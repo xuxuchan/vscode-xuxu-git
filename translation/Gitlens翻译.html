@@ -1,0 +1,325 @@
+<!--
+ * @Description:
+ * @Author: xuxu
+ * @Date: 2024-06-22 15:46:49
+ * @LastEditors: xuxu
+ * @LastEditTime: 2024-06-23 15:55:08
+ * @Email: xuxuchan1988@gmail.com
+ * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gitlens 翻译</title>
+</head>
+<body>
+    <div class="main">
+        <button class="upload-btn" onclick="document.getElementById('fileUpload').click();">
+            源文件
+        </button>
+        <input type="file" id="fileUpload" class="file-input" accept=".json" onchange="handleFiles(this.files)"/>
+        <div class="fileName"><span id="fileName">&nbsp;</span></div>
+
+        <button class="upload-btn" onclick="document.getElementById('fileUpload2').click();">
+            翻译文件
+        </button>
+        <input type="file" id="fileUpload2" class="file-input" accept=".json" onchange="handleFiles2(this.files)"/>
+        <div class="fileName"><span id="fileName2">&nbsp;</span></div>
+
+        <button onclick="findMarkdownDescriptions()" class="blue-button"> 查找Config </button>
+        <button onclick="translateMarkdownDescriptions()" class="blue-button"> 翻译Config </button>
+
+        <button onclick="findEnumDescriptions()" class="blue-button"> 查找Enums </button>
+
+        <div class="clear"></div>
+        <button id="copyButton" class="copy-button">复制</button>
+        <div id="result" class="result"></div>
+    </div>
+    <div class="tips">
+	请把下面的json字符串的所有markdownDescription参数的值翻译为简体中文：
+    。这是VsCode的Gitlens插件的内容，翻译结果请以原始json格式输出给我
+	</div>
+    <script>
+        function handleFiles(files) {
+            // 处理文件列表，例如显示文件名
+            if (files.length > 0) {
+                console.log("选中的文件名: ", files[0].name);
+                document.getElementById('fileName').innerHTML = files[0].name;
+            }
+        }
+        function handleFiles2(files) {
+            // 处理文件列表，例如显示文件名
+            if (files.length > 0) {
+                console.log("选中的文件名2: ", files[0].name);
+                document.getElementById('fileName2').innerHTML = files[0].name;
+            }
+        }
+        function readFile(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = event => resolve(JSON.parse(event.target.result));
+                reader.onerror = error => reject(error);
+                reader.readAsText(file);
+            });
+        }
+        async function findMarkdownDescriptions() {
+            const file = document.getElementById('fileUpload').files[0];
+            if (!file) {
+                alert('请先选择文件！');
+                return;
+            }
+            let obj = await readFile(file);
+            let result = extractMarkdownDescriptions(obj);
+
+            document.getElementById('result').innerHTML = `<pre><code>${result}</code></pre>`;
+        }
+
+        // 步骤:
+        // 1. 解析当前JS文件中的JSON字符串
+        // 2. 遍历JSON对象，找到所有的"contributes" -> "configuration"数组
+        // 3. 在每个"configuration"项中，找到"properties"对象
+        // 4. 从"properties"对象中提取所有的"markdownDescription"，并保留其JS结构
+        // 5. 将提取的结果组装成新的JS对象
+
+        function extractMarkdownDescriptions(jsonObj) {
+
+            // 检查"contributes"和"configuration"是否存在
+            if (!jsonObj.contributes || !jsonObj.contributes.configuration) {
+                console.error('JSON结构不符合预期，缺少必要的字段。');
+                return;
+            }
+
+            // 初始化结果对象
+            const result = {
+                contributes: {
+                configuration: []
+                }
+            };
+
+            // 遍历"configuration"数组
+            jsonObj.contributes.configuration.forEach(configItem => {
+                if (configItem.properties) {
+                // 初始化新的配置项，只包含properties
+                const newItem = { properties: {} };
+
+                // 遍历properties对象，提取markdownDescription
+                for (const key in configItem.properties) {
+                    if (configItem.properties[key].markdownDescription) {
+                    newItem.properties[key] = {
+                        markdownDescription: configItem.properties[key].markdownDescription
+                    };
+                    }
+                }
+
+                // 如果newItem中properties不为空，则添加到结果中
+                if (Object.keys(newItem.properties).length > 0) {
+                    result.contributes.configuration.push(newItem);
+                }
+                }
+            });
+
+            // 返回提取结果的JSON字符串
+            //return result;
+            return JSON.stringify(result, null, 2);
+        }
+        // 定义一个方法，匹配上传的两个文件，第一个是原始json文件，第二个是翻译后的json文件，然后把翻译后的内容替换到原始json文件中，然后输出到result中，注意：只替换markdownDescription的内容
+        function translateMarkdownDescriptions() {
+            // 获取上传的两个文件
+            const file1 = document.getElementById('fileUpload').files[0];
+            const file2 = document.getElementById('fileUpload2').files[0];
+
+            // 检查两个文件是否都存在
+            if (!file1 || !file2) {
+                alert('请先选择两个文件！');
+                return;
+            }
+
+            // 读取两个文件的内容
+            Promise.all([readFile(file1), readFile(file2)]).then(([obj1, obj2]) => {
+                // 替换obj1中的markdownDescription
+                replaceMarkdownDescriptions(obj1, obj2);
+
+                // 输出结果
+                document.getElementById('result').innerHTML = `<pre><code>${JSON.stringify(obj1, null, 2)}</code></pre>`;
+            });
+        }
+        // 定义一个方法，替换obj1中的markdownDescription
+        function replaceMarkdownDescriptions(obj1, obj2) {
+            // 遍历obj2中的markdownDescription，替换obj1中的内容
+            obj2.contributes.configuration.forEach((configItem2, index2) => {
+                if (configItem2.properties) {
+                    // 使用Object.keys()遍历properties对象的键
+                    Object.keys(configItem2.properties).forEach((key) => {
+                        const property2 = configItem2.properties[key];
+                        if (property2.markdownDescription) {
+                            // 确保obj1中对应的位置也有properties对象
+                            if (!obj1.contributes.configuration[index2].properties) {
+                                obj1.contributes.configuration[index2].properties = {};
+                            }
+                            // 替换markdownDescription
+                            obj1.contributes.configuration[index2].properties[key].markdownDescription = property2.markdownDescription;
+                        }
+                    });
+                }
+            });
+        }
+        // 定义一个方法，查找jsonData中的所有enumDescriptions
+        async function findEnumDescriptions() {
+            const file = document.getElementById('fileUpload').files[0];
+            if (!file) {
+                alert('请先选择文件！');
+                return;
+            }
+            let obj = await readFile(file);
+            let result = extractEnumDescriptions(obj);
+
+            document.getElementById('result').innerHTML = `<pre><code>${JSON.stringify(result, null, 2)}</code></pre>`;
+        }
+        // 定义一个方法，提取jsonData中的所有enumDescriptions
+        function extractEnumDescriptions(jsonData) {
+            // 结果JSON，初始化为包含contributes.configuration的结构
+            const resultJson = {
+                contributes: {
+                configuration: []
+                }
+            };
+
+            // 检查jsonData是否有contributes.configuration路径
+            if (jsonData.contributes && Array.isArray(jsonData.contributes.configuration)) {
+                // 遍历configuration数组
+                jsonData.contributes.configuration.forEach(configItem => {
+                // 初始化当前配置项的结构，只包含properties（如果有enumDescriptions）
+                const currentItem = {
+                    properties: {}
+                };
+                let hasEnumDescriptions = false;
+
+                // 检查每个配置项是否有properties对象
+                if (configItem.properties) {
+                    // 遍历properties对象
+                    Object.keys(configItem.properties).forEach(key => {
+                    const property = configItem.properties[key];
+                    // 检查每个属性是否有enumDescriptions属性
+                    if (property.enumDescriptions) {
+                        // 将具有enumDescriptions的属性添加到当前配置项中
+                        currentItem.properties[key] = {
+                        enumDescriptions: property.enumDescriptions
+                        };
+                        hasEnumDescriptions = true;
+                    }
+                    });
+                }
+
+                // 如果当前配置项中有enumDescriptions，则添加到结果JSON中
+                if (hasEnumDescriptions) {
+                    resultJson.contributes.configuration.push(currentItem);
+                }
+                });
+            }
+
+            // 返回包含所有具有enumDescriptions属性的properties的完整JSON结构
+            return resultJson;
+            //return JSON.stringify(resultJson, null, 2);
+        }
+
+
+        // 获取按钮和result的div元素
+        const copyButton = document.getElementById('copyButton');
+        const resultDiv = document.getElementById('result');
+
+        // 为按钮添加点击事件监听器
+        copyButton.addEventListener('click', function() {
+            // 使用navigator.clipboard.writeText复制result的内容到剪贴板
+            navigator.clipboard.writeText(resultDiv.innerText).then(() => {
+            // 可选：复制成功后的操作，比如显示提示信息
+            alert('内容已复制到剪贴板');
+            }).catch(err => {
+            // 处理复制过程中可能出现的错误
+            console.error('复制失败:', err);
+            });
+        });
+    </script>
+</body>
+<style>
+    .main{
+        width: 98%;
+        margin: 0 auto;
+        text-align: left;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .title{
+        width:90%;
+        line-height: 30px;
+        height: 30px;
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 15px;
+        background-color: #eeeeee;
+        text-indent: 5px;
+        float: left;
+    }
+    .result{
+        width:100%;
+        background-color: #f9f9f9;
+        border: solid 1px #eeeeee;
+        min-height: 30px;
+        overflow-x: auto;
+    }
+    .clear{
+        height:1px;
+        width:100%;
+        clear: both;
+    }
+    .blue-button{
+        background-color: #6666ff;
+        color: #fff;
+        border: none;
+        line-height: 26px;
+        width: 100px;
+        cursor: pointer;
+        border-radius: 5px;
+        float: left;
+        margin-left: 30px;
+    }
+    .copy-button{
+        background-color: #6666ff;
+        color: #fff;
+        border: none;
+        line-height: 26px;
+        width: 80px;
+        cursor: pointer;
+        float: right;
+        border-radius: 5px;
+    }
+	.tips{
+		margin-top:30px;
+		clear:both;
+		color:#f1f1f1;
+	}
+    body{
+        text-align: center;
+    }
+    .upload-btn {
+        background-color: #6666ff;
+        color: #fff;
+        line-height: 26px;
+        width: 100px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        display: block;
+        float: left;
+    }
+    .file-input {
+        display: none;
+    }
+    .fileName{
+        float: left;
+        margin-left: 10px;
+        line-height: 26px;
+        width:120px;
+        overflow: hidden;
+    }
+</style>
+</html>

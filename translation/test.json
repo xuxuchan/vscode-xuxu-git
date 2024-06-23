@@ -1,0 +1,716 @@
+{
+  "contributes": {
+    "configuration": [
+      {
+        "properties": {
+          "gitlens.codeLens.authors.command": {
+            "enumDescriptions": [
+              "Disables click interaction",
+              "Toggles file blame",
+              "Toggles file heatmap",
+              "Toggles file changes since before the commit",
+              "Toggles file changes from the commit",
+              "Compares the current committed file with the previous commit",
+              "Reveals the commit in the Side Bar",
+              "Searches for commits within the range",
+              "Shows an Inspect quick pick menu",
+              "Shows a commit file details quick pick menu",
+              "Shows a file history quick pick menu",
+              "Shows a branch history quick pick menu",
+              "Opens the commit on the remote service (when available)",
+              "Copies the remote commit URL to the clipboard (when available)",
+              "Opens the file revision on the remote service (when available)",
+              "Copies the remote file URL to the clipboard (when available)"
+            ]
+          },
+          "gitlens.codeLens.recentChange.command": {
+            "enumDescriptions": [
+              "Disables click interaction",
+              "Toggles file blame",
+              "Toggles file heatmap",
+              "Toggles file changes since before the commit",
+              "Toggles file changes from the commit",
+              "Compares the current committed file with the previous commit",
+              "Reveals the commit in the Side Bar",
+              "Shows the Inspect",
+              "Shows an Inspect quick pick menu",
+              "Shows a commit file details quick pick menu",
+              "Shows a file history quick pick menu",
+              "Shows a branch history quick pick menu",
+              "Opens the commit on the remote service (when available)",
+              "Copies the remote commit URL to the clipboard (when available)",
+              "Opens the file revision on the remote service (when available)",
+              "Copies the remote file URL to the clipboard (when available)"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.statusBar.alignment": {
+            "enumDescriptions": [
+              "Aligns to the left",
+              "Aligns to the right"
+            ]
+          },
+          "gitlens.statusBar.command": {
+            "enumDescriptions": [
+              "Toggles file blame",
+              "Toggles file heatmap",
+              "Toggles file changes since before the commit",
+              "Toggles file changes from the commit",
+              "Toggles Git CodeLens",
+              "Compares the current line commit with the previous",
+              "Compares the current line commit with the working tree",
+              "Reveals the commit in the Side Bar",
+              "Shows the Inspect",
+              "Shows an Inspect quick pick menu",
+              "Shows a commit file details quick pick menu",
+              "Shows a file history quick pick menu",
+              "Shows a branch history quick pick menu",
+              "Opens the commit on the remote service (when available)",
+              "Copies the remote commit URL to the clipboard (when available)",
+              "Opens the file revision on the remote service (when available)",
+              "Copies the remote file URL to the clipboard (when available)"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.hovers.currentLine.over": {
+            "enumDescriptions": [
+              "Only shown when hovering over the line annotation",
+              "Shown when hovering anywhere over the line"
+            ]
+          },
+          "gitlens.hovers.annotations.over": {
+            "enumDescriptions": [
+              "Only shown when hovering over the line annotation",
+              "Shown when hovering anywhere over the line"
+            ]
+          },
+          "gitlens.hovers.changesDiff": {
+            "enumDescriptions": [
+              "Shows only the changes to the line",
+              "Shows the set of related changes"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.commits.showBranchComparison": {
+            "enumDescriptions": [
+              "Hides the branch comparison",
+              "Compares the current branch with a user-selected reference",
+              "Compares the working tree with a user-selected reference"
+            ]
+          },
+          "gitlens.views.commits.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.commits.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.commits.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.commitDetails.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.commitDetails.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.commitDetails.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.repositories.showBranchComparison": {
+            "enumDescriptions": [
+              "Hides the branch comparison",
+              "Compares the current branch with a user-selected reference",
+              "Compares the working tree with a user-selected reference"
+            ]
+          },
+          "gitlens.views.repositories.branches.layout": {
+            "enumDescriptions": [
+              "Displays branches as a list",
+              "Displays branches as a tree when branch names contain slashes `/`"
+            ]
+          },
+          "gitlens.views.repositories.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.repositories.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.repositories.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          },
+          "gitlens.views.repositories.branches.showBranchComparison": {
+            "enumDescriptions": [
+              "Hides the branch comparison",
+              "Compares the branch with a user-selected reference"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.pullRequest.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.pullRequest.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.pullRequest.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.fileHistory.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.fileHistory.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.fileHistory.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.branches.showBranchComparison": {
+            "enumDescriptions": [
+              "Hides the branch comparison",
+              "Compares the branch with a user-selected reference"
+            ]
+          },
+          "gitlens.views.branches.branches.layout": {
+            "enumDescriptions": [
+              "Displays branches as a list",
+              "Displays branches as a tree when branch names contain slashes `/`"
+            ]
+          },
+          "gitlens.views.branches.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.branches.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.branches.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.remotes.branches.layout": {
+            "enumDescriptions": [
+              "Displays branches as a list",
+              "Displays branches as a tree when branch names contain slashes `/`"
+            ]
+          },
+          "gitlens.views.remotes.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.remotes.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.remotes.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.stashes.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.stashes.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.stashes.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.tags.branches.layout": {
+            "enumDescriptions": [
+              "Displays tags as a list",
+              "Displays tags as a tree when tags names contain slashes `/`"
+            ]
+          },
+          "gitlens.views.tags.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.tags.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.tags.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.worktrees.openAfterCreate": {
+            "enumDescriptions": [
+              "Always open the new worktree in the current window",
+              "Always open the new worktree in a new window",
+              "Only open the new worktree in the current window when no folder is opened",
+              "Never open the new worktree",
+              "Always prompt to open the new worktree"
+            ]
+          },
+          "gitlens.views.worktrees.showBranchComparison": {
+            "enumDescriptions": [
+              "Hides the branch comparison",
+              "Compares the worktree branch with a user-selected reference"
+            ]
+          },
+          "gitlens.views.worktrees.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.worktrees.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.worktrees.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.contributors.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.contributors.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.contributors.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.searchAndCompare.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.searchAndCompare.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.searchAndCompare.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.drafts.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.drafts.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.drafts.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.workspaces.showBranchComparison": {
+            "enumDescriptions": [
+              "Hides the branch comparison",
+              "Compares the current branch with a user-selected reference",
+              "Compares the working tree with a user-selected reference"
+            ]
+          },
+          "gitlens.views.workspaces.branches.layout": {
+            "enumDescriptions": [
+              "Displays branches as a list",
+              "Displays branches as a tree when branch names contain slashes `/`"
+            ]
+          },
+          "gitlens.views.workspaces.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.workspaces.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.workspaces.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          },
+          "gitlens.views.workspaces.branches.showBranchComparison": {
+            "enumDescriptions": [
+              "Hides the branch comparison",
+              "Compares the branch with a user-selected reference"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.patchDetails.files.layout": {
+            "enumDescriptions": [
+              "Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.patchDetails.files.threshold#` value and the number of files at each nesting level",
+              "Displays files as a list",
+              "Displays files as a tree"
+            ]
+          },
+          "gitlens.views.patchDetails.files.icon": {
+            "enumDescriptions": [
+              "Shows the file's status as the icon",
+              "Shows the file's type (theme icon) as the icon"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.fileAnnotations.command": {
+            "enumDescriptions": [
+              "Shows a menu to choose which file annotations to toggle",
+              "Toggles file blame annotations",
+              "Toggles file heatmap annotations",
+              "Toggles file changes annotations"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.blame.toggleMode": {
+            "enumDescriptions": [
+              "Toggles each file individually",
+              "Toggles the window, i.e. all files at once"
+            ]
+          },
+          "gitlens.blame.heatmap.location": {
+            "enumDescriptions": [
+              "Adds a heatmap indicator on the left edge of the file blame annotations",
+              "Adds a heatmap indicator on the right edge of the file blame annotations"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.changes.toggleMode": {
+            "enumDescriptions": [
+              "Toggles each file individually",
+              "Toggles the window, i.e. all files at once"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.heatmap.toggleMode": {
+            "enumDescriptions": [
+              "Toggles each file individually",
+              "Toggles the window, i.e. all files at once"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.graph.showDetailsView": {
+            "enumDescriptions": [
+              "Never shows the _Commit Details_ view automatically",
+              "Shows the _Commit Details_ view automatically only when opening the _Commit Graph_",
+              "Shows the _Commit Details_ view automatically when selection changes in the _Commit Graph_"
+            ]
+          },
+          "gitlens.graph.commitOrdering": {
+            "enumDescriptions": [
+              "Shows commits in reverse chronological order of the commit timestamp",
+              "Shows commits in reverse chronological order of the author timestamp",
+              "Shows commits in reverse chronological order of the commit timestamp, but avoids intermixing multiple lines of history"
+            ]
+          },
+          "gitlens.graph.dateStyle": {
+            "enumDescriptions": [
+              "e.g. 1 day ago",
+              "e.g. July 25th, 2018 7:18pm"
+            ]
+          },
+          "gitlens.graph.layout": {
+            "enumDescriptions": [
+              "Prefer showing the Commit Graph in the editor area",
+              "Prefer showing the Commit Graph in the bottom panel"
+            ]
+          },
+          "gitlens.graph.minimap.dataType": {
+            "enumDescriptions": [
+              "Shows the number of commits per day in the minimap",
+              "Shows the number of lines changed per day in the minimap"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.launchpad.indicator.icon": {
+            "enumDescriptions": [
+              "Shows the Launchpad icon",
+              "Shows the icon of the highest priority group"
+            ]
+          },
+          "gitlens.launchpad.indicator.label": {
+            "enumDescriptions": [
+              "Hides the label",
+              "Shows the highest priority item which needs your attention",
+              "Shows the status counts of items which need your attention"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.rebaseEditor.ordering": {
+            "enumDescriptions": [
+              "Shows oldest commit first",
+              "Shows newest commit first"
+            ]
+          },
+          "gitlens.rebaseEditor.showDetailsView": {
+            "enumDescriptions": [
+              "Never shows the _Commit Details_ view automatically",
+              "Shows the _Commit Details_ view automatically only when opening the _Interactive Rebase Editor_",
+              "Shows the _Commit Details_ view automatically when selection changes in the _Interactive Rebase Editor_"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.gitCommands.sortBy": {
+            "enumDescriptions": [
+              "Sorts commands by name",
+              "Sorts commands by last used date"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.ai.experimental.model": {
+            "enumDescriptions": [
+              "OpenAI GPT-4 Omni",
+              "OpenAI GPT-4 Turbo with Vision",
+              "OpenAI GPT-4 Turbo Preview",
+              "OpenAI GPT-4",
+              "OpenAI GPT-4 32k",
+              "OpenAI GPT-3.5 Turbo",
+              "OpenAI GPT-3.5 Turbo 16k",
+              "Anthropic Claude 3 Opus",
+              "Anthropic Claude 3 Sonnet",
+              "Anthropic Claude 3 Haiku",
+              "Anthropic Claude 2.1",
+              "Anthropic Claude 2",
+              "Anthropic Claude Instant 1.2",
+              "Google Gemini 1.5 Pro (Latest)",
+              "Google Gemini 1.5 Flash",
+              "Google Gemini 1.0 Pro",
+              "VS Code Extension"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.defaultDateStyle": {
+            "enumDescriptions": [
+              "e.g. 1 day ago",
+              "e.g. July 25th, 2018 7:18pm"
+            ]
+          },
+          "gitlens.defaultDateSource": {
+            "enumDescriptions": [
+              "Uses the date when the changes were authored (i.e. originally written)",
+              "Uses the date when the changes were committed"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.sortRepositoriesBy": {
+            "enumDescriptions": [
+              "Sorts repositories by discovery or workspace order",
+              "Sorts repositories by last fetched date in descending order",
+              "Sorts repositories by last fetched date in ascending order",
+              "Sorts repositories by name in ascending order",
+              "Sorts repositories by name in descending order"
+            ]
+          },
+          "gitlens.sortBranchesBy": {
+            "enumDescriptions": [
+              "Sorts branches by the most recent commit date in descending order",
+              "Sorts branches by the most recent commit date in ascending order",
+              "Sorts branches by name in ascending order",
+              "Sorts branches by name in descending order"
+            ]
+          },
+          "gitlens.sortTagsBy": {
+            "enumDescriptions": [
+              "Sorts tags by date in descending order",
+              "Sorts tags by date in ascending order",
+              "Sorts tags by name in ascending order",
+              "Sorts tags by name in descending order"
+            ]
+          },
+          "gitlens.sortContributorsBy": {
+            "enumDescriptions": [
+              "Sorts contributors by commit count in descending order",
+              "Sorts contributors by commit count in ascending order",
+              "Sorts contributors by the most recent commit date in descending order",
+              "Sorts contributors by the most recent commit date in ascending order",
+              "Sorts contributors by name in ascending order",
+              "Sorts contributors by name in descending order"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.keymap": {
+            "enumDescriptions": [
+              "Adds an alternate set of shortcut keys that start with `Alt` (⌥ on macOS)",
+              "Adds a chorded set of shortcut keys that start with `Ctrl+Shift+G` (`⌥⌘G` on macOS)",
+              "No shortcut keys will be added"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.mode.statusBar.alignment": {
+            "enumDescriptions": [
+              "Aligns to the left",
+              "Aligns to the right"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.cloudPatches.experimental.layout": {
+            "enumDescriptions": [
+              "Prefer showing Cloud Patches in the editor area",
+              "Prefer showing Cloud Patches in a view"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.advanced.commitOrdering": {
+            "enumDescriptions": [
+              "Shows commits in reverse chronological order",
+              "Shows commits in reverse chronological order of the commit timestamp",
+              "Shows commits in reverse chronological order of the author timestamp",
+              "Shows commits in reverse chronological order of the commit timestamp, but avoids intermixing multiple lines of history"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.outputLevel": {
+            "enumDescriptions": [
+              "Logs nothing",
+              "Logs only errors",
+              "Logs errors and warnings",
+              "Logs errors, warnings, and messages",
+              "Logs verbose errors, warnings, and messages. Best for issue reporting."
+            ]
+          },
+          "gitlens.defaultGravatarsStyle": {
+            "enumDescriptions": [
+              "A geometric pattern",
+              "A simple, cartoon-style silhouetted outline of a person (does not vary by email hash)",
+              "A monster with different colors, faces, etc",
+              "8-bit arcade-style pixelated faces",
+              "A robot with different colors, faces, etc",
+              "A face with differing features and backgrounds"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
