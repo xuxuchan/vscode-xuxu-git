@@ -3,7 +3,7 @@
  * @Author: xuxu
  * @Date: 2024-06-22 15:46:49
  * @LastEditors: xuxu
- * @LastEditTime: 2024-06-23 15:55:08
+ * @LastEditTime: 2024-06-24 17:36:33
  * @Email: xuxuchan1988@gmail.com
  * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
 -->
@@ -26,19 +26,28 @@
         <input type="file" id="fileUpload2" class="file-input" accept=".json" onchange="handleFiles2(this.files)"/>
         <div class="fileName"><span id="fileName2">&nbsp;</span></div>
 
-        <button onclick="findMarkdownDescriptions()" class="blue-button"> 查找Config </button>
-        <button onclick="translateMarkdownDescriptions()" class="blue-button"> 翻译Config </button>
+        <button onclick="findMarkdownDescriptions()" class="blue-button button1"> 查找Config </button>
+        <button onclick="translateMarkdownDescriptions()" class="blue-button button1"> 翻译Config </button>
 
-        <button onclick="findEnumDescriptions()" class="blue-button"> 查找Enums </button>
+        <button onclick="findEnumDescriptions()" class="blue-button button2"> 查找Enums </button>
+        <button onclick="translateEnumDescriptions()" class="blue-button button2"> 翻译Enums </button>
+
+        <button onclick="findColorDescriptions()" class="blue-button button3"> 查找Color </button>
+        <button onclick="translateColorDescriptions()" class="blue-button button3"> 翻译Color </button>
+
+        <button onclick="findCommandTitle()" class="blue-button button4"> 查找CMD </button>
+        <button onclick="translateCommand()" class="blue-button button4"> 翻译CMD </button>
 
         <div class="clear"></div>
         <button id="copyButton" class="copy-button">复制</button>
         <div id="result" class="result"></div>
     </div>
     <div class="tips">
-	请把下面的json字符串的所有markdownDescription参数的值翻译为简体中文：
-    。这是VsCode的Gitlens插件的内容，翻译结果请以原始json格式输出给我
+	    请把下面的json字符串的所有markdownDescription参数的值翻译为简体中文。这是VsCode的Gitlens插件的内容，翻译结果请以原始json格式输出给我
 	</div>
+    <div class="tips">
+        请把下面的json字符串的所有enumDescriptions参数的值翻译为简体中文。这是VsCode的Gitlens插件的内容，翻译结果请以原始json格式输出给我
+    </div>
     <script>
         function handleFiles(files) {
             // 处理文件列表，例如显示文件名
@@ -222,6 +231,204 @@
             //return JSON.stringify(resultJson, null, 2);
         }
 
+        // 定义一个方法，匹配上传的两个文件，第一个是原始json文件，第二个是翻译后的json文件，然后把翻译后的内容替换到原始json文件中，然后输出到result中，注意：只替换EnumDescription的内容
+        function translateEnumDescriptions() {
+            // 获取上传的两个文件
+            const file1 = document.getElementById('fileUpload').files[0];
+            const file2 = document.getElementById('fileUpload2').files[0];
+
+            // 检查两个文件是否都存在
+            if (!file1 || !file2) {
+                alert('请先选择两个文件！');
+                return;
+            }
+
+            // 读取两个文件的内容
+            Promise.all([readFile(file1), readFile(file2)]).then(([obj1, obj2]) => {
+                // 替换obj1中的enumDescriptions
+                replaceEnumDescriptions(obj1, obj2);
+
+                // 输出结果
+                document.getElementById('result').innerHTML = `<pre><code>${JSON.stringify(obj1, null, 2)}</code></pre>`;
+            });
+        }
+        // 定义一个方法，替换obj1中的enumDescriptions，由于configuration的数量在obj1和obj2不一样，因此匹配替换时只能根据properties[key]的值来匹配
+        function replaceEnumDescriptions(obj1, obj2) {
+            // 遍历obj2中的enumDescriptions，替换obj1中的内容
+            obj2.contributes.configuration.forEach((configItem2) => {
+                if (configItem2.properties) {
+                    // 遍历properties对象
+                    Object.keys(configItem2.properties).forEach(key => {
+                        const property2 = configItem2.properties[key];
+                        if (property2.enumDescriptions) {
+                            // 遍历obj1中的properties对象
+                            for (let i = 0; i < obj1.contributes.configuration.length; i++) {
+                                const configItem1 = obj1.contributes.configuration[i];
+                                if (configItem1.properties && configItem1.properties[key]) {
+                                    // 替换enumDescriptions
+                                    obj1.contributes.configuration[i].properties[key].enumDescriptions = property2.enumDescriptions;
+                                    break;
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        // 定义一个方法，查找jsonData中的所有Color的description，json结构是contributes.colors[i].description
+        async function findColorDescriptions() {
+            const file = document.getElementById('fileUpload').files[0];
+            if (!file) {
+                alert('请先选择文件！');
+                return;
+            }
+            let obj = await readFile(file);
+            let result = extractColorDescriptions(obj);
+
+            document.getElementById('result').innerHTML = `<pre><code>${JSON.stringify(result, null, 2)}</code></pre>`;
+        }
+        // 定义一个方法，提取jsonData中的所有Color的description
+        function extractColorDescriptions(jsonData) {
+            // 结果JSON，初始化为包含contributes.colors的结构
+            const resultJson = {
+                contributes: {
+                colors: []
+                }
+            };
+
+            // 检查jsonData是否有contributes.colors路径
+            if (jsonData.contributes && Array.isArray(jsonData.contributes.colors)) {
+                // 遍历colors数组
+                jsonData.contributes.colors.forEach(colorItem => {
+                // 初始化当前颜色项的结构，只包含description
+                const currentColor = {};
+
+                // 检查每个颜色项是否有description属性
+                if (colorItem.description) {
+                    // 将具有description的颜色项添加到结果JSON中
+                    currentColor.description = colorItem.description;
+                    resultJson.contributes.colors.push(currentColor);
+                }
+                });
+            }
+
+            // 返回包含所有具有description属性的颜色项的完整JSON结构
+            return resultJson;
+            //return JSON.stringify(resultJson, null, 2);
+        }
+        // 定义一个方法，匹配上传的两个文件，第一个是原始json文件，第二个是翻译后的json文件，然后把翻译后的内容替换到原始json文件中，然后输出到result中，注意：只替换Color的description的内容
+        function translateColorDescriptions() {
+            // 获取上传的两个文件
+            const file1 = document.getElementById('fileUpload').files[0];
+            const file2 = document.getElementById('fileUpload2').files[0];
+
+            // 检查两个文件是否都存在
+            if (!file1 || !file2) {
+                alert('请先选择两个文件！');
+                return;
+            }
+
+            // 读取两个文件的内容
+            Promise.all([readFile(file1), readFile(file2)]).then(([obj1, obj2]) => {
+                // 替换obj1中的description
+                replaceColorDescriptions(obj1, obj2);
+
+                // 输出结果
+                document.getElementById('result').innerHTML = `<pre><code>${JSON.stringify(obj1, null, 2)}</code></pre>`;
+            });
+        }
+        // 定义一个方法，替换obj1中的description
+        function replaceColorDescriptions(obj1, obj2) {
+            // 遍历obj2中的description，替换obj1中的内容
+            obj2.contributes.colors.forEach((colorItem2, index2) => {
+                if (colorItem2.description) {
+                    // 确保obj1中对应的位置也有colors对象
+                    if (!obj1.contributes.colors) {
+                        obj1.contributes.colors = [];
+                    }
+                    // 替换description
+                    obj1.contributes.colors[index2].description = colorItem2.description;
+                }
+            });
+        }
+        // 定义一个方法，查找jsonData中的所有command的title，json结构是contributes.commands[i].title
+        function findCommandTitle() {
+            const file = document.getElementById('fileUpload').files[0];
+            if (!file) {
+                alert('请先选择文件！');
+                return;
+            }
+            readFile(file).then(obj => {
+                let result = extractCommandTitle(obj);
+                document.getElementById('result').innerHTML = `<pre><code>${JSON.stringify(result, null, 2)}</code></pre>`;
+            });
+        }
+        // 定义一个方法，提取jsonData中的所有command的title
+        function extractCommandTitle(jsonData) {
+            // 结果JSON，初始化为包含contributes.commands的结构
+            const resultJson = {
+                contributes: {
+                commands: []
+                }
+            };
+
+            // 检查jsonData是否有contributes.commands路径
+            if (jsonData.contributes && Array.isArray(jsonData.contributes.commands)) {
+                // 遍历commands数组
+                jsonData.contributes.commands.forEach(commandItem => {
+                // 初始化当前命令项的结构，只包含title
+                const currentCommand = {};
+
+                // 检查每个命令项是否有title属性
+                if (commandItem.title) {
+                    // 将具有title的命令项添加到结果JSON中
+                    currentCommand.title = commandItem.title;
+                    resultJson.contributes.commands.push(currentCommand);
+                }
+                });
+            }
+
+            // 返回包含所有具有title属性的命令项的完整JSON结构
+            return resultJson;
+            //return JSON.stringify(resultJson, null, 2);
+        }
+        // 定义一个方法，匹配上传的两个文件，第一个是原始json文件，第二个是翻译后的json文件，然后把翻译后的内容替换到原始json文件中，然后输出到result中，注意：只替换Command的title的内容
+        function translateCommand() {
+            // 获取上传的两个文件
+            const file1 = document.getElementById('fileUpload').files[0];
+            const file2 = document.getElementById('fileUpload2').files[0];
+
+            // 检查两个文件是否都存在
+            if (!file1 || !file2) {
+                alert('请先选择两个文件！');
+                return;
+            }
+
+            // 读取两个文件的内容
+            Promise.all([readFile(file1), readFile(file2)]).then(([obj1, obj2]) => {
+                // 替换obj1中的title
+                replaceCommandTitle(obj1, obj2);
+
+                // 输出结果
+                document.getElementById('result').innerHTML = `<pre><code>${JSON.stringify(obj1, null, 2)}</code></pre>`;
+            });
+        }
+        // 定义一个方法，替换obj1中的title
+        function replaceCommandTitle(obj1, obj2) {
+            // 遍历obj2中的title，替换obj1中的内容
+            obj2.contributes.commands.forEach((commandItem2, index2) => {
+                if (commandItem2.title) {
+                    // 确保obj1中对应的位置也有commands对象
+                    if (!obj1.contributes.commands) {
+                        obj1.contributes.commands = [];
+                    }
+                    // 替换title
+                    obj1.contributes.commands[index2].title = commandItem2.title;
+                }
+            });
+        }
+
 
         // 获取按钮和result的div元素
         const copyButton = document.getElementById('copyButton');
@@ -320,6 +527,18 @@
         line-height: 26px;
         width:120px;
         overflow: hidden;
+    }
+    .button1{
+        background-color: #3676f6 !important;
+    }
+    .button2{
+        background-color: #d28b20 !important;
+    }
+    .button3{
+        background-color: #16b352 !important;
+    }
+    .button4{
+        background-color: #14a39e !important;
     }
 </style>
 </html>

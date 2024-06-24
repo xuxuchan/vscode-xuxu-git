@@ -1,0 +1,716 @@
+{
+  "contributes": {
+    "configuration": [
+      {
+        "properties": {
+          "gitlens.codeLens.authors.command": {
+            "enumDescriptions": [
+              "禁用单击交互",
+              "切换文件责备",
+              "切换文件热图",
+              "切换自提交之前文件更改",
+              "切换提交后的文件更改",
+              "比较当前提交的文件与上一个提交",
+              "在侧边栏显示提交",
+              "搜索范围内的提交",
+              "显示检查快速选择菜单",
+              "显示提交文件详细信息快速选择菜单",
+              "显示文件历史记录快速选择菜单",
+              "显示分支历史记录快速选择菜单",
+              "在远程服务上打开提交（如果可用）",
+              "将远程提交 URL 复制到剪贴板（如果可用）",
+              "在远程服务上打开文件修订版（如果可用）",
+              "将远程文件 URL 复制到剪贴板（如果可用）"
+            ]
+          },
+          "gitlens.codeLens.recentChange.command": {
+            "enumDescriptions": [
+              "禁用点击交互",
+              "切换文件责备",
+              "切换文件热图",
+              "切换提交前的文件更改",
+              "切换提交中的文件更改",
+              "将当前提交的文件与之前的提交进行比较",
+              "在侧边栏中显示提交",
+              "显示检查",
+              "显示检查快速选择菜单",
+              "显示提交文件详细信息快速选择菜单",
+              "显示文件历史记录快速选择菜单",
+              "显示分支历史记录快速选择菜单",
+              "在远程服务上打开提交（如果可用）",
+              "将远程提交URL复制到剪贴板（如果可用）",
+              "在远程服务上打开文件修订版（如果可用）",
+              "将远程文件URL复制到剪贴板（如果可用）"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.statusBar.alignment": {
+            "enumDescriptions": [
+              "左对齐",
+              "右对齐"
+            ]
+          },
+          "gitlens.statusBar.command": {
+            "enumDescriptions": [
+              "切换文件责备",
+              "切换文件热图",
+              "切换提交前的文件更改",
+              "切换提交中的文件更改",
+              "切换 Git CodeLens",
+              "将当前行提交与之前的提交进行比较",
+              "将当前行提交与工作树进行比较",
+              "在侧边栏中显示提交",
+              "显示检查",
+              "显示检查快速选择菜单",
+              "显示提交文件详细信息快速选择菜单",
+              "显示文件历史记录快速选择菜单",
+              "显示分支历史记录快速选择菜单",
+              "在远程服务上打开提交（如果可用）",
+              "将远程提交 URL 复制到剪贴板（如果可用）",
+              "在远程服务上打开文件修订版（如果可用）",
+              "将远程文件 URL 复制到剪贴板（如果可用）"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.hovers.currentLine.over": {
+            "enumDescriptions": [
+              "仅在悬停在行注释上时显示",
+              "悬停在行上任何位置时显示"
+            ]
+          },
+          "gitlens.hovers.annotations.over": {
+            "enumDescriptions": [
+              "仅在悬停在行注释上时显示",
+              "悬停在行上任何位置时显示"
+            ]
+          },
+          "gitlens.hovers.changesDiff": {
+            "enumDescriptions": [
+              "仅显示行的更改",
+              "显示相关更改集"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.commits.showBranchComparison": {
+            "enumDescriptions": [
+              "隐藏分支比较",
+              "将当前分支与用户选择的参考进行比较",
+              "将工作树与用户选择的参考进行比较"
+            ]
+          },
+          "gitlens.views.commits.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.commits.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.commits.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.commitDetails.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.commitDetails.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.commitDetails.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.repositories.showBranchComparison": {
+            "enumDescriptions": [
+              "隐藏分支比较",
+              "将当前分支与用户选择的参考进行比较",
+              "将工作树与用户选择的参考进行比较"
+            ]
+          },
+          "gitlens.views.repositories.branches.layout": {
+            "enumDescriptions": [
+              "以列表形式显示分支",
+              "当分支名称包含斜杠 `/` 时以树形结构显示分支"
+            ]
+          },
+          "gitlens.views.repositories.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.repositories.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.repositories.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          },
+          "gitlens.views.repositories.branches.showBranchComparison": {
+            "enumDescriptions": [
+              "隐藏分支比较",
+              "将分支与用户选择的参考进行比较"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.pullRequest.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.pullRequest.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.pullRequest.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.fileHistory.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.fileHistory.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.fileHistory.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.branches.showBranchComparison": {
+            "enumDescriptions": [
+              "隐藏分支比较",
+              "将分支与用户选择的参考进行比较"
+            ]
+          },
+          "gitlens.views.branches.branches.layout": {
+            "enumDescriptions": [
+              "以列表形式显示分支",
+              "当分支名称包含斜杠 `/` 时以树形结构显示分支"
+            ]
+          },
+          "gitlens.views.branches.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.branches.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.branches.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.remotes.branches.layout": {
+            "enumDescriptions": [
+              "以列表形式显示分支",
+              "当分支名称包含斜杠 `/` 时以树形结构显示分支"
+            ]
+          },
+          "gitlens.views.remotes.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.remotes.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.remotes.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.stashes.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.stashes.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.stashes.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.tags.branches.layout": {
+            "enumDescriptions": [
+              "以列表形式显示标签",
+              "当标签名称包含斜杠 `/` 时以树形结构显示标签"
+            ]
+          },
+          "gitlens.views.tags.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.tags.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.tags.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.worktrees.openAfterCreate": {
+            "enumDescriptions": [
+              "总是在当前窗口中打开新工作树",
+              "总是在新窗口中打开新工作树",
+              "只有在没有打开文件夹时才在当前窗口中打开新工作树",
+              "从不打开新工作树",
+              "始终提示打开新工作树"
+            ]
+          },
+          "gitlens.views.worktrees.showBranchComparison": {
+            "enumDescriptions": [
+              "隐藏分支比较",
+              "将工作树分支与用户选择的参考进行比较"
+            ]
+          },
+          "gitlens.views.worktrees.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.worktrees.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.worktrees.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.contributors.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.contributors.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.contributors.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.searchAndCompare.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.searchAndCompare.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+              "以列表形式显示文件",
+              "以树形结构显示文件"
+            ]
+          },
+          "gitlens.views.searchAndCompare.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态为图标",
+              "显示文件类型（主题图标）为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.drafts.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.drafts.files.threshold#` 值和每个嵌套级别的文件数量自动在 `树形视图` 和 `列表视图` 之间切换",
+              "以列表方式显示文件",
+              "以树形方式显示文件"
+            ]
+          },
+          "gitlens.views.drafts.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态作为图标",
+              "显示文件类型（主题图标）作为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.workspaces.showBranchComparison": {
+            "enumDescriptions": [
+              "隐藏分支比较",
+              "将当前分支与用户选择的参考进行比较",
+              "将工作树与用户选择的参考进行比较"
+            ]
+          },
+          "gitlens.views.workspaces.branches.layout": {
+            "enumDescriptions": [
+              "以列表方式显示分支",
+              "当分支名称包含斜杠 `/` 时以树形方式显示分支"
+            ]
+          },
+          "gitlens.views.workspaces.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.workspaces.files.threshold#` 值和每个嵌套级别的文件数量自动在 `树形视图` 和 `列表视图` 之间切换",
+              "以列表方式显示文件",
+              "以树形方式显示文件"
+            ]
+          },
+          "gitlens.views.workspaces.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态作为图标",
+              "显示文件类型（主题图标）作为图标"
+            ]
+          },
+          "gitlens.views.workspaces.branches.showBranchComparison": {
+            "enumDescriptions": [
+              "隐藏分支比较",
+              "将分支与用户选择的参考进行比较"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.views.patchDetails.files.layout": {
+            "enumDescriptions": [
+              "根据 `#gitlens.views.patchDetails.files.threshold#` 值和每个嵌套级别的文件数量自动在 `树形视图` 和 `列表视图` 之间切换",
+              "以列表方式显示文件",
+              "以树形方式显示文件"
+            ]
+          },
+          "gitlens.views.patchDetails.files.icon": {
+            "enumDescriptions": [
+              "显示文件状态作为图标",
+              "显示文件类型（主题图标）作为图标"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.fileAnnotations.command": {
+            "enumDescriptions": [
+              "显示菜单以选择要切换的文件注释",
+              "切换文件责任注释",
+              "切换文件热图注释",
+              "切换文件更改注释"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.blame.toggleMode": {
+            "enumDescriptions": [
+              "逐个切换每个文件",
+              "切换窗口，即一次切换所有文件"
+            ]
+          },
+          "gitlens.blame.heatmap.location": {
+            "enumDescriptions": [
+              "在文件责任注释的左边缘添加热图指示器",
+              "在文件责任注释的右边缘添加热图指示器"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.changes.toggleMode": {
+            "enumDescriptions": [
+              "逐个切换每个文件",
+              "切换窗口，即一次切换所有文件"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.heatmap.toggleMode": {
+            "enumDescriptions": [
+              "逐个切换每个文件",
+              "切换窗口，即一次切换所有文件"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.graph.showDetailsView": {
+            "enumDescriptions": [
+              "从不自动显示“提交详情”视图",
+              "仅在打开“提交图”时自动显示“提交详情”视图",
+              "在“提交图”中选择更改时自动显示“提交详情”视图"
+            ]
+          },
+          "gitlens.graph.commitOrdering": {
+            "enumDescriptions": [
+              "按提交时间戳的反向时间顺序显示提交",
+              "按作者时间戳的反向时间顺序显示提交",
+              "按提交时间戳的反向时间顺序显示提交，但避免混合多条历史线"
+            ]
+          },
+          "gitlens.graph.dateStyle": {
+            "enumDescriptions": [
+              "例如 1 天前",
+              "例如 2018年7月25日 下午7:18"
+            ]
+          },
+          "gitlens.graph.layout": {
+            "enumDescriptions": [
+              "优先在编辑区域显示提交图",
+              "优先在底部面板显示提交图"
+            ]
+          },
+          "gitlens.graph.minimap.dataType": {
+            "enumDescriptions": [
+              "在迷你地图中显示每天的提交数量",
+              "在迷你地图中显示每天的行改动数量"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.launchpad.indicator.icon": {
+            "enumDescriptions": [
+              "显示启动台图标",
+              "显示优先级最高的组的图标"
+            ]
+          },
+          "gitlens.launchpad.indicator.label": {
+            "enumDescriptions": [
+              "隐藏标签",
+              "显示需要您关注的最高优先级项目",
+              "显示需要您关注的项目的状态计数"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.rebaseEditor.ordering": {
+            "enumDescriptions": [
+              "首先显示最早的提交",
+              "首先显示最新的提交"
+            ]
+          },
+          "gitlens.rebaseEditor.showDetailsView": {
+            "enumDescriptions": [
+              "从不自动显示“提交详情”视图",
+              "仅在打开“交互式变基编辑器”时自动显示“提交详情”视图",
+              "在“交互式变基编辑器”中选择更改时自动显示“提交详情”视图"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.gitCommands.sortBy": {
+            "enumDescriptions": [
+              "按名称排序命令",
+              "按最后使用日期排序命令"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.ai.experimental.model": {
+            "enumDescriptions": [
+              "OpenAI GPT-4 Omni",
+              "OpenAI GPT-4 Turbo with Vision",
+              "OpenAI GPT-4 Turbo Preview",
+              "OpenAI GPT-4",
+              "OpenAI GPT-4 32k",
+              "OpenAI GPT-3.5 Turbo",
+              "OpenAI GPT-3.5 Turbo 16k",
+              "Anthropic Claude 3 Opus",
+              "Anthropic Claude 3 Sonnet",
+              "Anthropic Claude 3 Haiku",
+              "Anthropic Claude 2.1",
+              "Anthropic Claude 2",
+              "Anthropic Claude Instant 1.2",
+              "Google Gemini 1.5 Pro (最新版)",
+              "Google Gemini 1.5 Flash",
+              "Google Gemini 1.0 Pro",
+              "VS Code 扩展"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.defaultDateStyle": {
+            "enumDescriptions": [
+              "例如 1 天前",
+              "例如 2018年7月25日 下午7:18"
+            ]
+          },
+          "gitlens.defaultDateSource": {
+            "enumDescriptions": [
+              "使用更改作者编写时的日期（即最初编写的日期）",
+              "使用更改提交时的日期"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.sortRepositoriesBy": {
+            "enumDescriptions": [
+              "按发现或工作区顺序排序存储库",
+              "按最后获取日期降序排序存储库",
+              "按最后获取日期升序排序存储库",
+              "按名称升序排序存储库",
+              "按名称降序排序存储库"
+            ]
+          },
+          "gitlens.sortBranchesBy": {
+            "enumDescriptions": [
+              "按最近提交日期降序排序分支",
+              "按最近提交日期升序排序分支",
+              "按名称升序排序分支",
+              "按名称降序排序分支"
+            ]
+          },
+          "gitlens.sortTagsBy": {
+            "enumDescriptions": [
+              "按日期降序排序标签",
+              "按日期升序排序标签",
+              "按名称升序排序标签",
+              "按名称降序排序标签"
+            ]
+          },
+          "gitlens.sortContributorsBy": {
+            "enumDescriptions": [
+              "按提交计数降序排序贡献者",
+              "按提交计数升序排序贡献者",
+              "按最近提交日期降序排序贡献者",
+              "按最近提交日期升序排序贡献者",
+              "按名称升序排序贡献者",
+              "按名称降序排序贡献者"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.keymap": {
+            "enumDescriptions": [
+              "添加以 `Alt` 开头的备用快捷键集合 (`⌥` 在 macOS 上)",
+              "添加以 `Ctrl+Shift+G` 开头的组合快捷键集合 (`⌥⌘G` 在 macOS 上)",
+              "不添加任何快捷键"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.mode.statusBar.alignment": {
+            "enumDescriptions": [
+              "左对齐",
+              "右对齐"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.cloudPatches.experimental.layout": {
+            "enumDescriptions": [
+              "优先在编辑区域显示云补丁",
+              "优先在视图中显示云补丁"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.advanced.commitOrdering": {
+            "enumDescriptions": [
+              "按反向时间顺序显示提交",
+              "按提交时间戳的反向时间顺序显示提交",
+              "按作者时间戳的反向时间顺序显示提交",
+              "按提交时间戳的反向时间顺序显示提交，但避免混合多条历史线"
+            ]
+          }
+        }
+      },
+      {
+        "properties": {
+          "gitlens.outputLevel": {
+            "enumDescriptions": [
+              "不记录任何内容",
+              "仅记录错误",
+              "记录错误和警告",
+              "记录错误、警告和消息",
+              "记录详细的错误、警告和消息。适合问题报告。"
+            ]
+          },
+          "gitlens.defaultGravatarsStyle": {
+            "enumDescriptions": [
+              "几何图案",
+              "简单的卡通风格剪影轮廓（不随电子邮件哈希变化）",
+              "不同颜色、表情等的怪物",
+              "8位街机风格的像素化面孔",
+              "不同颜色、表情等的机器人",
+              "具有不同特征和背景的面孔"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

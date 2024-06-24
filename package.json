@@ -2,7 +2,7 @@
 	"name": "xuxu-git",
 	"displayName": "XUXU Git Tool",
 	"description": "超级增强 VS Code 中的 Git 功能——通过 Git blame 注释和 CodeLens 一目了然地可视化代码作者信息，无缝导航和探索 Git 仓库，通过丰富的可视化和强大的比较命令获取有价值的见解，等等。",
-	"version": "1.15.1.0",
+	"version": "1.15.1",
 	"engines": {
 	  "vscode": "^1.82.0"
 	},
@@ -189,22 +189,22 @@
 				"gitlens.copyRemoteFileUrl"
 			  ],
 			  "enumDescriptions": [
-				"Disables click interaction",
-				"Toggles file blame",
-				"Toggles file heatmap",
-				"Toggles file changes since before the commit",
-				"Toggles file changes from the commit",
-				"Compares the current committed file with the previous commit",
-				"Reveals the commit in the Side Bar",
-				"Searches for commits within the range",
-				"Shows an Inspect quick pick menu",
-				"Shows a commit file details quick pick menu",
-				"Shows a file history quick pick menu",
-				"Shows a branch history quick pick menu",
-				"Opens the commit on the remote service (when available)",
-				"Copies the remote commit URL to the clipboard (when available)",
-				"Opens the file revision on the remote service (when available)",
-				"Copies the remote file URL to the clipboard (when available)"
+				"禁用单击交互",
+				"切换文件责备",
+				"切换文件热图",
+				"切换自提交之前文件更改",
+				"切换提交后的文件更改",
+				"比较当前提交的文件与上一个提交",
+				"在侧边栏显示提交",
+				"搜索范围内的提交",
+				"显示检查快速选择菜单",
+				"显示提交文件详细信息快速选择菜单",
+				"显示文件历史记录快速选择菜单",
+				"显示分支历史记录快速选择菜单",
+				"在远程服务上打开提交（如果可用）",
+				"将远程提交 URL 复制到剪贴板（如果可用）",
+				"在远程服务上打开文件修订版（如果可用）",
+				"将远程文件 URL 复制到剪贴板（如果可用）"
 			  ],
 			  "default": "gitlens.toggleFileBlame",
 			  "markdownDescription": "指定单击“_作者_”代码透镜时要执行的命令",
@@ -242,22 +242,22 @@
 				"gitlens.copyRemoteFileUrl"
 			  ],
 			  "enumDescriptions": [
-				"Disables click interaction",
-				"Toggles file blame",
-				"Toggles file heatmap",
-				"Toggles file changes since before the commit",
-				"Toggles file changes from the commit",
-				"Compares the current committed file with the previous commit",
-				"Reveals the commit in the Side Bar",
-				"Shows the Inspect",
-				"Shows an Inspect quick pick menu",
-				"Shows a commit file details quick pick menu",
-				"Shows a file history quick pick menu",
-				"Shows a branch history quick pick menu",
-				"Opens the commit on the remote service (when available)",
-				"Copies the remote commit URL to the clipboard (when available)",
-				"Opens the file revision on the remote service (when available)",
-				"Copies the remote file URL to the clipboard (when available)"
+				"禁用点击交互",
+				"切换文件责备",
+				"切换文件热图",
+				"切换提交前的文件更改",
+				"切换提交中的文件更改",
+				"将当前提交的文件与之前的提交进行比较",
+				"在侧边栏中显示提交",
+				"显示检查",
+				"显示检查快速选择菜单",
+				"显示提交文件详细信息快速选择菜单",
+				"显示文件历史记录快速选择菜单",
+				"显示分支历史记录快速选择菜单",
+				"在远程服务上打开提交（如果可用）",
+				"将远程提交URL复制到剪贴板（如果可用）",
+				"在远程服务上打开文件修订版（如果可用）",
+				"将远程文件URL复制到剪贴板（如果可用）"
 			  ],
 			  "default": "gitlens.showQuickCommitFileDetails",
 			  "markdownDescription": "指定单击“_最近更改_”代码透镜时要执行的命令",
@@ -378,8 +378,8 @@
 				"right"
 			  ],
 			  "enumDescriptions": [
-				"Aligns to the left",
-				"Aligns to the right"
+				"左对齐",
+				"右对齐"
 			  ],
 			  "markdownDescription": "指定状态栏中责任的对齐方式",
 			  "scope": "window",
@@ -408,23 +408,23 @@
 				"gitlens.copyRemoteFileUrl"
 			  ],
 			  "enumDescriptions": [
-				"Toggles file blame",
-				"Toggles file heatmap",
-				"Toggles file changes since before the commit",
-				"Toggles file changes from the commit",
-				"Toggles Git CodeLens",
-				"Compares the current line commit with the previous",
-				"Compares the current line commit with the working tree",
-				"Reveals the commit in the Side Bar",
-				"Shows the Inspect",
-				"Shows an Inspect quick pick menu",
-				"Shows a commit file details quick pick menu",
-				"Shows a file history quick pick menu",
-				"Shows a branch history quick pick menu",
-				"Opens the commit on the remote service (when available)",
-				"Copies the remote commit URL to the clipboard (when available)",
-				"Opens the file revision on the remote service (when available)",
-				"Copies the remote file URL to the clipboard (when available)"
+				"切换文件责备",
+				"切换文件热图",
+				"切换提交前的文件更改",
+				"切换提交中的文件更改",
+				"切换 Git CodeLens",
+				"将当前行提交与之前的提交进行比较",
+				"将当前行提交与工作树进行比较",
+				"在侧边栏中显示提交",
+				"显示检查",
+				"显示检查快速选择菜单",
+				"显示提交文件详细信息快速选择菜单",
+				"显示文件历史记录快速选择菜单",
+				"显示分支历史记录快速选择菜单",
+				"在远程服务上打开提交（如果可用）",
+				"将远程提交 URL 复制到剪贴板（如果可用）",
+				"在远程服务上打开文件修订版（如果可用）",
+				"将远程文件 URL 复制到剪贴板（如果可用）"
 			  ],
 			  "markdownDescription": "指定单击责任状态栏项时要执行的命令",
 			  "scope": "window",
@@ -519,8 +519,8 @@
 				"line"
 			  ],
 			  "enumDescriptions": [
-				"Only shown when hovering over the line annotation",
-				"Shown when hovering anywhere over the line"
+				"仅在悬停在行注释上时显示",
+				"悬停在行上任何位置时显示"
 			  ],
 			  "markdownDescription": "指定何时触发当前行的悬停信息",
 			  "scope": "window",
@@ -555,8 +555,8 @@
 				"line"
 			  ],
 			  "enumDescriptions": [
-				"Only shown when hovering over the line annotation",
-				"Shown when hovering anywhere over the line"
+				"仅在悬停在行注释上时显示",
+				"悬停在行上任何位置时显示"
 			  ],
 			  "markdownDescription": "指定显示责任注释时触发悬停信息的时间",
 			  "scope": "window",
@@ -592,8 +592,8 @@
 				"hunk"
 			  ],
 			  "enumDescriptions": [
-				"Shows only the changes to the line",
-				"Shows the set of related changes"
+				"仅显示行的更改",
+				"显示相关更改集"
 			  ],
 			  "markdownDescription": "指定在“_更改 (diff)_”悬停信息中仅显示对行的更改还是显示相关的更改集",
 			  "scope": "window",
@@ -762,9 +762,9 @@
 				"working"
 			  ],
 			  "enumDescriptions": [
-				"Hides the branch comparison",
-				"Compares the current branch with a user-selected reference",
-				"Compares the working tree with a user-selected reference"
+				"隐藏分支比较",
+				"将当前分支与用户选择的参考进行比较",
+				"将工作树与用户选择的参考进行比较"
 			  ],
 			  "default": "working",
 			  "markdownDescription": "指定在“_提交_”视图中是否显示当前分支或工作树与用户选择的引用（分支、标签等）的比较",
@@ -801,9 +801,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.commits.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.commits.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_提交_”视图将如何显示文件",
 			  "scope": "window",
@@ -831,8 +831,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_提交_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -889,9 +889,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.commitDetails.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.commitDetails.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_提交详细信息_”视图将如何显示文件",
 			  "scope": "window",
@@ -919,8 +919,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_提交详细信息_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -951,9 +951,9 @@
 				"working"
 			  ],
 			  "enumDescriptions": [
-				"Hides the branch comparison",
-				"Compares the current branch with a user-selected reference",
-				"Compares the working tree with a user-selected reference"
+				"隐藏分支比较",
+				"将当前分支与用户选择的参考进行比较",
+				"将工作树与用户选择的参考进行比较"
 			  ],
 			  "default": "working",
 			  "markdownDescription": "指定在“_仓库_”视图中是否显示当前分支或工作树与用户选择的引用（分支、标签等）的比较",
@@ -1080,8 +1080,8 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Displays branches as a list",
-				"Displays branches as a tree when branch names contain slashes `/`"
+				"以列表形式显示分支",
+				"当分支名称包含斜杠 `/` 时以树形结构显示分支"
 			  ],
 			  "markdownDescription": "指定“_仓库_”视图将如何显示分支",
 			  "scope": "window",
@@ -1096,9 +1096,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.repositories.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.repositories.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_仓库_”视图将如何显示文件",
 			  "scope": "window",
@@ -1126,8 +1126,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_仓库_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1150,8 +1150,8 @@
 				"branch"
 			  ],
 			  "enumDescriptions": [
-				"Hides the branch comparison",
-				"Compares the branch with a user-selected reference"
+				"隐藏分支比较",
+				"将分支与用户选择的参考进行比较"
 			  ],
 			  "default": "branch",
 			  "markdownDescription": "指定在“_仓库_”视图中的每个分支下是否显示分支与用户选择的引用（分支、标签等）的比较",
@@ -1178,9 +1178,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.pullRequest.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.pullRequest.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_拉取请求_”视图将如何显示文件",
 			  "scope": "window",
@@ -1208,8 +1208,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_拉取请求_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1252,9 +1252,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.fileHistory.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.fileHistory.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_文件历史_”视图将如何显示文件",
 			  "scope": "window",
@@ -1282,8 +1282,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_文件历史_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1352,8 +1352,8 @@
 				"branch"
 			  ],
 			  "enumDescriptions": [
-				"Hides the branch comparison",
-				"Compares the branch with a user-selected reference"
+				"隐藏分支比较",
+				"将分支与用户选择的参考进行比较"
 			  ],
 			  "default": "branch",
 			  "markdownDescription": "指定在“_分支_”视图中是否显示分支与用户选择的引用（分支、标签等）的比较",
@@ -1389,8 +1389,8 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Displays branches as a list",
-				"Displays branches as a tree when branch names contain slashes `/`"
+				"以列表形式显示分支",
+				"当分支名称包含斜杠 `/` 时以树形结构显示分支"
 			  ],
 			  "markdownDescription": "指定“_分支_”视图将如何显示分支",
 			  "scope": "window",
@@ -1405,9 +1405,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.branches.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.branches.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_分支_”视图将如何显示文件",
 			  "scope": "window",
@@ -1435,8 +1435,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_分支_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1492,8 +1492,8 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Displays branches as a list",
-				"Displays branches as a tree when branch names contain slashes `/`"
+				"以列表形式显示分支",
+				"当分支名称包含斜杠 `/` 时以树形结构显示分支"
 			  ],
 			  "markdownDescription": "指定“_远程_”视图将如何显示分支",
 			  "scope": "window",
@@ -1508,9 +1508,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.remotes.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.remotes.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_远程_”视图将如何显示文件",
 			  "scope": "window",
@@ -1538,8 +1538,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_远程_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1575,9 +1575,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.stashes.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.stashes.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_暂存区_”视图将如何显示文件",
 			  "scope": "window",
@@ -1605,8 +1605,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_暂存区_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1634,8 +1634,8 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Displays tags as a list",
-				"Displays tags as a tree when tags names contain slashes `/`"
+				"以列表形式显示标签",
+				"当标签名称包含斜杠 `/` 时以树形结构显示标签"
 			  ],
 			  "markdownDescription": "指定“_标签_”视图将如何显示标签",
 			  "scope": "window",
@@ -1650,9 +1650,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.tags.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.tags.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_标签_”视图将如何显示文件",
 			  "scope": "window",
@@ -1680,8 +1680,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_标签_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1733,11 +1733,11 @@
 				"prompt"
 			  ],
 			  "enumDescriptions": [
-				"Always open the new worktree in the current window",
-				"Always open the new worktree in a new window",
-				"Only open the new worktree in the current window when no folder is opened",
-				"Never open the new worktree",
-				"Always prompt to open the new worktree"
+				"总是在当前窗口中打开新工作树",
+				"总是在新窗口中打开新工作树",
+				"只有在没有打开文件夹时才在当前窗口中打开新工作树",
+				"从不打开新工作树",
+				"始终提示打开新工作树"
 			  ],
 			  "markdownDescription": "创建工作区后如何以及何时打开它",
 			  "scope": "resource",
@@ -1753,8 +1753,8 @@
 				"branch"
 			  ],
 			  "enumDescriptions": [
-				"Hides the branch comparison",
-				"Compares the worktree branch with a user-selected reference"
+				"隐藏分支比较",
+				"将工作树分支与用户选择的参考进行比较"
 			  ],
 			  "default": "working",
 			  "markdownDescription": "指定在“_工作区_”视图中是否显示工作区分支与用户选择的引用（分支、标签等）的比较",
@@ -1791,9 +1791,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.worktrees.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.worktrees.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_工作区_”视图将如何显示文件",
 			  "scope": "window",
@@ -1821,8 +1821,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_工作区_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1886,9 +1886,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.contributors.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.contributors.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“_贡献者_”视图将如何显示文件",
 			  "scope": "window",
@@ -1916,8 +1916,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“_贡献者_”视图将如何显示文件图标",
 			  "scope": "window",
@@ -1967,9 +1967,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.searchAndCompare.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.searchAndCompare.files.threshold#` 值和每个嵌套级别的文件数量在树或列表之间自动切换",
+				"以列表形式显示文件",
+				"以树形结构显示文件"
 			  ],
 			  "markdownDescription": "指定“搜索 & 比较”视图将如何显示文件",
 			  "scope": "window",
@@ -1997,8 +1997,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态为图标",
+				"显示文件类型（主题图标）为图标"
 			  ],
 			  "markdownDescription": "指定“搜索 & 比较”视图将如何显示文件图标",
 			  "scope": "window",
@@ -2027,9 +2027,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.drafts.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.drafts.files.threshold#` 值和每个嵌套级别的文件数量自动在 `树形视图` 和 `列表视图` 之间切换",
+				"以列表方式显示文件",
+				"以树形方式显示文件"
 			  ],
 			  "markdownDescription": "指定“云补丁”视图将如何显示文件",
 			  "scope": "window",
@@ -2057,8 +2057,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态作为图标",
+				"显示文件类型（主题图标）作为图标"
 			  ],
 			  "markdownDescription": "指定“云补丁”视图将如何显示文件图标",
 			  "scope": "window",
@@ -2089,9 +2089,9 @@
 				"working"
 			  ],
 			  "enumDescriptions": [
-				"Hides the branch comparison",
-				"Compares the current branch with a user-selected reference",
-				"Compares the working tree with a user-selected reference"
+				"隐藏分支比较",
+				"将当前分支与用户选择的参考进行比较",
+				"将工作树与用户选择的参考进行比较"
 			  ],
 			  "default": "working",
 			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示当前分支或工作树与用户选择的引用（分支、标签等）的比较",
@@ -2204,8 +2204,8 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Displays branches as a list",
-				"Displays branches as a tree when branch names contain slashes `/`"
+				"以列表方式显示分支",
+				"当分支名称包含斜杠 `/` 时以树形方式显示分支"
 			  ],
 			  "markdownDescription": "指定“GitKraken 工作区”视图将如何显示分支",
 			  "scope": "window",
@@ -2220,9 +2220,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.workspaces.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.workspaces.files.threshold#` 值和每个嵌套级别的文件数量自动在 `树形视图` 和 `列表视图` 之间切换",
+				"以列表方式显示文件",
+				"以树形方式显示文件"
 			  ],
 			  "markdownDescription": "指定“GitKraken 工作区”视图将如何显示文件",
 			  "scope": "window",
@@ -2250,8 +2250,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态作为图标",
+				"显示文件类型（主题图标）作为图标"
 			  ],
 			  "markdownDescription": "指定“GitKraken 工作区”视图将如何显示文件图标",
 			  "scope": "window",
@@ -2274,8 +2274,8 @@
 				"branch"
 			  ],
 			  "enumDescriptions": [
-				"Hides the branch comparison",
-				"Compares the branch with a user-selected reference"
+				"隐藏分支比较",
+				"将分支与用户选择的参考进行比较"
 			  ],
 			  "default": "branch",
 			  "markdownDescription": "指定在“GitKraken 工作区”视图中每个分支下是否显示分支与用户选择的引用（分支、标签等）的比较",
@@ -2298,9 +2298,9 @@
 				"tree"
 			  ],
 			  "enumDescriptions": [
-				"Automatically switches between displaying files as a `tree` or `list` based on the `#gitlens.views.patchDetails.files.threshold#` value and the number of files at each nesting level",
-				"Displays files as a list",
-				"Displays files as a tree"
+				"根据 `#gitlens.views.patchDetails.files.threshold#` 值和每个嵌套级别的文件数量自动在 `树形视图` 和 `列表视图` 之间切换",
+				"以列表方式显示文件",
+				"以树形方式显示文件"
 			  ],
 			  "markdownDescription": "指定“补丁详情”视图将如何显示文件",
 			  "scope": "window",
@@ -2328,8 +2328,8 @@
 				"type"
 			  ],
 			  "enumDescriptions": [
-				"Shows the file's status as the icon",
-				"Shows the file's type (theme icon) as the icon"
+				"显示文件状态作为图标",
+				"显示文件类型（主题图标）作为图标"
 			  ],
 			  "markdownDescription": "指定“补丁详情”视图将如何显示文件图标",
 			  "scope": "window",
@@ -2369,10 +2369,10 @@
 				"changes"
 			  ],
 			  "enumDescriptions": [
-				"Shows a menu to choose which file annotations to toggle",
-				"Toggles file blame annotations",
-				"Toggles file heatmap annotations",
-				"Toggles file changes annotations"
+				"显示菜单以选择要切换的文件注释",
+				"切换文件责任注释",
+				"切换文件热图注释",
+				"切换文件更改注释"
 			  ],
 			  "markdownDescription": "指定编辑器标题栏中的文件注释按钮是显示菜单还是立即切换指定的文件注释",
 			  "scope": "window",
@@ -2414,8 +2414,8 @@
 				"window"
 			  ],
 			  "enumDescriptions": [
-				"Toggles each file individually",
-				"Toggles the window, i.e. all files at once"
+				"逐个切换每个文件",
+				"切换窗口，即一次切换所有文件"
 			  ],
 			  "markdownDescription": "指定如何切换文件责任注释",
 			  "scope": "window",
@@ -2471,8 +2471,8 @@
 				"right"
 			  ],
 			  "enumDescriptions": [
-				"Adds a heatmap indicator on the left edge of the file blame annotations",
-				"Adds a heatmap indicator on the right edge of the file blame annotations"
+				"在文件责任注释的左边缘添加热图指示器",
+				"在文件责任注释的右边缘添加热图指示器"
 			  ],
 			  "markdownDescription": "指定在文件责任注释中显示热图指示器的位置",
 			  "scope": "window",
@@ -2558,8 +2558,8 @@
 				"window"
 			  ],
 			  "enumDescriptions": [
-				"Toggles each file individually",
-				"Toggles the window, i.e. all files at once"
+				"逐个切换每个文件",
+				"切换窗口，即一次切换所有文件"
 			  ],
 			  "markdownDescription": "指定如何切换文件改动注释",
 			  "scope": "window",
@@ -2607,8 +2607,8 @@
 				"window"
 			  ],
 			  "enumDescriptions": [
-				"Toggles each file individually",
-				"Toggles the window, i.e. all files at once"
+				"逐个切换每个文件",
+				"切换窗口，即一次切换所有文件"
 			  ],
 			  "markdownDescription": "指定如何切换文件热图注释",
 			  "scope": "window",
@@ -2757,9 +2757,9 @@
 				"selection"
 			  ],
 			  "enumDescriptions": [
-				"Never shows the _Commit Details_ view automatically",
-				"Shows the _Commit Details_ view automatically only when opening the _Commit Graph_",
-				"Shows the _Commit Details_ view automatically when selection changes in the _Commit Graph_"
+				"从不自动显示“提交详情”视图",
+				"仅在打开“提交图”时自动显示“提交详情”视图",
+				"在“提交图”中选择更改时自动显示“提交详情”视图"
 			  ],
 			  "markdownDescription": "指定何时在“提交图”中为选定行显示“提交详细信息”视图",
 			  "scope": "window",
@@ -2823,9 +2823,9 @@
 				"topo"
 			  ],
 			  "enumDescriptions": [
-				"Shows commits in reverse chronological order of the commit timestamp",
-				"Shows commits in reverse chronological order of the author timestamp",
-				"Shows commits in reverse chronological order of the commit timestamp, but avoids intermixing multiple lines of history"
+				"按提交时间戳的反向时间顺序显示提交",
+				"按作者时间戳的反向时间顺序显示提交",
+				"按提交时间戳的反向时间顺序显示提交，但避免混合多条历史线"
 			  ],
 			  "markdownDescription": "指定在“提交图”上显示提交的排序方式",
 			  "scope": "window",
@@ -2848,8 +2848,8 @@
 				"absolute"
 			  ],
 			  "enumDescriptions": [
-				"e.g. 1 day ago",
-				"e.g. July 25th, 2018 7:18pm"
+				"例如 1 天前",
+				"例如 2018年7月25日 下午7:18"
 			  ],
 			  "markdownDescription": "指定如何在“提交图”中显示日期",
 			  "scope": "window",
@@ -2880,8 +2880,8 @@
 				"panel"
 			  ],
 			  "enumDescriptions": [
-				"Prefer showing the Commit Graph in the editor area",
-				"Prefer showing the Commit Graph in the bottom panel"
+				"优先在编辑区域显示提交图",
+				"优先在底部面板显示提交图"
 			  ],
 			  "markdownDescription": "指定“提交图”的首选布局",
 			  "scope": "window",
@@ -2902,8 +2902,8 @@
 				"lines"
 			  ],
 			  "enumDescriptions": [
-				"Shows the number of commits per day in the minimap",
-				"Shows the number of lines changed per day in the minimap"
+				"在迷你地图中显示每天的提交数量",
+				"在迷你地图中显示每天的行改动数量"
 			  ],
 			  "markdownDescription": "指定在“提交图”的小地图上显示的数据",
 			  "scope": "window",
@@ -3002,8 +3002,8 @@
 				"group"
 			  ],
 			  "enumDescriptions": [
-				"Shows the Launchpad icon",
-				"Shows the icon of the highest priority group"
+				"显示启动台图标",
+				"显示优先级最高的组的图标"
 			  ],
 			  "default": "default",
 			  "markdownDescription": "指定“启动板”状态栏指示器图标的样式",
@@ -3021,9 +3021,9 @@
 				"counts"
 			  ],
 			  "enumDescriptions": [
-				"Hides the label",
-				"Shows the highest priority item which needs your attention",
-				"Shows the status counts of items which need your attention"
+				"隐藏标签",
+				"显示需要您关注的最高优先级项目",
+				"显示需要您关注的项目的状态计数"
 			  ],
 			  "default": "item",
 			  "markdownDescription": "指定“启动板”状态栏指示器标签的显示方式",
@@ -3144,8 +3144,8 @@
 				"desc"
 			  ],
 			  "enumDescriptions": [
-				"Shows oldest commit first",
-				"Shows newest commit first"
+				"首先显示最早的提交",
+				"首先显示最新的提交"
 			  ],
 			  "markdownDescription": "指定如何在“交互式变基编辑器”中显示 Git 提交",
 			  "scope": "window",
@@ -3163,9 +3163,9 @@
 				"selection"
 			  ],
 			  "enumDescriptions": [
-				"Never shows the _Commit Details_ view automatically",
-				"Shows the _Commit Details_ view automatically only when opening the _Interactive Rebase Editor_",
-				"Shows the _Commit Details_ view automatically when selection changes in the _Interactive Rebase Editor_"
+				"从不自动显示“提交详情”视图",
+				"仅在打开“交互式变基编辑器”时自动显示“提交详情”视图",
+				"在“交互式变基编辑器”中选择更改时自动显示“提交详情”视图"
 			  ],
 			  "markdownDescription": "指定何时在“交互式变基编辑器”中为选定行显示“提交详细信息”视图",
 			  "scope": "window",
@@ -3193,8 +3193,8 @@
 				"usage"
 			  ],
 			  "enumDescriptions": [
-				"Sorts commands by name",
-				"Sorts commands by last used date"
+				"按名称排序命令",
+				"按最后使用日期排序命令"
 			  ],
 			  "markdownDescription": "指定如何在“Git 命令面板”中排序 Git 命令",
 			  "scope": "window",
@@ -3622,10 +3622,10 @@
 				"Anthropic Claude 2.1",
 				"Anthropic Claude 2",
 				"Anthropic Claude Instant 1.2",
-				"Google Gemini 1.5 Pro (Latest)",
+				"Google Gemini 1.5 Pro (最新版)",
 				"Google Gemini 1.5 Flash",
 				"Google Gemini 1.0 Pro",
-				"VS Code Extension"
+				"VS Code 扩展"
 			  ],
 			  "markdownDescription": "指定用于 GitLens 实验性人工智能功能的人工智能模型",
 			  "scope": "window",
@@ -3667,8 +3667,8 @@
 				"absolute"
 			  ],
 			  "enumDescriptions": [
-				"e.g. 1 day ago",
-				"e.g. July 25th, 2018 7:18pm"
+				"例如 1 天前",
+				"例如 2018年7月25日 下午7:18"
 			  ],
 			  "markdownDescription": "指定默认情况下日期的显示方式",
 			  "scope": "window",
@@ -3722,8 +3722,8 @@
 				"committed"
 			  ],
 			  "enumDescriptions": [
-				"Uses the date when the changes were authored (i.e. originally written)",
-				"Uses the date when the changes were committed"
+				"使用更改作者编写时的日期（即最初编写的日期）",
+				"使用更改提交时的日期"
 			  ],
 			  "markdownDescription": "指定提交日期应使用创作日期还是提交日期",
 			  "scope": "window",
@@ -3747,11 +3747,11 @@
 				"name:desc"
 			  ],
 			  "enumDescriptions": [
-				"Sorts repositories by discovery or workspace order",
-				"Sorts repositories by last fetched date in descending order",
-				"Sorts repositories by last fetched date in ascending order",
-				"Sorts repositories by name in ascending order",
-				"Sorts repositories by name in descending order"
+				"按发现或工作区顺序排序存储库",
+				"按最后获取日期降序排序存储库",
+				"按最后获取日期升序排序存储库",
+				"按名称升序排序存储库",
+				"按名称降序排序存储库"
 			  ],
 			  "markdownDescription": "指定在快速选择菜单和视图中排序仓库的方式",
 			  "scope": "window",
@@ -3767,10 +3767,10 @@
 				"name:desc"
 			  ],
 			  "enumDescriptions": [
-				"Sorts branches by the most recent commit date in descending order",
-				"Sorts branches by the most recent commit date in ascending order",
-				"Sorts branches by name in ascending order",
-				"Sorts branches by name in descending order"
+				"按最近提交日期降序排序分支",
+				"按最近提交日期升序排序分支",
+				"按名称升序排序分支",
+				"按名称降序排序分支"
 			  ],
 			  "markdownDescription": "指定在快速选择菜单和视图中排序分支的方式",
 			  "scope": "window",
@@ -3786,10 +3786,10 @@
 				"name:desc"
 			  ],
 			  "enumDescriptions": [
-				"Sorts tags by date in descending order",
-				"Sorts tags by date in ascending order",
-				"Sorts tags by name in ascending order",
-				"Sorts tags by name in descending order"
+				"按日期降序排序标签",
+				"按日期升序排序标签",
+				"按名称升序排序标签",
+				"按名称降序排序标签"
 			  ],
 			  "markdownDescription": "指定在快速选择菜单和视图中排序标签的方式",
 			  "scope": "window",
@@ -3807,12 +3807,12 @@
 				"name:desc"
 			  ],
 			  "enumDescriptions": [
-				"Sorts contributors by commit count in descending order",
-				"Sorts contributors by commit count in ascending order",
-				"Sorts contributors by the most recent commit date in descending order",
-				"Sorts contributors by the most recent commit date in ascending order",
-				"Sorts contributors by name in ascending order",
-				"Sorts contributors by name in descending order"
+				"按提交计数降序排序贡献者",
+				"按提交计数升序排序贡献者",
+				"按最近提交日期降序排序贡献者",
+				"按最近提交日期升序排序贡献者",
+				"按名称升序排序贡献者",
+				"按名称降序排序贡献者"
 			  ],
 			  "markdownDescription": "指定在快速选择菜单和视图中排序贡献者的方式",
 			  "scope": "window",
@@ -4221,9 +4221,9 @@
 				"none"
 			  ],
 			  "enumDescriptions": [
-				"Adds an alternate set of shortcut keys that start with `Alt` (⌥ on macOS)",
-				"Adds a chorded set of shortcut keys that start with `Ctrl+Shift+G` (`⌥⌘G` on macOS)",
-				"No shortcut keys will be added"
+				"添加以 `Alt` 开头的备用快捷键集合 (`⌥` 在 macOS 上)",
+				"添加以 `Ctrl+Shift+G` 开头的组合快捷键集合 (`⌥⌘G` 在 macOS 上)",
+				"不添加任何快捷键"
 			  ],
 			  "markdownDescription": "指定用于 GitLens 快捷键的键映射",
 			  "scope": "window",
@@ -4251,8 +4251,8 @@
 				"right"
 			  ],
 			  "enumDescriptions": [
-				"Aligns to the left",
-				"Aligns to the right"
+				"左对齐",
+				"右对齐"
 			  ],
 			  "markdownDescription": "指定活动 GitLens 模式在状态栏中的对齐方式",
 			  "scope": "window",
@@ -4435,8 +4435,8 @@
 				"view"
 			  ],
 			  "enumDescriptions": [
-				"Prefer showing Cloud Patches in the editor area",
-				"Prefer showing Cloud Patches in a view"
+				"优先在编辑区域显示云补丁",
+				"优先在视图中显示云补丁"
 			  ],
 			  "markdownDescription": "（实验性）指定“云补丁”的首选布局",
 			  "scope": "window",
@@ -4607,10 +4607,10 @@
 				"topo"
 			  ],
 			  "enumDescriptions": [
-				"Shows commits in reverse chronological order",
-				"Shows commits in reverse chronological order of the commit timestamp",
-				"Shows commits in reverse chronological order of the author timestamp",
-				"Shows commits in reverse chronological order of the commit timestamp, but avoids intermixing multiple lines of history"
+				"按反向时间顺序显示提交",
+				"按提交时间戳的反向时间顺序显示提交",
+				"按作者时间戳的反向时间顺序显示提交",
+				"按提交时间戳的反向时间顺序显示提交，但避免混合多条历史线"
 			  ],
 			  "markdownDescription": "指定显示提交的顺序。如果不指定，则提交将按逆时间顺序显示",
 			  "scope": "window",
@@ -4747,11 +4747,11 @@
 				"debug"
 			  ],
 			  "enumDescriptions": [
-				"Logs nothing",
-				"Logs only errors",
-				"Logs errors and warnings",
-				"Logs errors, warnings, and messages",
-				"Logs verbose errors, warnings, and messages. Best for issue reporting."
+				"不记录任何内容",
+				"仅记录错误",
+				"记录错误和警告",
+				"记录错误、警告和消息",
+				"记录详细的错误、警告和消息。适合问题报告。"
 			  ],
 			  "markdownDescription": "指定发送到 GitLens 输出频道的输出量（如果有）",
 			  "scope": "window",
@@ -4769,12 +4769,12 @@
 				"wavatar"
 			  ],
 			  "enumDescriptions": [
-				"A geometric pattern",
-				"A simple, cartoon-style silhouetted outline of a person (does not vary by email hash)",
-				"A monster with different colors, faces, etc",
-				"8-bit arcade-style pixelated faces",
-				"A robot with different colors, faces, etc",
-				"A face with differing features and backgrounds"
+				"几何图案",
+				"简单的卡通风格剪影轮廓（不随电子邮件哈希变化）",
+				"不同颜色、表情等的怪物",
+				"8位街机风格的像素化面孔",
+				"不同颜色、表情等的机器人",
+				"具有不同特征和背景的面孔"
 			  ],
 			  "markdownDescription": "指定 Gravatar 默认（备用）图像的样式",
 			  "scope": "window",
@@ -4850,7 +4850,7 @@
 	  "colors": [
 		{
 		  "id": "gitlens.gutterBackgroundColor",
-		  "description": "Specifies the background color of the file blame annotations",
+		  "description": "指定文件责任注释的背景颜色",
 		  "defaults": {
 			"dark": "#FFFFFF13",
 			"light": "#0000000C",
@@ -4859,7 +4859,7 @@
 		},
 		{
 		  "id": "gitlens.gutterForegroundColor",
-		  "description": "Specifies the foreground color of the file blame annotations",
+		  "description": "指定文件责任注释的前景颜色",
 		  "defaults": {
 			"dark": "#BEBEBE",
 			"light": "#747474",
@@ -4868,7 +4868,7 @@
 		},
 		{
 		  "id": "gitlens.gutterUncommittedForegroundColor",
-		  "description": "Specifies the foreground color of an uncommitted line in the file blame annotations",
+		  "description": "指定文件责任注释中未提交行的前景颜色",
 		  "defaults": {
 			"dark": "#00BCF299",
 			"light": "#00BCF299",
@@ -4877,7 +4877,7 @@
 		},
 		{
 		  "id": "gitlens.trailingLineBackgroundColor",
-		  "description": "Specifies the background color of the inline blame annotation for the current line",
+		  "description": "指定当前行的内联责任注释的背景颜色",
 		  "defaults": {
 			"dark": "#00000000",
 			"light": "#00000000",
@@ -4886,7 +4886,7 @@
 		},
 		{
 		  "id": "gitlens.trailingLineForegroundColor",
-		  "description": "Specifies the foreground color of the inline blame annotation for the current line",
+		  "description": "指定当前行的内联责任注释的前景颜色",
 		  "defaults": {
 			"dark": "#99999959",
 			"light": "#99999959",
@@ -4895,7 +4895,7 @@
 		},
 		{
 		  "id": "gitlens.lineHighlightBackgroundColor",
-		  "description": "Specifies the background color of the associated line highlights in blame annotations",
+		  "description": "指定责任注释中相关行高亮显示的背景颜色",
 		  "defaults": {
 			"dark": "#00BCF233",
 			"light": "#00BCF233",
@@ -4904,7 +4904,7 @@
 		},
 		{
 		  "id": "gitlens.lineHighlightOverviewRulerColor",
-		  "description": "Specifies the scroll bar color of the associated line highlights in blame annotations",
+		  "description": "指定责任注释中相关行高亮显示的滚动条颜色",
 		  "defaults": {
 			"dark": "#00BCF299",
 			"light": "#00BCF299",
@@ -4918,7 +4918,7 @@
 			"light": "#1a7f37",
 			"highContrast": "#68ff79"
 		  },
-		  "description": "Specifies the icon color of open issues in the GitLens views"
+		  "description": "指定 GitLens 视图中打开问题的图标颜色"
 		},
 		{
 		  "id": "gitlens.closedAutolinkedIssueIconColor",
@@ -4927,11 +4927,11 @@
 			"light": "#8250df",
 			"highContrast": "#8945ff"
 		  },
-		  "description": "Specifies the icon color of closed issues in the GitLens views"
+		  "description": "指定 GitLens 视图中关闭问题的图标颜色"
 		},
 		{
 		  "id": "gitlens.closedPullRequestIconColor",
-		  "description": "Specifies the icon color of closed pull requests in the GitLens views",
+		  "description": "指定 GitLens 视图中关闭拉取请求的图标颜色",
 		  "defaults": {
 			"dark": "#f85149",
 			"light": "#cf222e",
@@ -4940,7 +4940,7 @@
 		},
 		{
 		  "id": "gitlens.openPullRequestIconColor",
-		  "description": "Specifies the icon color of open pull requests in the GitLens views",
+		  "description": "指定 GitLens 视图中打开拉取请求的图标颜色",
 		  "defaults": {
 			"dark": "#3fb950",
 			"light": "#1a7f37",
@@ -4949,7 +4949,7 @@
 		},
 		{
 		  "id": "gitlens.mergedPullRequestIconColor",
-		  "description": "Specifies the icon color of merged pull requests in the GitLens views",
+		  "description": "指定 GitLens 视图中合并拉取请求的图标颜色",
 		  "defaults": {
 			"dark": "#a371f7",
 			"light": "#8250df",
@@ -4958,7 +4958,7 @@
 		},
 		{
 		  "id": "gitlens.unpublishedChangesIconColor",
-		  "description": "Specifies the icon color of unpublished changes in the GitLens views",
+		  "description": "指定 GitLens 视图中未发布更改的图标颜色",
 		  "defaults": {
 			"dark": "#35b15e",
 			"light": "#35b15e",
@@ -4967,7 +4967,7 @@
 		},
 		{
 		  "id": "gitlens.unpublishedCommitIconColor",
-		  "description": "Specifies the icon color of unpublished commits in the GitLens views",
+		  "description": "指定 GitLens 视图中未发布提交的图标颜色",
 		  "defaults": {
 			"dark": "#35b15e",
 			"light": "#35b15e",
@@ -4976,7 +4976,7 @@
 		},
 		{
 		  "id": "gitlens.unpulledChangesIconColor",
-		  "description": "Specifies the icon color of unpulled changes in the GitLens views",
+		  "description": "指定 GitLens 视图中未拉取更改的图标颜色",
 		  "defaults": {
 			"dark": "#b15e35",
 			"light": "#b15e35",
@@ -4985,7 +4985,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.addedForegroundColor",
-		  "description": "Specifies the decoration foreground color of added files",
+		  "description": "指定添加文件的装饰前景颜色",
 		  "defaults": {
 			"light": "gitDecoration.addedResourceForeground",
 			"dark": "gitDecoration.addedResourceForeground",
@@ -4994,7 +4994,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.copiedForegroundColor",
-		  "description": "Specifies the decoration foreground color of copied files",
+		  "description": "指定复制文件的装饰前景颜色",
 		  "defaults": {
 			"light": "gitDecoration.renamedResourceForeground",
 			"dark": "gitDecoration.renamedResourceForeground",
@@ -5003,7 +5003,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.deletedForegroundColor",
-		  "description": "Specifies the decoration foreground color of deleted files",
+		  "description": "指定删除文件的装饰前景颜色",
 		  "defaults": {
 			"light": "gitDecoration.deletedResourceForeground",
 			"dark": "gitDecoration.deletedResourceForeground",
@@ -5012,7 +5012,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.ignoredForegroundColor",
-		  "description": "Specifies the decoration foreground color of ignored files",
+		  "description": "指定忽略文件的装饰前景颜色",
 		  "defaults": {
 			"light": "gitDecoration.ignoredResourceForeground",
 			"dark": "gitDecoration.ignoredResourceForeground",
@@ -5021,7 +5021,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.modifiedForegroundColor",
-		  "description": "Specifies the decoration foreground color of modified files",
+		  "description": "指定修改文件的装饰前景颜色",
 		  "defaults": {
 			"light": "gitDecoration.modifiedResourceForeground",
 			"dark": "gitDecoration.modifiedResourceForeground",
@@ -5030,7 +5030,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.untrackedForegroundColor",
-		  "description": "Specifies the decoration foreground color of untracked files",
+		  "description": "指定未跟踪文件的装饰前景颜色",
 		  "defaults": {
 			"light": "gitDecoration.untrackedResourceForeground",
 			"dark": "gitDecoration.untrackedResourceForeground",
@@ -5039,7 +5039,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.renamedForegroundColor",
-		  "description": "Specifies the decoration foreground color of renamed files",
+		  "description": "指定重命名文件的装饰前景颜色",
 		  "defaults": {
 			"light": "gitDecoration.renamedResourceForeground",
 			"dark": "gitDecoration.renamedResourceForeground",
@@ -5048,7 +5048,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.branchAheadForegroundColor",
-		  "description": "Specifies the decoration foreground color of branches that are ahead of their upstream",
+		  "description": "指定超前其上游分支的分支的装饰前景颜色",
 		  "defaults": {
 			"dark": "#35b15e",
 			"light": "#35b15e",
@@ -5057,7 +5057,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.branchBehindForegroundColor",
-		  "description": "Specifies the decoration foreground color of branches that are behind their upstream",
+		  "description": "指定落后其上游分支的分支的装饰前景颜色",
 		  "defaults": {
 			"dark": "#b15e35",
 			"light": "#b15e35",
@@ -5066,7 +5066,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.branchDivergedForegroundColor",
-		  "description": "Specifies the decoration foreground color of branches that are both ahead and behind their upstream",
+		  "description": "指定同时超前和落后其上游分支的分支的装饰前景颜色",
 		  "defaults": {
 			"dark": "#D8AF1B",
 			"light": "#D8AF1B",
@@ -5075,7 +5075,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.branchUpToDateForegroundColor",
-		  "description": "Specifies the decoration foreground color of branches that are up to date with their upstream",
+		  "description": "指定与其上游分支同步的分支的装饰前景颜色",
 		  "defaults": {
 			"dark": "sideBar.foreground",
 			"light": "sideBar.foreground",
@@ -5084,7 +5084,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.branchUnpublishedForegroundColor",
-		  "description": "Specifies the decoration foreground color of branches that are not yet published to an upstream",
+		  "description": "指定尚未发布到上游的分支的装饰前景颜色",
 		  "defaults": {
 			"dark": "#35b15e",
 			"light": "#35b15e",
@@ -5093,7 +5093,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.branchMissingUpstreamForegroundColor",
-		  "description": "Specifies the decoration foreground color of branches that have a missing upstream",
+		  "description": "指定缺少上游的分支的装饰前景颜色",
 		  "defaults": {
 			"light": "#ad0707",
 			"dark": "#c74e39",
@@ -5102,7 +5102,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.statusMergingOrRebasingConflictForegroundColor",
-		  "description": "Specifies the decoration foreground color of the status during a rebase operation with conflicts",
+		  "description": "指定存在冲突的变基操作期间的状态的装饰前景颜色",
 		  "defaults": {
 			"light": "#ad0707",
 			"dark": "#c74e39",
@@ -5111,7 +5111,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.statusMergingOrRebasingForegroundColor",
-		  "description": "Specifies the decoration foreground color of the status during a rebase operation",
+		  "description": "指定变基操作期间的状态的装饰前景颜色",
 		  "defaults": {
 			"dark": "#D8AF1B",
 			"light": "#D8AF1B",
@@ -5120,7 +5120,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.workspaceRepoMissingForegroundColor",
-		  "description": "Specifies the decoration foreground color of workspace repos which are missing a local path",
+		  "description": "指定缺少本地路径的工作区存储库的装饰前景颜色",
 		  "defaults": {
 			"dark": "#909090",
 			"light": "#949494",
@@ -5129,7 +5129,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.workspaceCurrentForegroundColor",
-		  "description": "Specifies the decoration foreground color of workspaces which are currently open as a Code Workspace file",
+		  "description": "指定当前以代码工作区文件形式打开的工作区的装饰前景颜色",
 		  "defaults": {
 			"dark": "#35b15e",
 			"light": "#35b15e",
@@ -5138,7 +5138,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.workspaceRepoOpenForegroundColor",
-		  "description": "Specifies the decoration foreground color of workspace repos which are open in the current workspace",
+		  "description": "指定在当前工作区中打开的工作区存储库的装饰前景颜色",
 		  "defaults": {
 			"dark": "#35b15e",
 			"light": "#35b15e",
@@ -5147,7 +5147,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.worktreeHasUncommittedChangesForegroundColor",
-		  "description": "Specifies the decoration foreground color for worktrees that have uncommitted changes",
+		  "description": "指定有未提交更改的工作树的装饰前景颜色",
 		  "defaults": {
 			"light": "#895503",
 			"dark": "#E2C08D",
@@ -5156,7 +5156,7 @@
 		},
 		{
 		  "id": "gitlens.decorations.worktreeMissingForegroundColor",
-		  "description": "Specifies the decoration foreground color for worktrees cannot be found on disk",
+		  "description": "指定在磁盘上找不到的工作树的装饰前景颜色",
 		  "defaults": {
 			"light": "#ad0707",
 			"dark": "#c74e39",
@@ -5165,7 +5165,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane1Color",
-		  "description": "Specifies the color for the first commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第一条提交通道的颜色",
 		  "defaults": {
 			"light": "#15a0bf",
 			"dark": "#15a0bf",
@@ -5174,7 +5174,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane2Color",
-		  "description": "Specifies the color for the second commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第二条提交通道的颜色",
 		  "defaults": {
 			"light": "#0669f7",
 			"dark": "#0669f7",
@@ -5183,7 +5183,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane3Color",
-		  "description": "Specifies the color for the third commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第三条提交通道的颜色",
 		  "defaults": {
 			"light": "#8e00c2",
 			"dark": "#8e00c2",
@@ -5192,7 +5192,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane4Color",
-		  "description": "Specifies the color for the fourth commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第四条提交通道的颜色",
 		  "defaults": {
 			"light": "#c517b6",
 			"dark": "#c517b6",
@@ -5201,7 +5201,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane5Color",
-		  "description": "Specifies the color for the fifth commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第五条提交通道的颜色",
 		  "defaults": {
 			"light": "#d90171",
 			"dark": "#d90171",
@@ -5210,7 +5210,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane6Color",
-		  "description": "Specifies the color for the sixth commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第六条提交通道的颜色",
 		  "defaults": {
 			"light": "#cd0101",
 			"dark": "#cd0101",
@@ -5219,7 +5219,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane7Color",
-		  "description": "Specifies the color for the seventh commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第七条提交通道的颜色",
 		  "defaults": {
 			"light": "#f25d2e",
 			"dark": "#f25d2e",
@@ -5228,7 +5228,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane8Color",
-		  "description": "Specifies the color for the eighth commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第八条提交通道的颜色",
 		  "defaults": {
 			"light": "#f2ca33",
 			"dark": "#f2ca33",
@@ -5237,7 +5237,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane9Color",
-		  "description": "Specifies the color for the ninth commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第九条提交通道的颜色",
 		  "defaults": {
 			"light": "#7bd938",
 			"dark": "#7bd938",
@@ -5246,7 +5246,7 @@
 		},
 		{
 		  "id": "gitlens.graphLane10Color",
-		  "description": "Specifies the color for the tenth commit lane of the _Commit Graph_ visualization",
+		  "description": "指定 _提交图_ 可视化的第十条提交通道的颜色",
 		  "defaults": {
 			"light": "#2ece9d",
 			"dark": "#2ece9d",
@@ -5255,7 +5255,7 @@
 		},
 		{
 		  "id": "gitlens.graphChangesColumnAddedColor",
-		  "description": "Specifies the color for denoting lines added in the _Changes_ column on the _Commit Graph_",
+		  "description": "指定 _提交图_ 中 _更改_ 列中表示添加行的颜色",
 		  "defaults": {
 			"light": "#2da44e",
 			"highContrastLight": "#2da44e",
@@ -5265,7 +5265,7 @@
 		},
 		{
 		  "id": "gitlens.graphChangesColumnDeletedColor",
-		  "description": "Specifies the color for denoting lines deleted in the _Changes_ column on the _Commit Graph_",
+		  "description": "指定 _提交图_ 中 _更改_ 列中表示删除行的颜色",
 		  "defaults": {
 			"light": "#cf222e",
 			"highContrastLight": "#cf222e",
@@ -5275,7 +5275,7 @@
 		},
 		{
 		  "id": "gitlens.graphMinimapMarkerHeadColor",
-		  "description": "Specifies the color marking HEAD on the minimap of the _Commit Graph_",
+		  "description": "指定 _提交图_ 小地图上标记 HEAD 的颜色",
 		  "defaults": {
 			"light": "#04c814",
 			"highContrastLight": "#04c814",
@@ -5285,7 +5285,7 @@
 		},
 		{
 		  "id": "gitlens.graphScrollMarkerHeadColor",
-		  "description": "Specifies the color marking HEAD on the scrollbar of the _Commit Graph_",
+		  "description": "指定 _提交图_ 滚动条上标记 HEAD 的颜色",
 		  "defaults": {
 			"light": "#04c814",
 			"highContrastLight": "#04c814",
@@ -5295,7 +5295,7 @@
 		},
 		{
 		  "id": "gitlens.graphMinimapMarkerUpstreamColor",
-		  "description": "Specifies the color marking HEAD's upstream on the minimap of the _Commit Graph_",
+		  "description": "指定 _提交图_ 小地图上标记 HEAD 的上游的颜色",
 		  "defaults": {
 			"light": "#8cd993",
 			"highContrastLight": "#8cd993",
@@ -5305,7 +5305,7 @@
 		},
 		{
 		  "id": "gitlens.graphScrollMarkerUpstreamColor",
-		  "description": "Specifies the color marking HEAD's upstream on the scrollbar of the _Commit Graph_",
+		  "description": "指定 _提交图_ 滚动条上标记 HEAD 的上游的颜色",
 		  "defaults": {
 			"light": "#8cd993",
 			"highContrastLight": "#8cd993",
@@ -5315,7 +5315,7 @@
 		},
 		{
 		  "id": "gitlens.graphMinimapMarkerHighlightsColor",
-		  "description": "Specifies the color marking highlights (matches) on the minimap of the _Commit Graph_",
+		  "description": "指定 _提交图_ 小地图上标记高亮（匹配项）的颜色",
 		  "defaults": {
 			"light": "#f5cc00",
 			"highContrastLight": "#f5cc00",
@@ -5325,7 +5325,7 @@
 		},
 		{
 		  "id": "gitlens.graphScrollMarkerHighlightsColor",
-		  "description": "Specifies the color marking highlights (matches) on the scrollbar of the _Commit Graph_",
+		  "description": "指定 _提交图_ 滚动条上标记高亮（匹配项）的颜色",
 		  "defaults": {
 			"light": "#f5cc00",
 			"highContrastLight": "#f5cc00",
@@ -5335,7 +5335,7 @@
 		},
 		{
 		  "id": "gitlens.graphMinimapMarkerLocalBranchesColor",
-		  "description": "Specifies the color marking local branches on the minimap of the _Commit Graph_",
+		  "description": "指定 _提交图_ 小地图上标记本地分支的颜色",
 		  "defaults": {
 			"light": "#3095e8",
 			"highContrastLight": "#3095e8",
@@ -5345,7 +5345,7 @@
 		},
 		{
 		  "id": "gitlens.graphScrollMarkerLocalBranchesColor",
-		  "description": "Specifies the color marking local branches on the scrollbar of the _Commit Graph_",
+		  "description": "指定 _提交图_ 滚动条上标记本地分支的颜色",
 		  "defaults": {
 			"light": "#3095e8",
 			"highContrastLight": "#3095e8",
@@ -5355,7 +5355,7 @@
 		},
 		{
 		  "id": "gitlens.graphMinimapMarkerRemoteBranchesColor",
-		  "description": "Specifies the color marking remote branches on the minimap of the _Commit Graph_",
+		  "description": "指定 _提交图_ 小地图上标记远程分支的颜色",
 		  "defaults": {
 			"light": "#67ace4",
 			"highContrastLight": "#67ace4",
@@ -5365,7 +5365,7 @@
 		},
 		{
 		  "id": "gitlens.graphScrollMarkerRemoteBranchesColor",
-		  "description": "Specifies the color marking remote branches on the scrollbar of the _Commit Graph_",
+		  "description": "指定 _提交图_ 滚动条上标记远程分支的颜色",
 		  "defaults": {
 			"light": "#67ace4",
 			"highContrastLight": "#67ace4",
@@ -5375,7 +5375,7 @@
 		},
 		{
 		  "id": "gitlens.graphMinimapMarkerStashesColor",
-		  "description": "Specifies the color marking stashes on the minimap of the _Commit Graph_",
+		  "description": "指定 _提交图_ 小地图上标记贮藏区的颜色",
 		  "defaults": {
 			"light": "#e467e4",
 			"highContrastLight": "#e467e4",
@@ -5385,7 +5385,7 @@
 		},
 		{
 		  "id": "gitlens.graphScrollMarkerStashesColor",
-		  "description": "Specifies the color marking stashes on the scrollbar of the _Commit Graph_",
+		  "description": "指定 _提交图_ 滚动条上标记贮藏区的颜色",
 		  "defaults": {
 			"light": "#e467e4",
 			"highContrastLight": "#e467e4",
@@ -5395,7 +5395,7 @@
 		},
 		{
 		  "id": "gitlens.graphMinimapMarkerTagsColor",
-		  "description": "Specifies the color marking tags on the minimap of the _Commit Graph_",
+		  "description": "指定 _提交图_ 小地图上标记标签的颜色",
 		  "defaults": {
 			"light": "#d2a379",
 			"highContrastLight": "#d2a379",
@@ -5405,7 +5405,7 @@
 		},
 		{
 		  "id": "gitlens.graphScrollMarkerTagsColor",
-		  "description": "Specifies the color marking tags on the scrollbar of the _Commit Graph_",
+		  "description": "指定 _提交图_ 滚动条上标记标签的颜色",
 		  "defaults": {
 			"light": "#d2a379",
 			"highContrastLight": "#d2a379",
@@ -5415,7 +5415,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorMergeableColor",
-		  "description": "Specifies the color of the _Launchpad_ indicator icon when the priority is mergeable",
+		  "description": "指定 _启动板_ 指示图标在优先级为可合并时的颜色",
 		  "defaults": {
 			"light": "#42c954",
 			"dark": "#3fb950",
@@ -5424,7 +5424,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorMergeableHoverColor",
-		  "description": "Specifies the color of the _Launchpad_ indicator icon in the hover when the priority is mergeable",
+		  "description": "指定 _启动板_ 指示图标在悬停时优先级为可合并时的颜色",
 		  "defaults": {
 			"light": "#42c954",
 			"dark": "#3fb950",
@@ -5433,7 +5433,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorBlockedColor",
-		  "description": "Specifies the color of the _Launchpad_ indicator icon when the priority is blocked",
+		  "description": "指定 _启动板_ 指示图标在优先级为被阻止时的颜色",
 		  "defaults": {
 			"light": "#ad0707",
 			"dark": "#c74e39",
@@ -5442,7 +5442,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorBlockedHoverColor",
-		  "description": "Specifies the color of the _Launchpad_ indicator icon in the hover when the priority is blocked",
+		  "description": "指定 _启动板_ 指示图标在悬停时优先级为被阻止时的颜色",
 		  "defaults": {
 			"light": "#ad0707",
 			"dark": "#c74e39",
@@ -5451,7 +5451,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorAttentionColor",
-		  "description": "Specifies the color of the _Launchpad_ indicator icon when the priority is follow-up or needs review",
+		  "description": "指定 _启动板_ 指示图标在优先级为后续或需要审查时的颜色",
 		  "defaults": {
 			"dark": "#D8AF1B",
 			"light": "#cc9b15",
@@ -5460,7 +5460,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorAttentionHoverColor",
-		  "description": "Specifies the color of the _Launchpad_ indicator icon in the hover when the priority is follow-up or needs review",
+		  "description": "指定 _启动板_ 指示图标在悬停时优先级为后续或需要审查时的颜色",
 		  "defaults": {
 			"dark": "#D8AF1B",
 			"light": "#cc9b15",
