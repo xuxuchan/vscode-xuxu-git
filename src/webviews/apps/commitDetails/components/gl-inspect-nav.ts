@@ -109,11 +109,11 @@ export class GlInspectNav extends LitElement {
 
 	override render() {
 		const pinLabel = this.pinned
-			? html`Unpin this Commit<br />Restores Automatic Following`
-			: html`Pin this Commit<br />Suspends Automatic Following`;
+			? html`取消固定此提交<br />恢复自动跟踪`
+			: html`固定此提交<br />暂停自动跟踪`;
 
-		let forwardLabel = 'Forward';
-		let backLabel = 'Back';
+		let forwardLabel = '前进';
+		let backLabel = '回退';
 		if (this.navigation?.hint) {
 			if (!this.pinned) {
 				forwardLabel += ` - ${this.navigation.hint}`;
@@ -184,7 +184,7 @@ export class GlInspectNav extends LitElement {
 				${when(
 					this.uncommitted,
 					() => html`
-						<gl-tooltip hoist content="Open SCM view"
+						<gl-tooltip hoist content="打开源代码管理视图"
 							><a
 								class="commit-action"
 								href="#"
@@ -195,7 +195,7 @@ export class GlInspectNav extends LitElement {
 						></gl-tooltip>
 					`,
 				)}
-				<gl-tooltip hoist content="Open in Commit Graph"
+				<gl-tooltip hoist content="在提交图表中打开"
 					><a
 						class="commit-action"
 						href="#"
@@ -207,7 +207,7 @@ export class GlInspectNav extends LitElement {
 				${when(
 					!this.uncommitted,
 					() => html`
-						<gl-tooltip hoist content="Show Commit Actions"
+						<gl-tooltip hoist content="显示提交相关操作"
 							><a
 								class="commit-action"
 								href="#"

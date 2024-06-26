@@ -261,22 +261,22 @@ export class GlCommitDetails extends GlDetailsBase {
 				?loading=${!this.state?.includeRichContent}
 				data-region="rich-pane"
 			>
-				<span slot="title">Autolinks</span>
+				<span slot="title">自动链接</span>
 				<span slot="subtitle" data-region="autolink-count"
-					>${this.state?.includeRichContent || deduped.size ? `${deduped.size} found ` : ''}${this.state
+					>${this.state?.includeRichContent || deduped.size ? `找到 ${deduped.size} 个 ` : ''}${this.state
 						?.includeRichContent
 						? ''
 						: '…'}</span
 				>
 				<action-nav slot="actions">
 					<action-item
-						label="${hasAccount && hasConnectedJira ? 'Manage Jira' : 'Connect to Jira Cloud'}"
+						label="${hasAccount && hasConnectedJira ? '管理 Jira' : '连接到 Jira 云'}"
 						icon="gl-provider-jira"
 						href="${jiraIntegrationLink}"
 					></action-item>
 					<action-item
 						data-action="autolinks-settings"
-						label="Autolinks Settings"
+						label="自动链接设置"
 						icon="gear"
 						href="command:gitlens.showSettingsPage!autolinks"
 					></action-item>
@@ -301,17 +301,16 @@ export class GlCommitDetails extends GlDetailsBase {
 							return html`
 								<div class="section" data-region="rich-info">
 									<p>
-										<code-icon icon="info"></code-icon>&nbsp;Use
+										<code-icon icon="info"></code-icon>&nbsp;使用
 										<gl-tooltip hoist>
 											<a
 												href="command:gitlens.showSettingsPage!autolinks"
 												data-action="autolink-settings"
-												>autolinks</a
+												>自动链接</a
 											>
-											<span slot="content">Configure autolinks</span>
+											<span slot="content">配置自动链接</span>
 										</gl-tooltip>
-										to linkify external references, like ${this.renderJiraLink()} or Zendesk
-										tickets, in commit messages.
+										在提交消息中链接化外部引用，如 ${this.renderJiraLink()} 或 Zendesk 工单。
 									</p>
 								</div>
 							`;
@@ -322,13 +321,13 @@ export class GlCommitDetails extends GlDetailsBase {
 									? html`
 											<section
 												class="auto-link"
-												aria-label="Custom Autolinks"
+												aria-label="自定义自动链接"
 												data-region="custom-autolinks"
 											>
 												${autolinks.map(autolink => {
 													let name = autolink.description ?? autolink.title;
 													if (name === undefined) {
-														name = `Custom Autolink ${autolink.prefix}${autolink.id}`;
+														name = `自定义自动链接 ${autolink.prefix}${autolink.id}`;
 													}
 													return html`
 														<issue-pull-request

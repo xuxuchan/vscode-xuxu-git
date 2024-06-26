@@ -53,7 +53,7 @@
 					<gl-tooltip hoist>
 						<a
 							class="inline-nav__link inline-nav__link--text"
-							href="https://github.com/gitkraken/vscode-gitlens/issues"
+							href="https://github.com/xuxuchan/vscode-xuxu-git/issues"
 							aria-label="反馈"
 							><code-icon icon="feedback"></code-icon><span>反馈</span></a
 						>
@@ -64,80 +64,79 @@
 					<gl-tooltip hoist>
 						<a
 							class="inline-nav__link"
-							href="https://github.com/gitkraken/vscode-gitlens/discussions"
+							href="https://github.com/xuxuchan/vscode-xuxu-git/discussions"
 							aria-label="GitHub Discussions"
 							><code-icon icon="comment-discussion"></code-icon
 						></a>
-						<span slot="content">GitHub Discussions</span>
+						<span slot="content">GitHub 讨论</span>
 					</gl-tooltip>
 					<gl-tooltip hoist>
 						<a
 							class="inline-nav__link"
-							href="https://github.com/gitkraken/vscode-gitlens"
+							href="https://github.com/xuxuchan/vscode-xuxu-git"
 							aria-label="GitHub Repo"
 							><code-icon icon="github"></code-icon
 						></a>
-						<span slot="content">GitHub Repo</span>
+						<span slot="content">GitHub 仓库</span>
 					</gl-tooltip>
 					<gl-tooltip hoist>
-						<a class="inline-nav__link" href="https://twitter.com/gitlens" aria-label="@gitlens on Twitter"
+						<a class="inline-nav__link" href="https://x.com/xuxuhome_cn" aria-label="@xuxu on Twitter"
 							><code-icon icon="twitter"></code-icon
 						></a>
-						<span slot="content">@gitlens on Twitter</span>
+						<span slot="content">@xuxu on Twitter</span>
 					</gl-tooltip>
 					<gl-tooltip hoist>
 						<a
 							class="inline-nav__link"
-							href="https://gitkraken.com/gitlens?utm_source=gitlens-extension&utm_medium=in-app-links&utm_campaign=gitlens-logo-links"
+							href="https://github.com/xuxuchan/vscode-xuxu-git"
 							aria-label="GitLens Website"
 							><code-icon icon="globe"></code-icon
 						></a>
-						<span slot="content">GitLens Website</span>
+						<span slot="content">网站</span>
 					</gl-tooltip>
 				</div>
 			</nav>
 		</div>
 		<header class="home__header" id="header" hidden>
 			<div id="no-repo-alert" class="alert alert--info mb-0" aria-hidden="true" hidden>
-				<h1 class="alert__title">No repository detected</h1>
+				<h1 class="alert__title">没有检测到仓库</h1>
 				<div class="alert__description">
 					<p>
-						To use GitLens, open a folder containing a git repository or clone from a URL from the Explorer.
+						要使用 XUXU Git，请打开一个包含Git仓库的文件夹或从资源管理器中的URL克隆。
 					</p>
 					<p class="centered">
 						<gl-button class="is-basic" href="command:workbench.view.explorer"
-							>Open a Folder or Repository</gl-button
+							>打开文件夹或仓库</gl-button
 						>
 					</p>
 					<p class="mb-0">
-						If you have opened a folder with a repository, please let us know by
-						<a class="one-line" href="https://github.com/gitkraken/vscode-gitlens/issues/new/choose"
-							>creating an Issue</a
-						>.
+						如果您已打开包含仓库的文件夹，请通过
+						<a class="one-line" href="https://github.com/xuxuchan/vscode-xuxu-git/issues/new/choose"
+							>创建Issue</a
+						> 让我们知道。
 					</p>
 				</div>
 			</div>
 			<div id="unsafe-repo-alert" class="alert alert--info mb-0" aria-hidden="true" hidden>
-				<h1 class="alert__title">Unsafe repository</h1>
+				<h1 class="alert__title">不安全的仓库</h1>
 				<div class="alert__description">
 					<p>
-						Unable to open any repositories as Git blocked them as potentially unsafe, due to the folder(s)
-						not being owned by the current user.
+						由于文件夹不属于当前用户，Git将其标记为潜在的不安全，无法打开任何仓库。
 					</p>
 					<p class="centered">
 						<gl-button class="is-basic" href="command:workbench.view.scm"
-							>Manage in Source Control</gl-button
+							>在源代码控制中管理</gl-button
 						>
 					</p>
 				</div>
 			</div>
 			<div id="untrusted-alert" class="alert alert--info mb-0" aria-hidden="true" hidden>
-				<h1 class="alert__title">Untrusted workspace</h1>
+				<h1 class="alert__title">不受信任的工作区</h1>
 				<div class="alert__description">
-					<p>Unable to open repositories in Restricted Mode.</p>
+					<p>无法在受限模式下打开仓库。</p>
 					<p class="centered">
 						<gl-button class="is-basic" href="command:workbench.trust.manage"
-							>Manage Workspace Trust</gl-button
+							>管理工作区信任</gl-button
 						>
 					</p>
 				</div>
@@ -145,7 +144,7 @@
 		</header>
 		<main class="home__main scrollable" id="main">
 			<p data-requires="norepo">
-				<code-icon icon="question"></code-icon> Features which need a repository are currently unavailable
+				<code-icon icon="question"></code-icon> 需要仓库的功能目前不可用
 			</p>
 			<div class="promo-banner" id="promo-hs2023" hidden>
 				<a
@@ -163,7 +162,7 @@
 						src="#{webroot}/media/holiday-2023-small-light.webp"
 						alt=""
 					/><br />
-					50% off GitLens Pro (plus entire the GitKraken DevEx platform) all for only $4/month
+					XUXU Git Pro 限时优惠50%，每月仅需 ¥29。
 				</a>
 			</div>
 			<div id="section-walkthrough" class="alert">
@@ -280,7 +279,7 @@
 						>
 					</a>
 				</div>
-				<div class="nav-list__item" style="display: none;">
+				<div class="nav-list__item" style="display: none !important;">
 					<a
 						class="nav-list__link"
 						href="command:gitlens.showDraftsView"
@@ -288,12 +287,11 @@
 						data-org-requires="drafts"
 						aria-label="Show Cloud Patches view"
 						><code-icon class="nav-list__icon" icon="gl-cloud-patch"></code-icon
-						><gl-tooltip hoist class="nav-list__group" content="Show Cloud Patches view"
-							><span class="nav-list__label">Cloud Patches</span
-							><span class="nav-list__desc">New!</span></gl-tooltip
+						><gl-tooltip hoist class="nav-list__group" content="显示云补丁视图"
+							><span class="nav-list__label">云补丁</span
+							><span class="nav-list__desc"> </span></gl-tooltip
 						>
 					</a>
-					<gl-feature-badge placement="left" class="nav-list__access" cloud preview></gl-feature-badge>
 				</div>
 				<div class="nav-list__item">
 					<a
@@ -343,18 +341,18 @@
 						>
 					</a>
 				</div>
-				<div class="nav-list__item" style="display: none;">
+				<div class="nav-list__item" style="display: none !important;">
 					<a
 						class="nav-list__link"
 						href="command:gitlens.showWorkspacesView"
 						aria-label="Show GitKraken Workspaces view"
 						data-requires="repo"
 						><code-icon class="nav-list__icon" icon="gl-workspaces-view"></code-icon
-						><gl-tooltip hoist class="nav-list__label" content="Show GitKraken Workspaces view">
-							<span>GK Workspaces</span></gl-tooltip
+						><gl-tooltip hoist class="nav-list__label" content="显示云工作空间视图">
+							<span>云工作空间</span></gl-tooltip
 						>
 					</a>
-					<gl-feature-badge placement="left" class="nav-list__access" cloud preview></gl-feature-badge>
+					<!--<gl-feature-badge placement="left" class="nav-list__access" cloud preview></gl-feature-badge>-->
 				</div>
 				<div class="nav-list__item">
 					<a
@@ -402,7 +400,7 @@
 						data-requires="repo"
 						><code-icon class="nav-list__icon" icon="source-control"></code-icon
 						><gl-tooltip hoist class="nav-list__label" content="显示源代码控制边栏"
-							><span>源代码控制</span></gl-tooltip
+							><span>源代码管理</span></gl-tooltip
 						>
 					</a>
 				</div>
@@ -459,7 +457,7 @@
 				</div>
 			</nav>
 			<nav class="nav-list" style="display: none;">
-				<h2 class="nav-list__title t-eyebrow sticky">Companion Tools</h2>
+				<h2 class="nav-list__title t-eyebrow sticky">扩展工具</h2>
 				<div class="nav-list__item">
 					<a
 						class="nav-list__link"
@@ -467,7 +465,7 @@
 						aria-label="Try the GitKraken Browser Extension"
 						><code-icon class="nav-list__icon" icon="extensions"></code-icon
 						><gl-tooltip hoist class="nav-list__label" content="Try the GitKraken Browser Extension"
-							><span>GitKraken Browser Extension</span></gl-tooltip
+							><span>浏览器插件</span></gl-tooltip
 						>
 					</a>
 				</div>
@@ -478,21 +476,21 @@
 						aria-label="Try the GitKraken CLI"
 						><code-icon class="nav-list__icon" icon="terminal"></code-icon
 						><gl-tooltip hoist class="nav-list__label" content="Try the GitKraken CLI"
-							><span>GitKraken CLI</span></gl-tooltip
+							><span>命令行工具</span></gl-tooltip
 						>
 					</a>
 				</div>
-				<div class="nav-list__item">
+				<!--<div class="nav-list__item">
 					<a
 						class="nav-list__link"
-						href="https://gitkraken.dev?utm_source=gitlens-extension&utm_medium=in-app-links"
+						href="https://github.com/xuxuchan/vscode-xuxu-git"
 						aria-label="Try GitKraken.dev"
 						><code-icon class="nav-list__icon" icon="globe"></code-icon
 						><gl-tooltip hoist class="nav-list__label" content="Try GitKraken.dev"
-							><span>GitKraken.dev</span></gl-tooltip
+							><span>网站</span></gl-tooltip
 						>
 					</a>
-				</div>
+				</div>-->
 			</nav>
 		</main>
 

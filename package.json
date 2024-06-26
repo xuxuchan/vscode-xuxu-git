@@ -1,7 +1,7 @@
 {
 	"name": "xuxu-git",
 	"displayName": "XUXU Git Tool",
-	"description": "超级增强 VS Code 中的 Git 功能——通过 Git blame 注释和 CodeLens 一目了然地可视化代码作者信息，无缝导航和探索 Git 仓库，通过丰富的可视化和强大的比较命令获取有价值的见解，等等。",
+	"description": "超级增强 VS Code 中的 Git 功能，一目了然地可视化代码作者信息，无缝导航和探索 Git 仓库，通过丰富的可视化和强大的比较命令获取有价值的见解，等等。",
 	"version": "1.15.1",
 	"engines": {
 	  "vscode": "^1.82.0"
@@ -74,63 +74,63 @@
 			"gitlens.currentLine.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "默认情况下，指定是否为当前行提供嵌入式责任注释。使用“切换行责任注释”命令 (`gitlens.toggleLineBlame`) 打开和关闭当前窗口的注释",
+			  "markdownDescription": "默认情况下，指定是否为当前行提供嵌入式追溯注释。使用“切换行追溯注释”命令 (`gitlens.toggleLineBlame`) 打开和关闭当前窗口的注释",
 			  "scope": "window",
 			  "order": 10
 			},
 			"gitlens.currentLine.pullRequests.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否在嵌入式责任注释中提供有关引入提交的拉取请求（如果有）的信息。需要连接到受支持的远程服务（例如 GitHub）",
+			  "markdownDescription": "指定是否在嵌入式追溯注释中提供有关引入提交的拉取请求（如果有）的信息。需要连接到受支持的远程服务（例如 GitHub）",
 			  "scope": "window",
 			  "order": 20
 			},
 			"gitlens.currentLine.format": {
 			  "type": "string",
 			  "default": "${author, }${agoOrDate}${' via 'pullRequest}${ • message|50?}",
-			  "markdownDescription": "指定嵌入式责任注释的格式。请参阅 GitLens 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)” 。 日期格式由 `#gitlens.currentLine.dateFormat#` 设置控制",
+			  "markdownDescription": "指定嵌入式追溯注释的格式。请参阅 XUXU Git 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)” 。 日期格式由 `#gitlens.currentLine.dateFormat#` 设置控制",
 			  "scope": "window",
 			  "order": 30
 			},
 			"gitlens.currentLine.uncommittedChangesFormat": {
 			  "type": "string",
 			  "default": null,
-			  "markdownDescription": "指定嵌入式责任注释的暂存更改格式。请参阅 GitLens 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)” 。 日期格式由 `#gitlens.currentLine.dateFormat#` 设置控制\n\n**注意：**将其设置为空字符串将禁用针对未提交更改的嵌入式责任注释。",
+			  "markdownDescription": "指定嵌入式追溯注释的暂存更改格式。请参阅 XUXU Git 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)” 。 日期格式由 `#gitlens.currentLine.dateFormat#` 设置控制\n\n**注意：**将其设置为空字符串将禁用针对未提交更改的嵌入式追溯注释。",
 			  "scope": "window",
 			  "order": 31
 			},
 			"gitlens.currentLine.fontFamily": {
 			  "type": "string",
 			  "default": "",
-			  "markdownDescription": "指定嵌入式责任注释的字体系列",
+			  "markdownDescription": "指定嵌入式追溯注释的字体系列",
 			  "scope": "window",
 			  "order": 33
 			},
 			"gitlens.currentLine.fontSize": {
 			  "type": "number",
 			  "default": 0,
-			  "markdownDescription": "指定嵌入式责任注释的字体大小",
+			  "markdownDescription": "指定嵌入式追溯注释的字体大小",
 			  "scope": "window",
 			  "order": 34
 			},
 			"gitlens.currentLine.fontStyle": {
 			  "type": "string",
 			  "default": "normal",
-			  "markdownDescription": "指定嵌入式责任注释的字体样式",
+			  "markdownDescription": "指定嵌入式追溯注释的字体样式",
 			  "scope": "window",
 			  "order": 35
 			},
 			"gitlens.currentLine.fontWeight": {
 			  "type": "string",
 			  "default": "normal",
-			  "markdownDescription": "指定嵌入式责任注释的字体粗细",
+			  "markdownDescription": "指定嵌入式追溯注释的字体粗细",
 			  "scope": "window",
 			  "order": 36
 			},
 			"gitlens.currentLine.scrollable": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否可以在嵌入式责任注释超出视口范围时将其滚动到可视位置。 **注意：**将其设置为 `false` 将阻止悬停显示在注释上；将 `#gitlens.hovers.currentLine.over#` 设置为 `line` 以启用悬停显示在任何行上。",
+			  "markdownDescription": "指定是否可以在嵌入式追溯注释超出视口范围时将其滚动到可视位置。 **注意：**将其设置为 `false` 将阻止悬停显示在注释上；将 `#gitlens.hovers.currentLine.over#` 设置为 `line` 以启用悬停显示在任何行上。",
 			  "scope": "window",
 			  "order": 40
 			},
@@ -140,7 +140,7 @@
 				"null"
 			  ],
 			  "default": null,
-			  "markdownDescription": "指定如何格式化嵌入式责任注释的绝对日期（例如，使用 `${date}` 令牌）。有关支持的格式，请参阅 [Moment.js 文档](https://momentjs.com/docs/#/displaying/format/)。",
+			  "markdownDescription": "指定如何格式化嵌入式追溯注释的绝对日期（例如，使用 `${date}` 令牌）。有关支持的格式，请参阅 [Moment.js 文档](https://momentjs.com/docs/#/displaying/format/)。",
 			  "scope": "window",
 			  "order": 50
 			}
@@ -148,20 +148,20 @@
 		},
 		{
 		  "id": "git-code-lens",
-		  "title": "Git CodeLens",
+		  "title": "Git 代码洞察",
 		  "order": 11,
 		  "properties": {
 			"gitlens.codeLens.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "默认情况下，指定是否提供任何 Git 代码透镜。使用“切换 Git 代码透镜”命令 (`gitlens.toggleCodeLens`) 打开和关闭当前窗口的 Git 代码透镜",
+			  "markdownDescription": "默认情况下，指定是否提供任何 Git 代码洞察。使用“切换 Git 代码洞察”命令 (`gitlens.toggleCodeLens`) 打开和关闭当前窗口的 Git 代码洞察",
 			  "scope": "window",
 			  "order": 10
 			},
 			"gitlens.codeLens.authors.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否提供“_作者_”代码透镜，显示文件或代码块的作者数量以及最突出的作者（如果有多个作者）",
+			  "markdownDescription": "指定是否提供“_作者_”代码洞察，显示文件或代码块的作者数量以及最突出的作者（如果有多个作者）",
 			  "scope": "window",
 			  "order": 20
 			},
@@ -190,7 +190,7 @@
 			  ],
 			  "enumDescriptions": [
 				"禁用单击交互",
-				"切换文件责任",
+				"切换文件追溯",
 				"切换文件热图",
 				"切换自提交之前文件更改",
 				"切换提交后的文件更改",
@@ -207,14 +207,14 @@
 				"将远程文件 URL 复制到剪贴板（如果可用）"
 			  ],
 			  "default": "gitlens.toggleFileBlame",
-			  "markdownDescription": "指定单击“_作者_”代码透镜时要执行的命令",
+			  "markdownDescription": "指定单击“_作者_”代码洞察时要执行的命令",
 			  "scope": "window",
 			  "order": 21
 			},
 			"gitlens.codeLens.recentChange.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否提供“_最近更改_”代码透镜，显示文件或代码块最近提交的作者和日期",
+			  "markdownDescription": "指定是否提供“_最近更改_”代码洞察，显示文件或代码块最近提交的作者和日期",
 			  "scope": "window",
 			  "order": 30
 			},
@@ -243,7 +243,7 @@
 			  ],
 			  "enumDescriptions": [
 				"禁用点击交互",
-				"切换文件责任",
+				"切换文件追溯",
 				"切换文件热图",
 				"切换提交前的文件更改",
 				"切换提交中的文件更改",
@@ -260,7 +260,7 @@
 				"将远程文件URL复制到剪贴板（如果可用）"
 			  ],
 			  "default": "gitlens.showQuickCommitFileDetails",
-			  "markdownDescription": "指定单击“_最近更改_”代码透镜时要执行的命令",
+			  "markdownDescription": "指定单击“_最近更改_”代码洞察时要执行的命令",
 			  "scope": "window",
 			  "order": 31
 			},
@@ -278,15 +278,15 @@
 				  "blocks"
 				],
 				"enumDescriptions": [
-				  "Adds CodeLens at the top of the document",
-				  "Adds CodeLens at the start of container-like symbols (modules, classes, interfaces, etc)",
-				  "Adds CodeLens at the start of block-like symbols (functions, methods, etc) lines"
+				  "在文档顶部添加代码洞察",
+				  " 在类似容器的符号（模块、类、接口等）开始处添加代码洞察",
+				  " 在类似块的符号（函数、方法等）行开始处添加代码洞察"
 				]
 			  },
 			  "minItems": 0,
 			  "maxItems": 3,
 			  "uniqueItems": true,
-			  "markdownDescription": "指定在文档中何处显示 Git 代码透镜",
+			  "markdownDescription": "指定在文档中何处显示 Git 代码洞察",
 			  "scope": "language-overridable",
 			  "order": 40
 			},
@@ -296,35 +296,35 @@
 				"type": "string"
 			  },
 			  "uniqueItems": true,
-			  "markdownDescription": "指定一组文档符号，Git 代码透镜将在其中显示或不显示在文档中。用 `!` 作为前缀表示不为该符号提供 Git 代码透镜。必须是 `SymbolKind` 的成员",
+			  "markdownDescription": "指定一组文档符号，Git 代码洞察将在其中显示或不显示在文档中。用 `!` 作为前缀表示不为该符号提供 Git 代码洞察。必须是 `SymbolKind` 的成员",
 			  "scope": "language-overridable",
 			  "order": 50
 			},
 			"gitlens.codeLens.includeSingleLineSymbols": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定是否为仅占一行符号提供任何 Git 代码透镜",
+			  "markdownDescription": "指定是否为仅占一行符号提供任何 Git 代码洞察",
 			  "scope": "window",
 			  "order": 60
 			},
 			"gitlens.strings.codeLens.unsavedChanges.recentChangeAndAuthors": {
 			  "type": "string",
 			  "default": "$(ellipsis)",
-			  "markdownDescription": "当存在未保存的更改时，指定要在“_最近更改_”和“_作者_”代码透镜两者位置显示的字符串",
+			  "markdownDescription": "当存在未保存的更改时，指定要在“_最近更改_”和“_作者_”代码洞察两者位置显示的字符串",
 			  "scope": "window",
 			  "order": 70
 			},
 			"gitlens.strings.codeLens.unsavedChanges.recentChangeOnly": {
 			  "type": "string",
 			  "default": "$(ellipsis)",
-			  "markdownDescription": "当存在未保存的更改时，指定要在“_最近更改_”代码透镜位置显示的字符串",
+			  "markdownDescription": "当存在未保存的更改时，指定要在“_最近更改_”代码洞察位置显示的字符串",
 			  "scope": "window",
 			  "order": 71
 			},
 			"gitlens.strings.codeLens.unsavedChanges.authorsOnly": {
 			  "type": "string",
 			  "default": "$(ellipsis)",
-			  "markdownDescription": "当存在未保存的更改时，指定要在“_作者_”代码透镜位置显示的字符串",
+			  "markdownDescription": "当存在未保存的更改时，指定要在“_作者_”代码洞察位置显示的字符串",
 			  "scope": "window",
 			  "order": 72
 			},
@@ -334,7 +334,7 @@
 				"null"
 			  ],
 			  "default": null,
-			  "markdownDescription": "指定如何在 Git 代码透镜中格式化绝对日期。有关支持的格式，请参阅 [Moment.js 文档](https://momentjs.com/docs/#/displaying/format/)。",
+			  "markdownDescription": "指定如何在 Git 代码洞察中格式化绝对日期。有关支持的格式，请参阅 [Moment.js 文档](https://momentjs.com/docs/#/displaying/format/)。",
 			  "scope": "window",
 			  "order": 73
 			},
@@ -352,7 +352,7 @@
 			"gitlens.statusBar.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否在状态栏中提供责任信息",
+			  "markdownDescription": "指定是否在状态栏中提供追溯信息",
 			  "scope": "window",
 			  "order": 10
 			},
@@ -366,7 +366,7 @@
 			"gitlens.statusBar.format": {
 			  "type": "string",
 			  "default": "${author}, ${agoOrDate}${' via 'pullRequest}",
-			  "markdownDescription": "指定状态栏中责任信息的格式。请参阅 GitLens 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)” 。 日期格式由 `#gitlens.statusBar.dateFormat#` 设置控制",
+			  "markdownDescription": "指定状态栏中追溯信息的格式。请参阅 XUXU Git 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)” 。 日期格式由 `#gitlens.statusBar.dateFormat#` 设置控制",
 			  "scope": "window",
 			  "order": 30
 			},
@@ -381,7 +381,7 @@
 				"左对齐",
 				"右对齐"
 			  ],
-			  "markdownDescription": "指定状态栏中责任的对齐方式",
+			  "markdownDescription": "指定状态栏中追溯的对齐方式",
 			  "scope": "window",
 			  "order": 40
 			},
@@ -408,11 +408,11 @@
 				"gitlens.copyRemoteFileUrl"
 			  ],
 			  "enumDescriptions": [
-				"切换文件责任",
+				"切换文件追溯",
 				"切换文件热图",
 				"切换提交前的文件更改",
 				"切换提交中的文件更改",
-				"切换 Git CodeLens",
+				"切换 Git 代码洞察",
 				"将当前行提交与之前的提交进行比较",
 				"将当前行提交与工作树进行比较",
 				"在侧边栏中显示提交",
@@ -426,7 +426,7 @@
 				"在远程服务上打开文件修订版（如果可用）",
 				"将远程文件 URL 复制到剪贴板（如果可用）"
 			  ],
-			  "markdownDescription": "指定单击责任状态栏项时要执行的命令",
+			  "markdownDescription": "指定单击追溯状态栏项时要执行的命令",
 			  "scope": "window",
 			  "order": 50
 			},
@@ -434,14 +434,14 @@
 			  "type": "string",
 			  "default": "${avatar}  __${author}__, ${ago}${' via 'pullRequest}   _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}\n\n${commands}",
 			  "editPresentation": "multilineText",
-			  "markdownDescription": "指定悬停于状态栏中责任信息上时显示的格式（markdown 格式）。请参阅 GitLens 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)”",
+			  "markdownDescription": "指定悬停于状态栏中追溯信息上时显示的格式（markdown 格式）。请参阅 XUXU Git 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)”",
 			  "scope": "window",
 			  "order": 60
 			},
 			"gitlens.statusBar.reduceFlicker": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否在更改行时避免清除以前的责任信息以减少状态栏“闪烁”",
+			  "markdownDescription": "指定是否在更改行时避免清除以前的追溯信息以减少状态栏“闪烁”",
 			  "scope": "window",
 			  "order": 70
 			},
@@ -451,7 +451,7 @@
 				"null"
 			  ],
 			  "default": null,
-			  "markdownDescription": "指定如何在状态栏中责任信息中格式化绝对日期（例如，使用 `${date}` 令牌）。有关支持的格式，请参阅 [Moment.js 文档](https://momentjs.com/docs/#/displaying/format/)。",
+			  "markdownDescription": "指定如何在状态栏中追溯信息中格式化绝对日期（例如，使用 `${date}` 令牌）。有关支持的格式，请参阅 [Moment.js 文档](https://momentjs.com/docs/#/displaying/format/)。",
 			  "scope": "window",
 			  "order": 80
 			}
@@ -543,7 +543,7 @@
 			"gitlens.hovers.annotations.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定显示责任注释时是否提供任何悬停信息",
+			  "markdownDescription": "指定显示追溯注释时是否提供任何悬停信息",
 			  "scope": "window",
 			  "order": 50
 			},
@@ -558,21 +558,21 @@
 				"仅在悬停在行注释上时显示",
 				"悬停在行上任何位置时显示"
 			  ],
-			  "markdownDescription": "指定显示责任注释时触发悬停信息的时间",
+			  "markdownDescription": "指定显示追溯注释时触发悬停信息的时间",
 			  "scope": "window",
 			  "order": 51
 			},
 			"gitlens.hovers.annotations.details": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定显示责任注释时是否为所有行提供“_提交详细信息_”悬停信息",
+			  "markdownDescription": "指定显示追溯注释时是否为所有行提供“_提交详细信息_”悬停信息",
 			  "scope": "window",
 			  "order": 52
 			},
 			"gitlens.hovers.annotations.changes": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定显示责任注释时是否为所有行提供“_更改 (diff)_”悬停信息",
+			  "markdownDescription": "指定显示追溯注释时是否为所有行提供“_更改 (diff)_”悬停信息",
 			  "scope": "window",
 			  "order": 53
 			},
@@ -580,7 +580,7 @@
 			  "type": "string",
 			  "default": "${avatar}  __${author}__, ${ago}${' via 'pullRequest}   _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}\n\n${commands}",
 			  "editPresentation": "multilineText",
-			  "markdownDescription": "指定“_提交详细信息_”悬停信息的格式（markdown 格式）。请参阅 GitLens 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)”",
+			  "markdownDescription": "指定“_提交详细信息_”悬停信息的格式（markdown 格式）。请参阅 XUXU Git 文档中的“[_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)”",
 			  "scope": "window",
 			  "order": 60
 			},
@@ -1327,7 +1327,7 @@
 			"gitlens.views.lineHistory.avatars": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“_行历史_”视图中显示头像图像而不是状态图标",
+			  "markdownDescription": "指定在“_代码行历史_”视图中显示头像图像而不是状态图标",
 			  "scope": "window",
 			  "order": 10
 			},
@@ -2370,7 +2370,7 @@
 			  ],
 			  "enumDescriptions": [
 				"显示菜单以选择要切换的文件注释",
-				"切换文件责任注释",
+				"切换文件追溯注释",
 				"切换文件热图注释",
 				"切换文件更改注释"
 			  ],
@@ -2388,14 +2388,14 @@
 			"gitlens.advanced.blame.delayAfterEdit": {
 			  "type": "number",
 			  "default": 5000,
-			  "markdownDescription": "指定在编辑未保存的文档后但未保存之前重新责任之前等待的时间（毫秒）。使用 0 指定无限等待。仅适用于文件小于 `#gitlens.advanced.sizeThresholdAfterEdit#`",
+			  "markdownDescription": "指定在编辑未保存的文档后但未保存之前重新追溯之前等待的时间（毫秒）。使用 0 指定无限等待。仅适用于文件小于 `#gitlens.advanced.sizeThresholdAfterEdit#`",
 			  "scope": "window",
 			  "order": 90
 			},
 			"gitlens.advanced.blame.sizeThresholdAfterEdit": {
 			  "type": "number",
 			  "default": 5000,
-			  "markdownDescription": "指定编辑后仍未保存时允许重新责任的最大文档大小（行数）。使用 0 指定没有最大值",
+			  "markdownDescription": "指定编辑后仍未保存时允许重新追溯的最大文档大小（行数）。使用 0 指定没有最大值",
 			  "scope": "window",
 			  "order": 91
 			}
@@ -2417,49 +2417,49 @@
 				"逐个切换每个文件",
 				"切换窗口，即一次切换所有文件"
 			  ],
-			  "markdownDescription": "指定如何切换文件责任注释",
+			  "markdownDescription": "指定如何切换文件追溯注释",
 			  "scope": "window",
 			  "order": 10
 			},
 			"gitlens.blame.format": {
 			  "type": "string",
 			  "default": "${message|50?} ${agoOrDate|14-}",
-			  "markdownDescription": "指定文件责任注释的格式。请参阅 GitLens 文档中的 [_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)。日期格式由 `#gitlens.blame.dateFormat#` 设置控制",
+			  "markdownDescription": "指定文件追溯注释的格式。请参阅 GitLens 文档中的 [_提交令牌_](https://github.com/xuxuchan/vscode-xuxu-git/wiki/Custom-Formatting#commit-tokens)。日期格式由 `#gitlens.blame.dateFormat#` 设置控制",
 			  "scope": "window",
 			  "order": 20
 			},
 			"gitlens.blame.fontFamily": {
 			  "type": "string",
 			  "default": "",
-			  "markdownDescription": "指定文件责任注释的字体系列",
+			  "markdownDescription": "指定文件追溯注释的字体系列",
 			  "scope": "window",
 			  "order": 22
 			},
 			"gitlens.blame.fontSize": {
 			  "type": "number",
 			  "default": 0,
-			  "markdownDescription": "指定文件责任注释的字体大小",
+			  "markdownDescription": "指定文件追溯注释的字体大小",
 			  "scope": "window",
 			  "order": 23
 			},
 			"gitlens.blame.fontStyle": {
 			  "type": "string",
 			  "default": "normal",
-			  "markdownDescription": "指定文件责任注释的字体样式",
+			  "markdownDescription": "指定文件追溯注释的字体样式",
 			  "scope": "window",
 			  "order": 24
 			},
 			"gitlens.blame.fontWeight": {
 			  "type": "string",
 			  "default": "normal",
-			  "markdownDescription": "指定文件责任注释的字体粗细",
+			  "markdownDescription": "指定文件追溯注释的字体粗细",
 			  "scope": "window",
 			  "order": 25
 			},
 			"gitlens.blame.heatmap.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否在文件责任注释中提供热图指示器",
+			  "markdownDescription": "指定是否在文件追溯注释中提供热图指示器",
 			  "scope": "window",
 			  "order": 30
 			},
@@ -2471,24 +2471,24 @@
 				"right"
 			  ],
 			  "enumDescriptions": [
-				"在文件责任注释的左边缘添加热图指示器",
-				"在文件责任注释的右边缘添加热图指示器"
+				"在文件追溯注释的左边缘添加热图指示器",
+				"在文件追溯注释的右边缘添加热图指示器"
 			  ],
-			  "markdownDescription": "指定在文件责任注释中显示热图指示器的位置",
+			  "markdownDescription": "指定在文件追溯注释中显示热图指示器的位置",
 			  "scope": "window",
 			  "order": 31
 			},
 			"gitlens.blame.avatars": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否在文件责任注释中显示头像图像",
+			  "markdownDescription": "指定是否在文件追溯注释中显示头像图像",
 			  "scope": "window",
 			  "order": 40
 			},
 			"gitlens.blame.compact": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否压缩（消除重复）匹配的相邻文件责任注释",
+			  "markdownDescription": "指定是否压缩（消除重复）匹配的相邻文件追溯注释",
 			  "scope": "window",
 			  "order": 50
 			},
@@ -2529,7 +2529,7 @@
 			"gitlens.blame.separateLines": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否用小间隙分隔文件责任注释",
+			  "markdownDescription": "指定是否用小间隙分隔文件追溯注释",
 			  "scope": "window",
 			  "order": 70
 			},
@@ -2539,7 +2539,7 @@
 				"null"
 			  ],
 			  "default": null,
-			  "markdownDescription": "指定如何在文件责任注释中格式化绝对日期（例如，使用 `${date}` 令牌）。有关支持的格式，请参阅 [Moment.js 文档](https://momentjs.com/docs/#/displaying/format/)。",
+			  "markdownDescription": "指定如何在文件追溯注释中格式化绝对日期（例如，使用 `${date}` 令牌）。有关支持的格式，请参阅 [Moment.js 文档](https://momentjs.com/docs/#/displaying/format/)。",
 			  "scope": "window",
 			  "order": 80
 			}
@@ -3516,7 +3516,7 @@
 			  "gitlens.liveshare.allowGuestAccess": {
 				"type": "boolean",
 				"default": true,
-				"description": "指定在使用Visual Studio Live Share时是否允许访客访问GitLens功能",
+				"description": "指定在使用Visual Studio Live Share时是否允许访客访问 XUXU Git 功能",
 				"scope": "window",
 				"order": 51
 			  }
@@ -4284,11 +4284,11 @@
 					},
 					"codeLens": {
 					  "type": "boolean",
-					  "description": "指定当此用户定义模式活动时是否显示任何 Git CodeLens"
+					  "description": "指定当此用户定义模式活动时是否显示任何 Git 代码洞察"
 					},
 					"currentLine": {
 					  "type": "boolean",
-					  "description": "指定当此用户定义模式活动时是否为当前行显示内联责任注释"
+					  "description": "指定当此用户定义模式活动时是否为当前行显示内联追溯注释"
 					},
 					"hovers": {
 					  "type": "boolean",
@@ -4296,7 +4296,7 @@
 					},
 					"statusBar": {
 					  "type": "boolean",
-					  "description": "指定当此用户定义模式活动时是否在状态栏中显示责任信息"
+					  "description": "指定当此用户定义模式活动时是否在状态栏中显示追溯信息"
 					}
 				  }
 				},
@@ -4317,11 +4317,11 @@
 					},
 					"codeLens": {
 					  "type": "boolean",
-					  "description": "指定当此用户定义模式活动时是否显示任何 Git CodeLens"
+					  "description": "指定当此用户定义模式活动时是否显示任何 Git 代码洞察"
 					},
 					"currentLine": {
 					  "type": "boolean",
-					  "description": "指定当此用户定义模式活动时是否为当前行显示内联责任注释"
+					  "description": "指定当此用户定义模式活动时是否为当前行显示内联追溯注释"
 					},
 					"hovers": {
 					  "type": "boolean",
@@ -4329,7 +4329,7 @@
 					},
 					"statusBar": {
 					  "type": "boolean",
-					  "description": "指定当此用户定义模式活动时是否在状态栏中显示责任信息"
+					  "description": "指定当此用户定义模式活动时是否在状态栏中显示追溯信息"
 					}
 				  }
 				}
@@ -4360,7 +4360,7 @@
 					  "heatmap"
 					],
 					"enumDescriptions": [
-					  "显示文件责任分配注释",
+					  "显示文件追溯分配注释",
 					  "显示文件更改注释",
 					  "显示文件热力图注释"
 					],
@@ -4368,11 +4368,11 @@
 				  },
 				  "codeLens": {
 					"type": "boolean",
-					"description": "指定当此用户定义模式活动时是否显示任何 Git CodeLens"
+					"description": "指定当此用户定义模式活动时是否显示任何 Git 代码洞察"
 				  },
 				  "currentLine": {
 					"type": "boolean",
-					"description": "指定当此用户定义模式活动时是否为当前行显示内联责任注释"
+					"description": "指定当此用户定义模式活动时是否为当前行显示内联追溯注释"
 				  },
 				  "hovers": {
 					"type": "boolean",
@@ -4380,7 +4380,7 @@
 				  },
 				  "statusBar": {
 					"type": "boolean",
-					"description": "指定当此用户定义模式活动时是否在状态栏中显示责任信息"
+					"description": "指定当此用户定义模式活动时是否在状态栏中显示追溯信息"
 				  }
 				}
 			  },
@@ -4403,7 +4403,7 @@
 				  "hovers": true
 				}
 			  },
-			  "markdownDescription": "指定用户定义的 GitLens 模式",
+			  "markdownDescription": "指定用户定义的 XUXU Git 模式",
 			  "scope": "window",
 			  "order": 30
 			}
@@ -4416,7 +4416,7 @@
 		  "properties": {
 			"gitlens.gitKraken.activeOrganizationId": {
 			  "type": "string",
-			  "markdownDescription": "指定用户在 GitLens 中的活动 GitKraken 组织的 ID",
+			  "markdownDescription": "指定用户在 XUXU Git 中的活动 X-Tech 组织的 ID",
 			  "scope": "window",
 			  "order": 1
 			}
@@ -4459,7 +4459,7 @@
 			"gitlens.telemetry.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否允许 GitLens 发送产品使用情况遥测数据.\n\n_注意：GitLens 要发送任何遥测数据，**此设置和 VS Code 遥测都必须启用**。如果其中任何一个被禁用，将不会发送任何遥测数据。",
+			  "markdownDescription": "指定是否允许 XUXU Git 发送产品使用情况遥测数据.\n\n_注意：XUXU Git 要发送任何遥测数据，**此设置和 VS Code 遥测都必须启用**。如果其中任何一个被禁用，将不会发送任何遥测数据。",
 			  "scope": "window",
 			  "order": 1
 			},
@@ -4619,7 +4619,7 @@
 			"gitlens.blame.ignoreWhitespace": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定在责任操作期间比较修订版本时是否忽略空白字符",
+			  "markdownDescription": "指定在追溯操作期间比较修订版本时是否忽略空白字符",
 			  "scope": "resource",
 			  "order": 40
 			},
@@ -4753,7 +4753,7 @@
 				"记录错误、警告和消息",
 				"记录详细的错误、警告和消息。适合问题报告。"
 			  ],
-			  "markdownDescription": "指定发送到 GitLens 输出频道的输出量（如果有）",
+			  "markdownDescription": "指定发送到 XUXU Git 输出频道的输出量（如果有）",
 			  "scope": "window",
 			  "order": 30
 			},
@@ -4850,7 +4850,7 @@
 	  "colors": [
 		{
 		  "id": "gitlens.gutterBackgroundColor",
-		  "description": "指定文件责任注释的背景颜色",
+		  "description": "指定文件追溯注释的背景颜色",
 		  "defaults": {
 			"dark": "#FFFFFF13",
 			"light": "#0000000C",
@@ -4859,7 +4859,7 @@
 		},
 		{
 		  "id": "gitlens.gutterForegroundColor",
-		  "description": "指定文件责任注释的前景颜色",
+		  "description": "指定文件追溯注释的前景颜色",
 		  "defaults": {
 			"dark": "#BEBEBE",
 			"light": "#747474",
@@ -4868,7 +4868,7 @@
 		},
 		{
 		  "id": "gitlens.gutterUncommittedForegroundColor",
-		  "description": "指定文件责任注释中未提交行的前景颜色",
+		  "description": "指定文件追溯注释中未提交行的前景颜色",
 		  "defaults": {
 			"dark": "#00BCF299",
 			"light": "#00BCF299",
@@ -4877,7 +4877,7 @@
 		},
 		{
 		  "id": "gitlens.trailingLineBackgroundColor",
-		  "description": "指定当前行的内联责任注释的背景颜色",
+		  "description": "指定当前行的内联追溯注释的背景颜色",
 		  "defaults": {
 			"dark": "#00000000",
 			"light": "#00000000",
@@ -4886,7 +4886,7 @@
 		},
 		{
 		  "id": "gitlens.trailingLineForegroundColor",
-		  "description": "指定当前行的内联责任注释的前景颜色",
+		  "description": "指定当前行的内联追溯注释的前景颜色",
 		  "defaults": {
 			"dark": "#99999959",
 			"light": "#99999959",
@@ -4895,7 +4895,7 @@
 		},
 		{
 		  "id": "gitlens.lineHighlightBackgroundColor",
-		  "description": "指定责任注释中相关行高亮显示的背景颜色",
+		  "description": "指定追溯注释中相关行高亮显示的背景颜色",
 		  "defaults": {
 			"dark": "#00BCF233",
 			"light": "#00BCF233",
@@ -4904,7 +4904,7 @@
 		},
 		{
 		  "id": "gitlens.lineHighlightOverviewRulerColor",
-		  "description": "指定责任注释中相关行高亮显示的滚动条颜色",
+		  "description": "指定追溯注释中相关行高亮显示的滚动条颜色",
 		  "defaults": {
 			"dark": "#00BCF299",
 			"light": "#00BCF299",
@@ -4918,7 +4918,7 @@
 			"light": "#1a7f37",
 			"highContrast": "#68ff79"
 		  },
-		  "description": "指定 GitLens 视图中打开问题的图标颜色"
+		  "description": "指定 XUXU Git 视图中打开问题的图标颜色"
 		},
 		{
 		  "id": "gitlens.closedAutolinkedIssueIconColor",
@@ -4927,11 +4927,11 @@
 			"light": "#8250df",
 			"highContrast": "#8945ff"
 		  },
-		  "description": "指定 GitLens 视图中关闭问题的图标颜色"
+		  "description": "指定 XUXU Git 视图中关闭问题的图标颜色"
 		},
 		{
 		  "id": "gitlens.closedPullRequestIconColor",
-		  "description": "指定 GitLens 视图中关闭拉取请求的图标颜色",
+		  "description": "指定 XUXU Git 视图中关闭拉取请求的图标颜色",
 		  "defaults": {
 			"dark": "#f85149",
 			"light": "#cf222e",
@@ -4940,7 +4940,7 @@
 		},
 		{
 		  "id": "gitlens.openPullRequestIconColor",
-		  "description": "指定 GitLens 视图中打开拉取请求的图标颜色",
+		  "description": "指定 XUXU Git 视图中打开拉取请求的图标颜色",
 		  "defaults": {
 			"dark": "#3fb950",
 			"light": "#1a7f37",
@@ -4949,7 +4949,7 @@
 		},
 		{
 		  "id": "gitlens.mergedPullRequestIconColor",
-		  "description": "指定 GitLens 视图中合并拉取请求的图标颜色",
+		  "description": "指定 XUXU Git 视图中合并拉取请求的图标颜色",
 		  "defaults": {
 			"dark": "#a371f7",
 			"light": "#8250df",
@@ -4958,7 +4958,7 @@
 		},
 		{
 		  "id": "gitlens.unpublishedChangesIconColor",
-		  "description": "指定 GitLens 视图中未发布更改的图标颜色",
+		  "description": "指定 XUXU Git 视图中未发布更改的图标颜色",
 		  "defaults": {
 			"dark": "#35b15e",
 			"light": "#35b15e",
@@ -4967,7 +4967,7 @@
 		},
 		{
 		  "id": "gitlens.unpublishedCommitIconColor",
-		  "description": "指定 GitLens 视图中未发布提交的图标颜色",
+		  "description": "指定 XUXU Git 视图中未发布提交的图标颜色",
 		  "defaults": {
 			"dark": "#35b15e",
 			"light": "#35b15e",
@@ -4976,7 +4976,7 @@
 		},
 		{
 		  "id": "gitlens.unpulledChangesIconColor",
-		  "description": "指定 GitLens 视图中未拉取更改的图标颜色",
+		  "description": "指定 XUXU Git 视图中未拉取更改的图标颜色",
 		  "defaults": {
 			"dark": "#b15e35",
 			"light": "#b15e35",
@@ -5471,7 +5471,7 @@
 	  "commands": [
 		{
 		  "command": "gitlens.generateCommitMessage",
-		  "title": "生成提交信息（GitLens）...",
+		  "title": "生成提交信息（XUXU Git）...",
 		  "category": "GitLens"
 		},
 		{
@@ -5713,7 +5713,7 @@
 		},
 		{
 		  "command": "gitlens.showLineHistoryView",
-		  "title": "显示行历史视图",
+		  "title": "显示代码行历史视图",
 		  "category": "GitLens"
 		},
 		{
@@ -6003,19 +6003,19 @@
 		},
 		{
 		  "command": "gitlens.toggleFileBlame",
-		  "title": "切换文件责任",
+		  "title": "切换文件追溯",
 		  "category": "GitLens",
 		  "icon": "$(gitlens-gitlens)"
 		},
 		{
 		  "command": "gitlens.toggleFileBlameInDiffLeft",
-		  "title": "切换文件责任",
+		  "title": "切换文件追溯",
 		  "category": "GitLens",
 		  "icon": "$(gitlens-gitlens)"
 		},
 		{
 		  "command": "gitlens.toggleFileBlameInDiffRight",
-		  "title": "切换文件责任",
+		  "title": "切换文件追溯",
 		  "category": "GitLens",
 		  "icon": "$(gitlens-gitlens)"
 		},
@@ -6073,12 +6073,12 @@
 		},
 		{
 		  "command": "gitlens.toggleLineBlame",
-		  "title": "切换行责任",
+		  "title": "切换行追溯",
 		  "category": "GitLens"
 		},
 		{
 		  "command": "gitlens.toggleCodeLens",
-		  "title": "切换Git CodeLens",
+		  "title": "切换Git 代码洞察",
 		  "category": "GitLens"
 		},
 		{
@@ -6624,7 +6624,7 @@
 		},
 		{
 		  "command": "gitlens.openBlamePriorToChange",
-		  "title": "在变更前打开责任",
+		  "title": "在变更前打开追溯",
 		  "icon": "$(versions)",
 		  "category": "GitLens"
 		},
@@ -7810,7 +7810,7 @@
 		},
 		{
 		  "command": "gitlens.views.fileHistory.copy",
-		  "title": "查看行历史",
+		  "title": "查看代码行历史",
 		  "category": "GitLens"
 		},
 		{
@@ -17041,7 +17041,7 @@
 		  },
 		  {
 			"id": "gitlensInspect",
-			"title": "XUXU Git 审查",
+			"title": "代码审查",
 			"icon": "$(gitlens-gitlens-inspect)"
 		  },
 		  {
@@ -17094,7 +17094,7 @@
 		},
 		{
 			"view": "gitlens.views.workspaces",
-			"contents": "工作区 预览 — 组和管理多个仓库，可随时访问，简化您的工作流程。\n\n创建仅供自己使用或分享（即将在 GitLens 中推出）与您的团队快速入门和更好的协作的工作区。"
+			"contents": "工作区 预览 — 组和管理多个仓库，可随时访问，简化您的工作流程。\n\n创建仅供自己使用或分享（即将在 XUXU Git 中推出）与您的团队快速入门和更好的协作的工作区。"
 		},
 		{
 			"view": "gitlens.views.workspaces",
@@ -17210,7 +17210,7 @@
 		  },
 		  {
 			"id": "gitlens.views.lineHistory",
-			"name": "行历史",
+			"name": "代码行历史",
 			"when": "!gitlens:disabled && !gitlens:hasVirtualFolders",
 			"contextualTitle": "GitLens",
 			"icon": "$(gitlens-history-view)",
@@ -17355,7 +17355,7 @@
 			{
 				"id": "get-started",
 				"title": "欢迎 & 概述",
-				"description": "快速[开始](command:gitlens.showWelcomePage \"打开 GitLens 欢迎页面\")并发现许多强大的 GitLens 功能，或观看我们的[教程视频](https://www.youtube.com/watch?v=UQPb73Zz9qk \"观看入门教程视频\")。\n\n**侧边栏 & 面板概述**\n\n$(gitlens-gitlens-inspect)  **GitLens 检查** — 查看代码历史的 X 光。提供专注于您当前工作的上下文洞察和详细信息。\n\n[打开 GitLens 检查](command:workbench.view.extension.gitlensInspect)\n\n$(gitlens-gitlens)  **GitLens** — 快速访问许多 GitLens 功能。也是我们团队和协作服务的主站。\n\n[打开 GitLens](command:workbench.view.extension.gitlens)\n\n$(source-control) **源代码控制** — 具有额外功能，用于处理、探索和管理您的代码库。\n\n[打开源代码控制](command:workbench.view.scm)\n\n$(layout-panel)  **（底部）面板** — 访问强大的提交图和其专用的详细视图。\n\n[打开提交图](command:gitlens.showGraphView)\n💡 虽然我们的视图是为了集中和提高生产力而安排的，但您可以轻松拖动它们以满足您的需求。使用[重置视图布局](command:workbench.action.quickOpen?%22>GitLens%3A%20Reset%20Views%20Layout%22)命令快速恢复到默认布局。\n💡 **想要更多控制？** 使用交互式[GitLens 设置](command:gitlens.showSettingsPage \"打开 GitLens 设置\")编辑器来定制 GitLens 以满足您的需求。",
+				"description": "快速[开始](command:gitlens.showWelcomePage \"打开 XUXU Git 欢迎页面\")并发现许多强大的 XUXU Git 功能，或观看我们的[教程视频](https://www.youtube.com/watch?v=UQPb73Zz9qk \"观看入门教程视频\")。\n\n**侧边栏 & 面板概述**\n\n$(gitlens-gitlens-inspect)  **XUXU Git 检查** — 查看代码历史的 X 光。提供专注于您当前工作的上下文洞察和详细信息。\n\n[打开 XUXU Git 检查](command:workbench.view.extension.gitlensInspect)\n\n$(gitlens-gitlens)  **XUXU Git** — 快速访问许多 XUXU Git 功能。也是我们团队和协作服务的主站。\n\n[打开 XUXU Git](command:workbench.view.extension.gitlens)\n\n$(source-control) **源代码控制** — 具有额外功能，用于处理、探索和管理您的代码库。\n\n[打开源代码控制](command:workbench.view.scm)\n\n$(layout-panel)  **（底部）面板** — 访问强大的提交图和其专用的详细视图。\n\n[打开提交图](command:gitlens.showGraphView)\n💡 虽然我们的视图是为了集中和提高生产力而安排的，但您可以轻松拖动它们以满足您的需求。使用[重置视图布局](command:workbench.action.quickOpen?%22>XUXUGit%3A%20Reset%20Views%20Layout%22)命令快速恢复到默认布局。\n💡 **想要更多控制？** 使用交互式[XUXU Git 设置](command:gitlens.showSettingsPage \"打开 XUXU Git 设置\")编辑器来定制 XUXU Git 以满足您的需求。",
 				"media": {
 				"markdown": "walkthroughs/welcome/get-started.md"
 				}
@@ -17363,16 +17363,16 @@
 			{
 				"id": "core-features",
 				"title": "发现核心功能",
-				"description": "**内联责任**和状态栏责任提供关于行更改的历史上下文。\n💡 悬停在注释上以显示丰富的详细信息和操作。\n**Git CodeLens** 在每个文件顶部和每个代码块的开头添加上下文和可操作的作者信息。\n💡 使用[切换行责任](command:workbench.action.quickOpen?%22>GitLens%3A%20Toggle%20Line%20Blame%22)和[切换 Git CodeLens](command:workbench.action.quickOpen?%22>GitLens%3A%20Toggle%20Git%20CodeLens%22)命令。\n**文件注释**，增强编辑器的视觉指示器，提供作者、最近更改或热图的洞察。注释可以按需切换单个文件或整体切换。\n💡 使用[切换文件责任](command:workbench.action.quickOpen?%22>GitLens%3A%20Toggle%20File%20Blame%22)、[切换文件更改](command:workbench.action.quickOpen?%22>GitLens%3A%20Toggle%20File%20Changes%22)和[切换文件热图](command:workbench.action.quickOpen?%22>GitLens%3A%20Toggle%20File%20Heatmap%22)命令在活动文件上切换。\n\n**导航修订历史**只需点击文件顶部的一个按钮，并随时间比较更改。",
+				"description": "**内联追溯**和状态栏追溯提供关于行更改的历史上下文。\n💡 悬停在注释上以显示丰富的详细信息和操作。\n**Git 代码洞察** 在每个文件顶部和每个代码块的开头添加上下文和可操作的作者信息。\n💡 使用[切换行追溯](command:workbench.action.quickOpen?%22>XUXUGit%3A%20Toggle%20Line%20Blame%22)和[切换 Git 代码洞察](command:workbench.action.quickOpen?%22>XUXUGit%3A%20Toggle%20Git%20CodeLens%22)命令。\n**文件注释**，增强编辑器的视觉指示器，提供作者、最近更改或热图的洞察。注释可以按需切换单个文件或整体切换。\n💡 使用[切换文件追溯](command:workbench.action.quickOpen?%22>XUXUGit%3A%20Toggle%20File%20Blame%22)、[切换文件更改](command:workbench.action.quickOpen?%22>XUXUGit%3A%20Toggle%20File%20Changes%22)和[切换文件热图](command:workbench.action.quickOpen?%22>XUXUGit%3A%20Toggle%20File%20Heatmap%22)命令在活动文件上切换。\n\n**导航修订历史**只需点击文件顶部的一个按钮，并随时间比较更改。",
 				"media": {
-				"altText": "内联责任、代码透镜、文件注释和修订导航的插图",
+				"altText": "内联追溯、代码洞察、文件注释和修订导航的插图",
 				"svg": "walkthroughs/welcome/core-features.svg"
 				}
 			},
 			{
 				"id": "pro-features",
 				"title": "使用 Pro 功能提升",
-				"description": "解锁 GitLens 的全部功能，享受[Pro 功能](https://gitkraken.com/gitlens/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links)并访问完整的[GitKraken DevEx 平台](https://gitkraken.com/devex?utm_source=gitlens-extension&utm_medium=in-app-links)。\n\n[开始 Pro 试用](command:gitlens.plus.signUp?%7B%22source%22%3A%22walkthrough%22%7D)\n\n已有账户？[登录](command:gitlens.plus.login?%7B%22source%22%3A%22walkthrough%22%7D)\n\n**Pro 功能**\n$(gitlens-graph)  [提交图](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化您的代码库并跟踪所有进行中的工作\n$(rocket)  [启动台](command:gitlens.openWalkthrough?%7B%22step%22%3A%22launchpad%22,%22source%22%3A%22walkthrough%22%7D) — 保持专注并确保您的团队不受阻碍\n$(gitlens-code-suggestion)  [代码建议](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 让您的代码审查摆脱不必要的限制\n$(gitlens-cloud-patch)  [云补丁](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 轻松安全地与您的团队成员分享代码\n$(gitlens-worktrees-view)  **工作树** — 同时处理多个分支\n$(gitlens-workspaces-view)  **工作区** — 将多个代码库分组和管理在一起\n$(graph-scatter)  [可视化文件历史](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化文件的演变并快速识别最重要的更改是何时由谁进行的",
+				"description": "解锁 XUXU Git 的全部功能，享受[Pro 功能](https://gitkraken.com/gitlens/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links)并访问完整的[GitKraken DevEx 平台](https://gitkraken.com/devex?utm_source=gitlens-extension&utm_medium=in-app-links)。\n\n[开始 Pro 试用](command:gitlens.plus.signUp?%7B%22source%22%3A%22walkthrough%22%7D)\n\n已有账户？[登录](command:gitlens.plus.login?%7B%22source%22%3A%22walkthrough%22%7D)\n\n**Pro 功能**\n$(gitlens-graph)  [提交图](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化您的代码库并跟踪所有进行中的工作\n$(rocket)  [启动台](command:gitlens.openWalkthrough?%7B%22step%22%3A%22launchpad%22,%22source%22%3A%22walkthrough%22%7D) — 保持专注并确保您的团队不受阻碍\n$(gitlens-code-suggestion)  [代码建议](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 让您的代码审查摆脱不必要的限制\n$(gitlens-cloud-patch)  [云补丁](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 轻松安全地与您的团队成员分享代码\n$(gitlens-worktrees-view)  **工作树** — 同时处理多个分支\n$(gitlens-workspaces-view)  **工作区** — 将多个代码库分组和管理在一起\n$(graph-scatter)  [可视化文件历史](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化文件的演变并快速识别最重要的更改是何时由谁进行的",
 				"media": {
 				"markdown": "walkthroughs/welcome/pro-features.md"
 				},
@@ -17408,7 +17408,7 @@
 			{
 				"id": "pro-paid",
 				"title": "Pro增强功能",
-				"description": "您拥有GitLens的全部功能，包括[Pro功能](https://gitkraken.com/gitlens/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links)和[GitKraken DevEx平台](https://gitkraken.com/devex?utm_source=gitlens-extension&utm_medium=in-app-links)。\n\n**Pro功能**\n$(gitlens-graph)  [提交图](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化您的存储库并跟踪所有进行中的工作\n$(rocket)  [启动台](command:gitlens.openWalkthrough?%7B%22step%22%3A%22launchpad%22,%22source%22%3A%22walkthrough%22%7D) — 保持专注并确保您的团队不受阻碍\n$(gitlens-code-suggestion)  [代码建议](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 让您的代码评审摆脱不必要的限制\n$(gitlens-cloud-patch)  [云补丁](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 轻松且安全地与您的团队共享代码\n$(gitlens-worktrees-view)  **工作树** — 同时处理多个分支\n$(gitlens-workspaces-view)  **工作区** — 将多个存储库分组并管理\n$(graph-scatter)  [可视化文件历史](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化文件的演变并快速识别最具影响力的更改是何时由谁做出的",
+				"description": "您拥有XUXU Git的全部功能，包括[Pro功能](https://gitkraken.com/gitlens/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links)和[GitKraken DevEx平台](https://gitkraken.com/devex?utm_source=gitlens-extension&utm_medium=in-app-links)。\n\n**Pro功能**\n$(gitlens-graph)  [提交图](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化您的存储库并跟踪所有进行中的工作\n$(rocket)  [启动台](command:gitlens.openWalkthrough?%7B%22step%22%3A%22launchpad%22,%22source%22%3A%22walkthrough%22%7D) — 保持专注并确保您的团队不受阻碍\n$(gitlens-code-suggestion)  [代码建议](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 让您的代码评审摆脱不必要的限制\n$(gitlens-cloud-patch)  [云补丁](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 轻松且安全地与您的团队共享代码\n$(gitlens-worktrees-view)  **工作树** — 同时处理多个分支\n$(gitlens-workspaces-view)  **工作区** — 将多个存储库分组并管理\n$(graph-scatter)  [可视化文件历史](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化文件的演变并快速识别最具影响力的更改是何时由谁做出的",
 				"media": {
 				"markdown": "walkthroughs/welcome/pro-paid.md"
 				},
@@ -17444,7 +17444,7 @@
 			{
 				"id": "integrations",
 				"title": "集成Git托管和问题服务",
-				"description": "GitLens自动检测提交消息中的模式，为包括GitHub、GitLab、Gitea、Gerrit、Google Source、Bitbucket、Azure DevOps和自定义服务器在内的Git托管服务生成自动链接到拉取请求和问题。\n\n[配置自动链接](command:gitlens.showSettingsPage!autolinks)以与其他服务进行自定义模式匹配。\n\n**与GitHub、GitLab和Jira的丰富集成**\n连接[GitHub](command:gitlens.connectRemoteProvider)、[GitLab](command:gitlens.connectRemoteProvider)和[Jira](command:gitlens.plus.cloudIntegrations.manage?%7B%22integrationId%22%3A%22jira%22%2C%22source%22%3A%22walkthrough%22%2C%22detail%22%3A%7B%22action%22%3A%22connect%22%2C%22integration%22%3A%22jira%22%7D%7D)集成，以通过API增强自动链接的更多数据，将分支和提交与PR关联，并在VS Code中查看拉取请求。",
+				"description": "XUXU Git自动检测提交消息中的模式，为包括GitHub、GitLab、Gitea、Gerrit、Google Source、Bitbucket、Azure DevOps和自定义服务器在内的Git托管服务生成自动链接到拉取请求和问题。\n\n[配置自动链接](command:gitlens.showSettingsPage!autolinks)以与其他服务进行自定义模式匹配。\n\n**与GitHub、GitLab和Jira的丰富集成**\n连接[GitHub](command:gitlens.connectRemoteProvider)、[GitLab](command:gitlens.connectRemoteProvider)和[Jira](command:gitlens.plus.cloudIntegrations.manage?%7B%22integrationId%22%3A%22jira%22%2C%22source%22%3A%22walkthrough%22%2C%22detail%22%3A%7B%22action%22%3A%22connect%22%2C%22integration%22%3A%22jira%22%7D%7D)集成，以通过API增强自动链接的更多数据，将分支和提交与PR关联，并在VS Code中查看拉取请求。",
 				"media": {
 				"markdown": "walkthroughs/welcome/integrations.md"
 				}
@@ -17452,7 +17452,7 @@
 			{
 				"id": "more",
 				"title": "更多功能！",
-				"description": "**重置让你烦恼？**\n通过直观且用户友好的交互式重置编辑器，轻松可视化和配置交互式重置操作\n\n**记不住Git命令？**\n有了Git命令调色板，您不再需要记住这些命令 — 这是一个引导的、逐步体验的许多常见Git命令。\n\n[打开Git命令调色板](command:gitlens.gitCommands)\n\n**喜欢终端？**\n通过集成终端中的自动链接，快速跳转到关于提交、分支、标签等的更多详细信息。\n\n**不确定要找什么？**\n打开命令调色板，探索许多可用命令。\n\n[打开GitLens命令](command:workbench.action.quickOpen?%22>GitLens%3A%22)",
+				"description": "**重置让你烦恼？**\n通过直观且用户友好的交互式重置编辑器，轻松可视化和配置交互式重置操作\n\n**记不住Git命令？**\n有了Git命令调色板，您不再需要记住这些命令 — 这是一个引导的、逐步体验的许多常见Git命令。\n\n[打开Git命令调色板](command:gitlens.gitCommands)\n\n**喜欢终端？**\n通过集成终端中的自动链接，快速跳转到关于提交、分支、标签等的更多详细信息。\n\n**不确定要找什么？**\n打开命令调色板，探索许多可用命令。\n\n[打开 XUXU Git 命令](command:workbench.action.quickOpen?%22>XUXUGit%3A%22)",
 				"media": {
 				"markdown": "walkthroughs/welcome/more-features.md"
 				}

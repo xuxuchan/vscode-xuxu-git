@@ -29,31 +29,29 @@
 			src="#{root}/images/snowman.png"
 		/> -->
 		<header class="welcome__header">
-			<h1 class="welcome__brand"><gitlens-logo></gitlens-logo> <small>Git Supercharged</small></h1>
+			<h1 class="welcome__brand"><gitlens-logo></gitlens-logo> <small>Git 超级赋能</small></h1>
 			<p class="welcome__release">
 				<span
-					>Version
+					>版本
 					<a
 						id="version"
-						href="https://github.com/gitkraken/vscode-gitlens/blob/main/CHANGELOG.md"
-						title="Open CHANGELOG"
+						href="https://github.com/xuxuchan/vscode-xuxu-git/blob/main/CHANGELOG.md"
+						title="打开更新日志"
 						aria-label="Open CHANGELOG"
 					></a
 				></span>
 				<a
 					href="https://help.gitkraken.com/gitlens/gitlens-release-notes-current"
-					title="Open Release Notes"
+					title="打开发布说明"
 					aria-label="Open Release Notes"
-					>Release notes</a
+					>发布说明</a
 				>
 			</p>
 		</header>
 		<main class="welcome__main">
 			<section class="welcome__section">
 				<p class="t-feature">
-					Supercharge Git and unlock <strong>untapped knowledge</strong> within your repository to better
-					<strong>understand</strong>, <strong>write</strong>, and <strong>review</strong> code. Focus,
-					collaborate, accelerate.
+					加速Git的使用，并解锁仓库中的<strong>未开发知识</strong>，以便更好地<strong>理解</strong>、<strong>编写</strong>和<strong>审查</strong>代码。专注，合作，加速。
 				</p>
 				<div class="promo-banner" id="promo" hidden>
 					<a
@@ -75,16 +73,14 @@
 			</section>
 			<section class="welcome__section">
 				<div class="h-show-small">
-					<h2 class="sticky">Get Started</h2>
+					<h2 class="sticky">开始使用</h2>
 					<p>
-						GitLens is <strong>powerful</strong>, <strong>feature rich</strong>, and highly
-						<strong>customizable</strong> to meet your needs. Check out our tutorial video and walkthrough
-						to get started.
+						XUXU Git 是<strong>强大的</strong>、<strong>功能丰富的</strong>，并且高度<strong>可定制的</strong>，以满足您的需求。查看我们的教程视频和演练以开始使用。
 					</p>
 					<p class="button-container">
 						<span class="button-group button-group--single">
 							<gl-button appearance="secondary" full href="command:gitlens.getStarted?%22welcome%22"
-								><code-icon icon="info" slot="prefix"></code-icon> Get Started Walkthrough</gl-button
+								><code-icon icon="info" slot="prefix"></code-icon> 引导教程 </gl-button
 							>
 						</span>
 					</p>
@@ -96,33 +92,33 @@
 					</p>
 
 					<div data-visible="try-pro">
-						<p class="h-space-half">Unlock the full power of GitLens</p>
+						<p class="h-space-half">解锁 XUXU Git 的所有功能</p>
 						<p>
 							<gl-button
 								appearance="secondary"
 								href="command:gitlens.plus.signUp?%7B%22source%22%3A%22welcome%22%7D"
-								>Start Pro trial</gl-button
+								>开始试用</gl-button
 							>
 							&nbsp;or
-							<a href="command:gitlens.plus.login?%7B%22source%22%3A%22welcome%22%7D" title="Sign In"
-								>sign in</a
+							<a href="command:gitlens.plus.login?%7B%22source%22%3A%22welcome%22%7D" title="注册"
+								>注册</a
 							>
 						</p>
 					</div>
 				</div>
 
 				<section>
-					<h2 class="h-large-mt-0">Powerful Features</h2>
+					<h2 class="h-large-mt-0">强大功能</h2>
 					<div class="welcome__gates">
 						<p>
-							All features are free to use on all repos, <strong>except</strong> for
-							<gl-feature-badge></gl-feature-badge> features, which require a
+							所有的功能在所有的仓库中都是免费的, <strong>除了</strong>
+							<gl-feature-badge></gl-feature-badge> 功能, 需要
 							<a
 								class="muted"
 								href="https://gitkraken.com/gitlens/pricing?utm_source=gitlens-extension&utm_medium=in-app-links"
-								title="See plans for more information"
-								>trial or paid plan</a
-							>.
+								title="查看订阅计划信息"
+								>试用或选择订阅计划</a
+							>。
 						</p>
 					</div>
 
@@ -131,54 +127,50 @@
 							<gl-tooltip hoist placement="top">
 								<label class="checkbox" for="inline-blame"
 									><gl-indicator pulse></gl-indicator
-									><input type="checkbox" id="inline-blame" data-feature="blame" checked />Inline
-									Blame</label
+									><input type="checkbox" id="inline-blame" data-feature="blame" checked />行内追溯</label
 								>
 								<div slot="content">
-									Enables or disables Inline Blame
+									启用或禁用行内追溯
 									<hr />
-									Toggle to see it in action below
+									点击切换以查看效果
 								</div></gl-tooltip
-							><span>and</span
+							><span>与</span
 							><gl-tooltip hoist placement="top"
 								><label class="checkbox" for="codelens"
 									><gl-indicator pulse></gl-indicator
-									><input type="checkbox" id="codelens" data-feature="codelens" checked />Git
-									CodeLens</label
+									><input type="checkbox" id="codelens" data-feature="codelens" checked />代码洞察</label
 								>
 								<div slot="content">
-									Enables or disables Git CodeLens
+									启用或禁用 Git 代码洞察
 									<hr />
-									Toggle to see it in action below
+									点击切换以查看效果
 								</div></gl-tooltip
 							>
 						</h3>
 						<p>
-							Gain a deeper understanding of how code changed and by whom through in-editor code
-							annotations and rich hovers.
+							通过编辑器内的代码注释和丰富的悬停信息，深入了解代码是如何以及由谁更改的。
 						</p>
 
 						<gk-blame-svg id="blame" inline codelens></gk-blame-svg>
 
 						<p style="margin: 0.5rem 1rem 0 1rem">
-							<strong>Want more control?</strong>
-							Use the interactive
+							<strong>需要更多的管理功能？</strong>
+							使用交互式
 							<a
 								href="command:gitlens.showSettingsPage"
-								title="Open GitLens Settings"
-								aria-label="Open GitLens Settings"
-								><code-icon icon="gear"></code-icon>&nbsp;GitLens Settings</a
+								title="打开 XUXU Git 设置"
+								aria-label="打开 XUXU Git 设置"
+								><code-icon icon="gear"></code-icon>&nbsp;XUXU Git 设置</a
 							>
-							editor to customize GitLens to meet your needs
+							编辑器来自定义 XUXU Git 设置，以满足您的需求。
 						</p>
 					</section>
 
 					<section>
-						<h3 class="sticky">File Annotations</h3>
+						<h3 class="sticky">文件注释</h3>
 						<p class="welcome__toolbar">
 							<span
-								>Use on-demand whole file annotations to see authorship, recent changes, and a
-								heatmap.</span
+								>使用按需的整个文件注释来查看作者信息、最近的更改以及热图。</span
 							>
 							<gk-editor-toolbar-svg annotations annotations-toggled></gk-editor-toolbar-svg>
 						</p>
@@ -186,10 +178,10 @@
 					</section>
 
 					<section>
-						<h3 class="sticky">Revision Navigation</h3>
+						<h3 class="sticky">修订导航</h3>
 						<p class="welcome__toolbar">
 							<span
-								>Effortlessly explore the history of a file to see how the code evolved over time.</span
+								>轻松探索文件的历史，查看代码随时间的演变。</span
 							>
 							<gk-editor-toolbar-svg revision revision-toggled></gk-editor-toolbar-svg>
 						</p>
@@ -202,50 +194,48 @@
 								class="muted"
 								href="command:gitlens.showGraph"
 								data-requires="repo"
-								aria-label="Open Commit Graph"
-								><gl-tooltip hoist content="Open Commit Graph"><span>Commit Graph</span></gl-tooltip></a
+								aria-label="打开提交图表"
+								><gl-tooltip hoist content="打开提交图表"><span>提交图表</span></gl-tooltip></a
 							><gl-feature-badge class="super" placement="right"></gl-feature-badge>
 						</h3>
-						<p>Easily visualize your repository and keep track of all work in progress.</p>
+						<p>轻松可视化您的仓库并跟踪所有进行中的工作。</p>
 						<p>
-							Use the rich commit search to find exactly what you're looking for. Its powerful filters
-							allow you to search by a specific commit, message, author, a changed file or files, or even
-							a specific code change.
+							使用丰富的提交搜索来精确找到您所寻找的内容。其强大的过滤器允许您通过特定的提交、消息、作者、更改的文件或文件，甚至是特定的代码更改来进行搜索。
 							<a
 								href="https://gitkraken.com/solutions/commit-graph?utm_source=gitlens-extension&utm_medium=in-app-links"
 								title="Learn more about the Commit Graph"
 								aria-label="Learn more about the Commit Graph"
-								>Learn&nbsp;more</a
+								>了解更多</a
 							>
 						</p>
 						<gk-graph-svg></gk-graph-svg>
 					</section>
 
 					<section>
-						<h3 class="sticky">Side Bar Views</h3>
-						<p>Powerful views into Git that don't come in the box.</p>
+						<h3 class="sticky">边栏视图</h3>
+						<p>提供Git中原生不包含的强大视图。</p>
 						<nav class="welcome__views-nav" aria-label="Sidebar view links">
 							<a
 								href="command:gitlens.showCommitsView"
 								data-requires="repo"
 								aria-label="Show Commits view"
 								><code-icon icon="gl-commits-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Commits view"><span>Commits</span></gl-tooltip>
+								><gl-tooltip hoist content="显示提交视图"><span>提交</span></gl-tooltip>
 							</a>
 							<a
 								href="command:gitlens.showCommitDetailsView"
 								data-requires="repo"
 								aria-label="Show Inspect view"
 								><code-icon icon="gl-commit-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Inspect view"><span>Inspect</span></gl-tooltip>
+								><gl-tooltip hoist content="显示审查视图"><span>审查</span></gl-tooltip>
 							</a>
 							<a
 								href="command:gitlens.showRepositoriesView"
 								data-requires="repo"
 								aria-label="Show Repositories view"
 								><code-icon icon="gl-repositories-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Repositories view"
-									><span>Repositories</span></gl-tooltip
+								><gl-tooltip hoist content="显示仓库视图"
+									><span>仓库</span></gl-tooltip
 								>
 							</a>
 							<a
@@ -253,8 +243,8 @@
 								data-requires="repo"
 								aria-label="Show File History view"
 								><code-icon icon="gl-history-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show File History view"
-									><span>File History</span></gl-tooltip
+								><gl-tooltip hoist content="显示文件历史视图"
+									><span>文件历史</span></gl-tooltip
 								>
 							</a>
 							<a
@@ -262,8 +252,8 @@
 								data-requires="repo"
 								aria-label="Show Visual File History view"
 								><code-icon icon="graph-scatter" size="20"></code-icon
-								><gl-tooltip hoist content="Show Visual File History view"
-									><span>Visual File History</span></gl-tooltip
+								><gl-tooltip hoist content="显示可视化文件历史视图"
+									><span>可视化文件历史</span></gl-tooltip
 								><gl-feature-badge class="super small"></gl-feature-badge>
 							</a>
 							<a
@@ -271,8 +261,8 @@
 								data-requires="repo"
 								aria-label="Show Line History view"
 								><code-icon icon="gl-history-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Line History view"
-									><span>Line History</span></gl-tooltip
+								><gl-tooltip hoist content="显示代码行历史视图"
+									><span>代码行历史</span></gl-tooltip
 								>
 							</a>
 							<a
@@ -280,7 +270,7 @@
 								data-requires="repo"
 								aria-label="Show Branches view"
 								><code-icon icon="gl-branches-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Branches view"><span>Branches</span></gl-tooltip>
+								><gl-tooltip hoist content="显示分支视图"><span>分支</span></gl-tooltip>
 							</a>
 							<a
 								href="command:gitlens.showDraftsView"
@@ -288,34 +278,34 @@
 								data-org-requires="drafts"
 								aria-label="Show Cloud Patches view"
 								><code-icon icon="gl-cloud-patch" size="20"></code-icon
-								><gl-tooltip hoist content="Show Cloud Patches view"
-									><span>Cloud Patches</span></gl-tooltip
-								><gl-feature-badge class="super small" preview></gl-feature-badge>
+								><gl-tooltip hoist content="显示云补丁视图"
+									><span>云补丁</span></gl-tooltip
+								>
 							</a>
 							<a
 								href="command:gitlens.showRemotesView"
 								data-requires="repo"
 								aria-label="Show Remotes view"
 								><code-icon icon="gl-remotes-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Remotes view"><span>Remotes</span></gl-tooltip>
+								><gl-tooltip hoist content="显示远程仓库视图"><span>远程仓库</span></gl-tooltip>
 							</a>
 							<a
 								href="command:gitlens.showStashesView"
 								data-requires="repo"
 								aria-label="Show Stashes view"
 								><code-icon icon="gl-stashes-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Stashes view"><span>Stashes</span></gl-tooltip>
+								><gl-tooltip hoist content="显示暂存区视图"><span>暂存区</span></gl-tooltip>
 							</a>
 							<a href="command:gitlens.showTagsView" data-requires="repo" aria-label="Show Tags view"
 								><code-icon icon="gl-tags-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Tags view"><span>Tags</span></gl-tooltip>
+								><gl-tooltip hoist content="显示标签视图"><span>标签</span></gl-tooltip>
 							</a>
 							<a
 								href="command:gitlens.showWorktreesView"
 								data-requires="repo"
 								aria-label="Show Worktrees view"
 								><code-icon icon="gl-worktrees-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Worktrees view"><span>Worktrees</span></gl-tooltip
+								><gl-tooltip hoist content="显示工作树视图"><span>工作树</span></gl-tooltip
 								><gl-feature-badge class="super small"></gl-feature-badge>
 							</a>
 							<a
@@ -323,8 +313,8 @@
 								data-requires="repo"
 								aria-label="Show Contributors view"
 								><code-icon icon="gl-contributors-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Contributors view"
-									><span>Contributors</span></gl-tooltip
+								><gl-tooltip hoist content="显示贡献者视图"
+									><span>贡献者</span></gl-tooltip
 								>
 							</a>
 							<a
@@ -332,8 +322,8 @@
 								data-requires="repo"
 								aria-label="Show Search &amp; Compare view"
 								><code-icon icon="gl-search-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show Search &amp; Compare view"
-									><span>Search &amp; Compare</span></gl-tooltip
+								><gl-tooltip hoist content="显示搜索与对比视图"
+									><span>搜索与对比</span></gl-tooltip
 								>
 							</a>
 							<a
@@ -341,14 +331,13 @@
 								data-requires="repo"
 								aria-label="Show GitKraken Workspaces view"
 								><code-icon icon="gl-workspaces-view" size="20"></code-icon
-								><gl-tooltip hoist content="Show GitKraken Workspaces view"
-									><span>GK Workspaces</span></gl-tooltip
-								><gl-feature-badge class="super small" preview></gl-feature-badge>
+								><gl-tooltip hoist content="显示工作空间视图"
+									><span>工作空间</span></gl-tooltip
+								>
 							</a>
 						</nav>
 						<p data-requires="norepo">
-							<code-icon icon="question"></code-icon> Features which need a repository are currently
-							unavailable
+							<code-icon icon="question"></code-icon> 需要仓库的功能目前不可用
 						</p>
 					</section>
 
@@ -358,18 +347,16 @@
 								class="muted"
 								href="command:gitlens.showLaunchpad?%7B%22source%22%3A%22welcome%22%7D"
 								aria-label="Open Launchpad"
-								><gl-tooltip hoist content="Open Launchpad"><span>Launchpad</span></gl-tooltip></a
-							><gl-feature-badge class="super" placement="right" preview></gl-feature-badge>
+								><gl-tooltip hoist content="打开操作面板"><span>操作面板</span></gl-tooltip></a
+							>
 						</h3>
 						<p>
-							Use Launchpad to bring all of your GitHub pull requests into a unified, actionable list to
-							better track work in progress, pending work, reviews, and more. Stay focused and take action
-							on the most important items to keep your team unblocked.
+							使用操作面板将您所有的 GitHub 拉取请求汇总到一个统一的、可操作的列表中，以更好地跟踪进行中的工作、待处理的工作、审查等。保持专注并对最重要的事项采取行动，以保持您的团队畅通无阻。
 							<a
 								href="https://gitkraken.com/solutions/launchpad?utm_source=gitlens-extension&utm_medium=in-app-links"
-								title="Learn more about Launchpad"
+								title="了解更多关于操作面板的信息"
 								aria-label="Learn more about Launchpad"
-								>Learn&nbsp;more</a
+								>了解更多</a
 							>
 						</p>
 						<gk-launchpad-quickpick-svg></gk-launchpad-quickpick-svg>
@@ -382,22 +369,19 @@
 								data-org-requires="drafts"
 								href="command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22welcome%22%7D"
 								aria-label="Learn more about Code Suggest"
-								><gl-tooltip hoist content="Learn more about Code Suggest"
-									><span>Code Suggest</span></gl-tooltip
+								><gl-tooltip hoist content="了解更多关于编码建议的信息"
+									><span>编码建议</span></gl-tooltip
 								></a
 							>
-							<span data-org-requires="nodrafts">Code Suggest</span>
-							<gl-feature-badge class="super" placement="right" cloud preview></gl-feature-badge>
+							<span data-org-requires="nodrafts">编码建议</span>
 						</h3>
 						<p>
-							Liberate your code reviews from GitHub's restrictive, comment-only feedback style. Like
-							suggesting changes on a Google-doc, suggest code changes from where you're already coding —
-							your IDE and on anything in your project, not just on the lines of code changed in the PR.
+							将您的代码审查从 GitHub 限制性的、仅限评论的反馈风格中解放出来。就像在 Google 文档上建议更改一样，在您已经在编码的地方——您的 IDE 中以及项目中的任何内容上建议代码更改，而不仅仅是 PR 中更改的代码行。
 							<a
 								href="https://gitkraken.com/solutions/code-suggest?utm_source=gitlens-extension&utm_medium=in-app-links"
-								title="Learn more about Code Suggest"
+								title="了解更多关于编码建议的信息"
 								aria-label="Learn more about Code Suggest"
-								>Learn&nbsp;more</a
+								>了解更多</a
 							>
 						</p>
 					</section>
@@ -409,23 +393,19 @@
 								data-org-requires="drafts"
 								href="command:gitlens.showDraftsView"
 								aria-label="Show Cloud Patches view"
-								><gl-tooltip hoist content="Show Cloud Patches view"
-									><span>Cloud Patches</span></gl-tooltip
+								><gl-tooltip hoist content="显示云补丁视图"
+									><span>云补丁</span></gl-tooltip
 								></a
 							>
-							<span data-org-requires="nodrafts">Cloud Patches</span>
-							<gl-feature-badge class="super" placement="right" cloud preview></gl-feature-badge>
+							<span data-org-requires="nodrafts">云补丁</span>
 						</h3>
 						<p>
-							Easily and securely share code changes with your teammates or other developers by creating a
-							Cloud Patch from your WIP, commit or stash and sharing the generated link. Use Cloud Patches
-							to collaborate early for feedback on direction, approach, and more, to minimize rework and
-							streamline your workflow.
+							通过从您的工作进度、提交或暂存中创建云补丁并分享生成的链接，轻松且安全地与您的团队成员或其他开发者共享代码更改。使用云补丁来进行早期合作，获取关于方向、方法等的反馈，以减少重做并简化您的工作流程。
 							<a
 								href="https://gitkraken.com/solutions/cloud-patches?utm_source=gitlens-extension&utm_medium=in-app-links"
-								title="Learn more about Cloud Patches"
+								title="了解更多关于云补丁的信息"
 								aria-label="Learn more about Cloud Patches"
-								>Learn&nbsp;more</a
+								>了解更多</a
 							>
 						</p>
 					</section>
@@ -436,17 +416,14 @@
 								class="muted"
 								href="command:gitlens.showWorktreesView"
 								data-requires="repo"
-								title="Show Worktrees view"
+								title="显示工作树视图"
 								aria-label="Show Worktrees view"
-								><gl-tooltip hoist content="Show Worktrees view"><span>Worktrees</span></gl-tooltip></a
+								><gl-tooltip hoist content="显示工作树视图"><span>工作树</span></gl-tooltip></a
 							>
 							<gl-feature-badge class="super" placement="right"></gl-feature-badge>
 						</h3>
 						<p>
-							Efficiently multitask by minimizing the context switching between branches, allowing you to
-							easily work on different branches of a repository simultaneously. Avoid interrupting your
-							work in progress when needing to review a pull request. Simply create a new worktree and
-							open it in a new VS Code window, all without impacting your work in progress.
+							通过最小化分支间的上下文切换来高效地进行多任务处理，使您能够同时轻松地在仓库的不同分支上工作。当需要审查一个拉取请求时，避免中断您正在进行的工作。只需创建一个新的工作树并在新的 VS Code 窗口中打开它，所有这些都不会影响您正在进行的工作。
 						</p>
 					</section>
 
@@ -457,21 +434,18 @@
 								href="command:gitlens.showWorkspacesView"
 								data-requires="repo"
 								aria-label="Show GitKraken Workspaces view"
-								><gl-tooltip hoist content="Show GitKraken Workspaces view"
-									><span>GitKraken (GK) Workspaces</span></gl-tooltip
+								><gl-tooltip hoist content="显示工作空间视图"
+									><span>工作空间</span></gl-tooltip
 								></a
 							>
-							<gl-feature-badge class="super" placement="right" preview></gl-feature-badge>
 						</h3>
 						<p>
-							Leverage workspaces to easily group and manage multiple repositories together, accessible
-							from anywhere, streamlining your workflow. Create workspaces just for yourself or share
-							(coming soon in GitLens) them with your team for faster onboarding and better collaboration.
+							利用工作区轻松地将多个仓库分组和管理在一起，可以从任何地方访问，简化您的工作流程。为自己创建工作区或分享（即将在 XUXU Git 中推出）给您的团队，以实现更快的入职和更好的协作。
 							<a
 								href="https://gitkraken.com/solutions/workspaces?utm_source=gitlens-extension&utm_medium=in-app-links"
-								title="Learn more about GitKraken Workspaces"
+								title="了解更多关于工作空间的信息"
 								aria-label="Learn more about GitKraken Workspaces"
-								>Learn&nbsp;more</a
+								>了解更多</a
 							>
 						</p>
 
@@ -485,75 +459,64 @@
 								href="command:gitlens.showTimelineView"
 								data-requires="repo"
 								aria-label="Show Visual File History view"
-								><gl-tooltip hoist content="Show Visual File History view"
-									><span>Visual File History</span></gl-tooltip
+								><gl-tooltip hoist content="显示可视化文件历史视图"
+									><span>可视化文件历史</span></gl-tooltip
 								></a
 							>
 							<gl-feature-badge class="super" placement="right"></gl-feature-badge>
 						</h3>
 						<p>
-							Quickly see the evolution of a file, including when changes were made, how large they were,
-							and who made them. Use it to quickly find when the most impactful changes were made to a
-							file or who best to talk to about file changes and more.
+							快速查看文件的演变，包括何时进行了更改、更改的规模有多大以及是谁做的更改。使用它可以快速找到对文件进行了最有影响的更改的时间，或者最适合讨论文件更改及更多信息的人。
 						</p>
 						<gk-timeline-svg></gk-timeline-svg>
 					</section>
 
 					<section>
-						<h3 class="sticky">Integrations</h3>
+						<h3 class="sticky">集成</h3>
 						<p>
-							Simplify your workflow and quickly gain insights with automatic linking of issues and pull
-							requests across multiple Git hosting platforms including GitHub, GitHub Enterprise
-							<gl-feature-badge cloud></gl-feature-badge>, GitLab, GitLab self-managed
-							<gl-feature-badge cloud></gl-feature-badge>, Gitea, Gerrit, Google Source, Bitbucket,
-							Bitbucket Server, Azure DevOps, and custom servers.
+							简化您的工作流程并通过在包括 GitHub、GitHub Enterprise <gl-feature-badge cloud></gl-feature-badge>、GitLab、GitLab 自托管 <gl-feature-badge cloud></gl-feature-badge>、Gitea、Gerrit、Google Source、Bitbucket、Bitbucket Server、Azure DevOps 以及自定义服务器在内的多个 Git 托管平台之间自动链接问题和拉取请求，快速获得洞察。
 						</p>
 						<p>
-							All integration provide automatic linking, while rich integrations with GitHub & GitLab
-							offer detailed hover information for autolinks, and correlations between pull requests,
-							branches, and commits, as well as user avatars for added context.
+							所有集成都提供自动链接，而与 GitHub 和 GitLab 的深度集成则提供自动链接的详细悬停信息，以及拉取请求、分支和提交之间的相关性，还有用户头像以增加上下文信息。
 						</p>
 						<p>
-							<strong>Define your own autolinks</strong>
+							<strong>定义你的自动链接</strong>
 							<br />
-							Use autolinks to linkify external references, like Jira issues or Zendesk tickets, in commit
-							messages.
+							使用自动链接在提交消息中链接化外部引用，如 Jira 问题或 Zendesk 工单。
 						</p>
 						<gl-button appearance="secondary" href="command:gitlens.showSettingsPage!autolinks"
-							>Configure Autolinks</gl-button
+							>配置自动链接</gl-button
 						>
 					</section>
 
 					<section>
-						<h3 class="sticky"><code-icon icon="beaker" size="20"></code-icon> GitKraken Labs</h3>
+						<h3 class="sticky"><code-icon icon="beaker" size="20"></code-icon> X-Tech 实验室</h3>
 						<p>
-							Our incubator for experimentation and exploration with the community to gather early
-							reactions and feedback. Below are some of our current experiments.
+							我们的孵化器用于与社区进行实验和探索，以收集早期的反应和反馈。以下是我们当前的一些实验。
 						</p>
 						<p>
-							<strong>Explain Commit (AI)</strong>
+							<strong>提交解释 (AI)</strong>
 							<br />
-							Use the Explain panel on the
+							使用
 							<a
 								data-requires="repo"
 								href="command:gitlens.showCommitDetailsView"
-								title="Show Inspect view"
-								>Inspect view</a
+								title="显示审查视图"
+								>审查视图</a
 							>
-							to leverage AI to help you understand the changes introduced by a commit.
+							上的解释面板，利用 AI 帮助您理解提交所引入的更改。
 						</p>
 						<p>
-							<strong>Automatically Generate Commit Message (AI)</strong>
+							<strong>自动生成提交信息 (AI)</strong>
 							<br />
-							Use the
+							在源代码管理视图的上下文菜单中使用
 							<a
 								data-requires="repo"
 								href="command:workbench.action.quickOpen?%22>GitLens%3A%20Generate%20Commit%20Message%22"
-								title="Open Command Palette"
-								>Generate Commit Message</a
+								title="打开命令面板"
+								>生成提交信息</a
 							>
-							command from the Source Control view's context menu to automatically generate a commit
-							message for your staged changes by leveraging AI.
+							命令，通过利用 AI 为您的暂存更改自动生成提交消息。
 						</p>
 					</section>
 				</section>
@@ -561,15 +524,13 @@
 
 			<section class="welcome__section welcome__section-bar">
 				<div class="h-show-large">
-					<h2 class="sticky">Get Started</h2>
+					<h2 class="sticky">开始使用</h2>
 					<p>
-						GitLens is <strong>powerful</strong>, <strong>feature rich</strong>, and highly
-						<strong>customizable</strong> to meet your needs. Check out our tutorial video and walkthrough
-						to get started.
+						XUXU Git 是<strong>强大的</strong>、<strong>功能丰富的</strong>，并且高度<strong>可定制的</strong>，以满足您的需求。查看我们的教程视频和演练以开始使用。
 					</p>
 					<p>
 						<gl-button appearance="secondary" full href="command:gitlens.getStarted?%22welcome%22"
-							><code-icon icon="info" slot="prefix"></code-icon> Get Started Walkthrough</gl-button
+							><code-icon icon="info" slot="prefix"></code-icon> 引导教程 </gl-button
 						>
 					</p>
 
@@ -578,69 +539,68 @@
 					</nav>
 
 					<div data-visible="try-pro">
-						<p class="h-space-half">Unlock the full power of GitLens</p>
+						<p class="h-space-half">解锁 XUXU Git 的全部功能</p>
 						<p>
 							<gl-button
 								appearance="secondary"
 								href="command:gitlens.plus.signUp?%7B%22source%22%3A%22welcome%22%7D"
-								>Start Pro Trial</gl-button
+								>开始试用</gl-button
 							>
 							&nbsp;or
-							<a href="command:gitlens.plus.login?%7B%22source%22%3A%22welcome%22%7D" title="Sign In"
-								>sign in</a
+							<a href="command:gitlens.plus.login?%7B%22source%22%3A%22welcome%22%7D" title="注册"
+								>注册</a
 							>
 						</p>
 					</div>
 				</div>
 
 				<section>
-					<h2 class="sticky">Quick Access</h2>
+					<h2 class="sticky">快速访问</h2>
 					<p data-requires="norepo">
-						<code-icon icon="question"></code-icon> Features which need a repository are currently
-						unavailable
+						<code-icon icon="question"></code-icon> 需要仓库的功能目前不可用
 					</p>
 					<nav class="welcome__resources-nav">
-						<h3 class="t-eyebrow sticky">Activity Bar</h3>
+						<h3 class="t-eyebrow sticky">活动栏</h3>
 						<a href="command:workbench.view.extension.gitlens" aria-label="Show GitLens Side Bar"
 							><code-icon icon="gl-gitlens"></code-icon>
-							<gl-tooltip hoist content="Show GitLens Side Bar"><span>GitLens</span></gl-tooltip>
+							<gl-tooltip hoist content="显示 XUXU Git 边栏"><span>XUXU Git</span></gl-tooltip>
 						</a>
 						<a href="command:workbench.view.scm" data-requires="repo" aria-label="Show GitLens Side Bar"
 							><code-icon icon="source-control"></code-icon>
-							<gl-tooltip hoist content="Show Source Control Side Bar"
-								><span>Source Control</span></gl-tooltip
+							<gl-tooltip hoist content="显示源代码管理边栏"
+								><span>源代码管理</span></gl-tooltip
 							>
 						</a>
 						<a
 							href="command:workbench.view.extension.gitlensInspect"
 							data-requires="repo"
-							aria-label="Show GitLens Inspect Side Bar"
+							aria-label="显示 XUXU Git 审查边栏"
 							><code-icon icon="gl-gitlens-inspect"></code-icon>
-							<gl-tooltip hoist content="Show GitLens Inspect Side Bar"><span>Inspect</span></gl-tooltip>
+							<gl-tooltip hoist content="显示 XUXU Git 审查边栏"><span>代码审查</span></gl-tooltip>
 						</a>
 					</nav>
 					<nav class="welcome__resources-nav">
-						<h3 class="t-eyebrow sticky">Popular</h3>
+						<h3 class="t-eyebrow sticky">热门功能</h3>
 						<a href="command:gitlens.showGraph" data-requires="repo" aria-label="Show Commit Graph"
 							><code-icon icon="gl-graph"></code-icon
-							><gl-tooltip hoist content="Show Commit Graph"><span>Commit Graph</span></gl-tooltip
+							><gl-tooltip hoist content="显示提交图表"><span>提交图表</span></gl-tooltip
 							><gl-feature-badge class="super small"></gl-feature-badge>
 						</a>
 						<a href="command:gitlens.showFocusPage" data-requires="repo" aria-label="Open Launchpad"
 							><code-icon icon="rocket"></code-icon
-							><gl-tooltip hoist content="Open Launchpad"><span>Launchpad</span></gl-tooltip
-							><gl-feature-badge class="super small" preview></gl-feature-badge>
+							><gl-tooltip hoist content="打开操作面板"><span>操作面板</span></gl-tooltip
+							>
 						</a>
 						<a href="command:gitlens.showCommitsView" data-requires="repo" aria-label="Show Commits view"
 							><code-icon icon="gl-commits-view"></code-icon>
-							<gl-tooltip hoist content="Show Commits view"><span>Commits</span></gl-tooltip>
+							<gl-tooltip hoist content="显示提交视图"><span>提交</span></gl-tooltip>
 						</a>
 						<a
 							href="command:gitlens.showCommitDetailsView"
 							data-requires="repo"
 							aria-label="Show Inspect view"
 							><code-icon icon="gl-commit-view"></code-icon
-							><gl-tooltip hoist content="Show Inspect view"><span>Inspect</span></gl-tooltip>
+							><gl-tooltip hoist content="显示审查视图"><span>审查</span></gl-tooltip>
 						</a>
 						<a
 							href="command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22welcome%22%7D"
@@ -648,9 +608,9 @@
 							data-org-requires="drafts"
 							aria-label="Open Code Suggest walkthrough"
 							><code-icon icon="gl-code-suggestion"></code-icon
-							><gl-tooltip hoist content="Open Code Suggest walkthrough"
-								><span>Code Suggest</span></gl-tooltip
-							><gl-feature-badge class="super small" preview></gl-feature-badge>
+							><gl-tooltip hoist content="打开编码建议引导教程"
+								><span>编码建议</span></gl-tooltip
+							>
 						</a>
 						<a
 							href="command:gitlens.showDraftsView"
@@ -658,23 +618,23 @@
 							data-org-requires="drafts"
 							aria-label="Show Cloud Patches view"
 							><code-icon icon="gl-cloud-patch"></code-icon>
-							<gl-tooltip hoist content="Show Cloud Patches view"><span>Cloud Patches</span></gl-tooltip
-							><gl-feature-badge class="super small" preview></gl-feature-badge>
+							<gl-tooltip hoist content="显示云补丁视图"><span>云补丁</span></gl-tooltip
+							>
 						</a>
 						<a
 							href="command:gitlens.showFileHistoryView"
 							data-requires="repo"
 							aria-label="Show File History view"
 							><code-icon icon="gl-history-view"></code-icon
-							><gl-tooltip hoist content="Show File History view"><span>File History</span></gl-tooltip>
+							><gl-tooltip hoist content="显示文件历史视图"><span>文件历史</span></gl-tooltip>
 						</a>
 						<a
 							href="command:gitlens.showTimelineView"
 							data-requires="repo"
 							aria-label="Show Visual File History view"
 							><code-icon icon="graph-scatter"></code-icon
-							><gl-tooltip hoist content="Show Visual File History view"
-								><span>Visual File History</span></gl-tooltip
+							><gl-tooltip hoist content="显示可视化文件历史视图"
+								><span>可视化文件历史</span></gl-tooltip
 							><gl-feature-badge class="super small"></gl-feature-badge>
 						</a>
 						<a
@@ -682,21 +642,21 @@
 							data-requires="repo"
 							aria-label="Show GitKraken Workspaces view"
 							><code-icon icon="gl-workspaces-view"></code-icon>
-							<gl-tooltip hoist content="Show GitKraken Workspaces view"
-								><span>GK Workspaces</span></gl-tooltip
-							><gl-feature-badge class="super small" preview></gl-feature-badge>
+							<gl-tooltip hoist content="显示工作空间视图"
+								><span>工作空间</span></gl-tooltip
+							>
 						</a>
 						<a href="command:gitlens.showStashesView" data-requires="repo" aria-label="Show Stashes view"
 							><code-icon icon="gl-stashes-view"></code-icon
-							><gl-tooltip hoist content="Show Stashes view"><span>Stashes</span></gl-tooltip>
+							><gl-tooltip hoist content="显示暂存区视图"><span>暂存区</span></gl-tooltip>
 						</a>
 						<a
 							href="command:gitlens.showSearchAndCompareView"
 							data-requires="repo"
 							aria-label="Show Search &amp; Compare view"
 							><code-icon icon="gl-search-view"></code-icon
-							><gl-tooltip hoist content="Show Search &amp; Compare view"
-								><span>Search &amp; Compare</span></gl-tooltip
+							><gl-tooltip hoist content="显示搜索与对比视图"
+								><span>搜索与对比</span></gl-tooltip
 							>
 						</a>
 						<a
@@ -704,99 +664,99 @@
 							data-requires="repo"
 							aria-label="Show Worktrees view"
 							><code-icon icon="gl-worktrees-view"></code-icon
-							><gl-tooltip hoist content="Show Worktrees view"><span>Worktrees</span></gl-tooltip
+							><gl-tooltip hoist content="显示工作树视图"><span>工作树</span></gl-tooltip
 							><gl-feature-badge class="super small"></gl-feature-badge
 						></a>
 					</nav>
 					<nav class="welcome__resources-nav">
-						<h3 class="t-eyebrow sticky">Commands</h3>
+						<h3 class="t-eyebrow sticky">命令</h3>
 						<a
 							href="command:workbench.action.quickOpen?%22>GitLens%3A%22"
 							aria-label="Show GitLens Commands"
 							><code-icon icon="symbol-event"></code-icon
-							><gl-tooltip hoist content="Show GitLens Commands"><span>Commands</span></gl-tooltip>
+							><gl-tooltip hoist content="显示 XUXU Git 命令"><span>命令</span></gl-tooltip>
 						</a>
 						<a href="command:gitlens.gitCommands" data-requires="repo" aria-label="Open Git Command Palette"
 							><code-icon icon="symbol-color"></code-icon
-							><gl-tooltip hoist content="Open Git Command Palette"
-								><span>Git Command Palette</span></gl-tooltip
+							><gl-tooltip hoist content="打开 Git 命令面板"
+								><span>Git 命令面板</span></gl-tooltip
 							>
 						</a>
 					</nav>
 					<nav class="welcome__resources-nav">
-						<h3 class="t-eyebrow sticky">Configuration</h3>
+						<h3 class="t-eyebrow sticky">配置</h3>
 						<a href="command:gitlens.showSettingsPage" aria-label="Open GitLens Settings"
 							><code-icon icon="gear"></code-icon
-							><gl-tooltip hoist content="Open GitLens Settings"
-								><span>GitLens Settings</span></gl-tooltip
+							><gl-tooltip hoist content="打开 XUXU Git 设置"
+								><span>XUXU Git 设置</span></gl-tooltip
 							>
 						</a>
 						<a href="command:gitlens.showSettingsPage!autolinks" aria-label="Open Autolinks Settings"
 							><code-icon icon="link"></code-icon
-							><gl-tooltip hoist content="Open Autolinks Settings"><span>Autolinks</span></gl-tooltip>
+							><gl-tooltip hoist content="打开自动链接设置"><span>自动链接</span></gl-tooltip>
 						</a>
 					</nav>
 				</section>
 
 				<section>
-					<h2 class="sticky">Companion Tools</h2>
-					<p>Supercharge GitLens with our other dev tools</p>
+					<h2 class="sticky">扩展工具</h2>
+					<p>使用我们其它的开发工具扩充功能</p>
 					<nav class="welcome__resources-nav" aria-label="Companion Tools">
 						<a
 							href="https://gitkraken.com/browser-extension?utm_source=gitlens-extension&utm_medium=in-app-links"
 							aria-label="Try the GitKraken Browser Extension"
 							><code-icon class="link" icon="extensions"></code-icon
-							><gl-tooltip hoist content="Try the GitKraken Browser Extension"
-								><span>Browser Extension</span></gl-tooltip
+							><gl-tooltip hoist content="试用浏览器插件"
+								><span>浏览器插件</span></gl-tooltip
 							>
 						</a>
 						<a
 							href="https://gitkraken.com/cli?utm_source=gitlens-extension&utm_medium=in-app-links"
 							aria-label="Try the GitKraken CLI"
 							><code-icon class="link" icon="terminal"></code-icon
-							><gl-tooltip hoist content="Try the GitKraken CLI"><span>GitKraken CLI</span></gl-tooltip>
+							><gl-tooltip hoist content="试用命令行工具"><span>命令行工具</span></gl-tooltip>
 						</a>
-						<a
+						<!--<a
 							href="https://gitkraken.dev?utm_source=gitlens-extension&utm_medium=in-app-links"
 							aria-label="Try GitKraken.dev"
 							><code-icon class="link" icon="globe"></code-icon
 							><gl-tooltip hoist content="Try GitKraken.dev"><span>GitKraken.dev</span></gl-tooltip>
-						</a>
+						</a>-->
 					</nav>
 				</section>
 
 				<section>
-					<h2 class="sticky">Resources</h2>
+					<h2 class="sticky">资源</h2>
 					<nav class="welcome__resources-nav" aria-label="Help and Resources">
 						<a href="https://help.gitkraken.com/gitlens/gitlens-home" aria-label="Help Center"
 							><code-icon icon="question"></code-icon
-							><gl-tooltip hoist content="Help Center"><span>Help Center</span></gl-tooltip>
+							><gl-tooltip hoist content="帮助中心"><span>帮助中心</span></gl-tooltip>
 						</a>
-						<a href="https://twitter.com/gitlens" aria-label="@gitlens on Twitter"
+						<a href="https://x.com/xuxhome_cn" aria-label="@gitlens on Twitter"
 							><code-icon icon="twitter"></code-icon
-							><gl-tooltip hoist content="@gitlens on Twitter"><span>Twitter</span></gl-tooltip>
+							><gl-tooltip hoist content="@xuxu on Twitter"><span>Twitter</span></gl-tooltip>
 						</a>
-						<a href="https://github.com/gitkraken/vscode-gitlens/issues" aria-label="Feedback"
+						<a href="https://github.com/xuxuchan/vscode-xuxu-git/issues" aria-label="Feedback"
 							><code-icon icon="feedback"></code-icon
-							><gl-tooltip hoist content="Feedback"><span>Feedback</span></gl-tooltip>
+							><gl-tooltip hoist content="反馈"><span>反馈</span></gl-tooltip>
 						</a>
-						<a href="https://github.com/gitkraken/vscode-gitlens" aria-label="GitHub Repo"
+						<a href="https://github.com/xuxuchan/vscode-xuxu-git" aria-label="GitHub Repo"
 							><code-icon icon="github"></code-icon
-							><gl-tooltip hoist content="GitHub Repo"><span>GitHub</span></gl-tooltip>
+							><gl-tooltip hoist content="GitHub 仓库"><span>GitHub</span></gl-tooltip>
 						</a>
 						<a
-							href="https://github.com/gitkraken/vscode-gitlens/discussions"
+							href="https://github.com/xuxuchan/vscode-xuxu-git/discussions"
 							aria-label="GitHub Discussions"
 							title="GitHub Discussions"
 							><code-icon icon="comment-discussion"></code-icon
-							><gl-tooltip hoist content="GitHub Discussions"><span>Discussions</span></gl-tooltip>
+							><gl-tooltip hoist content="GitHub 讨论"><span>讨论</span></gl-tooltip>
 						</a>
-						<a
+						<!--<a
 							href="https://gitkraken.com/gitlens?utm_source=gitlens-extension&utm_medium=in-app-links&utm_campaign=gitlens-logo-links"
 							aria-label="GitLens Website"
 							><code-icon icon="globe"></code-icon
-							><gl-tooltip hoist content="GitLens Website"><span>Website</span></gl-tooltip>
-						</a>
+							><gl-tooltip hoist content="XUXU Git 网站"><span>网站</span></gl-tooltip>
+						</a>-->
 					</nav>
 				</section>
 			</section>
