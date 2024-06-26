@@ -1,3 +1,12 @@
+/*
+ * @Description:
+ * @Author: xuxu
+ * @Date: 2024-06-15 14:39:13
+ * @LastEditors: xuxu
+ * @LastEditTime: 2024-06-26 23:59:09
+ * @Email: xuxuchan1988@gmail.com
+ * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
+ */
 import { Badge, defineGkElement } from '@gitkraken/shared-web-components';
 import { html, LitElement, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
@@ -404,48 +413,48 @@ export class GlCommitDetailsApp extends LitElement {
 	}
 
 	renderWipTooltipContent() {
-		if (this.wipStatus == null) return 'Overview';
+		if (this.wipStatus == null) return '概览';
 
 		return html`
-			Overview of &nbsp;<code-icon icon="git-branch" size="12"></code-icon
+			概览&nbsp;<code-icon icon="git-branch" size="12"></code-icon
 			><span class="md-code">${this.wipStatus.branch}</span>
 			${when(
 				this.wipStatus.status === 'both',
 				() =>
 					html`<hr />
-						<span class="md-code">${this.wipStatus!.branch}</span> is
-						${pluralize('commit', this.wipStatus!.behind)} behind and
-						${pluralize('commit', this.wipStatus!.ahead)} ahead of
+						<span class="md-code">${this.wipStatus!.branch}</span> 落后
+						${pluralize('个提交', this.wipStatus!.behind)} 且领先
+						${pluralize('个提交', this.wipStatus!.ahead)} 于
 						<span class="md-code">${this.wipStatus!.upstream ?? 'origin'}</span>`,
 			)}
 			${when(
 				this.wipStatus.status === 'behind',
 				() =>
 					html`<hr />
-						<span class="md-code">${this.wipStatus!.branch}</span> is
-						${pluralize('commit', this.wipStatus!.behind)} behind
+						<span class="md-code">${this.wipStatus!.branch}</span> 落后
+						${pluralize('个提交', this.wipStatus!.behind)} 于
 						<span class="md-code">${this.wipStatus!.upstream ?? 'origin'}</span>`,
 			)}
 			${when(
 				this.wipStatus.status === 'ahead',
 				() =>
 					html`<hr />
-						<span class="md-code">${this.wipStatus!.branch}</span> is
-						${pluralize('commit', this.wipStatus!.ahead)} ahead of
+						<span class="md-code">${this.wipStatus!.branch}</span> 领先
+						${pluralize('个提交', this.wipStatus!.ahead)} 于
 						<span class="md-code"> ${this.wipStatus!.upstream ?? 'origin'}</span>`,
 			)}
 			${when(
 				this.wipStatus.working > 0,
 				() =>
 					html`<hr />
-						${pluralize('working change', this.wipStatus!.working)}`,
+						${pluralize('个工作中的更改', this.wipStatus!.working)}`,
 			)}
 		`;
 	}
 
 	renderTopSection() {
 		const isWip = this.state?.mode === 'wip';
-
+		// todo 待修改
 		return html`
 			<div class="inspect-header">
 				<nav class="inspect-header__tabs">

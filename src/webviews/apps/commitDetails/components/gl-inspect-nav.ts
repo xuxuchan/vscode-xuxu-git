@@ -1,3 +1,12 @@
+/*
+ * @Description:
+ * @Author: xuxu
+ * @Date: 2024-06-15 14:39:13
+ * @LastEditors: xuxu
+ * @LastEditTime: 2024-06-26 21:09:50
+ * @Email: xuxuchan1988@gmail.com
+ * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
+ */
 import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { when } from 'lit/directives/when.js';
@@ -143,7 +152,7 @@ export class GlInspectNav extends LitElement {
 								>
 							</a>
 							<span slot="content"
-								>Copy ${this.stashNumber != null ? 'Stash Name' : 'SHA'}<br />[⌥] Copy Message</span
+								>复制 ${this.stashNumber != null ? '暂存名' : 'SHA'}<br />[⌥] 复制信息</span
 							>
 						</gl-tooltip>
 					`,
@@ -195,7 +204,7 @@ export class GlInspectNav extends LitElement {
 						></gl-tooltip>
 					`,
 				)}
-				<gl-tooltip hoist content="在提交图表中打开"
+				<gl-tooltip hoist content="在提交图中打开"
 					><a
 						class="commit-action"
 						href="#"

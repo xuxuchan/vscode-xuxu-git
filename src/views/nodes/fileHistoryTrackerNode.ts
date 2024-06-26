@@ -1,3 +1,12 @@
+/*
+ * @Description:
+ * @Author: xuxu
+ * @Date: 2024-06-15 14:39:13
+ * @LastEditors: xuxu
+ * @LastEditTime: 2024-06-26 21:34:28
+ * @Email: xuxuchan1988@gmail.com
+ * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
+ */
 import type { TextEditor } from 'vscode';
 import { Disposable, FileType, TreeItem, TreeItemCollapsibleState, window, workspace } from 'vscode';
 import type { GitCommitish } from '../../git/gitUri';
@@ -49,7 +58,7 @@ export class FileHistoryTrackerNode extends SubscribeableViewNode<'file-history-
 			if (!this.hasUri) {
 				this.view.description = undefined;
 
-				this.view.message = 'There are no editors open that can provide file history information.';
+				this.view.message = '没有打开可以提供文件历史信息的编辑器。';
 				return [];
 			}
 
@@ -70,7 +79,7 @@ export class FileHistoryTrackerNode extends SubscribeableViewNode<'file-history-
 				}
 			} catch {}
 
-			this.view.title = folder ? 'Folder History' : 'File History';
+			this.view.title = folder ? '文件夹历史' : '文件历史';
 
 			let branch;
 			if (!commitish.sha || commitish.sha === 'HEAD') {
@@ -110,8 +119,8 @@ export class FileHistoryTrackerNode extends SubscribeableViewNode<'file-history-
 	async changeBase() {
 		const pick = await showReferencePicker(
 			this.uri.repoPath!,
-			'Change File History Base',
-			'Choose a reference to set as the new base',
+			'更改文件历史基准',
+			'选择一个引用作为新的基准',
 			{
 				allowRevisions: true,
 				picked: this._base,

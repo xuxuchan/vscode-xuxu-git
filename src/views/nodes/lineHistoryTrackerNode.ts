@@ -1,3 +1,12 @@
+/*
+ * @Description:
+ * @Author: xuxu
+ * @Date: 2024-06-15 14:39:13
+ * @LastEditors: xuxu
+ * @LastEditTime: 2024-06-26 21:33:49
+ * @Email: xuxuchan1988@gmail.com
+ * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
+ */
 import type { Selection } from 'vscode';
 import { TreeItem, TreeItemCollapsibleState, window } from 'vscode';
 import type { GitCommitish } from '../../git/gitUri';
@@ -55,14 +64,14 @@ export class LineHistoryTrackerNode extends SubscribeableViewNode<
 			if (!this.hasUri) {
 				this.view.description = undefined;
 
-				this.view.message = 'There are no editors open that can provide line history information.';
+				this.view.message = '没有打开可以提供行历史信息的编辑器。';
 				return [];
 			}
 
 			if (this._selection == null) {
 				this.view.description = undefined;
 
-				this.view.message = 'There was no selection provided for line history.';
+				this.view.message = '没有为行历史提供选择。';
 				this.view.description = `${this.uri.fileName}${
 					this.uri.sha
 						? ` ${this.uri.sha === deletedOrMissing ? this.uri.shortSha : `(${this.uri.shortSha})`}`
@@ -120,8 +129,8 @@ export class LineHistoryTrackerNode extends SubscribeableViewNode<
 	async changeBase() {
 		const pick = await showReferencePicker(
 			this.uri.repoPath!,
-			'Change Line History Base',
-			'Choose a reference to set as the new base',
+			'更改行历史基准',
+			'选择一个引用作为新的基准',
 			{
 				allowRevisions: true,
 				picked: this._base,

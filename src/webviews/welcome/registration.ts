@@ -1,3 +1,12 @@
+/*
+ * @Description:
+ * @Author: xuxu
+ * @Date: 2024-06-15 14:39:13
+ * @LastEditors: xuxu
+ * @LastEditTime: 2024-06-26 21:54:52
+ * @Email: xuxuchan1988@gmail.com
+ * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
+ */
 import { ViewColumn } from 'vscode';
 import { Commands } from '../../constants';
 import type { WebviewsController } from '../webviewsController';
@@ -10,7 +19,7 @@ export function registerWelcomeWebviewPanel(controller: WebviewsController) {
 			id: 'gitlens.welcome',
 			fileName: 'welcome.html',
 			iconPath: 'images/gitlens-icon.png',
-			title: 'Welcome to GitLens',
+			title: '欢迎使用 XUXU Git',
 			contextKeyPrefix: `gitlens:webview:welcome`,
 			trackingFeature: 'welcomeWebview',
 			plusFeature: false,

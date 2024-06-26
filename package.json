@@ -68,7 +68,7 @@
 	  "configuration": [
 		{
 		  "id": "current-line-blame",
-		  "title": "Inline Blame",
+		  "title": "行内追溯",
 		  "order": 10,
 		  "properties": {
 			"gitlens.currentLine.enabled": {
@@ -346,7 +346,7 @@
 		},
 		{
 		  "id": "status-bar-blame",
-		  "title": "Status Bar Blame",
+		  "title": "状态栏追溯",
 		  "order": 12,
 		  "properties": {
 			"gitlens.statusBar.enabled": {
@@ -459,7 +459,7 @@
 		},
 		{
 		  "id": "hovers",
-		  "title": "Hovers",
+		  "title": "悬停",
 		  "order": 13,
 		  "properties": {
 			"gitlens.hovers.enabled": {
@@ -603,7 +603,7 @@
 		},
 		{
 		  "id": "views",
-		  "title": "Views",
+		  "title": "视图",
 		  "order": 20,
 		  "properties": {
 			"gitlens.views.collapseWorktreesWhenPossible": {
@@ -748,7 +748,7 @@
 		},
 		{
 		  "id": "commits-view",
-		  "title": "Commits View",
+		  "title": "提交视图",
 		  "order": 21,
 		  "properties": {
 			"gitlens.views.commits.showBranchComparison": {
@@ -856,7 +856,7 @@
 		},
 		{
 		  "id": "commit-details-view",
-		  "title": "Inspect View",
+		  "title": "审查视图",
 		  "order": 22,
 		  "properties": {
 			"gitlens.views.commitDetails.autolinks.enabled": {
@@ -937,7 +937,7 @@
 		},
 		{
 		  "id": "repositories-view",
-		  "title": "Repositories View",
+		  "title": "仓库视图",
 		  "order": 23,
 		  "properties": {
 			"gitlens.views.repositories.showBranchComparison": {
@@ -1166,7 +1166,7 @@
 		},
 		{
 		  "id": "pull-request-view",
-		  "title": "Pull Request View",
+		  "title": "拉取请求视图",
 		  "order": 21,
 		  "properties": {
 			"gitlens.views.pullRequest.files.layout": {
@@ -1226,7 +1226,7 @@
 		},
 		{
 		  "id": "file-history-view",
-		  "title": "File History View",
+		  "title": "文件历史视图",
 		  "order": 24,
 		  "properties": {
 			"gitlens.views.fileHistory.pullRequests.enabled": {
@@ -1321,7 +1321,7 @@
 		},
 		{
 		  "id": "line-history-view",
-		  "title": "Line History View",
+		  "title": "代码行历史视图",
 		  "order": 25,
 		  "properties": {
 			"gitlens.views.lineHistory.avatars": {
@@ -1339,7 +1339,7 @@
 		},
 		{
 		  "id": "branches-view",
-		  "title": "Branches View",
+		  "title": "分支视图",
 		  "order": 26,
 		  "properties": {
 			"gitlens.views.branches.showBranchComparison": {
@@ -1460,7 +1460,7 @@
 		},
 		{
 		  "id": "remotes-view",
-		  "title": "Remotes View",
+		  "title": "远程视图",
 		  "order": 27,
 		  "properties": {
 			"gitlens.views.remotes.pullRequests.enabled": {
@@ -1563,7 +1563,7 @@
 		},
 		{
 		  "id": "stashes-view",
-		  "title": "Stashes View",
+		  "title": "暂存区视图",
 		  "order": 28,
 		  "properties": {
 			"gitlens.views.stashes.files.layout": {
@@ -1623,7 +1623,7 @@
 		},
 		{
 		  "id": "tags-view",
-		  "title": "Tags View",
+		  "title": "标签视图",
 		  "order": 29,
 		  "properties": {
 			"gitlens.views.tags.branches.layout": {
@@ -1705,7 +1705,7 @@
 		},
 		{
 		  "id": "worktrees-view",
-		  "title": "Worktrees View",
+		  "title": "工作树视图",
 		  "order": 30,
 		  "properties": {
 			"gitlens.worktrees.promptForLocation": {
@@ -1846,7 +1846,7 @@
 		},
 		{
 		  "id": "contributors-view",
-		  "title": "Contributors View",
+		  "title": "贡献者视图",
 		  "order": 31,
 		  "properties": {
 			"gitlens.views.contributors.showAllBranches": {
@@ -1941,7 +1941,7 @@
 		},
 		{
 		  "id": "search-compare-view",
-		  "title": "Search & Compare View",
+		  "title": "搜索与对比视图",
 		  "order": 32,
 		  "properties": {
 			"gitlens.views.searchAndCompare.pullRequests.enabled": {
@@ -2015,7 +2015,7 @@
 		},
 		{
 		  "id": "cloud-patches-view",
-		  "title": "Cloud Patches View",
+		  "title": "云补丁视图",
 		  "order": 33,
 		  "properties": {
 			"gitlens.views.drafts.files.layout": {
@@ -2075,7 +2075,7 @@
 		},
 		{
 		  "id": "workspaces-view",
-		  "title": "GitKraken Workspaces View",
+		  "title": "工作空间视图",
 		  "order": 34,
 		  "properties": {
 			"gitlens.views.workspaces.showBranchComparison": {
@@ -2094,105 +2094,105 @@
 				"将工作树与用户选择的参考进行比较"
 			  ],
 			  "default": "working",
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示当前分支或工作树与用户选择的引用（分支、标签等）的比较",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示当前分支或工作树与用户选择的引用（分支、标签等）的比较",
 			  "scope": "window",
 			  "order": 10
 			},
 			"gitlens.views.workspaces.showUpstreamStatus": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库当前分支的上游状态",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库当前分支的上游状态",
 			  "scope": "window",
 			  "order": 11
 			},
 			"gitlens.views.workspaces.includeWorkingTree": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否包含每个仓库的工作树文件状态",
+			  "markdownDescription": "指定在“工作空间”视图中是否包含每个仓库的工作树文件状态",
 			  "scope": "window",
 			  "order": 12
 			},
 			"gitlens.views.workspaces.pullRequests.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否在“GitKraken 工作区”视图中查询与分支和提交相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
+			  "markdownDescription": "指定是否在“工作空间”视图中查询与分支和提交相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
 			  "scope": "window",
 			  "order": 20
 			},
 			"gitlens.views.workspaces.pullRequests.showForBranches": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示与分支（如果有）相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示与分支（如果有）相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
 			  "scope": "window",
 			  "order": 21
 			},
 			"gitlens.views.workspaces.pullRequests.showForCommits": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示与提交（如果有）相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示与提交（如果有）相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
 			  "scope": "window",
 			  "order": 22
 			},
 			"gitlens.views.workspaces.showCommits": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库当前分支上的提交",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库当前分支上的提交",
 			  "scope": "window",
 			  "order": 30
 			},
 			"gitlens.views.workspaces.showBranches": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库的分支",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的分支",
 			  "scope": "window",
 			  "order": 31
 			},
 			"gitlens.views.workspaces.showRemotes": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库的远程仓库",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的远程仓库",
 			  "scope": "window",
 			  "order": 32
 			},
 			"gitlens.views.workspaces.showStashes": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库的暂存区",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的暂存区",
 			  "scope": "window",
 			  "order": 33
 			},
 			"gitlens.views.workspaces.showTags": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库的标签",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的标签",
 			  "scope": "window",
 			  "order": 34
 			},
 			"gitlens.views.workspaces.showContributors": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库的贡献者",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的贡献者",
 			  "scope": "window",
 			  "order": 35
 			},
 			"gitlens.views.workspaces.showWorktrees": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库的工作区",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的工作区",
 			  "scope": "window",
 			  "order": 36
 			},
 			"gitlens.views.workspaces.showIncomingActivity": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示每个仓库的实验性传入活动",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的实验性传入活动",
 			  "scope": "window",
 			  "order": 37
 			},
 			"gitlens.views.workspaces.avatars": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中显示头像图像而不是提交（或状态）图标",
+			  "markdownDescription": "指定在“工作空间”视图中显示头像图像而不是提交（或状态）图标",
 			  "scope": "window",
 			  "order": 60
 			},
@@ -2207,7 +2207,7 @@
 				"以列表方式显示分支",
 				"当分支名称包含斜杠 `/` 时以树形方式显示分支"
 			  ],
-			  "markdownDescription": "指定“GitKraken 工作区”视图将如何显示分支",
+			  "markdownDescription": "指定“工作空间”视图将如何显示分支",
 			  "scope": "window",
 			  "order": 70
 			},
@@ -2224,7 +2224,7 @@
 				"以列表方式显示文件",
 				"以树形方式显示文件"
 			  ],
-			  "markdownDescription": "指定“GitKraken 工作区”视图将如何显示文件",
+			  "markdownDescription": "指定“工作空间”视图将如何显示文件",
 			  "scope": "window",
 			  "order": 80
 			},
@@ -2253,14 +2253,14 @@
 				"显示文件状态作为图标",
 				"显示文件类型（主题图标）作为图标"
 			  ],
-			  "markdownDescription": "指定“GitKraken 工作区”视图将如何显示文件图标",
+			  "markdownDescription": "指定“工作空间”视图将如何显示文件图标",
 			  "scope": "window",
 			  "order": 83
 			},
 			"gitlens.views.workspaces.compact": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中是否显示紧凑的显示密度",
+			  "markdownDescription": "指定在“工作空间”视图中是否显示紧凑的显示密度",
 			  "scope": "window",
 			  "order": 90
 			},
@@ -2278,7 +2278,7 @@
 				"将分支与用户选择的参考进行比较"
 			  ],
 			  "default": "branch",
-			  "markdownDescription": "指定在“GitKraken 工作区”视图中每个分支下是否显示分支与用户选择的引用（分支、标签等）的比较",
+			  "markdownDescription": "指定在“工作空间”视图中每个分支下是否显示分支与用户选择的引用（分支、标签等）的比较",
 			  "scope": "window",
 			  "order": 100
 			}
@@ -2286,7 +2286,7 @@
 		},
 		{
 		  "id": "patch-details-view",
-		  "title": "Patch Details View",
+		  "title": "补丁详情视图",
 		  "order": 35,
 		  "properties": {
 			"gitlens.views.patchDetails.files.layout": {
@@ -2346,7 +2346,7 @@
 		},
 		{
 		  "id": "file-annotations",
-		  "title": "File Annotations",
+		  "title": "文件注释",
 		  "order": 14,
 		  "properties": {
 			"gitlens.fileAnnotations.dismissOnEscape": {
@@ -2403,7 +2403,7 @@
 		},
 		{
 		  "id": "file-blame",
-		  "title": "File Blame",
+		  "title": "文件追溯",
 		  "order": 15,
 		  "properties": {
 			"gitlens.blame.toggleMode": {
@@ -2547,7 +2547,7 @@
 		},
 		{
 		  "id": "file-changes",
-		  "title": "File Changes",
+		  "title": "文件更改",
 		  "order": 16,
 		  "properties": {
 			"gitlens.changes.toggleMode": {
@@ -2596,7 +2596,7 @@
 		},
 		{
 		  "id": "file-heatmap",
-		  "title": "File Heatmap",
+		  "title": "文件热图",
 		  "order": 17,
 		  "properties": {
 			"gitlens.heatmap.toggleMode": {
@@ -2672,7 +2672,7 @@
 		},
 		{
 		  "id": "graph",
-		  "title": "Commit Graph",
+		  "title": "提交图",
 		  "order": 200,
 		  "properties": {
 			"gitlens.graph.allowMultiple": {
@@ -2941,7 +2941,7 @@
 		},
 		{
 		  "id": "cloud-patches",
-		  "title": "Cloud Patches (Preview)",
+		  "title": "云补丁 (预览)",
 		  "order": 300,
 		  "properties": {
 			"gitlens.cloudPatches.enabled": {
@@ -2955,7 +2955,7 @@
 		},
 		{
 		  "id": "focus",
-		  "title": "Launchpad (Preview)",
+		  "title": "启动板 (预览)",
 		  "order": 400,
 		  "properties": {
 			"gitlens.launchpad.ignoredRepositories": {
@@ -3112,7 +3112,7 @@
 		},
 		{
 		  "id": "visual-history",
-		  "title": "Visual File History",
+		  "title": "可视化文件历史",
 		  "order": 500,
 		  "properties": {
 			"gitlens.visualHistory.allowMultiple": {
@@ -3133,7 +3133,7 @@
 		},
 		{
 		  "id": "rebase-editor",
-		  "title": "Interactive Rebase Editor",
+		  "title": "交互式变基编辑器",
 		  "order": 600,
 		  "properties": {
 			"gitlens.rebaseEditor.ordering": {
@@ -3175,7 +3175,7 @@
 		},
 		{
 		  "id": "git-command-palette",
-		  "title": "Git Command Palette",
+		  "title": "Git 命令面板",
 		  "order": 700,
 		  "properties": {
 			"gitlens.gitCommands.avatars": {
@@ -3306,7 +3306,7 @@
 		},
 		{
 		  "id": "integrations",
-		  "title": "Integrations",
+		  "title": "集成",
 		  "order": 800,
 		  "properties": {
 			"gitlens.autolinks": {
@@ -3524,7 +3524,7 @@
 		},
 		{
 		  "id": "terminal",
-		  "title": "Terminal",
+		  "title": "终端",
 		  "order": 900,
 		  "properties": {
 			"gitlens.terminalLinks.enabled": {
@@ -3552,7 +3552,7 @@
 		},
 		{
 		  "id": "ai",
-		  "title": "AI (Experimental)",
+		  "title": "AI (实验性)",
 		  "order": 1000,
 		  "properties": {
 			"gitlens.ai.experimental.generateCommitMessage.enabled": {
@@ -3656,7 +3656,7 @@
 		},
 		{
 		  "id": "date-times",
-		  "title": "Date & Times",
+		  "title": "日期与时间",
 		  "order": 1100,
 		  "properties": {
 			"gitlens.defaultDateStyle": {
@@ -3733,7 +3733,7 @@
 		},
 		{
 		  "id": "sorting",
-		  "title": "Sorting",
+		  "title": "排序",
 		  "order": 1200,
 		  "properties": {
 			"gitlens.sortRepositoriesBy": {
@@ -3822,7 +3822,7 @@
 		},
 		{
 		  "id": "menus-toolbars",
-		  "title": "Menus & Toolbars",
+		  "title": "菜单与工具栏",
 		  "order": 1300,
 		  "properties": {
 			"gitlens.menus": {
@@ -4209,7 +4209,7 @@
 		},
 		{
 		  "id": "keyboard",
-		  "title": "Keyboard Shortcuts",
+		  "title": "快捷键",
 		  "order": 1400,
 		  "properties": {
 			"gitlens.keymap": {
@@ -4233,7 +4233,7 @@
 		},
 		{
 		  "id": "modes",
-		  "title": "Modes",
+		  "title": "模式",
 		  "order": 1500,
 		  "properties": {
 			"gitlens.mode.statusBar.enabled": {
@@ -4411,7 +4411,7 @@
 		},
 		{
 		  "id": "gitkraken",
-		  "title": "GitKraken",
+		  "title": "X-Tech",
 		  "order": 9000,
 		  "properties": {
 			"gitlens.gitKraken.activeOrganizationId": {
@@ -4424,7 +4424,7 @@
 		},
 		{
 		  "id": "experimental",
-		  "title": "Experimental",
+		  "title": "实验性",
 		  "order": 9500,
 		  "properties": {
 			"gitlens.cloudPatches.experimental.layout": {
@@ -4446,7 +4446,7 @@
 		},
 		{
 		  "id": "advanced",
-		  "title": "Advanced",
+		  "title": "高级功能",
 		  "order": 10000,
 		  "properties": {
 			"gitlens.detectNestedRepositories": {
@@ -4719,7 +4719,7 @@
 		},
 		{
 		  "id": "general",
-		  "title": "General",
+		  "title": "通用",
 		  "order": 0,
 		  "properties": {
 			"gitlens.showWelcomeOnInstall": {
@@ -17171,7 +17171,7 @@
 		  },
 		  {
 			"id": "gitlens.views.workspaces",
-			"name": "XUXU Git 工作空间",
+			"name": "X-Tech 工作空间",
 			"when": "!gitlens:untrusted && !gitlens:hasVirtualFolders",
 			"contextualTitle": "GitLens",
 			"icon": "$(gitlens-workspaces-view)",
@@ -17181,7 +17181,7 @@
 		  {
 			"type": "webview",
 			"id": "gitlens.views.account",
-			"name": "XUXU Git 账户",
+			"name": "X-Tech 账户",
 			"contextualTitle": "GitLens",
 			"icon": "$(gitlens-gitlens)",
 			"initialSize": 1,
@@ -17349,7 +17349,7 @@
 		"walkthroughs": [
 		{
 			"id": "welcome",
-			"title": "开始使用 GitLens",
+			"title": "开始使用 XUXU Git",
 			"description": "发现和个性化增强 Git 体验的功能",
 			"steps": [
 			{
@@ -17407,7 +17407,7 @@
 			},
 			{
 				"id": "pro-paid",
-				"title": "Pro增强功能",
+				"title": "Pro 增强功能",
 				"description": "您拥有XUXU Git的全部功能，包括[Pro功能](https://gitkraken.com/gitlens/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links)和[GitKraken DevEx平台](https://gitkraken.com/devex?utm_source=gitlens-extension&utm_medium=in-app-links)。\n\n**Pro功能**\n$(gitlens-graph)  [提交图](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化您的存储库并跟踪所有进行中的工作\n$(rocket)  [启动台](command:gitlens.openWalkthrough?%7B%22step%22%3A%22launchpad%22,%22source%22%3A%22walkthrough%22%7D) — 保持专注并确保您的团队不受阻碍\n$(gitlens-code-suggestion)  [代码建议](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 让您的代码评审摆脱不必要的限制\n$(gitlens-cloud-patch)  [云补丁](command:gitlens.openWalkthrough?%7B%22step%22%3A%22code-collab%22,%22source%22%3A%22walkthrough%22%7D) — 轻松且安全地与您的团队共享代码\n$(gitlens-worktrees-view)  **工作树** — 同时处理多个分支\n$(gitlens-workspaces-view)  **工作区** — 将多个存储库分组并管理\n$(graph-scatter)  [可视化文件历史](command:gitlens.openWalkthrough?%7B%22step%22%3A%22visualize%22,%22source%22%3A%22walkthrough%22%7D) — 可视化文件的演变并快速识别最具影响力的更改是何时由谁做出的",
 				"media": {
 				"markdown": "walkthroughs/welcome/pro-paid.md"

@@ -1,3 +1,12 @@
+/*
+ * @Description:
+ * @Author: xuxu
+ * @Date: 2024-06-15 14:39:13
+ * @LastEditors: xuxu
+ * @LastEditTime: 2024-06-26 21:59:46
+ * @Email: xuxuchan1988@gmail.com
+ * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
+ */
 import { html, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
@@ -92,29 +101,29 @@ export class GlCommitDetails extends GlDetailsBase {
 	private renderEmptyContent() {
 		return html`
 			<div class="section section--empty" id="empty">
-				<p>Rich details for commits and stashes are shown as you navigate:</p>
+				<p>在您导航时显示提交和暂存的丰富细节：</p>
 
 				<ul class="bulleted">
-					<li>lines in the text editor</li>
+					<li>文本编辑器中的行</li>
 					<li>
-						commits in the <a href="command:gitlens.showGraph">Commit Graph</a>,
-						<a href="command:gitlens.showTimelineView">Visual File History</a>, or
-						<a href="command:gitlens.showCommitsView">Commits view</a>
+						在<a href="command:gitlens.showGraph">提交图</a>、
+						<a href="command:gitlens.showTimelineView">可视化文件历史</a>或
+						<a href="command:gitlens.showCommitsView">提交视图</a>中的提交
 					</li>
-					<li>stashes in the <a href="command:gitlens.showStashesView">Stashes view</a></li>
+					<li>在<a href="command:gitlens.showStashesView">暂存视图</a>中的暂存</li>
 				</ul>
 
-				<p>Alternatively, show your work-in-progress, or search for or choose a commit</p>
+				<p>或者，展示您的进行中工作，或搜索或选择一个提交</p>
 
 				<p class="button-container">
 					<span class="button-group button-group--single">
-						<gl-button full data-action="wip">Overview</gl-button>
+						<gl-button full data-action="wip">概览</gl-button>
 					</span>
 				</p>
 				<p class="button-container">
 					<span class="button-group button-group--single">
-						<gl-button full data-action="pick-commit">Choose Commit...</gl-button>
-						<gl-button density="compact" data-action="search-commit" tooltip="Search for Commit"
+						<gl-button full data-action="pick-commit">选择提交...</gl-button>
+						<gl-button density="compact" data-action="search-commit" tooltip="搜索提交"
 							><code-icon icon="search"></code-icon
 						></gl-button>
 					</span>
@@ -142,7 +151,7 @@ export class GlCommitDetails extends GlDetailsBase {
 							.dateFormat="${this.preferences?.dateFormat}"
 							.avatarUrl="${details.author.avatar ?? ''}"
 							.showAvatar="${this.preferences?.avatars ?? true}"
-							.actionLabel="${details.sha === uncommittedSha ? 'modified' : 'committed'}"
+							.actionLabel="${details.sha === uncommittedSha ? '已更改' : '已提交'}"
 						></commit-identity>
 					`,
 				)}
@@ -166,7 +175,7 @@ export class GlCommitDetails extends GlDetailsBase {
 	}
 
 	private renderJiraLink() {
-		if (this.state == null) return 'Jira issues';
+		if (this.state == null) return 'Jira 议题';
 
 		const { hasAccount, hasConnectedJira } = this.state;
 
@@ -181,7 +190,7 @@ export class GlCommitDetails extends GlDetailsBase {
 						},
 					} satisfies ManageCloudIntegrationsCommandArgs),
 				)}"
-				>Connect to Jira Cloud</a
+				>连接到 Jira 云</a
 			>
 			&mdash; ${hasAccount ? '' : 'sign up and '}get access to automatic rich Jira autolinks`;
 
@@ -401,14 +410,14 @@ export class GlCommitDetails extends GlDetailsBase {
 		// TODO: add loading and response states
 		return html`
 			<webview-pane collapsable data-region="explain-pane">
-				<span slot="title">Explain (AI)</span>
+				<span slot="title">解释 (AI)</span>
 				<span slot="subtitle"><code-icon icon="beaker" size="12"></code-icon></span>
 				<action-nav slot="actions">
-					<action-item data-action="switch-ai" label="Switch AI Model" icon="hubot"></action-item>
+					<action-item data-action="switch-ai" label="切换 AI 模型" icon="hubot"></action-item>
 				</action-nav>
 
 				<div class="section">
-					<p>Let AI assist in understanding the changes made with this commit.</p>
+					<p>让AI帮助理解这次提交所做的更改。</p>
 					<p class="button-container">
 						<span class="button-group button-group--single">
 							<gl-button
@@ -418,8 +427,7 @@ export class GlCommitDetails extends GlDetailsBase {
 								aria-busy="${this.explainBusy ? 'true' : nothing}"
 								@click=${this.onExplainChanges}
 								@keydown=${this.onExplainChanges}
-								><code-icon icon="loading" modifier="spin" slot="prefix"></code-icon>Explain
-								Changes</gl-button
+								><code-icon icon="loading" modifier="spin" slot="prefix"></code-icon>解释修改</gl-button
 							>
 						</span>
 					</p>
