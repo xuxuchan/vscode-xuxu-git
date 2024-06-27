@@ -225,13 +225,7 @@ export class GlFeatureBadge extends LitElement {
 		switch (this.state) {
 			case SubscriptionState.Paid:
 				content = html`<p>
-					Your
-					<gl-tooltip hoist content="Show Account view">
-						<a href="${generateCommandLink(Commands.ShowAccountView, undefined)}"
-							>${getSubscriptionPlanName(this.subscription?.plan.actual.id ?? SubscriptionPlanId.Pro)}</a
-						>
-					</gl-tooltip>
-					plan provides access to all Pro features.
+					您的订阅计划提供了访问所有专业功能的权限。
 				</p>`;
 				break;
 

@@ -325,7 +325,7 @@ export class AIProviderService implements Disposable {
 				: await this.container.git.getCommit(commitOrRepoPath.repoPath, commitOrRepoPath.ref);
 			options = shaOrOptions;
 		}
-		if (commit == null) throw new Error('Unable to find commit');
+		if (commit == null) throw new Error('找不到提交');
 
 		const diff = await this.container.git.getDiff(commit.repoPath, commit.sha);
 		if (!diff?.contents) throw new Error('No changes found to explain.');

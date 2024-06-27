@@ -800,7 +800,7 @@ export class PatchDetailsWebviewProvider
 
 	private async explainRequest<T extends typeof ExplainRequest>(requestType: T, msg: IpcCallMessageType<T>) {
 		if (this._context.draft?.draftType !== 'cloud') {
-			void this.host.respond(requestType, msg, { error: { message: 'Unable to find patch' } });
+			void this.host.respond(requestType, msg, { error: { message: '找不到补丁' } });
 			return;
 		}
 
@@ -809,17 +809,17 @@ export class PatchDetailsWebviewProvider
 		try {
 			// TODO@eamodio HACK -- only works for the first patch
 			const patch = await this.getDraftPatch(this._context.draft);
-			if (patch == null) throw new Error('Unable to find patch');
+			if (patch == null) throw new Error('找不到补丁');
 
 			const commit = await this.getOrCreateCommitForPatch(patch.gkRepositoryId);
-			if (commit == null) throw new Error('Unable to find commit');
+			if (commit == null) throw new Error('找不到提交');
 
 			const summary = await (
 				await this.container.ai
 			)?.explainCommit(commit, {
 				progress: { location: { viewId: this.host.id } },
 			});
-			if (summary == null) throw new Error('Error retrieving content');
+			if (summary == null) throw new Error('检索内容时出错');
 
 			params = { summary: summary };
 		} catch (ex) {
@@ -851,17 +851,17 @@ export class PatchDetailsWebviewProvider
 		try {
 			// TODO@eamodio HACK -- only works for the first patch
 			// const patch = await this.getDraftPatch(this._context.draft);
-			// if (patch == null) throw new Error('Unable to find patch');
+			// if (patch == null) throw new Error('找不到补丁');
 
 			// const commit = await this.getOrCreateCommitForPatch(patch.gkRepositoryId);
-			// if (commit == null) throw new Error('Unable to find commit');
+			// if (commit == null) throw new Error('找不到提交');
 
 			const summary = await (
 				await this.container.ai
 			)?.generateDraftMessage(repo, {
 				progress: { location: { viewId: this.host.id } },
 			});
-			if (summary == null) throw new Error('Error retrieving content');
+			if (summary == null) throw new Error('检索内容时出错');
 
 			params = extractDraftMessage(summary);
 		} catch (ex) {

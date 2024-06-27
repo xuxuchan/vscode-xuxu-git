@@ -316,7 +316,7 @@ export class GlPatchCreate extends GlTreeBase {
 					() => html`
 						<div class="alert alert--error">
 							<code-icon icon="error"></code-icon>
-							<p class="alert__content">${this.generate!.error!.message ?? 'Error retrieving content'}</p>
+							<p class="alert__content">${this.generate!.error!.message ?? '检索内容时出错'}</p>
 						</div>
 					`,
 				)}

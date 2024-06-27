@@ -1,12 +1,3 @@
-/*
- * @Description:
- * @Author: xuxu
- * @Date: 2024-06-15 14:39:13
- * @LastEditors: xuxu
- * @LastEditTime: 2024-06-26 21:59:46
- * @Email: xuxuchan1988@gmail.com
- * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
- */
 import { html, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
@@ -192,16 +183,16 @@ export class GlCommitDetails extends GlDetailsBase {
 				)}"
 				>连接到 Jira 云</a
 			>
-			&mdash; ${hasAccount ? '' : 'sign up and '}get access to automatic rich Jira autolinks`;
+			&mdash; ${hasAccount ? '' : '注册并'}获得自动丰富的 Jira 自动链接的访问权限`;
 
 		if (hasAccount && hasConnectedJira) {
-			message = html`<i class="codicon codicon-check" style="vertical-align: text-bottom"></i> Jira connected
-				&mdash; automatic rich Jira autolinks are enabled`;
+			message = html`<i class="codicon codicon-check" style="vertical-align: text-bottom"></i> Jira 已连接
+				&mdash; 已启用自动丰富的 Jira 自动链接`;
 		}
 
 		return html`<gl-popover hoist class="inline-popover">
 			<span class="tooltip-hint" slot="anchor"
-				>Jira issues <code-icon icon="${hasConnectedJira ? 'check' : 'gl-unplug'}"></code-icon
+				>Jira 议题 <code-icon icon="${hasConnectedJira ? 'check' : 'gl-unplug'}"></code-icon
 			></span>
 			<span slot="content">${message}</span>
 		</gl-popover>`;
@@ -442,7 +433,7 @@ export class GlCommitDetails extends GlDetailsBase {
 									this.explain?.error,
 									() =>
 										html`<p class="ai-content__summary scrollable">
-											${this.explain!.error!.message ?? 'Error retrieving content'}
+											${this.explain!.error!.message ?? '检索内容时出错'}
 										</p>`,
 								)}
 								${when(
@@ -500,7 +491,7 @@ export class GlCommitDetails extends GlDetailsBase {
 		const actions = [
 			{
 				icon: 'go-to-file',
-				label: 'Open file',
+				label: '打开文件',
 				action: 'file-open',
 			},
 		];
@@ -511,7 +502,7 @@ export class GlCommitDetails extends GlDetailsBase {
 
 		actions.push({
 			icon: 'git-compare',
-			label: 'Open Changes with Working File',
+			label: '与工作文件的更改进行对比',
 			action: 'file-compare-working',
 		});
 
@@ -519,12 +510,12 @@ export class GlCommitDetails extends GlDetailsBase {
 			actions.push(
 				{
 					icon: 'globe',
-					label: 'Open on remote',
+					label: '在远程中打开',
 					action: 'file-open-on-remote',
 				},
 				{
 					icon: 'ellipsis',
-					label: 'Show more actions',
+					label: '更多操作',
 					action: 'file-more-actions',
 				},
 			);

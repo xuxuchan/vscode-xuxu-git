@@ -229,7 +229,7 @@ export class GlDraftDetails extends GlTreeBase {
 									this.explain?.error,
 									() =>
 										html`<p class="ai-content__summary scrollable">
-											${this.explain!.error!.message ?? 'Error retrieving content'}
+											${this.explain!.error!.message ?? '检索内容时出错'}
 										</p>`,
 								)}
 								${when(

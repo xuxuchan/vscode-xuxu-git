@@ -1,12 +1,3 @@
-/*
- * @Description:
- * @Author: xuxu
- * @Date: 2024-06-15 14:39:13
- * @LastEditors: xuxu
- * @LastEditTime: 2024-06-26 21:09:50
- * @Email: xuxuchan1988@gmail.com
- * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
- */
 import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { when } from 'lit/directives/when.js';

@@ -1,12 +1,3 @@
-/*
- * @Description:
- * @Author: xuxu
- * @Date: 2024-06-15 14:39:13
- * @LastEditors: xuxu
- * @LastEditTime: 2024-06-26 23:59:09
- * @Email: xuxuchan1988@gmail.com
- * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
- */
 import { Badge, defineGkElement } from '@gitkraken/shared-web-components';
 import { html, LitElement, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
@@ -446,15 +437,14 @@ export class GlCommitDetailsApp extends LitElement {
 			${when(
 				this.wipStatus.working > 0,
 				() =>
-					html`<hr />
-						${pluralize('个工作中的更改', this.wipStatus!.working)}`,
+					//html`<hr />${pluralize('个工作中的更改', this.wipStatus!.working)}`,
+					html`<hr />${this.wipStatus!.working}个工作中的更改`,
 			)}
 		`;
 	}
 
 	renderTopSection() {
 		const isWip = this.state?.mode === 'wip';
-		// todo 待修改
 		return html`
 			<div class="inspect-header">
 				<nav class="inspect-header__tabs">
@@ -465,20 +455,20 @@ export class GlCommitDetailsApp extends LitElement {
 						<span slot="content"
 							>${this.state?.commit != null
 								? !this.isStash
-									? html`Inspect Commit
+									? html`审查提交
 											<span class="md-code"
 												><code-icon icon="git-commit"></code-icon> ${this.state.commit
 													.shortSha}</span
 											>`
-									: html`Inspect Stash
+									: html`审查暂存
 											<span class="md-code"
 												><code-icon icon="gl-stashes-view"></code-icon> #${this.state.commit
 													.stashNumber}</span
 											>`
-								: 'Inspect'}${this.state?.pinned
-								? html`(pinned)
+								: '审查'}${this.state?.pinned
+								? html`(已固定)
 										<hr />
-										Automatic following is suspended while pinned`
+										在固定时自动跟随被暂停`
 								: ''}</span
 						>
 					</gl-tooltip>
@@ -526,7 +516,7 @@ export class GlCommitDetailsApp extends LitElement {
 								.orgSettings=${this.state?.orgSettings}
 								.generate=${this.generate}
 								.isUncommitted=${true}
-								.emptyText=${'No working changes'}
+								.emptyText=${'没有工作中的更改'}
 								.draftState=${this.draftState}
 								@draft-state-changed=${(e: CustomEvent<{ inReview: boolean }>) =>
 									this.onDraftStateChanged(e.detail.inReview)}
@@ -607,14 +597,14 @@ export class GlCommitDetailsApp extends LitElement {
 		try {
 			const result = await this._hostIpc.sendRequest(ExplainRequest, undefined);
 			if (result.error) {
-				this.explain = { error: { message: result.error.message ?? 'Error retrieving content' } };
+				this.explain = { error: { message: result.error.message ?? '检索内容时出错' } };
 			} else if (result.summary) {
 				this.explain = { summary: result.summary };
 			} else {
 				this.explain = undefined;
 			}
 		} catch (ex) {
-			this.explain = { error: { message: 'Error retrieving content' } };
+			this.explain = { error: { message: '检索内容时出错' } };
 		}
 	}
 
@@ -623,7 +613,7 @@ export class GlCommitDetailsApp extends LitElement {
 			const result = await this._hostIpc.sendRequest(GenerateRequest, undefined);
 
 			if (result.error) {
-				this.generate = { error: { message: result.error.message ?? 'Error retrieving content' } };
+				this.generate = { error: { message: result.error.message ?? '检索内容时出错' } };
 			} else if (result.title || result.description) {
 				this.generate = {
 					title: result.title,
@@ -642,7 +632,7 @@ export class GlCommitDetailsApp extends LitElement {
 				this.generate = undefined;
 			}
 		} catch (ex) {
-			this.generate = { error: { message: 'Error retrieving content' } };
+			this.generate = { error: { message: '检索内容时出错' } };
 		}
 		this.requestUpdate('generate');
 	}

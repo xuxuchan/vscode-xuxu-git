@@ -1,12 +1,3 @@
-/*
- * @Description:
- * @Author: xuxu
- * @Date: 2024-06-15 14:39:13
- * @LastEditors: xuxu
- * @LastEditTime: 2024-06-26 21:33:49
- * @Email: xuxuchan1988@gmail.com
- * Copyright (c) 2024 X-Tech Software, All Rights Reserved.
- */
 import type { Selection } from 'vscode';
 import { TreeItem, TreeItemCollapsibleState, window } from 'vscode';
 import type { GitCommitish } from '../../git/gitUri';
