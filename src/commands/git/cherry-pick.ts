@@ -203,10 +203,10 @@ export class CherryPickGitCommand extends QuickCommand<State> {
 						picked: state.references?.map(r => r.ref),
 						placeholder: (context, log) =>
 							log == null
-								? `No pickable commits found on ${getReferenceLabel(context.selectedBranchOrTag, {
+								? `未找到可挑选的提交，在 ${getReferenceLabel(context.selectedBranchOrTag, {
 										icon: false,
 								  })}`
-								: `Choose commits to cherry-pick into ${getReferenceLabel(context.destination, {
+								: `选择提交来优选 ${getReferenceLabel(context.destination, {
 										icon: false,
 								  })}`,
 					},
@@ -232,27 +232,27 @@ export class CherryPickGitCommand extends QuickCommand<State> {
 
 	private *confirmStep(state: CherryPickStepState, context: Context): StepResultGenerator<Flags[]> {
 		const step: QuickPickStep<FlagsQuickPickItem<Flags>> = createConfirmStep(
-			appendReposToTitle(`Confirm ${context.title}`, state, context),
+			appendReposToTitle(`确认 ${context.title}`, state, context),
 			[
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `Will apply ${getReferenceLabel(state.references)} to ${getReferenceLabel(
+					detail: `将会应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
 						context.destination,
 					)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--edit'], {
 					label: `${this.title} & Edit`,
 					description: '--edit',
-					detail: `Will edit and apply ${getReferenceLabel(state.references)} to ${getReferenceLabel(
+					detail: `将会编辑并应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
 						context.destination,
 					)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--no-commit'], {
-					label: `${this.title} without Committing`,
+					label: `${this.title}，不提交`,
 					description: '--no-commit',
-					detail: `Will apply ${getReferenceLabel(state.references)} to ${getReferenceLabel(
+					detail: `将会应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
 						context.destination,
-					)} without Committing`,
+					)} ，不提交`,
 				}),
 			],
 			context,

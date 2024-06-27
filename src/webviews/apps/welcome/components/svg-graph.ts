@@ -162,7 +162,7 @@ export class GraphSvg extends LitElement {
 
 				<circle class="lane5-foreground container" cx="305" cy="245" r="8" stroke-width="2"/>
 
-				<text x="366" y="33.5" class="foreground wip"><tspan>Work in progress</tspan><tspan dx="9" dy="1" class="codicon">&#xea73;</tspan><tspan dx="3" dy="-1">2</tspan><tspan dx="9" dy="1" class="codicon">&#xea60;</tspan><tspan dx="3" dy="-1">1</tspan></text>
+				<text x="366" y="33.5" class="foreground wip"><tspan>工作进行中</tspan><tspan dx="9" dy="1" class="codicon">&#xea73;</tspan><tspan dx="3" dy="-1">2</tspan><tspan dx="9" dy="1" class="codicon">&#xea60;</tspan><tspan dx="3" dy="-1">1</tspan></text>
 				<text class="foreground messages">
 					<tspan x="366" y="59.5">Improves performance &amp; reduces bundle size</tspan>
 					<tspan x="366" y="86.5">Adds brand new welcome experience</tspan>

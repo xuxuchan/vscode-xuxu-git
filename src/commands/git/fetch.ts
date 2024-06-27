@@ -44,7 +44,7 @@ type FetchStepState<T extends State = State> = ExcludeSome<StepState<T>, 'repos'
 
 export class FetchGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: FetchGitCommandArgs) {
-		super(container, 'fetch', 'fetch', 'Fetch', { description: 'fetches changes from one or more remotes' });
+		super(container, 'fetch', 'fetch', 'Fetch', { description: '从一个或多个远程获取更改' });
 
 		let counter = 0;
 		if (args?.state?.repos != null && (!Array.isArray(args.state.repos) || args.state.repos.length !== 0)) {
@@ -165,19 +165,19 @@ export class FetchGitCommand extends QuickCommand<State> {
 						detail: `Will fetch ${reposToFetch}`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--prune'], {
-						label: `${this.title} & Prune`,
+						label: `${this.title} & 修剪`,
 						description: '--prune',
-						detail: `Will fetch and prune ${reposToFetch}`,
+						detail: `将会获取并修剪 ${reposToFetch}`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--all'], {
-						label: `${this.title} All`,
+						label: `${this.title} 全部`,
 						description: '--all',
-						detail: `Will fetch all remotes of ${reposToFetch}`,
+						detail: `将会获取 ${reposToFetch} 的所有远程分支`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--all', '--prune'], {
-						label: `${this.title} All & Prune`,
+						label: `${this.title} 全部 & 修剪`,
 						description: '--all --prune',
-						detail: `Will fetch and prune all remotes of ${reposToFetch}`,
+						detail: `将获取并修剪 ${reposToFetch} 的所有远程分支`,
 					}),
 				],
 				context,

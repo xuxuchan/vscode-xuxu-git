@@ -53,7 +53,7 @@ type MergeStepState<T extends State = State> = ExcludeSome<StepState<T>, 'repo',
 export class MergeGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: MergeGitCommandArgs) {
 		super(container, 'merge', 'merge', 'Merge', {
-			description: 'integrates changes from a specified branch into the current branch',
+			description: '将指定分支的更改集成到当前分支中',
 		});
 
 		let counter = 0;
@@ -139,7 +139,7 @@ export class MergeGitCommand extends QuickCommand<State> {
 				});
 
 				const result: StepResult<GitReference> = yield* pickBranchOrTagStep(state as MergeStepState, context, {
-					placeholder: context => `Choose a branch${context.showTags ? ' or tag' : ''} to merge`,
+					placeholder: context => `选择一个分支${context.showTags ? ' 或标签' : ''} 来合并`,
 					picked: context.selectedBranchOrTag?.ref,
 					value: context.selectedBranchOrTag == null ? state.reference?.ref : undefined,
 					additionalButtons: [pickCommitToggle],
@@ -180,10 +180,10 @@ export class MergeGitCommand extends QuickCommand<State> {
 					onDidLoadMore: log => context.cache.set(ref, Promise.resolve(log)),
 					placeholder: (context, log) =>
 						log == null
-							? `No commits found on ${getReferenceLabel(context.selectedBranchOrTag, {
+							? `未找到提交，在 ${getReferenceLabel(context.selectedBranchOrTag, {
 									icon: false,
 							  })}`
-							: `Choose a commit to merge into ${getReferenceLabel(context.destination, {
+							: `选择一个提交合并到 ${getReferenceLabel(context.destination, {
 									icon: false,
 							  })}`,
 					picked: state.reference?.ref,
@@ -218,13 +218,13 @@ export class MergeGitCommand extends QuickCommand<State> {
 					label: 'OK',
 					detail: `${getReferenceLabel(context.destination, {
 						capitalize: true,
-					})} is already up to date with ${getReferenceLabel(state.reference)}`,
+					})} 已经是最新的，与 ${getReferenceLabel(state.reference)}`,
 				}),
 				{
-					placeholder: `Nothing to merge; ${getReferenceLabel(context.destination, {
+					placeholder: `没有可合并的内容; ${getReferenceLabel(context.destination, {
 						label: false,
 						icon: false,
-					})} is already up to date`,
+					})} 已经是最新的`,
 				},
 			);
 			const selection: StepSelection<typeof step> = yield step;
@@ -237,38 +237,38 @@ export class MergeGitCommand extends QuickCommand<State> {
 			[
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `Will merge ${pluralize('commit', count)} from ${getReferenceLabel(
+					detail: `将会合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
 						state.reference,
-					)} into ${getReferenceLabel(context.destination)}`,
+					)} 到 ${getReferenceLabel(context.destination)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--ff-only'], {
 					label: `Fast-forward ${this.title}`,
 					description: '--ff-only',
-					detail: `Will fast-forward merge ${pluralize('commit', count)} from ${getReferenceLabel(
+					detail: `将会快进合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
 						state.reference,
-					)} into ${getReferenceLabel(context.destination)}`,
+					)} 到 ${getReferenceLabel(context.destination)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--squash'], {
 					label: `Squash ${this.title}`,
 					description: '--squash',
-					detail: `Will squash ${pluralize('commit', count)} from ${getReferenceLabel(
+					detail: `将会压缩 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
 						state.reference,
-					)} into one when merging into ${getReferenceLabel(context.destination)}`,
+					)} 为一个提交，在合并到 ${getReferenceLabel(context.destination)} 时`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--no-ff'], {
 					label: `${this.title} without Fast-Forwarding`,
 					description: '--no-ff',
-					detail: `Will create a merge commit when merging ${pluralize(
-						'commit',
+					detail: `将会创建一个合并提交，当合并 ${pluralize(
+						'个提交',
 						count,
-					)} from ${getReferenceLabel(state.reference)} into ${getReferenceLabel(context.destination)}`,
+					)} 从 ${getReferenceLabel(state.reference)} 到 ${getReferenceLabel(context.destination)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--no-ff', '--no-commit'], {
 					label: `${this.title} without Fast-Forwarding or Committing`,
 					description: '--no-ff --no-commit',
-					detail: `Will merge ${pluralize('commit', count)} from ${getReferenceLabel(
+					detail: `将会合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
 						state.reference,
-					)} into ${getReferenceLabel(context.destination)} without Committing`,
+					)} 到 ${getReferenceLabel(context.destination)}，不提交`,
 				}),
 			],
 		);

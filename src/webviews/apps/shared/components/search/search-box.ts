@@ -117,7 +117,7 @@ export class GlSearchBox extends GlElement {
 	label = 'Search';
 
 	@property({ type: String })
-	placeholder = 'Search commits (↑↓ for history), e.g. "Updates dependencies" author:eamodio';
+	placeholder = '搜索提交（↑↓ 查看历史），例如：“更新依赖” 作者：xuxu';
 
 	@property({ type: String })
 	value = '';

@@ -48,7 +48,7 @@ type PullStepState<T extends State = State> = ExcludeSome<StepState<T>, 'repos',
 export class PullGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: PullGitCommandArgs) {
 		super(container, 'pull', 'pull', 'Pull', {
-			description: 'fetches and integrates changes from a remote into the current branch',
+			description: '从远程获取并集成更改到当前分支',
 		});
 
 		let counter = 0;
@@ -144,15 +144,15 @@ export class PullGitCommand extends QuickCommand<State> {
 		let step: QuickPickStep<FlagsQuickPickItem<Flags>>;
 
 		if (state.repos.length > 1) {
-			step = this.createConfirmStep(appendReposToTitle(`Confirm ${context.title}`, state, context), [
+			step = this.createConfirmStep(appendReposToTitle(`确认 ${context.title}`, state, context), [
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `Will pull ${state.repos.length} repos`,
+					detail: `将会拉取 ${state.repos.length} 个仓库`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--rebase'], {
-					label: `${this.title} with Rebase`,
+					label: `${this.title} 使用变基`,
 					description: '--rebase',
-					detail: `Will pull ${state.repos.length} repos by rebasing`,
+					detail: `将会变基拉取 ${state.repos.length} 个仓库`,
 				}),
 			]);
 		} else if (isBranchReference(state.reference)) {
@@ -161,8 +161,8 @@ export class PullGitCommand extends QuickCommand<State> {
 					appendReposToTitle(`Confirm ${context.title}`, state, context),
 					[],
 					createDirectiveQuickPickItem(Directive.Cancel, true, {
-						label: `Cancel ${this.title}`,
-						detail: 'Cannot pull a remote branch',
+						label: `取消 ${this.title}`,
+						detail: '无法拉取一个远程分支',
 					}),
 				);
 			} else {
@@ -174,17 +174,17 @@ export class PullGitCommand extends QuickCommand<State> {
 						appendReposToTitle(`Confirm ${context.title}`, state, context),
 						[],
 						createDirectiveQuickPickItem(Directive.Cancel, true, {
-							label: `Cancel ${this.title}`,
-							detail: 'Cannot pull a branch until it has been published',
+							label: `取消 ${this.title}`,
+							detail: '在分支被发布之前无法拉取',
 						}),
 					);
 				} else {
 					step = this.createConfirmStep(appendReposToTitle(`Confirm ${context.title}`, state, context), [
 						createFlagsQuickPickItem<Flags>(state.flags, [], {
 							label: this.title,
-							detail: `Will pull${
+							detail: `将会拉取${
 								branch.state.behind
-									? ` ${pluralize('commit', branch.state.behind)} into ${getReferenceLabel(branch)}`
+									? ` ${pluralize('个提交', branch.state.behind)} 到 ${getReferenceLabel(branch)}`
 									: ` into ${getReferenceLabel(branch)}`
 							}`,
 						}),
@@ -202,20 +202,20 @@ export class PullGitCommand extends QuickCommand<State> {
 
 			const pullDetails =
 				status?.state.behind != null
-					? ` ${pluralize('commit', status.state.behind)} into $(repo) ${repo.formattedName}`
-					: ` into $(repo) ${repo.formattedName}`;
+					? ` ${pluralize('个提交', status.state.behind)} 到 $(repo) ${repo.formattedName}`
+					: ` 到 $(repo) ${repo.formattedName}`;
 
 			step = this.createConfirmStep(
-				appendReposToTitle(`Confirm ${context.title}`, state, context, lastFetchedOn),
+				appendReposToTitle(`确认 ${context.title}`, state, context, lastFetchedOn),
 				[
 					createFlagsQuickPickItem<Flags>(state.flags, [], {
 						label: this.title,
-						detail: `Will pull${pullDetails}`,
+						detail: `将会拉取${pullDetails}`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--rebase'], {
-						label: `${this.title} with Rebase`,
+						label: `${this.title} 使用变基`,
 						description: '--rebase',
-						detail: `Will pull and rebase${pullDetails}`,
+						detail: `将会拉取并变基${pullDetails}`,
 					}),
 				],
 				undefined,
@@ -224,7 +224,7 @@ export class PullGitCommand extends QuickCommand<State> {
 					onDidClickButton: async (quickpick, button) => {
 						if (button !== FetchQuickInputButton || quickpick.busy) return false;
 
-						quickpick.title = `Confirm ${context.title}${pad(GlyphChars.Dot, 2, 2)}Fetching${
+						quickpick.title = `确认 ${context.title}${pad(GlyphChars.Dot, 2, 2)}获取中${
 							GlyphChars.Ellipsis
 						}`;
 

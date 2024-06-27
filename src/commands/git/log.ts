@@ -49,7 +49,7 @@ export interface LogGitCommandArgs {
 export class LogGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: LogGitCommandArgs) {
 		super(container, 'log', 'history', 'Commits', {
-			description: 'aka log, shows commit history',
+			description: '又名日志，显示提交历史',
 		});
 
 		let counter = 0;
@@ -124,7 +124,7 @@ export class LogGitCommand extends QuickCommand<State> {
 
 			if (state.counter < 2 || state.reference == null) {
 				const result = yield* pickBranchOrTagStep(state, context, {
-					placeholder: 'Choose a branch or tag to show its commit history',
+					placeholder: '选择一个分支或标签以显示其提交历史',
 					picked: context.selectedBranchOrTag?.ref,
 					value: context.selectedBranchOrTag == null ? state.reference?.ref : undefined,
 					ranges: true,
@@ -175,10 +175,10 @@ export class LogGitCommand extends QuickCommand<State> {
 					onDidLoadMore: log => context.cache.set(ref, Promise.resolve(log)),
 					placeholder: (context, log) =>
 						log == null
-							? `No commits found in ${getReferenceLabel(context.selectedBranchOrTag, {
+							? `未找到提交，在 ${getReferenceLabel(context.selectedBranchOrTag, {
 									icon: false,
 							  })}`
-							: 'Choose a commit',
+							: '选择一个提交',
 					picked: state.reference?.ref,
 				});
 				if (result === StepResultBreak) continue;

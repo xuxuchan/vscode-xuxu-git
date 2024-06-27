@@ -356,7 +356,7 @@ export class SearchGitCommand extends QuickCommand<State> {
 
 		const step = createPickStep<QuickPickItemOfT<NormalizedSearchOperators>>({
 			title: appendReposToTitle(context.title, state, context),
-			placeholder: 'e.g. "Updates dependencies" author:eamodio',
+			placeholder: '例如：“更新依赖” 作者：xuxu',
 			ignoreFocusOut: true,
 			matchOnDescription: true,
 			matchOnDetail: true,
@@ -424,7 +424,7 @@ export class SearchGitCommand extends QuickCommand<State> {
 
 					quickpick.items = [
 						{
-							label: 'Search for',
+							label: '搜索 ',
 							description: quickpick.value,
 							item: quickpick.value as NormalizedSearchOperators,
 							picked: true,
@@ -475,8 +475,8 @@ async function updateSearchQuery(
 		const contributors = await showContributorsPicker(
 			context.container,
 			state.repo,
-			'Search by Author',
-			'Choose contributors to include commits from',
+			'按作者搜索',
+			'选择要包含提交的贡献者',
 			{
 				appendReposToTitle: true,
 				clearButton: true,
@@ -513,8 +513,8 @@ async function updateSearchQuery(
 			canSelectFiles: usePickers.file.type === 'file',
 			canSelectFolders: usePickers.file.type === 'folder',
 			canSelectMany: usePickers.file.type === 'file',
-			title: 'Search by File',
-			openLabel: 'Add to Search',
+			title: '按文件搜索',
+			openLabel: '添加到搜索',
 			defaultUri: state.repo.folder?.uri,
 		});
 

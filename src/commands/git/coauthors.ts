@@ -30,7 +30,7 @@ type CoAuthorStepState<T extends State = State> = ExcludeSome<StepState<T>, 'rep
 export class CoAuthorsGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: CoAuthorsGitCommandArgs) {
 		super(container, 'co-authors', 'co-authors', 'Add Co-Authors', {
-			description: 'adds co-authors to a commit message',
+			description: '将共同作者添加到提交信息中',
 		});
 
 		let counter = 0;
@@ -140,7 +140,7 @@ export class CoAuthorsGitCommand extends QuickCommand<State> {
 				const result = yield* pickContributorsStep(
 					state as CoAuthorStepState,
 					context,
-					'Choose contributors to add as co-authors',
+					'选择要添加为共同作者的贡献者',
 				);
 				if (result === StepResultBreak) {
 					// If we skipped the previous step, make sure we back up past it
