@@ -1,12 +1,3 @@
-/*
- * @Description:
- * @Author: xuxu
- * @Date: 2024-06-15 14:39:13
- * @LastEditors: xuxu
- * @LastEditTime: 2024-06-23 15:22:14
- * @Email: xuxuchan1988@gmail.com
- * Copyright (c) 2024 XU-Tech Software, All Rights Reserved.
- */
 // NOTE@eamodio This file is referenced in the webviews to we can't use anything vscode or other imports that aren't available in the webviews
 import { getDateDifference } from '../../../system/date';
 import type { Organization } from './organization';

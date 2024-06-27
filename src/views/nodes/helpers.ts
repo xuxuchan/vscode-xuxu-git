@@ -1,11 +1,3 @@
-/*
- * @Author: 许腾
- * @Date: 2024-06-26 18:08:53
- * @LastEditors: 许腾
- * @LastEditTime: 2024-06-27 10:54:14
- * @FilePath: \test\src\views\nodes\helpers.ts
- * @Description: 
- */
 import type { GitCommit } from '../../git/models/commit';
 import type { ViewNode } from './abstract/viewNode';
 import { ContextValues } from './abstract/viewNode';
