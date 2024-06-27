@@ -60,7 +60,8 @@ export class GlDetailsBase extends LitElement {
 
 	get filesChangedPaneLabel() {
 		const fileCount = this.files?.length ?? 0;
-		const filesLabel = fileCount > 0 ? pluralize('文件', fileCount) : '文件';
+		//const filesLabel = fileCount > 0 ? pluralize('文件', fileCount) : '文件';
+		const filesLabel = fileCount > 0 ? `${fileCount}文件` : '文件';
 		return `${filesLabel}已更改`;
 	}
 
@@ -69,22 +70,22 @@ export class GlDetailsBase extends LitElement {
 		const isTree = this.isTree(fileCount);
 		let value = 'tree';
 		let icon = 'list-tree';
-		let label = '树形显示';
+		let label = '树状视图';
 		switch (this.fileLayout) {
 			case 'auto':
 				value = 'list';
 				icon = 'gl-list-auto';
-				label = '列表显示';
+				label = '列表视图';
 				break;
 			case 'list':
 				value = 'tree';
 				icon = 'list-flat';
-				label = '树形显示';
+				label = '树状视图';
 				break;
 			case 'tree':
 				value = 'auto';
 				icon = 'list-tree';
-				label = '自动显示';
+				label = '自动模式';
 				break;
 		}
 

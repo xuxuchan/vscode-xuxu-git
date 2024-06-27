@@ -159,15 +159,15 @@ function assertStateStepRepository(
 	if (state.repo != null && typeof state.repo !== 'string') return;
 
 	debugger;
-	throw new Error('Missing repository');
+	throw new Error('丢失仓库');
 }
 
 const subcommandToTitleMap = new Map<State['subcommand'] | undefined, string>([
 	[undefined, `Worktrees ${proBadgeSuperscript}`],
-	['create', `Create Worktree`],
-	['delete', `Delete Worktrees`],
-	['open', `Open Worktree`],
-	['copy-changes', 'Copy Changes to'],
+	['create', `创建工作树`],
+	['delete', `删除工作树`],
+	['open', `打开工作树`],
+	['copy-changes', '复制更改到'],
 ]);
 function getTitle(subcommand: State['subcommand'] | undefined, suffix?: string) {
 	return `${subcommandToTitleMap.get(subcommand)}${suffix ?? ''}`;
@@ -184,7 +184,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 
 	constructor(container: Container, args?: WorktreeGitCommandArgs) {
 		super(container, 'worktree', 'worktree', `Worktrees ${proBadgeSuperscript}`, {
-			description: `${proBadge}\u00a0\u00a0open, create, or delete worktrees`,
+			description: `${proBadge}\u00a0\u00a0打开、创建、或删除工作树`,
 		});
 
 		let counter = 0;
@@ -339,23 +339,23 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 	private *pickSubcommandStep(state: PartialStepState<State>): StepResultGenerator<State['subcommand']> {
 		const step = createPickStep<QuickPickItemOfT<State['subcommand']>>({
 			title: this.title,
-			placeholder: `Choose a ${this.label} command`,
+			placeholder: `选择一个 ${this.label} 命令`,
 			items: [
 				{
 					label: 'open',
-					description: 'opens the specified worktree',
+					description: '打开指定的工作树',
 					picked: state.subcommand === 'open',
 					item: 'open',
 				},
 				{
 					label: 'create',
-					description: 'creates a new worktree',
+					description: '创建一个新的工作树',
 					picked: state.subcommand === 'create',
 					item: 'create',
 				},
 				{
 					label: 'delete',
-					description: 'deletes the specified worktrees',
+					description: '删除指定的工作树',
 					picked: state.subcommand === 'delete',
 					item: 'delete',
 				},
@@ -386,9 +386,9 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 			if (state.counter < 3 || state.reference == null) {
 				const result = yield* pickBranchOrTagStep(state, context, {
 					placeholder: context =>
-						`Choose a branch${context.showTags ? ' or tag' : ''} to create the new worktree for`,
+						`选择一个分支${context.showTags ? ' 或者标签' : ''} 来创建工作树`,
 					picked: state.reference?.ref ?? (await state.repo.getBranch())?.ref,
-					titleContext: ' for',
+					titleContext: ' 为',
 					value: isRevisionReference(state.reference) ? state.reference.ref : undefined,
 				});
 				// Always break on the first step (so we will go back)
@@ -409,8 +409,8 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					switch (result[0]) {
 						case 'changeRoot': {
 							const result = yield* this.createCommandChoosePathStep(state, context, {
-								title: `Choose a Different Root Folder for this Worktree`,
-								label: 'Choose Root Folder',
+								title: `为这个工作树选择一个不同的根文件夹`,
+								label: '选择根文件夹',
 								pickedUri: context.pickedRootFolder,
 								defaultUri: context.pickedRootFolder ?? context.defaultUri,
 							});
@@ -424,8 +424,8 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 						}
 						case 'chooseFolder': {
 							const result = yield* this.createCommandChoosePathStep(state, context, {
-								title: `Choose a Specific Folder for this Worktree`,
-								label: 'Choose Worktree Folder',
+								title: `为这个工作树选择一个特定的文件夹`,
+								label: '选择工作树文件夹',
 								pickedUri: context.pickedRootFolder,
 								defaultUri: context.pickedSpecificFolder ?? context.defaultUri,
 							});
@@ -475,7 +475,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 
 				if (state.createBranch == null) {
 					const result = yield* inputBranchNameStep(state, context, {
-						titleContext: ` and New Branch from ${getReferenceLabel(state.reference, {
+						titleContext: ` 和新分支从 ${getReferenceLabel(state.reference, {
 							capitalize: true,
 							icon: false,
 							label: state.reference.refType !== 'branch',
@@ -517,14 +517,14 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					WorktreeCreateError.is(ex, WorktreeCreateErrorReason.AlreadyCheckedOut) &&
 					!state.flags.includes('--force')
 				) {
-					const createBranch: MessageItem = { title: 'Create New Branch' };
-					const force: MessageItem = { title: 'Create Anyway' };
-					const cancel: MessageItem = { title: 'Cancel', isCloseAffordance: true };
+					const createBranch: MessageItem = { title: '创建新分支' };
+					const force: MessageItem = { title: '强制创建' };
+					const cancel: MessageItem = { title: '取消', isCloseAffordance: true };
 					const result = await window.showWarningMessage(
-						`Unable to create the new worktree because ${getReferenceLabel(state.reference, {
+						`无法创建新的工作树，因为 ${getReferenceLabel(state.reference, {
 							icon: false,
 							quoted: true,
-						})} is already checked out.\n\nWould you like to create a new branch for this worktree or forcibly create it anyway?`,
+						})} 已经被检出。\n\n您想为这个工作树创建一个新分支，还是强制创建它？`,
 						{ modal: true },
 						createBranch,
 						force,
@@ -545,13 +545,13 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 						continue;
 					}
 				} else if (WorktreeCreateError.is(ex, WorktreeCreateErrorReason.AlreadyExists)) {
-					const confirm: MessageItem = { title: 'OK' };
-					const openFolder: MessageItem = { title: 'Open Folder' };
+					const confirm: MessageItem = { title: '确定' };
+					const openFolder: MessageItem = { title: '打开文件夹' };
 					void window
 						.showErrorMessage(
-							`Unable to create a new worktree in '${getWorkspaceFriendlyPath(
+							`无法在 '${getWorkspaceFriendlyPath(
 								uri,
-							)}' because the folder already exists and is not empty.`,
+							)}' 创建新工作树，因为文件夹已存在且不为空。`,
 							confirm,
 							openFolder,
 						)
@@ -562,7 +562,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 						});
 				} else {
 					void showGenericErrorMessage(
-						`Unable to create a new worktree in '${getWorkspaceFriendlyPath(uri)}.`,
+						`无法在 '${getWorkspaceFriendlyPath(uri)} 创建新工作树。`,
 					);
 				}
 			}
@@ -705,12 +705,12 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 						[],
 						{
 							label: isRemoteBranch
-								? 'Create Worktree for New Local Branch'
+								? '为新的本地分支创建工作树'
 								: isBranch
-								  ? 'Create Worktree for Branch'
+								  ? '为分支创建工作树'
 								  : context.title,
 							description: '',
-							detail: `Will create worktree in $(folder) ${recommendedFriendlyPath}`,
+							detail: `将会创建工作树在 $(folder) ${recommendedFriendlyPath}`,
 						},
 						recommendedRootUri,
 					),
@@ -723,10 +723,10 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					['-b'],
 					{
 						label: isRemoteBranch
-							? 'Create Worktree for New Local Branch Named...'
-							: 'Create Worktree for New Branch Named...',
+							? '为新的本地分支创建工作树，分支名为...'
+							: '为新分支创建工作树，分支名为...',
 						description: '',
-						detail: `Will create worktree in $(folder) ${recommendedNewBranchFriendlyPath}`,
+						detail: `将会创建工作树在 $(folder) ${recommendedNewBranchFriendlyPath}`,
 					},
 					recommendedRootUri,
 				),
@@ -739,12 +739,12 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 						['--direct'],
 						{
 							label: isRemoteBranch
-								? 'Create Worktree for Local Branch'
+								? '为本地分支创建工作树'
 								: isBranch
-								  ? 'Create Worktree for Branch'
+								  ? '为分支创建工作树'
 								  : context.title,
 							description: '',
-							detail: `Will create worktree directly in $(folder) ${truncateLeft(
+							detail: `将会直接创建工作树在 $(folder) ${truncateLeft(
 								pickedFriendlyPath,
 								60,
 							)}`,
@@ -760,10 +760,10 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					['-b', '--direct'],
 					{
 						label: isRemoteBranch
-							? 'Create Worktree for New Local Branch'
-							: 'Create Worktree for New Branch',
+							? '为新的本地分支创建工作树'
+							: '为新分支创建工作树',
 						description: '',
-						detail: `Will create worktree directly in $(folder) ${truncateLeft(pickedFriendlyPath, 60)}`,
+						detail: `将会直接创建工作树在 $(folder) ${truncateLeft(pickedFriendlyPath, 60)}`,
 					},
 					pickedUri,
 				),
@@ -777,7 +777,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					[],
 					[],
 					{
-						label: 'Change Root Folder...',
+						label: '更改根文件夹...',
 						description: `$(folder) ${truncateLeft(pickedFriendlyPath, 65)}`,
 						picked: false,
 					},
@@ -791,7 +791,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 				[],
 				[],
 				{
-					label: 'Choose a Specific Folder...',
+					label: '选择一个特定文件夹...',
 					description: '',
 					picked: false,
 				},
@@ -835,7 +835,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					filter: wt => !wt.main || !wt.opened, // Can't delete the main or opened worktree
 					includeStatus: true,
 					picked: state.uris?.map(uri => uri.toString()),
-					placeholder: 'Choose worktrees to delete',
+					placeholder: '选择工作树以删除',
 				});
 				// Always break on the first step (so we will go back)
 				if (result === StepResultBreak) break;
@@ -867,10 +867,10 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 							} catch {}
 
 							if (status?.hasChanges ?? false) {
-								const confirm: MessageItem = { title: 'Force Delete' };
-								const cancel: MessageItem = { title: 'Cancel', isCloseAffordance: true };
+								const confirm: MessageItem = { title: '强制删除' };
+								const cancel: MessageItem = { title: '取消', isCloseAffordance: true };
 								const result = await window.showWarningMessage(
-									`The worktree in '${uri.fsPath}' has uncommitted changes.\n\nDeleting it will cause those changes to be FOREVER LOST.\nThis is IRREVERSIBLE!\n\nAre you sure you still want to delete it?`,
+									`位于 '${uri.fsPath}' 的工作树有未提交的更改。\n\n删除它将导致这些更改被永久丢失。\n这是不可逆的！\n\n您确定还要删除它吗？`,
 									{ modal: true },
 									confirm,
 									cancel,
@@ -884,14 +884,14 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					} catch (ex) {
 						if (WorktreeDeleteError.is(ex)) {
 							if (ex.reason === WorktreeDeleteErrorReason.MainWorkingTree) {
-								void window.showErrorMessage('Unable to delete the main worktree');
+								void window.showErrorMessage('无法删除主工作树');
 							} else if (!force) {
-								const confirm: MessageItem = { title: 'Force Delete' };
-								const cancel: MessageItem = { title: 'Cancel', isCloseAffordance: true };
+								const confirm: MessageItem = { title: '强制删除' };
+								const cancel: MessageItem = { title: '取消', isCloseAffordance: true };
 								const result = await window.showErrorMessage(
 									ex.reason === WorktreeDeleteErrorReason.HasChanges
-										? `Unable to delete worktree because there are UNCOMMITTED changes in '${uri.fsPath}'.\n\nForcibly deleting it will cause those changes to be FOREVER LOST.\nThis is IRREVERSIBLE!\n\nWould you like to forcibly delete it?`
-										: `Unable to delete worktree in '${uri.fsPath}'.\n\nWould you like to try to forcibly delete it?`,
+										? `无法删除工作树，因为 '${uri.fsPath}' 中有未提交的更改。\n\n强制删除它将导致这些更改被永久丢失。\n这是不可逆的！\n\n您想要强制删除它吗？`
+										: `无法在 '${uri.fsPath}' 中删除工作树。\n\n您想尝试强制删除它吗？`,
 									{ modal: true },
 									confirm,
 									cancel,
@@ -903,7 +903,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 								}
 							}
 						} else {
-							void showGenericErrorMessage(`Unable to delete worktree in '${uri.fsPath}.`);
+							void showGenericErrorMessage(`无法删除工作树在 '${uri.fsPath}.`);
 						}
 					}
 				} while (retry);
@@ -917,16 +917,16 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 			[
 				createFlagsQuickPickItem<DeleteFlags>(state.flags, [], {
 					label: context.title,
-					detail: `Will delete ${pluralize('worktree', state.uris.length, {
+					detail: `将会删除 ${pluralize('工作树', state.uris.length, {
 						only: state.uris.length === 1,
-					})}${state.uris.length === 1 ? ` in $(folder) ${getWorkspaceFriendlyPath(state.uris[0])}` : ''}`,
+					})}${state.uris.length === 1 ? ` 在 $(folder) ${getWorkspaceFriendlyPath(state.uris[0])}` : ''}`,
 				}),
 				createFlagsQuickPickItem<DeleteFlags>(state.flags, ['--force'], {
 					label: `Force ${context.title}`,
-					description: 'including ANY UNCOMMITTED changes',
-					detail: `Will forcibly delete ${pluralize('worktree', state.uris.length, {
+					description: '包含任何未提交的更改',
+					detail: `将会强制删除 ${pluralize('工作树', state.uris.length, {
 						only: state.uris.length === 1,
-					})} ${state.uris.length === 1 ? ` in $(folder) ${getWorkspaceFriendlyPath(state.uris[0])}` : ''}`,
+					})} ${state.uris.length === 1 ? ` 在 $(folder) ${getWorkspaceFriendlyPath(state.uris[0])}` : ''}`,
 				}),
 			],
 			context,
@@ -953,7 +953,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					excludeOpened: true,
 					includeStatus: true,
 					picked: state.worktree?.uri?.toString(),
-					placeholder: 'Choose worktree to open',
+					placeholder: '选择工作树以打开',
 				});
 				// Always break on the first step (so we will go back)
 				if (result === StepResultBreak) break;
@@ -994,16 +994,16 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 
 		const confirmations: StepType[] = [
 			createFlagsQuickPickItem<OpenFlags>(state.flags, [], {
-				label: 'Open Worktree',
+				label: '打开工作树',
 				detail: 'Will open the worktree in the current window',
 			}),
 			createFlagsQuickPickItem<OpenFlags>(state.flags, ['--new-window'], {
-				label: `Open Worktree in a New Window`,
-				detail: 'Will open the worktree in a new window',
+				label: `在新窗口打开工作树`,
+				detail: '将会在新窗口打开工作树',
 			}),
 			createFlagsQuickPickItem<OpenFlags>(state.flags, ['--add-to-workspace'], {
-				label: `Add Worktree to Workspace`,
-				detail: 'Will add the worktree into the current workspace',
+				label: `添加工作树到工作区`,
+				detail: '将会添加工作树到当前工作区',
 			}),
 		];
 
@@ -1011,9 +1011,9 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 			confirmations.push(
 				createQuickPickSeparator(),
 				createFlagsQuickPickItem<OpenFlags>(state.flags, ['--reveal-explorer'], {
-					label: `Reveal in File Explorer`,
+					label: `在文件资源管理器中显示`,
 					description: `$(folder) ${truncateLeft(getWorkspaceFriendlyPath(state.worktree.uri), 40)}`,
-					detail: 'Will open the worktree in the File Explorer',
+					detail: '将会在文件资源管理器中打开工作树',
 				}),
 			);
 		}
@@ -1043,13 +1043,13 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 				let placeholder;
 				switch (state.changes.type) {
 					case 'index':
-						placeholder = 'Choose a worktree to copy your staged changes to';
+						placeholder = '选择一个工作树来复制你的暂存更改';
 						break;
 					case 'working-tree':
-						placeholder = 'Choose a worktree to copy your working changes to';
+						placeholder = '选择一个工作树来复制你的工作更改';
 						break;
 					default:
-						placeholder = 'Choose a worktree to copy changes to';
+						placeholder = '选择一个工作树以复制更改';
 						break;
 				}
 
@@ -1072,7 +1072,7 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 					'HEAD',
 				);
 				if (!diff?.contents) {
-					void window.showErrorMessage(`No changes to copy`);
+					void window.showErrorMessage(`没有更改可复制`);
 
 					endSteps(state);
 					break;
@@ -1108,24 +1108,24 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 				await this.container.git.applyUnreachableCommitForPatch(state.worktree.uri, commit.sha, {
 					stash: false,
 				});
-				void window.showInformationMessage(`Changes copied successfully`);
+				void window.showInformationMessage(`更改已成功复制`);
 			} catch (ex) {
 				if (ex instanceof CancellationError) return;
 
 				if (ex instanceof ApplyPatchCommitError) {
 					if (ex.reason === ApplyPatchCommitErrorReason.AppliedWithConflicts) {
-						void window.showWarningMessage('Changes copied with conflicts');
+						void window.showWarningMessage('更改已复制，但存在冲突');
 					} else if (ex.reason === ApplyPatchCommitErrorReason.ApplyAbortedWouldOverwrite) {
 						void window.showErrorMessage(
-							'Unable to copy changes as some local changes would be overwritten',
+							'无法复制更改，因为这样会覆盖一些本地更改',
 						);
 						return;
 					} else {
-						void window.showErrorMessage(`Unable to copy changes: ${ex.message}`);
+						void window.showErrorMessage(`无法复制更改: ${ex.message}`);
 						return;
 					}
 				} else {
-					void window.showErrorMessage(`Unable to copy changes: ${ex.message}`);
+					void window.showErrorMessage(`无法复制更改: ${ex.message}`);
 					return;
 				}
 			}
@@ -1157,28 +1157,28 @@ export class WorktreeGitCommand extends QuickCommand<State> {
 		switch (state.changes.type) {
 			case 'index':
 				confirmations.push({
-					label: 'Copy Staged Changes to Worktree',
-					detail: `Will copy the staged changes${
-						count > 0 ? ` (${pluralize('file', count)})` : ''
-					} to worktree '${state.worktree.name}'`,
+					label: '将暂存更改复制到工作树',
+					detail: `将会复制暂存更改${
+						count > 0 ? ` (${pluralize('个文件', count)})` : ''
+					} 到工作树 '${state.worktree.name}'`,
 				});
 				break;
 			case 'working-tree':
 				confirmations.push({
-					label: 'Copy Working Changes to Worktree',
-					detail: `Will copy the working changes${
-						count > 0 ? ` (${pluralize('file', count)})` : ''
-					} to worktree '${state.worktree.name}'`,
+					label: '将工作更改复制到工作树',
+					detail: `将复制工作更改${
+						count > 0 ? ` (${pluralize('个文件', count)})` : ''
+					} 到工作树 '${state.worktree.name}'`,
 				});
 				break;
 
 			default:
 				confirmations.push(
 					createFlagsQuickPickItem([], [], {
-						label: 'Copy Changes to Worktree',
-						detail: `Will copy the changes${
-							count > 0 ? ` (${pluralize('file', count)})` : ''
-						} to worktree '${state.worktree.name}'`,
+						label: '将更改复制到工作树',
+						detail: `将会复制更改${
+							count > 0 ? ` (${pluralize('个文件', count)})` : ''
+						} 到工作树 '${state.worktree.name}'`,
 					}),
 				);
 				break;

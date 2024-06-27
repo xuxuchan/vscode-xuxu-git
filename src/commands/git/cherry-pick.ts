@@ -47,7 +47,7 @@ type CherryPickStepState<T extends State = State> = ExcludeSome<StepState<T>, 'r
 export class CherryPickGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: CherryPickGitCommandArgs) {
 		super(container, 'cherry-pick', 'cherry-pick', 'Cherry Pick', {
-			description: 'integrates changes from specified commits into the current branch',
+			description: '将指定提交的更改集成到当前分支中',
 		});
 
 		let counter = 0;
@@ -148,7 +148,7 @@ export class CherryPickGitCommand extends QuickCommand<State> {
 					{
 						filter: { branches: b => b.id !== context.destination.id },
 						placeholder: context =>
-							`Choose a branch${context.showTags ? ' or tag' : ''} to cherry-pick from`,
+							`选择一个分支${context.showTags ? '或标签' : ''} 来优选`,
 						picked: context.selectedBranchOrTag?.ref,
 						value: context.selectedBranchOrTag == null ? state.references?.[0]?.ref : undefined,
 					},

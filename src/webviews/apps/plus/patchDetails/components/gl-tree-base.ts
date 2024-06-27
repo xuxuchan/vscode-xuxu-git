@@ -39,22 +39,22 @@ export class GlTreeBase extends GlElement {
 
 		let value = 'tree';
 		let icon = 'list-tree';
-		let label = '树形显示';
+		let label = '树状视图';
 		switch (layout) {
 			case 'auto':
 				value = 'list';
 				icon = 'gl-list-auto';
-				label = '列表显示';
+				label = '列表视图';
 				break;
 			case 'list':
 				value = 'tree';
 				icon = 'list-flat';
-				label = '树形显示';
+				label = '树状视图';
 				break;
 			case 'tree':
 				value = 'auto';
 				icon = 'list-tree';
-				label = '自动显示';
+				label = '自动模式';
 				break;
 		}
 

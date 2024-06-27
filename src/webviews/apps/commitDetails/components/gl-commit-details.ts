@@ -166,7 +166,7 @@ export class GlCommitDetails extends GlDetailsBase {
 	}
 
 	private renderJiraLink() {
-		if (this.state == null) return 'Jira 议题';
+		if (this.state == null) return 'Jira 问题';
 
 		const { hasAccount, hasConnectedJira } = this.state;
 
@@ -192,7 +192,7 @@ export class GlCommitDetails extends GlDetailsBase {
 
 		return html`<gl-popover hoist class="inline-popover">
 			<span class="tooltip-hint" slot="anchor"
-				>Jira 议题 <code-icon icon="${hasConnectedJira ? 'check' : 'gl-unplug'}"></code-icon
+				>Jira 问题 <code-icon icon="${hasConnectedJira ? 'check' : 'gl-unplug'}"></code-icon
 			></span>
 			<span slot="content">${message}</span>
 		</gl-popover>`;

@@ -1,13 +1,21 @@
+/*
+ * @Author: 许腾
+ * @Date: 2024-06-26 18:08:53
+ * @LastEditors: 许腾
+ * @LastEditTime: 2024-06-27 10:54:14
+ * @FilePath: \test\src\views\nodes\helpers.ts
+ * @Description: 
+ */
 import type { GitCommit } from '../../git/models/commit';
 import type { ViewNode } from './abstract/viewNode';
 import { ContextValues } from './abstract/viewNode';
 import { MessageNode } from './common';
 
 const markers: [number, string][] = [
-	[0, 'Less than a week ago'],
-	[7, 'Over a week ago'],
-	[25, 'Over a month ago'],
-	[77, 'Over 3 months ago'],
+	[0, '少于一周前'],
+	[7, '一周多以前'],
+	[25, '一个月多以前'],
+	[77, '三个月多以前'],
 ];
 
 export function* insertDateMarkers<T extends ViewNode & { commit: GitCommit }>(

@@ -57,7 +57,7 @@ export class FileHistoryNode
 
 	async getChildren(): Promise<ViewNode[]> {
 		this.view.description = `${this.label}${
-			this.parent instanceof FileHistoryTrackerNode && !this.parent.followingEditor ? ' (pinned)' : ''
+			this.parent instanceof FileHistoryTrackerNode && !this.parent.followingEditor ? ' (已固定)' : ''
 		}`;
 
 		const children: ViewNode[] = [];

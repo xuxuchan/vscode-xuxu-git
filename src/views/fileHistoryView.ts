@@ -11,7 +11,7 @@ import { LineHistoryTrackerNode } from './nodes/lineHistoryTrackerNode';
 import { ViewBase } from './viewBase';
 import { registerViewCommand } from './viewCommands';
 
-const pinnedSuffix = ' (pinned)';
+const pinnedSuffix = ' (已固定)';
 
 export class FileHistoryView extends ViewBase<
 	'fileHistory',

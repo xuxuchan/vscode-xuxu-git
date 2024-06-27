@@ -232,13 +232,13 @@ export class FocusIndicator implements Disposable {
 		tooltip.isTrusted = true;
 
 		tooltip.appendMarkdown(
-			`GitLens Launchpad ${previewBadge}\u00a0\u00a0\u00a0\u00a0&mdash;\u00a0\u00a0\u00a0\u00a0`,
+			`XU-Git 启动板 ${previewBadge}\u00a0\u00a0\u00a0\u00a0&mdash;\u00a0\u00a0\u00a0\u00a0`,
 		);
-		tooltip.appendMarkdown(`[$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "What is this?")`);
+		tooltip.appendMarkdown(`[$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "这是什么？")`);
 		tooltip.appendMarkdown('\u00a0');
-		tooltip.appendMarkdown(`[$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "Settings")`);
+		tooltip.appendMarkdown(`[$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "设置")`);
 		tooltip.appendMarkdown('\u00a0\u00a0|\u00a0\u00a0');
-		tooltip.appendMarkdown(`[$(circle-slash) Hide](command:gitlens.launchpad.indicator.action?%22hide%22 "Hide")`);
+		tooltip.appendMarkdown(`[$(circle-slash) 隐藏](command:gitlens.launchpad.indicator.action?%22hide%22 "隐藏")`);
 
 		if (
 			state === 'idle' ||
@@ -248,10 +248,10 @@ export class FocusIndicator implements Disposable {
 		) {
 			tooltip.appendMarkdown('\n\n---\n\n');
 			tooltip.appendMarkdown(
-				'[Launchpad](command:gitlens.launchpad.indicator.action?%info%22 "Learn about Launchpad") organizes your pull requests into actionable groups to help you focus and keep your team unblocked.',
+				'[启动板](command:gitlens.launchpad.indicator.action?%info%22 "了解启动板") 将您的拉取请求组织成可操作的组，以帮助您集中注意力并保持您的团队畅通无阻。',
 			);
 			tooltip.appendMarkdown(
-				"\n\nIt's always accessible using the `GitLens: Open Launchpad` command from the Command Palette.",
+				"\n\n始终可以通过从命令面板使用 `XU-Git: Open Launchpad` 命令来访问。",
 			);
 		}
 
@@ -266,17 +266,17 @@ export class FocusIndicator implements Disposable {
 			case 'disconnected':
 				this.clearRefreshTimer();
 				tooltip.appendMarkdown(
-					`\n\n---\n\n[Connect to GitHub](command:gitlens.launchpad.indicator.action?%22connectGitHub%22 "Connect to GitHub") to get started.`,
+					`\n\n---\n\n[连接到 GitHub](command:gitlens.launchpad.indicator.action?%22connectGitHub%22 "连接到 GitHub") 以开始使用。`,
 				);
 
-				this._statusBarFocus.text = `$(rocket)$(gitlens-unplug) Launchpad`;
+				this._statusBarFocus.text = `$(rocket)$(gitlens-unplug) 启动板`;
 				this._statusBarFocus.tooltip = tooltip;
 				this._statusBarFocus.color = undefined;
 				break;
 
 			case 'loading':
 				this.startRefreshTimer(0);
-				tooltip.appendMarkdown('\n\n---\n\n$(loading~spin) Loading...');
+				tooltip.appendMarkdown('\n\n---\n\n$(loading~spin) 加载中...');
 
 				this._statusBarFocus.text = '$(rocket)$(loading~spin)';
 				this._statusBarFocus.tooltip = tooltip;
@@ -289,7 +289,7 @@ export class FocusIndicator implements Disposable {
 
 			case 'failed':
 				this.clearRefreshTimer();
-				tooltip.appendMarkdown('\n\n---\n\n$(alert) Unable to load items');
+				tooltip.appendMarkdown('\n\n---\n\n$(alert) 无法加载项目');
 
 				this._statusBarFocus.text = '$(rocket)$(alert)';
 				this._statusBarFocus.tooltip = tooltip;
@@ -336,11 +336,11 @@ export class FocusIndicator implements Disposable {
 		const hasImportantGroupsWithItems = groups.some(group => groupedItems.get(group)?.length);
 		if (totalGroupedItems === 0) {
 			tooltip.appendMarkdown('\n\n---\n\n');
-			tooltip.appendMarkdown('You are all caught up!');
+			tooltip.appendMarkdown('您已经拉取到最新的代码了！');
 		} else if (!hasImportantGroupsWithItems) {
 			tooltip.appendMarkdown('\n\n---\n\n');
 			tooltip.appendMarkdown(
-				`No pull requests need your attention\\\n(${totalGroupedItems} other pull requests)`,
+				`没有需要您注意的拉取请求\\\n(${totalGroupedItems} 其他拉取请求)`,
 			);
 		} else {
 			for (const group of groups) {
@@ -356,12 +356,12 @@ export class FocusIndicator implements Disposable {
 					case 'mergeable': {
 						priorityIcon ??= icon;
 						color = new ThemeColor('gitlens.launchpadIndicatorMergeableColor' satisfies Colors);
-						priorityItem ??= { item: items[0], groupLabel: 'can be merged' };
+						priorityItem ??= { item: items[0], groupLabel: '可以合并' };
 						tooltip.appendMarkdown(
 							`<span style="color:var(--vscode-gitlens-launchpadIndicatorMergeableHoverColor);">${icon}</span>$(blank) [${
 								labelType === 'item' && priorityItem != null
 									? this.getPriorityItemLabel(priorityItem.item, items.length)
-									: pluralize('pull request', items.length)
+									: pluralize('拉取请求', items.length)
 							} can be merged](command:gitlens.showLaunchpad?${encodeURIComponent(
 								JSON.stringify({
 									source: 'launchpad-indicator',
@@ -370,7 +370,7 @@ export class FocusIndicator implements Disposable {
 										selectTopItem: labelType === 'item',
 									},
 								} satisfies Omit<FocusCommandArgs, 'command'>),
-							)} "Open Ready to Merge in Launchpad")`,
+							)} "在启动板中打开准备合并")`,
 						);
 						break;
 					}
@@ -391,14 +391,14 @@ export class FocusIndicator implements Disposable {
 
 						let actionGroupItems = action.get('unassigned-reviewers');
 						if (actionGroupItems?.length) {
-							actionMessage = `${actionGroupItems.length > 1 ? 'need' : 'needs'} reviewers`;
+							actionMessage = `${actionGroupItems.length > 1 ? '需要' : '需要'} 审阅者`;
 							summaryMessage += `${actionGroupItems.length} ${actionMessage}`;
 							item ??= actionGroupItems[0];
 						}
 
 						actionGroupItems = action.get('failed-checks');
 						if (actionGroupItems?.length) {
-							actionMessage = `failed CI checks`;
+							actionMessage = `CI检查失败`;
 							summaryMessage += `${hasMultipleCategories ? ', ' : ''}${
 								actionGroupItems.length
 							} ${actionMessage}`;
@@ -407,7 +407,7 @@ export class FocusIndicator implements Disposable {
 
 						actionGroupItems = action.get('conflicts');
 						if (actionGroupItems?.length) {
-							actionMessage = `${actionGroupItems.length > 1 ? 'have' : 'has'} conflicts`;
+							actionMessage = `${actionGroupItems.length > 1 ? 'have' : 'has'} 冲突`;
 							summaryMessage += `${hasMultipleCategories ? ', ' : ''}${
 								actionGroupItems.length
 							} ${actionMessage}`;
@@ -422,28 +422,28 @@ export class FocusIndicator implements Disposable {
 							`<span style="color:var(--vscode-gitlens-launchpadIndicatorBlockedColor);">${icon}</span>$(blank) [${
 								labelType === 'item' && item != null && priorityItem == null
 									? this.getPriorityItemLabel(item, items.length)
-									: pluralize('pull request', items.length)
+									: pluralize('拉取请求', items.length)
 							} ${
-								hasMultipleCategories ? 'are blocked' : actionMessage
+								hasMultipleCategories ? '已阻止' : actionMessage
 							}](command:gitlens.showLaunchpad?${encodeURIComponent(
 								JSON.stringify({
 									source: 'launchpad-indicator',
 									state: { initialGroup: 'blocked', selectTopItem: labelType === 'item' },
 								} satisfies Omit<FocusCommandArgs, 'command'>),
-							)} "Open Blocked in Launchpad")`,
+							)} "在启动板中打开已阻止")`,
 						);
 						if (hasMultipleCategories) {
 							tooltip.appendMarkdown(`\\\n$(blank)$(blank) ${summaryMessage}`);
 						}
 
 						if (item != null) {
-							let label = 'is blocked';
+							let label = '已阻止';
 							if (item.actionableCategory === 'unassigned-reviewers') {
-								label = 'needs reviewers';
+								label = '需要审阅者';
 							} else if (item.actionableCategory === 'failed-checks') {
-								label = 'failed CI checks';
+								label = 'CI检查失败';
 							} else if (item.actionableCategory === 'conflicts') {
-								label = 'has conflicts';
+								label = '存在冲突';
 							}
 							priorityItem ??= { item: item, groupLabel: label };
 						}
@@ -456,9 +456,9 @@ export class FocusIndicator implements Disposable {
 							`<span style="color:var(--vscode-gitlens-launchpadIndicatorAttentionHoverColor);">${icon}</span>$(blank) [${
 								labelType === 'item' && priorityItem == null && items.length
 									? this.getPriorityItemLabel(items[0], items.length)
-									: pluralize('pull request', items.length)
+									: pluralize('拉取请求', items.length)
 							} ${
-								items.length > 1 ? 'require' : 'requires'
+								items.length > 1 ? '需要' : '需要'
 							} follow-up](command:gitlens.showLaunchpad?${encodeURIComponent(
 								JSON.stringify({
 									source: 'launchpad-indicator',
@@ -467,9 +467,9 @@ export class FocusIndicator implements Disposable {
 										selectTopItem: labelType === 'item',
 									},
 								} satisfies Omit<FocusCommandArgs, 'command'>),
-							)} "Open Follow-Up in Launchpad")`,
+							)} "在启动板中打开后续跟进")`,
 						);
-						priorityItem ??= { item: items[0], groupLabel: 'requires follow-up' };
+						priorityItem ??= { item: items[0], groupLabel: '需要后续跟进' };
 						break;
 					}
 					case 'needs-review': {
@@ -479,9 +479,9 @@ export class FocusIndicator implements Disposable {
 							`<span style="color:var(--vscode-gitlens-launchpadIndicatorAttentionHoverColor);">${icon}</span>$(blank) [${
 								labelType === 'item' && priorityItem == null && items.length
 									? this.getPriorityItemLabel(items[0], items.length)
-									: pluralize('pull request', items.length)
+									: pluralize('拉取请求', items.length)
 							} ${
-								items.length > 1 ? 'need' : 'needs'
+								items.length > 1 ? '需要' : '需要'
 							} your review](command:gitlens.showLaunchpad?${encodeURIComponent(
 								JSON.stringify({
 									source: 'launchpad-indicator',
@@ -490,9 +490,9 @@ export class FocusIndicator implements Disposable {
 										selectTopItem: labelType === 'item',
 									},
 								} satisfies Omit<FocusCommandArgs, 'command'>),
-							)} "Open Needs Your Review in Launchpad")`,
+							)} "在启动板中打开 需要您的审阅")`,
 						);
-						priorityItem ??= { item: items[0], groupLabel: 'needs your review' };
+						priorityItem ??= { item: items[0], groupLabel: '需要您的审阅' };
 						break;
 					}
 				}
@@ -547,13 +547,13 @@ export class FocusIndicator implements Disposable {
 						break;
 					}
 					case 'hide': {
-						const hide = { title: 'Hide Anyway' };
-						const cancel = { title: 'Cancel', isCloseAffordance: true };
+						const hide = { title: '隐藏' };
+						const cancel = { title: '取消', isCloseAffordance: true };
 						const action = await window.showInformationMessage(
-							'GitLens Launchpad helps you focus and keep your team unblocked.\n\nAre you sure you want hide the indicator?',
+							'启动板帮助您集中注意力并保持团队畅通无阻。\n\n您确定要隐藏指示器吗？',
 							{
 								modal: true,
-								detail: '\nYou can always access Launchpad using the "GitLens: Open Launchpad" command, and can re-enable the indicator with the "GitLens: Toggle Launchpad Indicator" command.',
+								detail: '\n您可以始终使用 "XU-Git: Open Launchpad" 命令访问启动板，并且可以使用 "XU-Git: Toggle Launchpad Indicator" 命令重新启用指示器。',
 							},
 							hide,
 							cancel,
@@ -581,7 +581,7 @@ export class FocusIndicator implements Disposable {
 	private getPriorityItemLabel(item: FocusItem, groupLength?: number) {
 		return `${item.repository != null ? `${item.repository.owner.login}/${item.repository.name}` : ''}#${item.id}${
 			groupLength != null && groupLength > 1
-				? ` and ${pluralize('pull request', groupLength - 1, { infix: ' other ' })}`
+				? ` 和 ${pluralize('拉取请求', groupLength - 1, { infix: ' 其他 ' })}`
 				: ''
 		}`;
 	}

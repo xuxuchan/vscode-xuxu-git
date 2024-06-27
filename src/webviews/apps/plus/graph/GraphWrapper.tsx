@@ -931,11 +931,11 @@ export function GraphWrapper({
 			if (isBehind) {
 				action = 'pull';
 				icon = 'repo-pull';
-				label = 'Pull';
+				label = '拉取';
 				tooltip = (
 					<>
-						Pull {pluralize('commit', branchState.behind)} from {remote}
-						{branchState.provider?.name ? ` on ${branchState.provider?.name}` : ''}
+						拉取 {pluralize('提交', branchState.behind)} 从 {remote}
+						{branchState.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 					</>
 				);
 				if (isAhead) {
@@ -943,9 +943,9 @@ export function GraphWrapper({
 						<>
 							{tooltip}
 							<hr />
-							{branchPrefix} {pluralize('commit', branchState.behind)} behind and{' '}
-							{pluralize('commit', branchState.ahead)} ahead of {remote}
-							{branchState.provider?.name ? ` on ${branchState.provider?.name}` : ''}
+							{branchPrefix} {pluralize('提交', branchState.behind)} 落后且{' '}
+							{pluralize('提交', branchState.ahead)} 领先 {remote}
+							{branchState.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 						</>
 					);
 				} else {
@@ -953,21 +953,21 @@ export function GraphWrapper({
 						<>
 							{tooltip}
 							<hr />
-							{branchPrefix} {pluralize('commit', branchState.behind)} behind {remote}
-							{branchState.provider?.name ? ` on ${branchState.provider?.name}` : ''}
+							{branchPrefix} {pluralize('提交', branchState.behind)} 落后 {remote}
+							{branchState.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 						</>
 					);
 				}
 			} else if (isAhead) {
 				action = 'push';
 				icon = 'repo-push';
-				label = 'Push';
+				label = '推送';
 				tooltip = (
 					<>
-						Push {pluralize('commit', branchState.ahead)} to {remote}
-						{branchState.provider?.name ? ` on ${branchState.provider?.name}` : ''}
+						推送 {pluralize('提交', branchState.ahead)} 到 {remote}
+						{branchState.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 						<hr />
-						{branchPrefix} {pluralize('commit', branchState.ahead)} ahead of {remote}
+						{branchPrefix} {pluralize('提交', branchState.ahead)} 领先 {remote}
 					</>
 				);
 			}
@@ -1026,14 +1026,14 @@ export function GraphWrapper({
 						className="action-button"
 					>
 						<span className="glicon glicon-repo-fetch action-button__icon"></span>
-						Fetch {fetchedText && <span className="action-button__small">({fetchedText})</span>}
+						获取 {fetchedText && <span className="action-button__small">({fetchedText})</span>}
 					</a>
 					<span slot="content" style={{ whiteSpace: 'break-spaces' }}>
-						Fetch from {remote}
-						{branchState?.provider?.name ? ` on ${branchState.provider?.name}` : ''}
+						从 {remote} 获取
+						{branchState?.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 						{fetchedText && (
 							<>
-								<hr /> Last fetched {fetchedText}
+								<hr /> 最后获取 {fetchedText}
 							</>
 						)}
 					</span>
@@ -1064,14 +1064,14 @@ export function GraphWrapper({
 										aria-hidden="true"
 									></span>
 								</a>
-								<span slot="content">Open Repository on {branchState.provider.name}</span>
+								<span slot="content">在 {branchState.provider.name} 打开仓库</span>
 							</GlTooltip>
 						)}
 						<GlTooltip placement="bottom">
 							<button
 								type="button"
 								className="action-button"
-								aria-label="Switch to Another Repository..."
+								aria-label="切换到其它仓库..."
 								disabled={repos.length < 2}
 								onClick={() => handleChooseRepository()}
 							>
@@ -1083,7 +1083,7 @@ export function GraphWrapper({
 									></span>
 								)}
 							</button>
-							<span slot="content">Switch to Another Repository...</span>
+							<span slot="content">切换到其它仓库...</span>
 						</GlTooltip>
 						{allowed && repo && (
 							<>
@@ -1128,7 +1128,7 @@ export function GraphWrapper({
 										)}
 										className="action-button"
 										style={branchState?.pr ? { marginLeft: '-0.6rem' } : {}}
-										aria-label="Switch to Another Branch..."
+										aria-label="切换到其他分支..."
 									>
 										{!branchState?.pr ? (
 											<span className="codicon codicon-git-branch" aria-hidden="true"></span>
@@ -1143,7 +1143,7 @@ export function GraphWrapper({
 									</a>
 									<div slot="content">
 										<span>
-											Switch to Another Branch...
+											切换到其他分支...
 											<hr />
 											<span className="codicon codicon-git-branch" aria-hidden="true"></span>{' '}
 											<span className="md-code">{branchName}</span>
@@ -1168,12 +1168,11 @@ export function GraphWrapper({
 								className="action-button"
 							>
 								<span className="codicon codicon-rocket"></span>
-								Launchpad
+								启动板
 							</a>
 							<span slot="content">
 								<span style={{ whiteSpace: 'break-spaces' }}>
-									Launchpad organizes your pull requests into actionable groups to help you focus and
-									keep your team unblocked
+									启动板将您的拉取请求组织成可操作的组，以帮助您集中注意力并保持您的团队畅通无阻。
 								</span>
 							</span>
 						</GlTooltip>
@@ -1197,7 +1196,7 @@ export function GraphWrapper({
 										></span>
 									</button>
 									<MenuList slot="content">
-										<MenuLabel>Filter options</MenuLabel>
+										<MenuLabel>过滤选项</MenuLabel>
 										<MenuItem role="none">
 											<VSCodeRadioGroup
 												orientation="vertical"
@@ -1214,11 +1213,11 @@ export function GraphWrapper({
 														value="branch-all"
 														onChange={handleLocalBranchFiltering}
 													>
-														Show All Branches
+														显示所有分支
 													</VSCodeRadio>
 												)}
 												<VSCodeRadio name="branching-toggle" value="branch-current">
-													Show Current Branch Only
+													显示当前分支
 												</VSCodeRadio>
 											</VSCodeRadioGroup>
 										</MenuItem>
@@ -1231,7 +1230,7 @@ export function GraphWrapper({
 														onChange={handleFilterChange}
 														defaultChecked={excludeTypes?.remotes ?? false}
 													>
-														Hide Remote-only Branches
+														隐藏远程独有分支
 													</VSCodeCheckbox>
 												</MenuItem>
 												<MenuItem role="none">
@@ -1240,7 +1239,7 @@ export function GraphWrapper({
 														onChange={handleFilterChange}
 														defaultChecked={excludeTypes?.stashes ?? false}
 													>
-														Hide Stashes
+														隐藏暂存
 													</VSCodeCheckbox>
 												</MenuItem>
 											</>
@@ -1251,7 +1250,7 @@ export function GraphWrapper({
 												onChange={handleFilterChange}
 												defaultChecked={excludeTypes?.tags ?? false}
 											>
-												Hide Tags
+												隐藏标签
 											</VSCodeCheckbox>
 										</MenuItem>
 										<MenuDivider></MenuDivider>
@@ -1266,7 +1265,7 @@ export function GraphWrapper({
 														onChange={handleFilterChange}
 														defaultChecked={graphConfig?.onlyFollowFirstParent ?? false}
 													>
-														Simplify Merge History
+														简化合并历史
 													</VSCodeCheckbox>
 												</GlTooltip>
 											</MenuItem>
@@ -1277,12 +1276,12 @@ export function GraphWrapper({
 												onChange={handleFilterChange}
 												defaultChecked={graphConfig?.dimMergeCommits ?? false}
 											>
-												Dim Merge Commit Rows
+												淡化合并提交行
 											</VSCodeCheckbox>
 										</MenuItem>
 									</MenuList>
 								</PopMenu>
-								<span slot="content">Filter Graph</span>
+								<span slot="content">过滤图表</span>
 							</GlTooltip>
 							<span>
 								<span className="action-divider"></span>
@@ -1312,13 +1311,13 @@ export function GraphWrapper({
 										type="button"
 										role="checkbox"
 										className="action-button"
-										aria-label="Toggle Minimap"
+										aria-label="切换小地图"
 										aria-checked={graphConfig?.minimap ?? false}
 										onClick={handleOnMinimapToggle}
 									>
 										<span className="codicon codicon-graph-line action-button__icon"></span>
 									</button>
-									<span slot="content">Toggle Minimap</span>
+									<span slot="content">切换小地图</span>
 								</GlTooltip>
 								<GlTooltip placement="top" distance={7}>
 									<PopMenu position="right">
@@ -1326,7 +1325,7 @@ export function GraphWrapper({
 											type="button"
 											className="action-button"
 											slot="trigger"
-											aria-label="Minimap Options"
+											aria-label="小地图选项"
 										>
 											<span
 												className="codicon codicon-chevron-down action-button__more"
@@ -1334,7 +1333,7 @@ export function GraphWrapper({
 											></span>
 										</button>
 										<MenuList slot="content">
-											<MenuLabel>Chart</MenuLabel>
+											<MenuLabel>图表</MenuLabel>
 											<MenuItem role="none">
 												<VSCodeRadioGroup
 													orientation="vertical"
@@ -1345,15 +1344,15 @@ export function GraphWrapper({
 														value="commits"
 														onChange={handleOnMinimapDataTypeChange}
 													>
-														Commits
+														提交
 													</VSCodeRadio>
 													<VSCodeRadio name="minimap-datatype" value="lines">
-														Lines Changed
+														已更改的行
 													</VSCodeRadio>
 												</VSCodeRadioGroup>
 											</MenuItem>
 											<MenuDivider></MenuDivider>
-											<MenuLabel>Markers</MenuLabel>
+											<MenuLabel>标记</MenuLabel>
 											<MenuItem role="none">
 												<VSCodeCheckbox
 													value="localBranches"
@@ -1367,7 +1366,7 @@ export function GraphWrapper({
 														className="minimap-marker-swatch"
 														data-marker="localBranches"
 													></span>
-													Local Branches
+													本地分支
 												</VSCodeCheckbox>
 											</MenuItem>
 											<MenuItem role="none">
@@ -1383,7 +1382,7 @@ export function GraphWrapper({
 														className="minimap-marker-swatch"
 														data-marker="remoteBranches"
 													></span>
-													Remote Branches
+													远程分支
 												</VSCodeCheckbox>
 											</MenuItem>
 											<MenuItem role="none">
@@ -1398,7 +1397,7 @@ export function GraphWrapper({
 														className="minimap-marker-swatch"
 														data-marker="stashes"
 													></span>
-													Stashes
+													暂存
 												</VSCodeCheckbox>
 											</MenuItem>
 											<MenuItem role="none">
@@ -1410,12 +1409,12 @@ export function GraphWrapper({
 													}
 												>
 													<span className="minimap-marker-swatch" data-marker="tags"></span>
-													Tags
+													标签
 												</VSCodeCheckbox>
 											</MenuItem>
 										</MenuList>
 									</PopMenu>
-									<span slot="content">Minimap Options</span>
+									<span slot="content">小地图选项</span>
 								</GlTooltip>
 							</span>
 						</div>
@@ -1438,15 +1437,13 @@ export function GraphWrapper({
 			>
 				<p slot="feature">
 					<a href="https://help.gitkraken.com/gitlens/gitlens-features/#commit-graph-%e2%9c%a8">
-						Commit Graph
+						提交图
 					</a>
 					<GlFeatureBadge
 						source={{ source: 'graph', detail: 'badge' }}
 						subscription={subscription}
 					></GlFeatureBadge>{' '}
-					&mdash; easily visualize your repository and keep track of all work in progress. Use the rich commit
-					search to find a specific commit, message, author, a changed file or files, or even a specific code
-					change.
+					&mdash; 轻松可视化您的仓库并跟踪所有进行中的工作。使用丰富的提交搜索来找到特定的提交、消息、作者、更改的文件或文件，甚至是特定的代码更改。
 				</p>
 			</GlFeatureGate>
 			<GlGraphMinimapContainer
@@ -1519,7 +1516,7 @@ export function GraphWrapper({
 						/>
 					</>
 				) : (
-					<p>No repository is selected</p>
+					<p>没有选择仓库</p>
 				)}
 			</main>
 		</>
