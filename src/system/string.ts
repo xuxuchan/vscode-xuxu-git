@@ -519,7 +519,7 @@ export function pluralize(
 ) {
 	if (options == null) return `${count} ${s}${count === 1 ? '' : ''}`;
 
-	const suffix = count === 1 ? s : options.plural ?? `${s}`;
+	const suffix = count === 1 ? s : options.plural ?? `${s}s`;
 	if (options.only) return suffix;
 
 	return `${count === 0 ? options.zero ?? count : options.format?.(count) ?? count}${options.infix ?? ' '}${suffix}`;

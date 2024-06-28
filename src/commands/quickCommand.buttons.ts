@@ -69,44 +69,44 @@ export const FeedbackQuickInputButton: QuickInputButton = {
 
 export const FetchQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('gitlens-repo-fetch'),
-	tooltip: 'Fetch',
+	tooltip: '获取',
 };
 
 export const LoadMoreQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('refresh'),
-	tooltip: 'Load More',
+	tooltip: '加载更多',
 };
 
 export const MatchCaseToggleQuickInputButton = class extends SelectableQuickInputButton {
 	constructor(on = false) {
-		super('Match Case', { off: 'icon-match-case', on: 'icon-match-case-selected' }, on);
+		super('匹配大小写', { off: 'icon-match-case', on: 'icon-match-case-selected' }, on);
 	}
 };
 
 export const MatchAllToggleQuickInputButton = class extends SelectableQuickInputButton {
 	constructor(on = false) {
-		super('Match All', { off: 'icon-match-all', on: 'icon-match-all-selected' }, on);
+		super('匹配所有', { off: 'icon-match-all', on: 'icon-match-all-selected' }, on);
 	}
 };
 
 export const MatchRegexToggleQuickInputButton = class extends SelectableQuickInputButton {
 	constructor(on = false) {
-		super('Match using Regular Expressions', { off: 'icon-match-regex', on: 'icon-match-regex-selected' }, on);
+		super('正则匹配', { off: 'icon-match-regex', on: 'icon-match-regex-selected' }, on);
 	}
 };
 
 export const PickCommitQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('git-commit'),
-	tooltip: 'Choose a Specific Commit',
+	tooltip: '选择一个指定的提交',
 };
 
 export const PickCommitToggleQuickInputButton = class extends ToggleQuickInputButton {
 	constructor(on = false, context: { showTags: boolean }, onDidClick?: (quickInput: QuickInput) => void) {
 		super(
 			() => ({
-				on: { tooltip: 'Choose a Specific Commit', icon: new ThemeIcon('git-commit') },
+				on: { tooltip: '选择一个指定的提交', icon: new ThemeIcon('git-commit') },
 				off: {
-					tooltip: `Choose a Branch${context.showTags ? ' or Tag' : ''}`,
+					tooltip: `选择一个分支${context.showTags ? '或标签' : ''}`,
 					icon: new ThemeIcon('git-branch'),
 				},
 			}),
@@ -119,92 +119,92 @@ export const PickCommitToggleQuickInputButton = class extends ToggleQuickInputBu
 
 export const MergeQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('merge'),
-	tooltip: 'Merge...',
+	tooltip: '合并...',
 };
 
 export const OpenOnGitHubQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('globe'),
-	tooltip: 'Open on GitHub',
+	tooltip: '在Github中打开',
 };
 
 export const OpenOnWebQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('globe'),
-	tooltip: 'Open on gitkraken.dev',
+	tooltip: '在 xutec.org 中打开',
 };
 
 export const OpenInEditorQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('link-external'),
-	tooltip: 'Open in Editor',
+	tooltip: '在编辑器中打开',
 };
 
 export const LaunchpadSettingsQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('gear'),
-	tooltip: 'Launchpad Settings',
+	tooltip: '启动板设置',
 };
 
 export const PinQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('pinned'),
-	tooltip: 'Pin',
+	tooltip: '固定',
 };
 
 export const UnpinQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('pin'),
-	tooltip: 'Unpin',
+	tooltip: '取消固定',
 };
 
 export const SnoozeQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('bell-slash'),
-	tooltip: 'Snooze',
+	tooltip: '暂时忽略',
 };
 
 export const RefreshQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('refresh'),
-	tooltip: 'Refresh',
+	tooltip: '刷新',
 };
 
 export const UnsnoozeQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('bell'),
-	tooltip: 'Unsnooze',
+	tooltip: '取消暂时忽略',
 };
 export const OpenInNewWindowQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('empty-window'),
-	tooltip: 'Open in New Window',
+	tooltip: '在新窗口中打开',
 };
 
 export const RevealInSideBarQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('search'),
-	tooltip: 'Reveal in Side Bar',
+	tooltip: '在侧边栏中显示',
 };
 
 export const SetRemoteAsDefaultQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('settings-gear'),
-	tooltip: 'Set as Default Remote',
+	tooltip: '设置为默认远程',
 };
 
 export const ShowDetailsViewQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('eye'),
-	tooltip: 'Inspect Details',
+	tooltip: '审查详情',
 };
 
 export const OpenChangesViewQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('compare-changes'),
-	tooltip: 'Open Changes',
+	tooltip: '打开已更改',
 };
 
 export const ShowResultsInSideBarQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('link-external'),
-	tooltip: 'Show Results in Side Bar',
+	tooltip: '在侧边栏中显示结果',
 };
 
 export const ShowTagsToggleQuickInputButton = class extends SelectableQuickInputButton {
 	constructor(on = false) {
-		super('Show Tags', { off: new ThemeIcon('tag'), on: 'icon-tag-selected' }, on);
+		super('显示标签', { off: new ThemeIcon('tag'), on: 'icon-tag-selected' }, on);
 	}
 };
 
 export const WillConfirmForcedQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('gitlens-confirm-checked'),
-	tooltip: 'You will be presented with a required confirmation step before the action is performed',
+	tooltip: '在执行操作之前，您将需要完成一个必要的确认步骤。',
 };
 
 export const WillConfirmToggleQuickInputButton = class extends ToggleQuickInputButton {
@@ -213,14 +213,14 @@ export const WillConfirmToggleQuickInputButton = class extends ToggleQuickInputB
 			() => ({
 				on: {
 					tooltip: isConfirmationStep
-						? 'For future actions, you will be presented with confirmation step before the action is performed\nClick to toggle'
-						: 'You will be presented with confirmation step before the action is performed\nClick to toggle',
+					? '对于未来的操作，在执行操作之前，您将看到一个确认步骤\n点击以切换'
+					: '在执行操作之前，您将看到一个确认步骤\n点击以切换',
 					icon: new ThemeIcon('gitlens-confirm-checked'),
 				},
 				off: {
 					tooltip: isConfirmationStep
-						? "For future actions, you won't be presented with confirmation step before the action is performed\nClick to toggle"
-						: "You won't be presented with confirmation step before the action is performed\nClick to toggle",
+					? "对于未来的操作，在执行操作之前，您不会看到确认步骤\n点击以切换"
+					: "在执行操作之前，您不会看到确认步骤\n点击以切换",
 					icon: new ThemeIcon('gitlens-confirm-unchecked'),
 				},
 			}),

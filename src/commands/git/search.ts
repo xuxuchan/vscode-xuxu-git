@@ -356,7 +356,7 @@ export class SearchGitCommand extends QuickCommand<State> {
 
 		const step = createPickStep<QuickPickItemOfT<NormalizedSearchOperators>>({
 			title: appendReposToTitle(context.title, state, context),
-			placeholder: '例如：“更新依赖” 作者：xuxu',
+			placeholder: '例如：“更新依赖” XUXU',
 			ignoreFocusOut: true,
 			matchOnDescription: true,
 			matchOnDetail: true,

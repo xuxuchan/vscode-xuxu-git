@@ -64,7 +64,7 @@ export class LineHistoryNode
 
 	async getChildren(): Promise<ViewNode[]> {
 		this.view.description = `${this.label}${
-			this.parent instanceof LineHistoryTrackerNode && !this.parent.followingEditor ? ' (pinned)' : ''
+			this.parent instanceof LineHistoryTrackerNode && !this.parent.followingEditor ? ' (已固定)' : ''
 		}`;
 
 		const children: ViewNode[] = [];
@@ -174,7 +174,7 @@ export class LineHistoryNode
 		}`;
 
 		this.view.description = `${label}${
-			this.parent instanceof LineHistoryTrackerNode && !this.parent.followingEditor ? ' (pinned)' : ''
+			this.parent instanceof LineHistoryTrackerNode && !this.parent.followingEditor ? ' (已固定)' : ''
 		}`;
 
 		return item;

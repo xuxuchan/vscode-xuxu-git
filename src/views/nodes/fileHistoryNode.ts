@@ -159,7 +159,7 @@ export class FileHistoryNode
 		}`;
 
 		this.view.description = `${label}${
-			this.parent instanceof FileHistoryTrackerNode && !this.parent.followingEditor ? ' (pinned)' : ''
+			this.parent instanceof FileHistoryTrackerNode && !this.parent.followingEditor ? ' (已固定)' : ''
 		}`;
 
 		return item;

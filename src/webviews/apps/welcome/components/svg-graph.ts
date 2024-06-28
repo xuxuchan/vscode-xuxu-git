@@ -164,27 +164,27 @@ export class GraphSvg extends LitElement {
 
 				<text x="366" y="33.5" class="foreground wip"><tspan>工作进行中</tspan><tspan dx="9" dy="1" class="codicon">&#xea73;</tspan><tspan dx="3" dy="-1">2</tspan><tspan dx="9" dy="1" class="codicon">&#xea60;</tspan><tspan dx="3" dy="-1">1</tspan></text>
 				<text class="foreground messages">
-					<tspan x="366" y="59.5">Improves performance &amp; reduces bundle size</tspan>
-					<tspan x="366" y="86.5">Adds brand new welcome experience</tspan>
-					<tspan x="366" y="113.5">Adds new Commit Graph panel layout</tspan>
-					<tspan x="366" y="140.5">Optimizes startup performance</tspan>
-					<tspan x="366" y="167.5">Revamps Home view experience for better utility</tspan>
-					<tspan x="366" y="194.5">Optimizes Commit Graph loading performance</tspan>
-					<tspan x="366" y="221.5">Adds new GitLens Inspect side bar for a better experience</tspan>
-					<tspan x="366" y="248.5">Fixes crash when run on a phone</tspan>
-					<tspan x="366" y="275.5">Updates package dependencies</tspan>
+					<tspan x="366" y="59.5">提高性能 & 减小包大小</tspan>
+					<tspan x="366" y="86.5">添加全新的欢迎体验</tspan>
+					<tspan x="366" y="113.5">添加新的提交图面板布局</tspan>
+					<tspan x="366" y="140.5">优化启动性能</tspan>
+					<tspan x="366" y="167.5">为了更好的实用性重塑首页视图体验</tspan>
+					<tspan x="366" y="194.5">优化提交图加载性能</tspan>
+					<tspan x="366" y="221.5">添加新的代码审查侧边栏以获得更好的体验</tspan>
+					<tspan x="366" y="248.5">修复在手机上运行时崩溃的问题</tspan>
+					<tspan x="366" y="275.5">更新包依赖</tspan>
 				</text>
 
 				<text class="foreground authors">
-					<tspan x="696" y="59.5">Eric Amodio</tspan>
-					<tspan x="696" y="86.5">Keith Daulton</tspan>
-					<tspan x="696" y="113.5">Eric Amodio</tspan>
-					<tspan x="696" y="140.5">Ramin Tadayon</tspan>
-					<tspan x="696" y="167.5">Keith Daulton</tspan>
-					<tspan x="696" y="194.5">Eric Amodio</tspan>
-					<tspan x="696" y="221.5">Keith Daulton</tspan>
-					<tspan x="696" y="248.5">Ramin Tadayon</tspan>
-					<tspan x="696" y="275.5">Ramin Tadayon</tspan>
+					<tspan x="696" y="59.5">XUXU</tspan>
+					<tspan x="696" y="86.5">XUXU</tspan>
+					<tspan x="696" y="113.5">XUXU</tspan>
+					<tspan x="696" y="140.5">XUXU</tspan>
+					<tspan x="696" y="167.5">XUXU</tspan>
+					<tspan x="696" y="194.5">XUXU</tspan>
+					<tspan x="696" y="221.5">XUXU</tspan>
+					<tspan x="696" y="248.5">XUXU</tspan>
+					<tspan x="696" y="275.5">XUXU</tspan>
 				</text>
 			</svg>
 		`;

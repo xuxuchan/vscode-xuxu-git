@@ -67,7 +67,7 @@ export class LineHistoryTrackerNode extends SubscribeableViewNode<
 					this.uri.sha
 						? ` ${this.uri.sha === deletedOrMissing ? this.uri.shortSha : `(${this.uri.shortSha})`}`
 						: ''
-				}${!this.followingEditor ? ' (pinned)' : ''}`;
+				}${!this.followingEditor ? ' (已固定)' : ''}`;
 				return [];
 			}
 
