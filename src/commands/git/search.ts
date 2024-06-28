@@ -46,17 +46,17 @@ import { appendReposToTitle, pickCommitStep, pickRepositoryStep } from '../quick
 
 const UseAuthorPickerQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('person-add'),
-	tooltip: 'Pick Authors',
+	tooltip: '选择作者',
 };
 
 const UseFilePickerQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('new-file'),
-	tooltip: 'Pick Files',
+	tooltip: '选择文件',
 };
 
 const UseFolderPickerQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('new-folder'),
-	tooltip: 'Pick Folder',
+	tooltip: '选择文件夹',
 };
 
 interface Context {
@@ -83,17 +83,17 @@ export interface SearchGitCommandArgs {
 }
 
 const searchOperatorToTitleMap = new Map<SearchOperators, string>([
-	['', 'Search by Message'],
-	['=:', 'Search by Message'],
-	['message:', 'Search by Message'],
-	['@:', 'Search by Author'],
-	['author:', 'Search by Author'],
-	['#:', 'Search by Commit SHA'],
-	['commit:', 'Search by Commit SHA'],
-	['?:', 'Search by File'],
-	['file:', 'Search by File'],
-	['~:', 'Search by Changes'],
-	['change:', 'Search by Changes'],
+	['', '按消息搜索'],
+	['=:', '按消息搜索'],
+	['message:', '按消息搜索'],
+	['@:', '按作者搜索'],
+	['author:', '按作者搜索'],
+	['#:', '按提交SHA搜索'],
+	['commit:', '按提交SHA搜索'],
+	['?:', '按文件搜索'],
+	['file:', '按文件搜索'],
+	['~:', '按更改搜索'],
+	['change:', '按更改搜索'],
 ]);
 
 type SearchStepState<T extends State = State> = ExcludeSome<StepState<T>, 'repo', string>;
@@ -101,7 +101,7 @@ type SearchStepState<T extends State = State> = ExcludeSome<StepState<T>, 'repo'
 export class SearchGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: SearchGitCommandArgs) {
 		super(container, 'search', 'search', 'Commit Search', {
-			description: 'aka grep, searches for commits',
+			description: '又名“grep”，用于搜索提交',
 		});
 
 		let counter = 0;
@@ -238,7 +238,7 @@ export class SearchGitCommand extends QuickCommand<State> {
 							  })} for ${state.query}`,
 					picked: context.commit?.ref,
 					showInSideBarCommand: new ActionQuickPickItem(
-						'$(link-external)  Show Results in Side Bar',
+						'$(link-external)  在侧边栏中显示结果',
 						() =>
 							void this.container.searchAndCompareView.search(
 								repoPath,
@@ -314,20 +314,20 @@ export class SearchGitCommand extends QuickCommand<State> {
 		const items: QuickPickItemOfT<NormalizedSearchOperators>[] = [
 			{
 				label: searchOperatorToTitleMap.get('')!,
-				description: `pattern or message: pattern or =: pattern ${GlyphChars.Dash} use quotes to search for phrases`,
+				description: `pattern 或 message: pattern 或 =: pattern ${GlyphChars.Dash} 使用引号搜索短语`,
 				alwaysShow: true,
 				item: 'message:' as const,
 			},
 			{
 				label: searchOperatorToTitleMap.get('author:')!,
-				description: 'author: pattern or @: pattern',
+				description: 'author: pattern 或 @: pattern',
 				buttons: [UseAuthorPickerQuickInputButton],
 				alwaysShow: true,
 				item: 'author:' as const,
 			},
 			{
 				label: searchOperatorToTitleMap.get('commit:')!,
-				description: 'commit: sha or #: sha',
+				description: 'commit: sha 或 #: sha',
 				alwaysShow: true,
 				item: 'commit:' as const,
 			},
@@ -335,7 +335,7 @@ export class SearchGitCommand extends QuickCommand<State> {
 				? undefined
 				: {
 						label: searchOperatorToTitleMap.get('file:')!,
-						description: 'file: glob or ?: glob',
+						description: 'file: glob 或 ?: glob',
 						buttons: [UseFilePickerQuickInputButton, UseFolderPickerQuickInputButton],
 						alwaysShow: true,
 						item: 'file:' as const,
@@ -344,7 +344,7 @@ export class SearchGitCommand extends QuickCommand<State> {
 				? undefined
 				: {
 						label: searchOperatorToTitleMap.get('change:')!,
-						description: 'change: pattern or ~: pattern',
+						description: 'change: pattern 或 ~: pattern',
 						alwaysShow: true,
 						item: 'change:' as const,
 				  },

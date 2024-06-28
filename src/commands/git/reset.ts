@@ -45,7 +45,7 @@ type ResetStepState<T extends State = State> = ExcludeSome<StepState<T>, 'repo',
 
 export class ResetGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: ResetGitCommandArgs) {
-		super(container, 'reset', 'reset', 'Reset', { description: 'resets the current branch to a specified commit' });
+		super(container, 'reset', 'reset', 'Reset', { description: '将当前分支重置到指定的提交' });
 
 		let counter = 0;
 		if (args?.state?.repo != null) {
@@ -133,7 +133,7 @@ export class ResetGitCommand extends QuickCommand<State> {
 					placeholder: (context, log) =>
 						log == null
 							? `${context.destination.name} has no commits`
-							: `Choose a commit to reset ${context.destination.name} to`,
+							: `选择一个提交以重置 ${context.destination.name} 到`,
 					picked: state.reference?.ref,
 				});
 				if (result === StepResultBreak) {
@@ -164,27 +164,27 @@ export class ResetGitCommand extends QuickCommand<State> {
 
 	private *confirmStep(state: ResetStepState, context: Context): StepResultGenerator<Flags[]> {
 		const step: QuickPickStep<FlagsQuickPickItem<Flags>> = this.createConfirmStep(
-			appendReposToTitle(`Confirm ${context.title}`, state, context),
+			appendReposToTitle(`确认 ${context.title}`, state, context),
 			[
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `Will reset (leaves changes in the working tree) ${getReferenceLabel(
+					detail: `重置 (保留工作树中的更改) ${getReferenceLabel(
 						context.destination,
-					)} to ${getReferenceLabel(state.reference)}`,
+					)} 到 ${getReferenceLabel(state.reference)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--soft'], {
 					label: `Soft ${this.title}`,
 					description: '--soft',
-					detail: `Will soft reset (leaves changes in the index and working tree) ${getReferenceLabel(
+					detail: `软重置 (保留索引和工作树中的更改) ${getReferenceLabel(
 						context.destination,
-					)} to ${getReferenceLabel(state.reference)}`,
+					)} 到 ${getReferenceLabel(state.reference)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--hard'], {
 					label: `Hard ${this.title}`,
 					description: '--hard',
-					detail: `Will hard reset (discards all changes) ${getReferenceLabel(
+					detail: `硬重置 (丢弃所有更改) ${getReferenceLabel(
 						context.destination,
-					)} to ${getReferenceLabel(state.reference)}`,
+					)} 到 ${getReferenceLabel(state.reference)}`,
 				}),
 			],
 		);

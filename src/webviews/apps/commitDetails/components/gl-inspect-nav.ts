@@ -143,7 +143,7 @@ export class GlInspectNav extends LitElement {
 								>
 							</a>
 							<span slot="content"
-								>复制 ${this.stashNumber != null ? '暂存名' : 'SHA'}<br />[⌥] 复制信息</span
+								>复制 ${this.stashNumber != null ? '暂存名' : 'SHA'}<br />[⌥] 复制消息</span
 							>
 						</gl-tooltip>
 					`,

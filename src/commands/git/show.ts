@@ -64,7 +64,7 @@ function assertsStateStepFileName(state: CommitStepState): asserts state is File
 export class ShowGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: ShowGitCommandArgs) {
 		super(container, 'show', 'show', 'Show', {
-			description: 'shows information about a git reference',
+			description: '显示Git引用的信息',
 		});
 
 		let counter = 0;
@@ -155,7 +155,7 @@ export class ShowGitCommand extends QuickCommand<State> {
 							limit: undefined,
 							hasMore: false,
 						},
-						placeholder: 'Enter a reference or commit SHA',
+						placeholder: '输入一个引用或提交 SHA',
 						picked: state.reference?.ref,
 					});
 					if (result === StepResultBreak) {

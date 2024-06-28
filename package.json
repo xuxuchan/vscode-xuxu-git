@@ -5471,7 +5471,7 @@
 	  "commands": [
 		{
 		  "command": "gitlens.generateCommitMessage",
-		  "title": "生成提交信息...",
+		  "title": "生成提交消息...",
 		  "category": "GitLens"
 		},
 		{
@@ -6412,7 +6412,7 @@
 		},
 		{
 		  "command": "gitlens.copyMessageToClipboard",
-		  "title": "复制信息",
+		  "title": "复制消息",
 		  "category": "GitLens",
 		  "icon": "$(copy)"
 		},
@@ -8751,7 +8751,7 @@
 		},
 		{
 		  "command": "gitlens.graph.copyMessage",
-		  "title": "复制信息",
+		  "title": "复制消息",
 		  "category": "GitLens",
 		  "icon": "$(copy)"
 		},

@@ -124,7 +124,7 @@ export class FocusCommand extends QuickCommand<State> {
 	private readonly telemetryContext: LaunchpadTelemetryContext | undefined;
 
 	constructor(container: Container, args?: FocusCommandArgs) {
-		super(container, 'focus', 'focus', `GitLens Launchpad\u00a0\u00a0${previewBadge}`, {
+		super(container, 'focus', 'focus', `XU-Git 启动台\u00a0\u00a0${previewBadge}`, {
 			description: '聚焦一个拉取请求或问题',
 		});
 
