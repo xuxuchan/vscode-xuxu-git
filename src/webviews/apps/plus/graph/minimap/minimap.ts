@@ -914,26 +914,26 @@ export class GlGraphMinimap extends GlElement {
 						let linesChanged;
 						let resultsCount;
 						if (stat?.commits) {
-							commits = pluralize('commit', stat.commits, { format: c => formatNumeric(c) });
+							commits = pluralize('个提交', stat.commits, { format: c => formatNumeric(c) });
 							if (results?.count) {
-								resultsCount = pluralize('matching commit', results.count);
+								resultsCount = pluralize('个匹配的提交', results.count);
 							}
 
 							if (this.dataType === 'lines') {
-								linesChanged = `${pluralize('file', stat?.files ?? 0, {
+								linesChanged = `${pluralize('个文件', stat?.files ?? 0, {
 									format: c => formatNumeric(c),
-									zero: 'No',
+									zero: '没有',
 								})}, ${pluralize(
-									'line',
+									'行',
 									(stat?.activity?.additions ?? 0) + (stat?.activity?.deletions ?? 0),
 									{
 										format: c => formatNumeric(c),
-										zero: 'No',
+										zero: '没有',
 									},
-								)} changed`;
+								)} 更改`;
 							}
 						} else {
-							commits = 'No commits';
+							commits = '没有提交';
 						}
 
 						return /*html*/ `<div class="bb-tooltip">
@@ -950,8 +950,8 @@ export class GlGraphMinimap extends GlElement {
 								? /*html*/ `
 						<div class="refs">${
 							stashesCount
-								? /*html*/ `<span class="stash">${pluralize('stash', stashesCount, {
-										plural: 'stashes',
+								? /*html*/ `<span class="stash">${pluralize('个暂存', stashesCount, {
+										plural: '个暂存',
 								  })}</span>`
 								: ''
 						}${

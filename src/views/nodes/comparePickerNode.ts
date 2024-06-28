@@ -46,7 +46,7 @@ export class ComparePickerNode extends ViewNode<'compare-picker', SearchAndCompa
 			);
 			item.contextValue = ContextValues.ComparePicker;
 			item.description = description;
-			item.tooltip = `Click to select or enter a reference for compare${GlyphChars.Ellipsis}`;
+			item.tooltip = `点击选择或输入一个比较的参考${GlyphChars.Ellipsis}`;
 			item.command = {
 				title: `Compare${GlyphChars.Ellipsis}`,
 				command: this.view.getQualifiedCommand('selectForCompare'),
@@ -58,7 +58,7 @@ export class ComparePickerNode extends ViewNode<'compare-picker', SearchAndCompa
 			);
 			item.contextValue = ContextValues.ComparePickerWithRef;
 			item.description = description;
-			item.tooltip = `Click to compare ${selectedRef.label} with${GlyphChars.Ellipsis}`;
+			item.tooltip = `点击比较 ${selectedRef.label} 与${GlyphChars.Ellipsis}`;
 			item.command = {
 				title: `Compare ${selectedRef.label} with${GlyphChars.Ellipsis}`,
 				command: this.view.getQualifiedCommand('compareWithSelected'),

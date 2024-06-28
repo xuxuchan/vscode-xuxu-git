@@ -463,7 +463,7 @@ export function parseGitLog(
 
 			case 97: // 'a': // author
 				if (uncommitted === entry.sha) {
-					entry.author = 'You';
+					entry.author = '我';
 				} else {
 					entry.author = line.substring(4);
 				}
@@ -739,13 +739,13 @@ function parseLogEntry(
 	if (commit == null) {
 		if (entry.author != null) {
 			if (isUserMatch(currentUser, entry.author, entry.authorEmail)) {
-				entry.author = 'You';
+				entry.author = '我';
 			}
 		}
 
 		if (entry.committer != null) {
 			if (isUserMatch(currentUser, entry.committer, entry.committerEmail)) {
-				entry.committer = 'You';
+				entry.committer = '我';
 			}
 		}
 

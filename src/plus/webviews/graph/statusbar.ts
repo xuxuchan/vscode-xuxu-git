@@ -45,12 +45,12 @@ export class GraphStatusBarController implements Disposable {
 		if (enabled) {
 			if (this._statusBarItem == null) {
 				this._statusBarItem = window.createStatusBarItem('gitlens.graph', StatusBarAlignment.Left, 10000 - 2);
-				this._statusBarItem.name = 'GitLens Commit Graph';
+				this._statusBarItem.name = 'XU-Git 提交图';
 				this._statusBarItem.command = Commands.ShowGraph;
 				this._statusBarItem.text = '$(gitlens-graph)';
-				this._statusBarItem.tooltip = new MarkdownString('Visualize commits on the Commit Graph');
+				this._statusBarItem.tooltip = new MarkdownString('在提交图上可视化提交');
 				this._statusBarItem.accessibilityInformation = {
-					label: `Show the GitLens Commit Graph`,
+					label: `显示 XU-Git 提交图`,
 				};
 			}
 			this._statusBarItem.show();

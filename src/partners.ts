@@ -63,7 +63,7 @@ function registerLiveShare(context: ExtensionContext) {
 				name: 'Live Share',
 				label: (context: ActionContext) => {
 					if (context.type === 'hover.commands') {
-						if (context.commit.author.name !== 'You') {
+						if (context.commit.author.name !== '我') {
 							return `$(live-share) Invite ${context.commit.author.name}${
 								(context.commit.author.presence as ContactPresence)?.statusText
 									? ` (${(context.commit.author.presence as ContactPresence)?.statusText})`
@@ -75,7 +75,7 @@ function registerLiveShare(context: ExtensionContext) {
 					return '$(live-share) Start a Live Share Session';
 				},
 				run: async (context: ActionContext) => {
-					if (context.type !== 'hover.commands' || context.commit.author.name === 'You') {
+					if (context.type !== 'hover.commands' || context.commit.author.name === '我') {
 						await executeCommand<InviteToLiveShareCommandArgs>(Commands.InviteToLiveShare, {});
 
 						return;

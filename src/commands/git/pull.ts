@@ -147,12 +147,12 @@ export class PullGitCommand extends QuickCommand<State> {
 			step = this.createConfirmStep(appendReposToTitle(`确认 ${context.title}`, state, context), [
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `将会拉取 ${state.repos.length} 个仓库`,
+					detail: `拉取 ${state.repos.length} 个仓库`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--rebase'], {
 					label: `${this.title} 使用变基`,
 					description: '--rebase',
-					detail: `将会变基拉取 ${state.repos.length} 个仓库`,
+					detail: `变基拉取 ${state.repos.length} 个仓库`,
 				}),
 			]);
 		} else if (isBranchReference(state.reference)) {
@@ -182,7 +182,7 @@ export class PullGitCommand extends QuickCommand<State> {
 					step = this.createConfirmStep(appendReposToTitle(`Confirm ${context.title}`, state, context), [
 						createFlagsQuickPickItem<Flags>(state.flags, [], {
 							label: this.title,
-							detail: `将会拉取${
+							detail: `拉取${
 								branch.state.behind
 									? ` ${pluralize('个提交', branch.state.behind)} 到 ${getReferenceLabel(branch)}`
 									: ` 到 ${getReferenceLabel(branch)}`
@@ -210,12 +210,12 @@ export class PullGitCommand extends QuickCommand<State> {
 				[
 					createFlagsQuickPickItem<Flags>(state.flags, [], {
 						label: this.title,
-						detail: `将会拉取${pullDetails}`,
+						detail: `拉取${pullDetails}`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--rebase'], {
 						label: `${this.title} 使用变基`,
 						description: '--rebase',
-						detail: `将会拉取并变基${pullDetails}`,
+						detail: `拉取并变基${pullDetails}`,
 					}),
 				],
 				undefined,

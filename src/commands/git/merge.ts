@@ -237,28 +237,28 @@ export class MergeGitCommand extends QuickCommand<State> {
 			[
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `将会合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
+					detail: `合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
 						state.reference,
 					)} 到 ${getReferenceLabel(context.destination)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--ff-only'], {
 					label: `Fast-forward ${this.title}`,
 					description: '--ff-only',
-					detail: `将会快进合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
+					detail: `快进合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
 						state.reference,
 					)} 到 ${getReferenceLabel(context.destination)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--squash'], {
 					label: `Squash ${this.title}`,
 					description: '--squash',
-					detail: `将会压缩 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
+					detail: `压缩 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
 						state.reference,
 					)} 为一个提交，在合并到 ${getReferenceLabel(context.destination)} 时`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--no-ff'], {
 					label: `${this.title} without Fast-Forwarding`,
 					description: '--no-ff',
-					detail: `将会创建一个合并提交，当合并 ${pluralize(
+					detail: `创建一个合并提交，当合并 ${pluralize(
 						'个提交',
 						count,
 					)} 从 ${getReferenceLabel(state.reference)} 到 ${getReferenceLabel(context.destination)}`,
@@ -266,7 +266,7 @@ export class MergeGitCommand extends QuickCommand<State> {
 				createFlagsQuickPickItem<Flags>(state.flags, ['--no-ff', '--no-commit'], {
 					label: `${this.title} without Fast-Forwarding or Committing`,
 					description: '--no-ff --no-commit',
-					detail: `将会合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
+					detail: `会合并 ${pluralize('个提交', count)} 从 ${getReferenceLabel(
 						state.reference,
 					)} 到 ${getReferenceLabel(context.destination)}，不提交`,
 				}),

@@ -341,23 +341,23 @@ export class DeepLinkService implements Disposable {
 		customMessage?: string;
 	}): Promise<DeepLinkRepoOpenType | undefined> {
 		const openOptions: OpenQuickPickItem[] = [
-			{ label: 'Choose a Local Folder...', action: 'folder' },
-			{ label: 'Choose a Workspace File...', action: 'workspace' },
+			{ label: '选择一个本地文件夹...', action: 'folder' },
+			{ label: '选择一个工作空间文件...', action: 'workspace' },
 		];
 
 		if (this._context.remoteUrl != null) {
-			openOptions.push({ label: 'Clone Repository...', action: 'clone' });
+			openOptions.push({ label: '克隆仓库...', action: 'clone' });
 		}
 
 		if (options?.includeCurrent) {
-			openOptions.push(createQuickPickSeparator(), { label: 'Use Current Window', action: 'current' });
+			openOptions.push(createQuickPickSeparator(), { label: '使用当前窗口', action: 'current' });
 		}
 
-		openOptions.push(createQuickPickSeparator(), { label: 'Cancel' });
+		openOptions.push(createQuickPickSeparator(), { label: '取消' });
 		const openTypeResult = await window.showQuickPick(openOptions, {
-			title: 'Locating Repository',
+			title: '定位仓库',
 			placeHolder:
-				options?.customMessage ?? 'Unable to locate a matching repository, please choose how to locate it',
+				options?.customMessage ?? '无法定位到匹配的仓库，请选择如何定位它',
 		});
 
 		return openTypeResult?.action;
@@ -390,7 +390,7 @@ export class DeepLinkService implements Disposable {
 				break;
 		}
 
-		openOptions.push(createQuickPickSeparator(), { label: 'Cancel' });
+		openOptions.push(createQuickPickSeparator(), { label: '取消' });
 		const openLocationResult = await window.showQuickPick(openOptions, {
 			title: `Locating Repository${suffix}`,
 			placeHolder: `Please choose where to open the repository ${
@@ -403,7 +403,7 @@ export class DeepLinkService implements Disposable {
 
 	private async showFetchPrompt(): Promise<boolean> {
 		const fetch: QuickPickItem = { label: 'Fetch' };
-		const cancel: QuickPickItem = { label: 'Cancel' };
+		const cancel: QuickPickItem = { label: '取消' };
 		const result = await window.showQuickPick([fetch, createQuickPickSeparator<QuickPickItem>(), cancel], {
 			title: 'Locating Link Target',
 			placeHolder: 'Unable to find the link target(s), would you like to fetch from the remote?',
@@ -414,7 +414,7 @@ export class DeepLinkService implements Disposable {
 
 	private async showAddRemotePrompt(remoteUrl: string, existingRemoteNames: string[]): Promise<string | undefined> {
 		const add: QuickPickItem = { label: 'Add Remote' };
-		const cancel: QuickPickItem = { label: 'Cancel' };
+		const cancel: QuickPickItem = { label: '取消' };
 		const result = await window.showQuickPick([add, cancel], {
 			title: `Locating Remote`,
 			placeHolder: `Unable to find remote for '${remoteUrl}', would you like to a new remote?`,

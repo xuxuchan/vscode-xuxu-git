@@ -117,7 +117,7 @@ export class WorktreesView extends ViewBase<'worktrees', WorktreesViewNode, Work
 								color: new ThemeColor(
 									'gitlens.decorations.worktreeHasUncommittedChangesForegroundColor' as Colors,
 								),
-								tooltip: 'Has Uncommitted Changes',
+								tooltip: '存在未提交的更改',
 							};
 
 						case 'missing':

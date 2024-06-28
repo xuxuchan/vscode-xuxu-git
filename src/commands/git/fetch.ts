@@ -149,7 +149,7 @@ export class FetchGitCommand extends QuickCommand<State> {
 				[
 					createFlagsQuickPickItem<Flags>(state.flags, [], {
 						label: this.title,
-						detail: `Will fetch ${getReferenceLabel(state.reference)}`,
+						detail: `获取 ${getReferenceLabel(state.reference)}`,
 					}),
 				],
 			);
@@ -162,22 +162,22 @@ export class FetchGitCommand extends QuickCommand<State> {
 				[
 					createFlagsQuickPickItem<Flags>(state.flags, [], {
 						label: this.title,
-						detail: `Will fetch ${reposToFetch}`,
+						detail: `获取 ${reposToFetch}`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--prune'], {
-						label: `${this.title} & 修剪`,
+						label: `${this.title} & Prune`,
 						description: '--prune',
-						detail: `将会获取并修剪 ${reposToFetch}`,
+						detail: `获取并修剪 ${reposToFetch}`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--all'], {
-						label: `${this.title} 全部`,
+						label: `${this.title} All`,
 						description: '--all',
-						detail: `将会获取 ${reposToFetch} 的所有远程分支`,
+						detail: `获取 ${reposToFetch} 的所有远程分支`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--all', '--prune'], {
-						label: `${this.title} 全部 & 修剪`,
+						label: `${this.title} All & Prune`,
 						description: '--all --prune',
-						detail: `将获取并修剪 ${reposToFetch} 的所有远程分支`,
+						detail: `获取并修剪 ${reposToFetch} 的所有远程分支`,
 					}),
 				],
 				context,

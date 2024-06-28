@@ -76,7 +76,7 @@ export class GitCommit implements GitRevisionReference {
 			}
 		} else if (isUncommitted(sha, true)) {
 			this._summary = summary;
-			this._message = 'Uncommitted Changes';
+			this._message = '未提交的更改';
 		} else {
 			this._summary = `${summary} ${GlyphChars.Ellipsis}`;
 		}

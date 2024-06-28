@@ -72,7 +72,7 @@ export function parseGitBlame(
 		switch (key) {
 			case 'author':
 				if (entry.sha === uncommitted) {
-					entry.author = 'You';
+					entry.author = '我';
 				} else {
 					entry.author = line.slice(key.length + 1).trim();
 				}
@@ -111,7 +111,7 @@ export function parseGitBlame(
 
 			case 'committer':
 				if (isUncommitted(entry.sha)) {
-					entry.committer = 'You';
+					entry.committer = '我';
 				} else {
 					entry.committer = line.slice(key.length + 1).trim();
 				}
@@ -215,7 +215,7 @@ function parseBlameEntry(
 				// Match on email if configured
 				(currentUser.email == null || currentUser.email === entry.authorEmail)
 			) {
-				entry.author = 'You';
+				entry.author = '我';
 			}
 
 			let author = authors.get(entry.author);

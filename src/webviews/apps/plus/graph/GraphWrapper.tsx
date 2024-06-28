@@ -934,7 +934,7 @@ export function GraphWrapper({
 				label = '拉取';
 				tooltip = (
 					<>
-						拉取 {pluralize('提交', branchState.behind)} 从 {remote}
+						拉取 {pluralize('个提交', branchState.behind)} 从 {remote}
 						{branchState.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 					</>
 				);
@@ -943,8 +943,8 @@ export function GraphWrapper({
 						<>
 							{tooltip}
 							<hr />
-							{branchPrefix} {pluralize('提交', branchState.behind)} 落后且{' '}
-							{pluralize('提交', branchState.ahead)} 领先 {remote}
+							{branchPrefix} {pluralize('个提交', branchState.behind)} 落后且{' '}
+							{pluralize('个提交', branchState.ahead)} 领先 {remote}
 							{branchState.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 						</>
 					);
@@ -953,7 +953,7 @@ export function GraphWrapper({
 						<>
 							{tooltip}
 							<hr />
-							{branchPrefix} {pluralize('提交', branchState.behind)} 落后 {remote}
+							{branchPrefix} {pluralize('个提交', branchState.behind)} 落后 {remote}
 							{branchState.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 						</>
 					);
@@ -964,10 +964,10 @@ export function GraphWrapper({
 				label = '推送';
 				tooltip = (
 					<>
-						推送 {pluralize('提交', branchState.ahead)} 到 {remote}
+						推送 {pluralize('个提交', branchState.ahead)} 到 {remote}
 						{branchState.provider?.name ? ` 于 ${branchState.provider?.name}` : ''}
 						<hr />
-						{branchPrefix} {pluralize('提交', branchState.ahead)} 领先 {remote}
+						{branchPrefix} {pluralize('个提交', branchState.ahead)} 领先 {remote}
 					</>
 				);
 			}
@@ -1168,11 +1168,11 @@ export function GraphWrapper({
 								className="action-button"
 							>
 								<span className="codicon codicon-rocket"></span>
-								启动板
+								启动台
 							</a>
 							<span slot="content">
 								<span style={{ whiteSpace: 'break-spaces' }}>
-									启动板将您的拉取请求组织成可操作的组，以帮助您集中注意力并保持您的团队畅通无阻。
+									启动台将您的拉取请求组织成可操作的组，以帮助您集中注意力并保持您的团队畅通无阻。
 								</span>
 							</span>
 						</GlTooltip>

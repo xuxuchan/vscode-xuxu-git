@@ -166,14 +166,14 @@ export class PushGitCommand extends QuickCommand<State> {
 			step = this.createConfirmStep(appendReposToTitle(`Confirm ${context.title}`, state, context), [
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `Will push ${state.repos.length} repos`,
+					detail: `推送 ${state.repos.length} repos`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--force'], {
 					label: `强制 ${this.title}${ useForceIfIncludes ? '（带租约且包含时）' : useForceWithLease ? '（带租约）' : '' }`,
 					description: `--force${
 						useForceWithLease ? `-with-lease${useForceIfIncludes ? ' --force-if-includes' : ''}` : ''
 					}`,
-					detail: `将强制推送${ useForceIfIncludes ? '（带租约且包含时）' : useForceWithLease ? '（带租约）' : '' } ${state.repos.length} 个仓库`,
+					detail: `强制推送${ useForceIfIncludes ? '（带租约且包含时）' : useForceWithLease ? '（带租约）' : '' } ${state.repos.length} 个仓库`,
 				}),
 			]);
 		} else {
@@ -244,7 +244,7 @@ export class PushGitCommand extends QuickCommand<State> {
 											? `-with-lease${useForceIfIncludes ? ' --force-if-includes' : ''}`
 											: ''
 									}`,
-									detail: `将会强制推送${
+									detail: `强制推送${
 										useForceIfIncludes
 											? ' (带租约且包含时)'
 											: useForceWithLease
@@ -272,7 +272,7 @@ export class PushGitCommand extends QuickCommand<State> {
 						step = this.createConfirmStep(appendReposToTitle(`Confirm ${context.title}`, state, context), [
 							createFlagsQuickPickItem<Flags>(state.flags, [branch.getRemoteName()!], {
 								label: this.title,
-								detail: `将会推送 ${pluralize('个提交', branch.state.ahead)} 从 ${getReferenceLabel(
+								detail: `推送 ${pluralize('个提交', branch.state.ahead)} 从 ${getReferenceLabel(
 									branch,
 								)} 到 ${branch.getRemoteName()}`,
 							}),
@@ -408,7 +408,7 @@ export class PushGitCommand extends QuickCommand<State> {
 										? `-with-lease${useForceIfIncludes ? ' --force-if-includes' : ''}`
 										: ''
 								}`,
-								detail: `将会强制推送${
+								detail: `强制推送${
 									useForceIfIncludes
 										? ' (带有租约且包含时)'
 										: useForceWithLease

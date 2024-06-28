@@ -129,7 +129,7 @@ export class RemoteGitCommand extends QuickCommand<State> {
 
 	constructor(container: Container, args?: RemoteGitCommandArgs) {
 		super(container, 'remote', 'remote', 'Remote', {
-			description: 'add, prune, or remove remotes',
+			description: '添加、修剪或删除远程仓库',
 		});
 
 		let counter = 0;
@@ -260,19 +260,19 @@ export class RemoteGitCommand extends QuickCommand<State> {
 			items: [
 				{
 					label: 'add',
-					description: 'adds a new remote',
+					description: '添加新的远程',
 					picked: state.subcommand === 'add',
 					item: 'add',
 				},
 				{
 					label: 'prune',
-					description: 'prunes remote branches on the specified remote',
+					description: '修剪指定远程仓库上的远程分支',
 					picked: state.subcommand === 'prune',
 					item: 'prune',
 				},
 				{
 					label: 'remove',
-					description: 'removes the specified remote',
+					description: '删除指定的远程',
 					picked: state.subcommand === 'remove',
 					item: 'remove',
 				},
@@ -293,7 +293,7 @@ export class RemoteGitCommand extends QuickCommand<State> {
 		while (this.canStepsContinue(state)) {
 			if (state.counter < 3 || state.name == null || alreadyExists) {
 				const result = yield* inputRemoteNameStep(state, context, {
-					placeholder: 'Please provide a name for the remote',
+					placeholder: '请提供远程仓库的名称',
 					value: state.name,
 				});
 				if (result === StepResultBreak) continue;
@@ -309,7 +309,7 @@ export class RemoteGitCommand extends QuickCommand<State> {
 
 			if (state.counter < 4 || state.url == null) {
 				const result = yield* inputRemoteUrlStep(state, context, {
-					placeholder: 'Please provide a URL for the remote',
+					placeholder: '请提供远程仓库的URL',
 					value: state.url,
 				});
 				if (result === StepResultBreak) continue;
@@ -342,12 +342,12 @@ export class RemoteGitCommand extends QuickCommand<State> {
 			[
 				createFlagsQuickPickItem<AddFlags>(state.flags, [], {
 					label: context.title,
-					detail: `Will add remote '${state.name}' for ${state.url}`,
+					detail: `为 ${state.url} 添加远程仓库 '${state.name}'`,
 				}),
 				createFlagsQuickPickItem<AddFlags>(state.flags, ['-f'], {
 					label: `${context.title} and Fetch`,
 					description: '-f',
-					detail: `Will add and fetch remote '${state.name}' for ${state.url}`,
+					detail: `添加并获取远程仓库 '${state.name}' 的内容，远程仓库地址为 ${state.url}`,
 				}),
 			],
 			context,
@@ -372,7 +372,7 @@ export class RemoteGitCommand extends QuickCommand<State> {
 			if (state.counter < 3 || state.remote == null) {
 				const result = yield* pickRemoteStep(state, context, {
 					picked: state.remote?.name,
-					placeholder: 'Choose remote to remove',
+					placeholder: '选择一个远程以删除',
 				});
 				// Always break on the first step (so we will go back)
 				if (result === StepResultBreak) break;
@@ -389,7 +389,7 @@ export class RemoteGitCommand extends QuickCommand<State> {
 				await state.repo.removeRemote(state.remote.name);
 			} catch (ex) {
 				Logger.error(ex);
-				void showGenericErrorMessage('Unable to remove remote');
+				void showGenericErrorMessage('无法删除远程');
 			}
 		}
 	}
@@ -403,7 +403,7 @@ export class RemoteGitCommand extends QuickCommand<State> {
 			[
 				{
 					label: context.title,
-					detail: `Will remove remote '${state.remote.name}'`,
+					detail: `删除远程 '${state.remote.name}'`,
 				},
 			],
 			context,
@@ -428,7 +428,7 @@ export class RemoteGitCommand extends QuickCommand<State> {
 			if (state.counter < 3 || state.remote == null) {
 				const result = yield* pickRemoteStep(state, context, {
 					picked: state.remote?.name,
-					placeholder: 'Choose a remote to prune',
+					placeholder: '选择一个远程以修剪',
 				});
 				// Always break on the first step (so we will go back)
 				if (result === StepResultBreak) break;
@@ -450,11 +450,11 @@ export class RemoteGitCommand extends QuickCommand<State> {
 		context: Context,
 	): StepResultGenerator<void> {
 		const step: QuickPickStep = createConfirmStep(
-			appendReposToTitle(`Confirm ${context.title}`, state, context),
+			appendReposToTitle(`确认 ${context.title}`, state, context),
 			[
 				{
 					label: context.title,
-					detail: `Will prune remote '${state.remote.name}'`,
+					detail: `修剪远程 '${state.remote.name}'`,
 				},
 			],
 			context,

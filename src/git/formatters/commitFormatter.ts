@@ -248,7 +248,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 
 	get authorNotYou(): string {
 		let { name, email } = this._item.author;
-		if (name === 'You') return this._padOrTruncate('', this._options.tokenOptions.authorNotYou);
+		if (name === '我') return this._padOrTruncate('', this._options.tokenOptions.authorNotYou);
 
 		const author = this._padOrTruncate(name, this._options.tokenOptions.authorNotYou);
 
@@ -280,7 +280,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 
 		const presence = this._options.presence;
 		if (presence != null) {
-			let title = `${name} ${name === 'You' ? 'are' : 'is'} ${
+			let title = `${name} ${name === '我' ? 'are' : 'is'} ${
 				presence.status === 'dnd' ? 'in ' : ''
 			}${presence.statusText.toLocaleLowerCase()}`;
 

@@ -623,8 +623,8 @@ export class GitHubGitProvider implements GitProvider, Disposable {
 				const c = range.commit;
 
 				const { viewer = session.account.label } = blame;
-				const authorName = viewer != null && c.author.name === viewer ? 'You' : c.author.name;
-				const committerName = viewer != null && c.committer.name === viewer ? 'You' : c.committer.name;
+				const authorName = viewer != null && c.author.name === viewer ? '我' : c.author.name;
+				const committerName = viewer != null && c.committer.name === viewer ? '我' : c.committer.name;
 
 				let author = authors.get(authorName);
 				if (author == null) {
@@ -761,8 +761,8 @@ export class GitHubGitProvider implements GitProvider, Disposable {
 			const c = range.commit;
 
 			const { viewer = session.account.label } = blame;
-			const authorName = viewer != null && c.author.name === viewer ? 'You' : c.author.name;
-			const committerName = viewer != null && c.committer.name === viewer ? 'You' : c.committer.name;
+			const authorName = viewer != null && c.author.name === viewer ? '我' : c.author.name;
+			const committerName = viewer != null && c.committer.name === viewer ? '我' : c.committer.name;
 
 			const commit = new GitCommit(
 				this.container,
@@ -1014,8 +1014,8 @@ export class GitHubGitProvider implements GitProvider, Disposable {
 			if (commit == null) return undefined;
 
 			const { viewer = session.account.label } = commit;
-			const authorName = viewer != null && commit.author.name === viewer ? 'You' : commit.author.name;
-			const committerName = viewer != null && commit.committer.name === viewer ? 'You' : commit.committer.name;
+			const authorName = viewer != null && commit.author.name === viewer ? '我' : commit.author.name;
+			const committerName = viewer != null && commit.committer.name === viewer ? '我' : commit.committer.name;
 
 			return new GitCommit(
 				this.container,
@@ -1153,8 +1153,8 @@ export class GitHubGitProvider implements GitProvider, Disposable {
 			if (commit == null) return undefined;
 
 			const { viewer = session.account.label } = commit;
-			const authorName = viewer != null && commit.author.name === viewer ? 'You' : commit.author.name;
-			const committerName = viewer != null && commit.committer.name === viewer ? 'You' : commit.committer.name;
+			const authorName = viewer != null && commit.author.name === viewer ? '我' : commit.author.name;
+			const committerName = viewer != null && commit.committer.name === viewer ? '我' : commit.committer.name;
 
 			const files = commit.files?.map(
 				f =>
@@ -1516,7 +1516,7 @@ export class GitHubGitProvider implements GitProvider, Disposable {
 				}
 			}
 
-			isCurrentUser = commit.author.name === 'You';
+			isCurrentUser = commit.author.name === '我';
 			contexts = {
 				row: serializeWebviewItemContext<GraphItemRefContext>({
 					webviewItem: `gitlens:commit${head ? '+HEAD' : ''}+current`,
@@ -1812,9 +1812,9 @@ export class GitHubGitProvider implements GitProvider, Disposable {
 
 			const { viewer = session.account.label } = result;
 			for (const commit of result.values) {
-				const authorName = viewer != null && commit.author.name === viewer ? 'You' : commit.author.name;
+				const authorName = viewer != null && commit.author.name === viewer ? '我' : commit.author.name;
 				const committerName =
-					viewer != null && commit.committer.name === viewer ? 'You' : commit.committer.name;
+					viewer != null && commit.committer.name === viewer ? '我' : commit.committer.name;
 
 				let c = commits.get(commit.oid);
 				if (c == null) {
@@ -2187,9 +2187,9 @@ export class GitHubGitProvider implements GitProvider, Disposable {
 
 			const { viewer = session.account.label } = result;
 			for (const commit of result.values) {
-				const authorName = viewer != null && commit.author.name === viewer ? 'You' : commit.author.name;
+				const authorName = viewer != null && commit.author.name === viewer ? '我' : commit.author.name;
 				const committerName =
-					viewer != null && commit.committer.name === viewer ? 'You' : commit.committer.name;
+					viewer != null && commit.committer.name === viewer ? '我' : commit.committer.name;
 
 				let c = commits.get(commit.oid);
 				if (c == null) {
@@ -2948,9 +2948,9 @@ export class GitHubGitProvider implements GitProvider, Disposable {
 
 			const viewer = session.account.label;
 			for (const commit of result.values) {
-				const authorName = viewer != null && commit.author.name === viewer ? 'You' : commit.author.name;
+				const authorName = viewer != null && commit.author.name === viewer ? '我' : commit.author.name;
 				const committerName =
-					viewer != null && commit.committer.name === viewer ? 'You' : commit.committer.name;
+					viewer != null && commit.committer.name === viewer ? '我' : commit.committer.name;
 
 				let c = commits.get(commit.oid);
 				if (c == null) {

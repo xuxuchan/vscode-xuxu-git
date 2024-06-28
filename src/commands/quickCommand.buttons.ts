@@ -139,7 +139,7 @@ export const OpenInEditorQuickInputButton: QuickInputButton = {
 
 export const LaunchpadSettingsQuickInputButton: QuickInputButton = {
 	iconPath: new ThemeIcon('gear'),
-	tooltip: '启动板设置',
+	tooltip: '启动台设置',
 };
 
 export const PinQuickInputButton: QuickInputButton = {

@@ -68,7 +68,7 @@ export async function createContributorQuickPickItem(
 ): Promise<ContributorQuickPickItem> {
 	const item: ContributorQuickPickItem = {
 		label: contributor.label,
-		description: contributor.current ? 'you' : contributor.email,
+		description: contributor.current ? '我' : contributor.email,
 		alwaysShow: options?.alwaysShow,
 		buttons: options?.buttons,
 		picked: picked,

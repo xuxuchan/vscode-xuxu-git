@@ -12,7 +12,7 @@ export function registerFocusWebviewPanel(controller: WebviewsController) {
 			id: 'gitlens.focus',
 			fileName: 'focus.html',
 			iconPath: 'images/gitlens-icon.png',
-			title: 'GitLens Launchpad',
+			title: 'XU-Git 启动台',
 			contextKeyPrefix: `gitlens:webview:focus`,
 			trackingFeature: 'focusWebview',
 			plusFeature: true,

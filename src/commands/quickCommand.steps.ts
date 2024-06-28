@@ -496,7 +496,7 @@ export function getValidateGitReferenceFn(
 			if (inRefMode) {
 				quickpick.items = [
 					createDirectiveQuickPickItem(Directive.Back, true, {
-						label: 'Enter a reference or commit SHA',
+						label: '输入一个引用或提交 SHA',
 					}),
 				];
 				return true;
@@ -538,24 +538,24 @@ export async function* inputBranchNameStep<
 ): AsyncStepResultGenerator<string> {
 	const step = createInputStep({
 		title: appendReposToTitle(`${context.title}${options.titleContext ?? ''}`, state, context),
-		placeholder: options.placeholder ?? 'Branch name',
+		placeholder: options.placeholder ?? '分支名称',
 		value: options.value,
-		prompt: options.prompt ?? 'Please provide a new branch name',
+		prompt: options.prompt ?? '请提供一个新的分支名称',
 		validate: async (value: string | undefined): Promise<[boolean, string | undefined]> => {
 			if (value == null) return [false, undefined];
 
 			value = value.trim();
-			if (value.length === 0) return [false, 'Please enter a valid branch name'];
+			if (value.length === 0) return [false, '请输入一个有效的分支名称'];
 
 			if ('repo' in state) {
 				const valid = await Container.instance.git.validateBranchOrTagName(state.repo.path, value);
 				if (!valid) {
-					return [false, `'${value}' isn't a valid branch name`];
+					return [false, `'${value}' 不是一个有效的分支名称`];
 				}
 
 				const alreadyExists = await state.repo.getBranch(value);
 				if (alreadyExists) {
-					return [false, `A branch named '${value}' already exists`];
+					return [false, `分支名称 '${value}' 已存在`];
 				}
 
 				return [true, undefined];
@@ -566,12 +566,12 @@ export async function* inputBranchNameStep<
 			for (const repo of state.repos) {
 				valid = await Container.instance.git.validateBranchOrTagName(repo.path, value);
 				if (!valid) {
-					return [false, `'${value}' isn't a valid branch name`];
+					return [false, `'${value}' 不是一个有效的分支名称`];
 				}
 
 				const alreadyExists = await repo.getBranch(value);
 				if (alreadyExists) {
-					return [false, `A branch named '${value}' already exists`];
+					return [false, `分支名称 '${value}' 已存在`];
 				}
 			}
 
@@ -599,20 +599,20 @@ export async function* inputRemoteNameStep<
 		title: appendReposToTitle(`${context.title}${options.titleContext ?? ''}`, state, context),
 		placeholder: options.placeholder,
 		value: options.value,
-		prompt: 'Enter remote name',
+		prompt: '输入远程名称',
 		validate: async (value: string | undefined): Promise<[boolean, string | undefined]> => {
 			if (value == null) return [false, undefined];
 
 			value = value.trim();
-			if (value.length === 0) return [false, 'Please enter a valid remote name'];
+			if (value.length === 0) return [false, '请输入一个有效的远程名称'];
 
 			const valid = !/[^a-zA-Z0-9-_.]/.test(value);
-			if (!valid) return [false, `'${value}' isn't a valid remote name`];
+			if (!valid) return [false, `'${value}' 不是一个有效的远程名称`];
 
 			if ('repo' in state) {
 				const alreadyExists = (await state.repo.getRemotes({ filter: r => r.name === value })).length !== 0;
 				if (alreadyExists) {
-					return [false, `A remote named '${value}' already exists`];
+					return [false, `远程名称 '${value}' 已存在`];
 				}
 			}
 
@@ -640,15 +640,15 @@ export async function* inputRemoteUrlStep<
 		title: appendReposToTitle(`${context.title}${options.titleContext ?? ''}`, state, context),
 		placeholder: options.placeholder,
 		value: options.value,
-		prompt: 'Enter remote URL',
+		prompt: '输入远程 URL',
 		validate: (value: string | undefined): [boolean, string | undefined] => {
 			if (value == null) return [false, undefined];
 
 			value = value.trim();
-			if (value.length === 0) return [false, 'Please enter a valid remote URL'];
+			if (value.length === 0) return [false, '请输入一个有效的远程 URL'];
 
 			const valid = remoteUrlRegex.test(value);
-			return [valid, valid ? undefined : `'${value}' isn't a valid remote URL`];
+			return [valid, valid ? undefined : `'${value}' 不是一个有效的远程 URL`];
 		},
 	});
 
@@ -672,16 +672,16 @@ export async function* inputTagNameStep<
 		title: appendReposToTitle(`${context.title}${options.titleContext ?? ''}`, state, context),
 		placeholder: options.placeholder,
 		value: options.value,
-		prompt: 'Enter tag name',
+		prompt: '输入标签名称',
 		validate: async (value: string | undefined): Promise<[boolean, string | undefined]> => {
 			if (value == null) return [false, undefined];
 
 			value = value.trim();
-			if (value.length === 0) return [false, 'Please enter a valid tag name'];
+			if (value.length === 0) return [false, '请输入一个有效的标签名称'];
 
 			if ('repo' in state) {
 				const valid = await Container.instance.git.validateBranchOrTagName(state.repo.path, value);
-				return [valid, valid ? undefined : `'${value}' isn't a valid tag name`];
+				return [valid, valid ? undefined : `'${value}' 不是一个有效的标签名称`];
 			}
 
 			let valid = true;
@@ -689,7 +689,7 @@ export async function* inputTagNameStep<
 			for (const repo of state.repos) {
 				valid = await Container.instance.git.validateBranchOrTagName(repo.path, value);
 				if (!valid) {
-					return [false, `'${value}' isn't a valid branch name`];
+					return [false, `'${value}' 不是一个有效的分支名称`];
 				}
 			}
 
@@ -794,7 +794,7 @@ export function* pickBranchesStep<
 		multiselect: true,
 		title: appendReposToTitle(`${context.title}${titleContext ?? ''}`, state, context),
 		placeholder: count =>
-			!count ? emptyPlaceholder ?? `No branches found in ${state.repo.formattedName}` : placeholder,
+			!count ? emptyPlaceholder ?? `在 ${state.repo.formattedName} 中未找到分支` : placeholder,
 		matchOnDetail: true,
 		items: items,
 		onDidClickItemButton: (quickpick, button, { item }) => {
@@ -868,7 +868,7 @@ export function* pickBranchOrTagStep<
 				? `No branches${context.showTags ? ' or tags' : ''} found in ${state.repo.formattedName}`
 				: `${
 						typeof placeholder === 'string' ? placeholder : placeholder(context)
-				  } (or enter a revision using #)`,
+				  } (或使用 # 输入一个修订版本)`,
 		matchOnDescription: true,
 		matchOnDetail: true,
 		value: value,
@@ -906,7 +906,7 @@ export function* pickBranchOrTagStep<
 							? `${state.repo.formattedName} has no branches${context.showTags ? ' or tags' : ''}`
 							: `${
 									typeof placeholder === 'string' ? placeholder : placeholder(context)
-							  } (or enter a revision using #)`;
+							  } (或使用 # 输入一个修订版本)`;
 					quickpick.items = branchesAndOrTags;
 				} finally {
 					quickpick.busy = false;
@@ -998,7 +998,7 @@ export function* pickBranchOrTagStepMultiRepo<
 				  } found in ${state.repos.length === 1 ? state.repos[0].formattedName : `${state.repos.length} repos`}`
 				: `${
 						typeof placeholder === 'string' ? placeholder : placeholder(context)
-				  } (or enter a revision using #)`,
+				  } (或使用 # 输入一个修订版本)`,
 		matchOnDescription: true,
 		matchOnDetail: true,
 		value: value ?? (isRevisionReference(state.reference) ? state.reference.ref : undefined),
@@ -1042,7 +1042,7 @@ export function* pickBranchOrTagStepMultiRepo<
 							  }`
 							: `${
 									typeof placeholder === 'string' ? placeholder : placeholder(context)
-							  } (or enter a revision using #)`;
+							  } (或使用 # 输入一个修订版本)`;
 					quickpick.items = branchesAndOrTags;
 				} finally {
 					quickpick.busy = false;

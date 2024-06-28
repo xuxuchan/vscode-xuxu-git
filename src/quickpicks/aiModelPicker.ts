@@ -65,8 +65,8 @@ export async function showAIModelPicker(
 				}),
 			);
 
-			quickpick.title = 'Choose AI Model';
-			quickpick.placeholder = 'Select an AI model to use for experimental AI features';
+			quickpick.title = '选择 AI 模型';
+			quickpick.placeholder = '选择一个 AI 模型用于实验性 AI 功能';
 			quickpick.matchOnDescription = true;
 			quickpick.matchOnDetail = true;
 			quickpick.buttons = [ResetAIKeyButton];

@@ -2955,7 +2955,7 @@
 		},
 		{
 		  "id": "focus",
-		  "title": "启动板 (预览)",
+		  "title": "启动台 (预览)",
 		  "order": 400,
 		  "properties": {
 			"gitlens.launchpad.ignoredRepositories": {
@@ -2964,7 +2964,7 @@
 			  "items": {
 				"type": "string"
 			  },
-			  "markdownDescription": "指定要在“启动板”中忽略的仓库",
+			  "markdownDescription": "指定要在“启动台”中忽略的仓库",
 			  "scope": "window",
 			  "order": 10
 			},
@@ -2974,7 +2974,7 @@
 			  "items": {
 				"type": "string"
 			  },
-			  "markdownDescription": "指定要在“启动板”中忽略的组织",
+			  "markdownDescription": "指定要在“启动台”中忽略的组织",
 			  "scope": "window",
 			  "order": 11
 			},
@@ -2984,14 +2984,14 @@
 				"null"
 			  ],
 			  "default": null,
-			  "markdownDescription": "指定在“启动板”中将拉取请求视为过时并移动到“其他”的天数",
+			  "markdownDescription": "指定在“启动台”中将拉取请求视为过时并移动到“其他”的天数",
 			  "scope": "window",
 			  "order": 20
 			},
 			"gitlens.launchpad.indicator.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否启用“启动板”状态栏指示器",
+			  "markdownDescription": "指定是否启用“启动台”状态栏指示器",
 			  "scope": "window",
 			  "order": 100
 			},
@@ -3006,7 +3006,7 @@
 				"显示优先级最高的组的图标"
 			  ],
 			  "default": "default",
-			  "markdownDescription": "指定“启动板”状态栏指示器图标的样式",
+			  "markdownDescription": "指定“启动台”状态栏指示器图标的样式",
 			  "scope": "window",
 			  "order": 110
 			},
@@ -3026,7 +3026,7 @@
 				"显示需要您关注的项目的状态计数"
 			  ],
 			  "default": "item",
-			  "markdownDescription": "指定“启动板”状态栏指示器标签的显示方式",
+			  "markdownDescription": "指定“启动台”状态栏指示器标签的显示方式",
 			  "scope": "window",
 			  "order": 120
 			},
@@ -3055,56 +3055,56 @@
 			  },
 			  "minItems": 1,
 			  "uniqueItems": true,
-			  "markdownDescription": "指定要在“启动板”状态栏指示器上显示的拉取请求组",
+			  "markdownDescription": "指定要在“启动台”状态栏指示器上显示的拉取请求组",
 			  "scope": "window",
 			  "order": 130
 			},
 			"gitlens.launchpad.indicator.useColors": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定是否在“启动板”状态栏指示器上使用颜色",
+			  "markdownDescription": "指定是否在“启动台”状态栏指示器上使用颜色",
 			  "scope": "window",
 			  "order": 140
 			},
 			"gitlens.launchpad.indicator.polling.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定状态栏指示器是否会为“启动板”获取并显示拉取请求数据",
+			  "markdownDescription": "指定状态栏指示器是否会为“启动台”获取并显示拉取请求数据",
 			  "scope": "window",
 			  "order": 150
 			},
 			"gitlens.launchpad.indicator.polling.interval": {
 			  "type": "number",
 			  "default": 30,
-			  "markdownDescription": "指定状态栏指示器获取“启动板”拉取请求数据的速率（分钟）。使用 0 禁用自动轮询",
+			  "markdownDescription": "指定状态栏指示器获取“启动台”拉取请求数据的速率（分钟）。使用 0 禁用自动轮询",
 			  "scope": "window",
 			  "order": 160
 			},
 			"gitlens.launchpad.indicator.openInEditor": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定单击状态栏指示器时是否将“启动板”作为编辑器选项卡打开",
+			  "markdownDescription": "指定单击状态栏指示器时是否将“启动台”作为编辑器选项卡打开",
 			  "scope": "window",
 			  "order": 170
 			},
 			"gitlens.launchpad.allowMultiple": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否允许将多个“启动板”实例作为编辑器选项卡打开",
+			  "markdownDescription": "指定是否允许将多个“启动台”实例作为编辑器选项卡打开",
 			  "scope": "window",
 			  "order": 1000
 			},
 			"gitlens.launchpad.experimental.queryLimit": {
 			  "type": "number",
 			  "default": 100,
-			  "markdownDescription": "指定“启动板”中要查询的拉取请求数量的实验性限制",
+			  "markdownDescription": "指定“启动台”中要查询的拉取请求数量的实验性限制",
 			  "scope": "window",
 			  "order": 1100
 			},
 			"gitlens.launchpad.experimental.queryUseInvolvesFilter": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定一个实验性标志，用于指定是否在“启动板”的 GraphQL 查询中使用 `involves` 过滤器",
+			  "markdownDescription": "指定一个实验性标志，用于指定是否在“启动台”的 GraphQL 查询中使用 `involves` 过滤器",
 			  "scope": "window",
 			  "order": 1110
 			}
@@ -5415,7 +5415,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorMergeableColor",
-		  "description": "指定 _启动板_ 指示图标在优先级为可合并时的颜色",
+		  "description": "指定 _启动台_ 指示图标在优先级为可合并时的颜色",
 		  "defaults": {
 			"light": "#42c954",
 			"dark": "#3fb950",
@@ -5424,7 +5424,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorMergeableHoverColor",
-		  "description": "指定 _启动板_ 指示图标在悬停时优先级为可合并时的颜色",
+		  "description": "指定 _启动台_ 指示图标在悬停时优先级为可合并时的颜色",
 		  "defaults": {
 			"light": "#42c954",
 			"dark": "#3fb950",
@@ -5433,7 +5433,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorBlockedColor",
-		  "description": "指定 _启动板_ 指示图标在优先级为被阻止时的颜色",
+		  "description": "指定 _启动台_ 指示图标在优先级为被阻止时的颜色",
 		  "defaults": {
 			"light": "#ad0707",
 			"dark": "#c74e39",
@@ -5442,7 +5442,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorBlockedHoverColor",
-		  "description": "指定 _启动板_ 指示图标在悬停时优先级为被阻止时的颜色",
+		  "description": "指定 _启动台_ 指示图标在悬停时优先级为被阻止时的颜色",
 		  "defaults": {
 			"light": "#ad0707",
 			"dark": "#c74e39",
@@ -5451,7 +5451,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorAttentionColor",
-		  "description": "指定 _启动板_ 指示图标在优先级为后续或需要审查时的颜色",
+		  "description": "指定 _启动台_ 指示图标在优先级为后续或需要审查时的颜色",
 		  "defaults": {
 			"dark": "#D8AF1B",
 			"light": "#cc9b15",
@@ -5460,7 +5460,7 @@
 		},
 		{
 		  "id": "gitlens.launchpadIndicatorAttentionHoverColor",
-		  "description": "指定 _启动板_ 指示图标在悬停时优先级为后续或需要审查时的颜色",
+		  "description": "指定 _启动台_ 指示图标在悬停时优先级为后续或需要审查时的颜色",
 		  "defaults": {
 			"dark": "#D8AF1B",
 			"light": "#cc9b15",
@@ -5631,25 +5631,25 @@
 		},
 		{
 		  "command": "gitlens.showLaunchpad",
-		  "title": "打开启动板",
+		  "title": "打开启动台",
 		  "category": "GitLens",
 		  "icon": "$(rocket)"
 		},
 		{
 		  "command": "gitlens.showFocusPage",
-		  "title": "在编辑器中打开启动板",
+		  "title": "在编辑器中打开启动台",
 		  "category": "GitLens",
 		  "icon": "$(rocket)"
 		},
 		{
 		  "command": "gitlens.launchpad.split",
-		  "title": "在编辑器中分割启动板",
+		  "title": "在编辑器中分割启动台",
 		  "category": "GitLens",
 		  "icon": "$(split-horizontal)"
 		},
 		{
 		  "command": "gitlens.launchpad.indicator.toggle",
-		  "title": "切换启动板指示器",
+		  "title": "切换启动台指示器",
 		  "category": "GitLens",
 		  "icon": "$(rocket)"
 		},
@@ -8751,7 +8751,7 @@
 		},
 		{
 		  "command": "gitlens.graph.copyMessage",
-		  "title": "复制消息",
+		  "title": "复制信息",
 		  "category": "GitLens",
 		  "icon": "$(copy)"
 		},

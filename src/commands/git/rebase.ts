@@ -229,13 +229,13 @@ export class RebaseGitCommand extends QuickCommand<State> {
 					label: 'OK',
 					detail: `${getReferenceLabel(context.destination, {
 						capitalize: true,
-					})} is already up to date with ${getReferenceLabel(state.reference)}`,
+					})} 已经是最新的，在 ${getReferenceLabel(state.reference)}`,
 				}),
 				{
-					placeholder: `Nothing to rebase; ${getReferenceLabel(context.destination, {
+					placeholder: `没有可变基的内容; ${getReferenceLabel(context.destination, {
 						label: false,
 						icon: false,
-					})} is already up to date`,
+					})} 已经是最新的`,
 				},
 			);
 			const selection: StepSelection<typeof step> = yield step;
@@ -244,21 +244,21 @@ export class RebaseGitCommand extends QuickCommand<State> {
 		}
 
 		const step: QuickPickStep<FlagsQuickPickItem<Flags>> = this.createConfirmStep(
-			appendReposToTitle(`Confirm ${context.title}`, state, context),
+			appendReposToTitle(`确认 ${context.title}`, state, context),
 			[
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `Will update ${getReferenceLabel(context.destination)} by applying ${pluralize(
-						'commit',
+					detail: `通过在 ${getReferenceLabel(context.destination)} 之上应用 ${pluralize(
+						'个提交',
 						count,
-					)} on top of ${getReferenceLabel(state.reference)}`,
+					)} 来更新 ${getReferenceLabel(state.reference)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--interactive'], {
 					label: `Interactive ${this.title}`,
 					description: '--interactive',
-					detail: `Will interactively update ${getReferenceLabel(
+					detail: `通过在 ${getReferenceLabel(
 						context.destination,
-					)} by applying ${pluralize('commit', count)} on top of ${getReferenceLabel(state.reference)}`,
+					)} 之上应用 ${pluralize('commit', count)} 来交互式更新 ${getReferenceLabel(state.reference)}`,
 				}),
 			],
 		);

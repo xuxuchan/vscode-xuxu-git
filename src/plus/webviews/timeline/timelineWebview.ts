@@ -367,7 +367,7 @@ export class TimelineWebviewProvider implements WebviewProvider<State, State, Ti
 			void (await Promise.allSettled(queryRequiredCommits.map(c => c.ensureFullDetails())));
 		}
 
-		const name = currentUser?.name ? `${currentUser.name} (you)` : 'You';
+		const name = currentUser?.name ? `${currentUser.name} (you)` : '我';
 
 		const dataset: Commit[] = [];
 		for (const commit of log.commits.values()) {
@@ -375,7 +375,7 @@ export class TimelineWebviewProvider implements WebviewProvider<State, State, Ti
 				commit.file?.stats ??
 				(getChangedFilesCount(commit.stats?.changedFiles) === 1 ? commit.stats : undefined);
 			dataset.push({
-				author: commit.author.name === 'You' ? name : commit.author.name,
+				author: commit.author.name === '我' ? name : commit.author.name,
 				additions: stats?.additions,
 				deletions: stats?.deletions,
 				commit: commit.sha,

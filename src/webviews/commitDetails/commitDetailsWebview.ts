@@ -1061,17 +1061,17 @@ export class CommitDetailsWebviewProvider
 			if (this._context.commit == null) {
 				this.host.title = this.host.originalTitle;
 			} else {
-				let following = 'Commit Details';
+				let following = '提交详情';
 				if (this._context.commit.refType === 'stash') {
-					following = 'Stash Details';
+					following = '暂存详情';
 				} else if (this._context.commit.isUncommitted) {
-					following = 'Uncommitted Changes';
+					following = '未提交的更改';
 				}
 
 				this.host.title = `${this.host.originalTitle}: ${following}`;
 			}
 		} else {
-			this.host.title = `${this.host.originalTitle}: Overview`;
+			this.host.title = `${this.host.originalTitle}: 概览`;
 		}
 	}
 

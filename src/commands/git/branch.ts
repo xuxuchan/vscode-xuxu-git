@@ -399,18 +399,18 @@ export class BranchGitCommand extends QuickCommand {
 			[
 				createFlagsQuickPickItem<CreateFlags>(state.flags, [], {
 					label: context.title,
-					detail: `将会创建一个新的名为 ${state.name} 的分支从 ${getReferenceLabel(state.reference)}`,
+					detail: `创建一个新的名为 ${state.name} 的分支从 ${getReferenceLabel(state.reference)}`,
 				}),
 				createFlagsQuickPickItem<CreateFlags>(state.flags, ['--switch'], {
 					label: `创建并切换到分支`,
-					detail: `将会创建并切换到一个新的名为 ${state.name} 的分支从 ${getReferenceLabel(
+					detail: `创建并切换到一个新的名为 ${state.name} 的分支从 ${getReferenceLabel(
 						state.reference,
 					)}`,
 				}),
 				createFlagsQuickPickItem<CreateFlags>(state.flags, ['--worktree'], {
 					label: `${context.title} 在新的工作树中`,
 					description: '避免修改你的工作树',
-					detail: `将会为名为 ${state.name} 的新分支创建一个新的工作树从 ${getReferenceLabel(
+					detail: `为名为 ${state.name} 的新分支创建一个新的工作树从 ${getReferenceLabel(
 						state.reference,
 					)}`,
 				}),
@@ -484,7 +484,7 @@ export class BranchGitCommand extends QuickCommand {
 		const confirmations: FlagsQuickPickItem<DeleteFlags>[] = [
 			createFlagsQuickPickItem<DeleteFlags>(state.flags, [], {
 				label: context.title,
-				detail: `将会删除 ${getReferenceLabel(state.references)}`,
+				detail: `删除 ${getReferenceLabel(state.references)}`,
 			}),
 		];
 		if (!state.references.every(b => b.remote)) {
@@ -492,7 +492,7 @@ export class BranchGitCommand extends QuickCommand {
 				createFlagsQuickPickItem<DeleteFlags>(state.flags, ['--force'], {
 					label: `Force ${context.title}`,
 					description: '--force',
-					detail: `将会强制删除 ${getReferenceLabel(state.references)}`,
+					detail: `强制删除 ${getReferenceLabel(state.references)}`,
 				}),
 			);
 
@@ -503,14 +503,14 @@ export class BranchGitCommand extends QuickCommand {
 							state.references.filter(b => !b.remote).length > 1 ? 's' : ''
 						}`,
 						description: '--remotes',
-						detail: `将会删除 ${getReferenceLabel(state.references)} 以及任何远程跟踪分支`,
+						detail: `删除 ${getReferenceLabel(state.references)} 以及任何远程跟踪分支`,
 					}),
 					createFlagsQuickPickItem<DeleteFlags>(state.flags, ['--force', '--remotes'], {
 						label: `Force ${context.title} & Remote${
 							state.references.filter(b => !b.remote).length > 1 ? 's' : ''
 						}`,
 						description: '--force --remotes',
-						detail: `将会强制删除 ${getReferenceLabel(
+						detail: `强制删除 ${getReferenceLabel(
 							state.references,
 						)} 以及任何远程跟踪分支`,
 					}),
@@ -571,7 +571,7 @@ export class BranchGitCommand extends QuickCommand {
 			[
 				createFlagsQuickPickItem<RenameFlags>(state.flags, ['-m'], {
 					label: context.title,
-					detail: `将会重命名 ${getReferenceLabel(state.reference)} 为 ${state.name}`,
+					detail: `重命名 ${getReferenceLabel(state.reference)} 为 ${state.name}`,
 				}),
 			],
 			context,

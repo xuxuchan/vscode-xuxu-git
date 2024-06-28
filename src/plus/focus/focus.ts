@@ -125,7 +125,7 @@ export class FocusCommand extends QuickCommand<State> {
 
 	constructor(container: Container, args?: FocusCommandArgs) {
 		super(container, 'focus', 'focus', `GitLens Launchpad\u00a0\u00a0${previewBadge}`, {
-			description: 'focus on a pull request or issue',
+			description: '聚焦一个拉取请求或问题',
 		});
 
 		if (
@@ -411,20 +411,20 @@ export class FocusCommand extends QuickCommand<State> {
 		function getItemsAndPlaceholder() {
 			if (context.result.error != null) {
 				return {
-					placeholder: `Unable to load items (${String(context.result.error)})`,
+					placeholder: `无法加载项目 (${String(context.result.error)})`,
 					items: [createDirectiveQuickPickItem(Directive.Cancel, undefined, { label: 'OK' })],
 				};
 			}
 
 			if (!context.result.items.length) {
 				return {
-					placeholder: 'All done! Take a vacation',
+					placeholder: '全部完成！去度假吧',
 					items: [createDirectiveQuickPickItem(Directive.Cancel, undefined, { label: 'OK' })],
 				};
 			}
 
 			return {
-				placeholder: 'Choose an item to focus on',
+				placeholder: '选择一个项目来聚焦',
 				items: getItems(context.result),
 			};
 		}
@@ -576,8 +576,8 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: 'Merge...',
-								detail: `Will merge ${from}${into}`,
+								label: '合并...',
+								detail: `将会合并 ${from}${into}`,
 							},
 							action,
 						),
@@ -588,7 +588,7 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: `${this.getOpenActionLabel(state.item.actionableCategory)} on GitHub`,
+								label: `${this.getOpenActionLabel(state.item.actionableCategory)} 在 GitHub`,
 							},
 							action,
 						),
@@ -598,7 +598,7 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: 'Switch to Branch or Worktree',
+								label: '切换到分支或工作树',
 								detail: 'Will checkout the branch, create or open a worktree',
 							},
 							action,
@@ -708,8 +708,8 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: 'Connect to GitHub...',
-								detail: 'Will connect to GitHub to provide access your pull requests and issues',
+								label: '连接到 GitHub...',
+								detail: '将连接到 GitHub 以提供对您的拉取请求和问题的访问权限',
 							},
 							integration,
 						),
@@ -721,10 +721,10 @@ export class FocusCommand extends QuickCommand<State> {
 		}
 
 		const step = this.createConfirmStep(
-			`${this.title} \u00a0\u2022\u00a0 Connect an Integration`,
+			`${this.title} \u00a0\u2022\u00a0 连接一个集成`,
 			confirmations,
-			createDirectiveQuickPickItem(Directive.Cancel, false, { label: 'Cancel' }),
-			{ placeholder: 'Launchpad requires a connected integration', ignoreFocusOut: false },
+			createDirectiveQuickPickItem(Directive.Cancel, false, { label: '取消' }),
+			{ placeholder: '启动台需要一个已连接的集成', ignoreFocusOut: false },
 		);
 
 		const selection: StepSelection<typeof step> = yield step;
@@ -818,13 +818,13 @@ export class FocusCommand extends QuickCommand<State> {
 			const iconPath = review.reviewer.avatarUrl != null ? Uri.parse(review.reviewer.avatarUrl) : undefined;
 			switch (review.state) {
 				case ProviderPullRequestReviewState.Approved:
-					reviewLabel = `${isCurrentUser ? 'You' : review.reviewer.username} approved these changes`;
+					reviewLabel = `${isCurrentUser ? '我' : review.reviewer.username} approved these changes`;
 					break;
 				case ProviderPullRequestReviewState.ChangesRequested:
-					reviewLabel = `${isCurrentUser ? 'You' : review.reviewer.username} requested changes`;
+					reviewLabel = `${isCurrentUser ? '我' : review.reviewer.username} requested changes`;
 					break;
 				case ProviderPullRequestReviewState.Commented:
-					reviewLabel = `${isCurrentUser ? 'You' : review.reviewer.username} left a comment review`;
+					reviewLabel = `${isCurrentUser ? '我' : review.reviewer.username} left a comment review`;
 					break;
 				case ProviderPullRequestReviewState.ReviewRequested:
 					reviewLabel = `${

@@ -236,21 +236,21 @@ export class CherryPickGitCommand extends QuickCommand<State> {
 			[
 				createFlagsQuickPickItem<Flags>(state.flags, [], {
 					label: this.title,
-					detail: `将会应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
+					detail: `应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
 						context.destination,
 					)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--edit'], {
 					label: `${this.title} & Edit`,
 					description: '--edit',
-					detail: `将会编辑并应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
+					detail: `编辑并应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
 						context.destination,
 					)}`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--no-commit'], {
-					label: `${this.title}，不提交`,
+					label: `${this.title}, No commit`,
 					description: '--no-commit',
-					detail: `将会应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
+					detail: `应用 ${getReferenceLabel(state.references)} 到 ${getReferenceLabel(
 						context.destination,
 					)} ，不提交`,
 				}),

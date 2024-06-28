@@ -54,7 +54,7 @@ export async function showReferencePicker(
 	quickpick.title = title;
 	quickpick.placeholder =
 		options?.allowRevisions != null && options.allowRevisions !== false
-			? `${placeholder} (or enter a revision using #)`
+			? `${placeholder} (或使用 # 输入一个修订版本)`
 			: placeholder;
 	quickpick.matchOnDescription = true;
 

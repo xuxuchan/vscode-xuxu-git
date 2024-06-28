@@ -136,7 +136,7 @@ export class FocusIndicator implements Disposable {
 
 	private async onReady(): Promise<void> {
 		this._statusBarFocus = window.createStatusBarItem('gitlens.launchpad', StatusBarAlignment.Left, 10000 - 3);
-		this._statusBarFocus.name = 'GitLens Launchpad';
+		this._statusBarFocus.name = 'XU-Git 启动台';
 
 		await this.maybeLoadData();
 		this.updateStatusBarCommand();
@@ -232,7 +232,7 @@ export class FocusIndicator implements Disposable {
 		tooltip.isTrusted = true;
 
 		tooltip.appendMarkdown(
-			`XU-Git 启动板 ${previewBadge}\u00a0\u00a0\u00a0\u00a0&mdash;\u00a0\u00a0\u00a0\u00a0`,
+			`XU-Git 启动台 ${previewBadge}\u00a0\u00a0\u00a0\u00a0&mdash;\u00a0\u00a0\u00a0\u00a0`,
 		);
 		tooltip.appendMarkdown(`[$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "这是什么？")`);
 		tooltip.appendMarkdown('\u00a0');
@@ -248,7 +248,7 @@ export class FocusIndicator implements Disposable {
 		) {
 			tooltip.appendMarkdown('\n\n---\n\n');
 			tooltip.appendMarkdown(
-				'[启动板](command:gitlens.launchpad.indicator.action?%info%22 "了解启动板") 将您的拉取请求组织成可操作的组，以帮助您集中注意力并保持您的团队畅通无阻。',
+				'[启动台](command:gitlens.launchpad.indicator.action?%info%22 "了解启动台") 将您的拉取请求组织成可操作的组，以帮助您集中注意力并保持您的团队畅通无阻。',
 			);
 			tooltip.appendMarkdown(
 				"\n\n始终可以通过从命令面板使用 `XU-Git: Open Launchpad` 命令来访问。",
@@ -269,7 +269,7 @@ export class FocusIndicator implements Disposable {
 					`\n\n---\n\n[连接到 GitHub](command:gitlens.launchpad.indicator.action?%22connectGitHub%22 "连接到 GitHub") 以开始使用。`,
 				);
 
-				this._statusBarFocus.text = `$(rocket)$(gitlens-unplug) 启动板`;
+				this._statusBarFocus.text = `$(rocket)$(gitlens-unplug) 启动台`;
 				this._statusBarFocus.tooltip = tooltip;
 				this._statusBarFocus.color = undefined;
 				break;
@@ -370,7 +370,7 @@ export class FocusIndicator implements Disposable {
 										selectTopItem: labelType === 'item',
 									},
 								} satisfies Omit<FocusCommandArgs, 'command'>),
-							)} "在启动板中打开准备合并")`,
+							)} "在启动台中打开准备合并")`,
 						);
 						break;
 					}
@@ -430,7 +430,7 @@ export class FocusIndicator implements Disposable {
 									source: 'launchpad-indicator',
 									state: { initialGroup: 'blocked', selectTopItem: labelType === 'item' },
 								} satisfies Omit<FocusCommandArgs, 'command'>),
-							)} "在启动板中打开已阻止")`,
+							)} "在启动台中打开已阻止")`,
 						);
 						if (hasMultipleCategories) {
 							tooltip.appendMarkdown(`\\\n$(blank)$(blank) ${summaryMessage}`);
@@ -467,7 +467,7 @@ export class FocusIndicator implements Disposable {
 										selectTopItem: labelType === 'item',
 									},
 								} satisfies Omit<FocusCommandArgs, 'command'>),
-							)} "在启动板中打开后续跟进")`,
+							)} "在启动台中打开后续跟进")`,
 						);
 						priorityItem ??= { item: items[0], groupLabel: '需要后续跟进' };
 						break;
@@ -490,7 +490,7 @@ export class FocusIndicator implements Disposable {
 										selectTopItem: labelType === 'item',
 									},
 								} satisfies Omit<FocusCommandArgs, 'command'>),
-							)} "在启动板中打开 需要您的审阅")`,
+							)} "在启动台中打开 需要您的审阅")`,
 						);
 						priorityItem ??= { item: items[0], groupLabel: '需要您的审阅' };
 						break;
@@ -550,10 +550,10 @@ export class FocusIndicator implements Disposable {
 						const hide = { title: '隐藏' };
 						const cancel = { title: '取消', isCloseAffordance: true };
 						const action = await window.showInformationMessage(
-							'启动板帮助您集中注意力并保持团队畅通无阻。\n\n您确定要隐藏指示器吗？',
+							'启动台帮助您集中注意力并保持团队畅通无阻。\n\n您确定要隐藏指示器吗？',
 							{
 								modal: true,
-								detail: '\n您可以始终使用 "XU-Git: Open Launchpad" 命令访问启动板，并且可以使用 "XU-Git: Toggle Launchpad Indicator" 命令重新启用指示器。',
+								detail: '\n您可以始终使用 "XU-Git: Open Launchpad" 命令访问启动台，并且可以使用 "XU-Git: Toggle Launchpad Indicator" 命令重新启用指示器。',
 							},
 							hide,
 							cancel,
