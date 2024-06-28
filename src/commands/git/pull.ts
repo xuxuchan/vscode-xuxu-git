@@ -185,7 +185,7 @@ export class PullGitCommand extends QuickCommand<State> {
 							detail: `将会拉取${
 								branch.state.behind
 									? ` ${pluralize('个提交', branch.state.behind)} 到 ${getReferenceLabel(branch)}`
-									: ` into ${getReferenceLabel(branch)}`
+									: ` 到 ${getReferenceLabel(branch)}`
 							}`,
 						}),
 					]);

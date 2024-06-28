@@ -4411,12 +4411,12 @@
 		},
 		{
 		  "id": "gitkraken",
-		  "title": "XU-Tech",
+		  "title": "XU-Tec",
 		  "order": 9000,
 		  "properties": {
 			"gitlens.gitKraken.activeOrganizationId": {
 			  "type": "string",
-			  "markdownDescription": "指定用户在 XU-Git 中的活动 XU-Tech 组织的 ID",
+			  "markdownDescription": "指定用户在 XU-Git 中的活动 XU-Tec 组织的 ID",
 			  "scope": "window",
 			  "order": 1
 			}
@@ -5486,17 +5486,17 @@
 		},
 		{
 		  "command": "gitlens.plus.login",
-		  "title": "登录到 XU-Tech...",
+		  "title": "登录到 XU-Tec...",
 		  "category": "GitLens"
 		},
 		{
 		  "command": "gitlens.plus.logout",
-		  "title": "退出 XU-Tech",
+		  "title": "退出 XU-Tec",
 		  "category": "GitLens"
 		},
 		{
 		  "command": "gitlens.plus.signUp",
-		  "title": "注册 XU-Tech...",
+		  "title": "注册 XU-Tec...",
 		  "category": "GitLens"
 		},
 		{
@@ -7798,7 +7798,7 @@
 		},
 		{
 		  "command": "gitlens.views.draft.openOnWeb",
-		  "title": "在 XU-Tech 上打开",
+		  "title": "在 XU-Tec 上打开",
 		  "category": "GitLens",
 		  "icon": "$(globe)"
 		},
@@ -17171,7 +17171,7 @@
 		  },
 		  {
 			"id": "gitlens.views.workspaces",
-			"name": "XU-Tech 云工作空间",
+			"name": "XU-Tec 云工作空间",
 			"when": "!gitlens:untrusted && !gitlens:hasVirtualFolders",
 			"contextualTitle": "GitLens",
 			"icon": "$(gitlens-workspaces-view)",
@@ -17181,7 +17181,7 @@
 		  {
 			"type": "webview",
 			"id": "gitlens.views.account",
-			"name": "XU-Tech 云账户",
+			"name": "XU-Tec 云账户",
 			"contextualTitle": "GitLens",
 			"icon": "$(gitlens-gitlens)",
 			"initialSize": 1,

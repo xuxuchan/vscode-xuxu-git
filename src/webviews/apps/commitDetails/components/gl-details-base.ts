@@ -60,8 +60,7 @@ export class GlDetailsBase extends LitElement {
 
 	get filesChangedPaneLabel() {
 		const fileCount = this.files?.length ?? 0;
-		//const filesLabel = fileCount > 0 ? pluralize('文件', fileCount) : '文件';
-		const filesLabel = fileCount > 0 ? `${fileCount}文件` : '文件';
+		const filesLabel = fileCount > 0 ? pluralize('个文件', fileCount) : '个文件';
 		return `${filesLabel}已更改`;
 	}
 

@@ -265,7 +265,7 @@ export class PushGitCommand extends QuickCommand<State> {
 								label: `取消 ${this.title}`,
 								detail: `无法推送; ${getReferenceLabel(
 									branch,
-								)} 落后于 ${branch.getRemoteName()} by ${pluralize('个提交', branch.state.behind)}`,
+								)} 落后于 ${branch.getRemoteName()} ${pluralize('个提交', branch.state.behind)}`,
 							}),
 						);
 					} else if (branch != null && branch?.state.ahead > 0) {
