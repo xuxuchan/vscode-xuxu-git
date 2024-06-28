@@ -462,10 +462,10 @@ export class GlSearchInput extends GlElement {
 						<code-icon class="action-button__more" icon="chevron-down" aria-hidden="true"></code-icon>
 					</button>
 					<menu-list slot="content">
-						<menu-label>Search by</menu-label>
+						<menu-label>搜索条件</menu-label>
 						<menu-item role="none">
 							<button class="menu-button" type="button" @click="${() => this.handleInsertToken('@me')}">
-								My changes <small>@me</small>
+								我的更改 <small>@me</small>
 							</button>
 						</menu-item>
 						<menu-item role="none">
@@ -474,7 +474,7 @@ export class GlSearchInput extends GlElement {
 								type="button"
 								@click="${() => this.handleInsertToken('message:')}"
 							>
-								Message <small>message: or =:</small>
+								信息 <small>message: or =:</small>
 							</button>
 						</menu-item>
 						<menu-item role="none">
@@ -483,7 +483,7 @@ export class GlSearchInput extends GlElement {
 								type="button"
 								@click="${() => this.handleInsertToken('author:')}"
 							>
-								Author <small>author: or @:</small>
+								作者 <small>author: or @:</small>
 							</button>
 						</menu-item>
 						<menu-item role="none">
@@ -492,12 +492,12 @@ export class GlSearchInput extends GlElement {
 								type="button"
 								@click="${() => this.handleInsertToken('commit:')}"
 							>
-								Commit SHA <small>commit: or #:</small>
+								提交 SHA <small>commit: or #:</small>
 							</button>
 						</menu-item>
 						<menu-item role="none">
 							<button class="menu-button" type="button" @click="${() => this.handleInsertToken('file:')}">
-								File <small>file: or ?:</small>
+								文件 <small>file: or ?:</small>
 							</button>
 						</menu-item>
 						<menu-item role="none">
@@ -506,7 +506,7 @@ export class GlSearchInput extends GlElement {
 								type="button"
 								@click="${() => this.handleInsertToken('change:')}"
 							>
-								Change <small>change: or ~:</small>
+								更改 <small>change: or ~:</small>
 							</button>
 						</menu-item>
 					</menu-list>
@@ -533,45 +533,44 @@ export class GlSearchInput extends GlElement {
 					${this.errorMessage !== '' ? html`${this.errorMessage}${this.helpType ? html`<br />` : ''}` : ''}
 					${this.helpType === 'message:'
 						? html`<span
-								>Message: use quotes to search for phrases, e.g. message:"Updates dependencies"</span
+								>信息：使用引号来搜索短语，例如 message:"更新依赖"</span
 						  >`
 						: ''}
 					${this.helpType === 'author:'
-						? html`<span>Author: use a user's account, e.g. author:eamodio</span>`
+						? html`<span>作者：使用用户名来搜索短语，例如 author:XUXU</span>`
 						: ''}
 					${this.helpType === 'commit:'
-						? html`<span>Commit: use a full or short Commit SHA, e.g. commit:4ce3a</span>`
+						? html`<span>提交: 使用完整或简短的提交 SHA，例如 commit:4ce3a</span>`
 						: ''}
 					${this.helpType === 'file:'
 						? html`<span
-								>File: use a filename with extension, e.g. file:package.json, or a glob pattern, e.g.
-								file:*graph*</span
+								>文件：使用带有扩展名的文件名，例如 file:package.json，或者使用 glob 模式，例如 file:*graph*</span
 						  >`
 						: ''}
 					${this.helpType === 'change:'
-						? html`<span>Change: use a regex pattern, e.g. change:update&#92;(param</span>`
+						? html`<span>更改：使用正则表达式模式，例如 change:update&#92;(param</span>`
 						: ''}
 				</div>
 			</div>
 			<div class="controls">
-				<gl-tooltip hoist content="Clear">
+				<gl-tooltip hoist content="清除">
 					<button
 						class="control${this.value ? '' : ' is-hidden'}"
 						type="button"
 						role="button"
-						aria-label="Clear"
+						aria-label="清除"
 						@click="${this.handleClear}"
 						@focus="${this.handleFocus}"
 					>
 						<code-icon icon="close"></code-icon>
 					</button>
 				</gl-tooltip>
-				<gl-tooltip hoist content="Match All">
+				<gl-tooltip hoist content="匹配全部">
 					<button
 						class="control"
 						type="button"
 						role="checkbox"
-						aria-label="Match All"
+						aria-label="匹配全部"
 						aria-checked="${this.matchAll}"
 						@click="${this.handleMatchAll}"
 						@focus="${this.handleFocus}"
@@ -581,7 +580,7 @@ export class GlSearchInput extends GlElement {
 				</gl-tooltip>
 				<gl-tooltip
 					hoist
-					content="Match Case${this.matchCaseOverride && !this.matchCase
+					content="匹配大小写${this.matchCaseOverride && !this.matchCase
 						? ' (always on without regular expressions)'
 						: ''}"
 				>
@@ -589,7 +588,7 @@ export class GlSearchInput extends GlElement {
 						class="control"
 						type="button"
 						role="checkbox"
-						aria-label="Match Case${this.matchCaseOverride && !this.matchCase
+						aria-label="匹配大小写${this.matchCaseOverride && !this.matchCase
 							? ' (always on without regular expressions)'
 							: ''}"
 						?disabled="${!this.matchRegex}"
@@ -600,12 +599,12 @@ export class GlSearchInput extends GlElement {
 						<code-icon icon="case-sensitive"></code-icon>
 					</button>
 				</gl-tooltip>
-				<gl-tooltip hoist content="Use Regular Expression">
+				<gl-tooltip hoist content="使用正则表达式">
 					<button
 						class="control"
 						type="button"
 						role="checkbox"
-						aria-label="Use Regular Expression"
+						aria-label="使用正则表达式"
 						aria-checked="${this.matchRegex}"
 						@click="${this.handleMatchRegex}"
 						@focus="${this.handleFocus}"

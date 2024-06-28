@@ -79,19 +79,19 @@ export const LoadMoreQuickInputButton: QuickInputButton = {
 
 export const MatchCaseToggleQuickInputButton = class extends SelectableQuickInputButton {
 	constructor(on = false) {
-		super('匹配大小写', { off: 'icon-match-case', on: 'icon-match-case-selected' }, on);
+		super('Match Case', { off: 'icon-match-case', on: 'icon-match-case-selected' }, on);
 	}
 };
 
 export const MatchAllToggleQuickInputButton = class extends SelectableQuickInputButton {
 	constructor(on = false) {
-		super('匹配所有', { off: 'icon-match-all', on: 'icon-match-all-selected' }, on);
+		super('Match All', { off: 'icon-match-all', on: 'icon-match-all-selected' }, on);
 	}
 };
 
 export const MatchRegexToggleQuickInputButton = class extends SelectableQuickInputButton {
 	constructor(on = false) {
-		super('正则匹配', { off: 'icon-match-regex', on: 'icon-match-regex-selected' }, on);
+		super('Match using Regular Expressions', { off: 'icon-match-regex', on: 'icon-match-regex-selected' }, on);
 	}
 };
 
@@ -198,7 +198,7 @@ export const ShowResultsInSideBarQuickInputButton: QuickInputButton = {
 
 export const ShowTagsToggleQuickInputButton = class extends SelectableQuickInputButton {
 	constructor(on = false) {
-		super('显示标签', { off: new ThemeIcon('tag'), on: 'icon-tag-selected' }, on);
+		super('Show Tags', { off: new ThemeIcon('tag'), on: 'icon-tag-selected' }, on);
 	}
 };
 

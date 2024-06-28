@@ -12,11 +12,11 @@
 		</h2>
 
 		<p class="section__header-hint">
-			Adds a
+			添加一个
 			<a class="command command--show-view" title="Show Commit Graph" href="command:gitlens.showGraph"
-				>Commit Graph</a
+				>提交图</a
 			>
-			to visualize, explore, and manage a Git repository
+			以可视化、探索和管理 Git 仓库
 		</p>
 	</div>
 
@@ -26,70 +26,70 @@
 				<div class="settings settings--fixed ml-1">
 					<div class="setting">
 						<div class="setting__input">
-							<label for="graph.layout">Prefer showing the Commit Graph in the </label>
+							<label for="graph.layout">优先在以下位置显示提交图</label>
 							<div class="select-container">
 								<select id="graph.layout" name="graph.layout" data-setting>
-									<option value="editor">editor area</option>
-									<option value="panel">bottom panel</option>
+									<option value="editor">编辑器区域</option>
+									<option value="panel">底部面板</option>
 								</select>
 							</div>
 						</div>
 					</div>
 
 					<div class="setting">
-						<div class="setting__input">
-							<label for="graph.defaultItemLimit">Show </label>
-							<input
-								id="graph.defaultItemLimit"
-								name="graph.defaultItemLimit"
-								type="number"
-								placeholder="500"
-								data-setting
-								data-default-value="500"
-							/>
-							<label for="graph.defaultItemLimit"> rows at first and</label>
-							<label for="graph.pageItemLimit">&nbsp;then page in </label>
-							<input
-								id="graph.pageItemLimit"
-								name="graph.pageItemLimit"
-								type="number"
-								placeholder="200"
-								data-setting
-								data-default-value="200"
-							/>
-							<label for="graph.pageItemLimit"> more rows when scrolling</label>
-						</div>
-					</div>
+                        <div class="setting__input">
+                            <label for="graph.defaultItemLimit">首次显示 </label>
+                            <input
+                                id="graph.defaultItemLimit"
+                                name="graph.defaultItemLimit"
+                                type="number"
+                                placeholder="500"
+                                data-setting
+                                data-default-value="500"
+                            />
+                            <label for="graph.defaultItemLimit"> 行，然后在滚动时分页显示 </label>
+                            <label for="graph.pageItemLimit">&nbsp;再显示 </label>
+                            <input
+                                id="graph.pageItemLimit"
+                                name="graph.pageItemLimit"
+                                type="number"
+                                placeholder="200"
+                                data-setting
+                                data-default-value="200"
+                            />
+                            <label for="graph.pageItemLimit"> 更多行</label>
+                        </div>
+                    </div>>
 
 					<div class="setting">
-						<div class="setting__input">
-							<label for="graph.searchItemLimit">Show </label>
-							<input
-								id="graph.searchItemLimit"
-								name="graph.searchItemLimit"
-								type="number"
-								placeholder="100"
-								data-setting
-								data-default-value="100"
-							/>
-							<label for="graph.searchItemLimit"> search results at first and when paging</label>
-						</div>
-					</div>
+                        <div class="setting__input">
+                            <label for="graph.searchItemLimit">首次显示 </label>
+                            <input
+                                id="graph.searchItemLimit"
+                                name="graph.searchItemLimit"
+                                type="number"
+                                placeholder="100"
+                                data-setting
+                                data-default-value="100"
+                            />
+                            <label for="graph.searchItemLimit"> 搜索结果，并在分页时显示</label>
+                        </div>
+                    </div>
 
 					<div class="setting">
-						<div class="setting__input">
-							<label for="graph.scrollRowPadding">Start scrolling at </label>
-							<input
-								id="graph.scrollRowPadding"
-								name="graph.scrollRowPadding"
-								type="number"
-								placeholder="0"
-								data-setting
-								data-default-value="0"
-							/>
-							<label for="graph.scrollRowPadding"> rows from the edge</label>
-						</div>
-					</div>
+                        <div class="setting__input">
+                            <label for="graph.scrollRowPadding">从边缘开始滚动 </label>
+                            <input
+                                id="graph.scrollRowPadding"
+                                name="graph.scrollRowPadding"
+                                type="number"
+                                placeholder="0"
+                                data-setting
+                                data-default-value="0"
+                            />
+                            <label for="graph.scrollRowPadding"> 行</label>
+                        </div>
+                    </div>
 
 					<div class="setting">
 						<div class="setting__input">
@@ -99,7 +99,7 @@
 								type="checkbox"
 								data-setting
 							/>
-							<label for="graph.scrollMarkers.enabled">Show markers on the Commit Graph scrollbar</label>
+							<label for="graph.scrollMarkers.enabled">在提交图滚动条上显示标记</label>
 						</div>
 					</div>
 
@@ -112,7 +112,7 @@
 								value="selection"
 								data-setting
 							/>
-							<label for="graph.showDetailsView">Show Inspect view</label>
+							<label for="graph.showDetailsView">显示审查视图</label>
 							<div class="select-container">
 								<select
 									id="graph.showDetailsView"
@@ -121,8 +121,8 @@
 									data-enablement="graph.showDetailsView !false"
 									disabled
 								>
-									<option value="open">only when opening</option>
-									<option value="selection">when selection changes (default)</option>
+								<option value="open">仅在打开时</option>
+								<option value="selection">当选择改变时（默认）</option>
 								</select>
 							</div>
 						</div>
@@ -137,7 +137,7 @@
 								data-setting
 							/>
 							<label for="graph.showGhostRefsOnRowHover"
-								>Show ghost branch / tag when hovering over or selecting a commit</label
+								>在悬停或选择提交时显示幽灵分支/标签</label
 							>
 						</div>
 					</div>
@@ -151,7 +151,7 @@
 								data-setting
 							/>
 							<label for="graph.highlightRowsOnRefHover"
-								>Highlight associated rows when hovering over a branch</label
+								>悬停在分支上时高亮显示关联行</label
 							>
 						</div>
 					</div>
@@ -164,7 +164,7 @@
 								type="checkbox"
 								data-setting
 							/>
-							<label for="graph.dimMergeCommits">Dim merge commit rows</label>
+							<label for="graph.dimMergeCommits">使合并提交行变暗</label>
 						</div>
 					</div>
 
@@ -176,7 +176,7 @@
 								type="checkbox"
 								data-setting
 							/>
-							<label for="graph.showRemoteNames">Show remote names on remote branches</label>
+							<label for="graph.showRemoteNames">在远程分支上显示远程名称</label>
 						</div>
 					</div>
 
@@ -189,7 +189,7 @@
 								data-setting
 							/>
 							<label for="graph.showUpstreamStatus"
-								>Show upstream status on local branches with remotes</label
+								>在具有远程的本地分支上显示上游状态</label
 							>
 						</div>
 					</div>
