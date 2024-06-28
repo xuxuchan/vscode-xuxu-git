@@ -55,7 +55,7 @@ export class RebaseGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: RebaseGitCommandArgs) {
 		super(container, 'rebase', 'rebase', 'Rebase', {
 			description:
-				'integrates changes from a specified branch into the current branch, by changing the base of the branch and reapplying the commits on top',
+				'将指定分支的更改集成到当前分支中，通过更改分支的基础并在顶部重新应用提交',
 		});
 
 		let counter = 0;
@@ -147,7 +147,7 @@ export class RebaseGitCommand extends QuickCommand<State> {
 				});
 
 				const result: StepResult<GitReference> = yield* pickBranchOrTagStep(state as RebaseStepState, context, {
-					placeholder: context => `Choose a branch${context.showTags ? ' or tag' : ''} to rebase`,
+					placeholder: context => `选择一个分支 ${context.showTags ? '或标签' : ''} 来变基`,
 					picked: context.selectedBranchOrTag?.ref,
 					value: context.selectedBranchOrTag == null ? state.reference?.ref : undefined,
 					additionalButtons: [pickCommitToggle],
@@ -188,12 +188,12 @@ export class RebaseGitCommand extends QuickCommand<State> {
 					onDidLoadMore: log => context.cache.set(ref, Promise.resolve(log)),
 					placeholder: (context, log) =>
 						log == null
-							? `No commits found on ${getReferenceLabel(context.selectedBranchOrTag, {
+							? `未找到提交，在 ${getReferenceLabel(context.selectedBranchOrTag, {
 									icon: false,
 							  })}`
-							: `Choose a commit to rebase ${getReferenceLabel(context.destination, {
+							: `选择一个提交以变基 ${getReferenceLabel(context.destination, {
 									icon: false,
-							  })} onto`,
+							  })} 到`,
 					picked: state.reference?.ref,
 				});
 				if (result === StepResultBreak) continue;

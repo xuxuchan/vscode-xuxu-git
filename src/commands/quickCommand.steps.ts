@@ -957,14 +957,14 @@ export function* pickBranchOrTagStepMultiRepo<
 	const showTagsButton = new ShowTagsToggleQuickInputButton(context.showTags);
 
 	const createNewBranchItem: QuickPickItem & { item: string } = {
-		label: 'Create New Branch...',
+		label: '创建新分支...',
 		iconPath: new ThemeIcon('plus'),
 		alwaysShow: true,
 		item: '',
 	};
 
 	const choosePullRequestItem: QuickPickItemOfT<CrossCommandReference> = {
-		label: 'Choose a Pull Request...',
+		label: '选择一个拉取请求...',
 		iconPath: new ThemeIcon('git-pull-request'),
 		alwaysShow: true,
 		item: createCrossCommandReference<Partial<FocusCommandArgs>>(Commands.ShowLaunchpad, {
@@ -2179,7 +2179,7 @@ async function getShowCommitOrStashStepItems<
 	items.unshift(
 		new CommitFilesQuickPickItem(state.reference, {
 			unpublished: unpublished,
-			hint: 'Click to see all changed files',
+			hint: '点击查看所有已更改的文件',
 		}),
 	);
 	return items as CommandQuickPickItem[];
@@ -2215,7 +2215,7 @@ export function* showCommitOrStashFilesStep<
 		items: [
 			new CommitFilesQuickPickItem(state.reference, {
 				picked: state.fileName == null,
-				hint: `Click to see ${isStash(state.reference) ? 'stash' : 'commit'} actions`,
+				hint: `点击查看 ${isStash(state.reference) ? '暂存' : '提交'} 动作`,
 			}),
 			createQuickPickSeparator('Files'),
 			...(state.reference.files?.map(
@@ -2425,7 +2425,7 @@ async function getShowCommitOrStashFileStepItems<
 	);
 
 	items.unshift(
-		new CommitFilesQuickPickItem(state.reference, { file: file, hint: 'Click to see all changed files' }),
+		new CommitFilesQuickPickItem(state.reference, { file: file, hint: '点击查看所有已更改的文件' }),
 	);
 	return items as CommandQuickPickItem[];
 }
@@ -2461,13 +2461,13 @@ function getShowRepositoryStatusStepItems<
 
 	let workingTreeStatus;
 	if (computed.staged === 0 && computed.unstaged === 0) {
-		workingTreeStatus = 'No working tree changes';
+		workingTreeStatus = '没有工作树的更改';
 	} else {
 		workingTreeStatus = `$(files) ${
-			computed.staged ? `${pluralize('staged file', computed.staged)} (${computed.stagedStatus})` : ''
+			computed.staged ? `${pluralize('个暂存文件', computed.staged)} (${computed.stagedStatus})` : ''
 		}${
 			computed.unstaged
-				? `${computed.staged ? ', ' : ''}${pluralize('unstaged file', computed.unstaged)} (${
+				? `${computed.staged ? ', ' : ''}${pluralize('个未暂存文件', computed.unstaged)} (${
 						computed.unstagedStatus
 				  })`
 				: ''
@@ -2478,28 +2478,28 @@ function getShowRepositoryStatusStepItems<
 		if (context.status.state.ahead === 0 && context.status.state.behind === 0) {
 			items.push(
 				createDirectiveQuickPickItem(Directive.Noop, true, {
-					label: `$(git-branch) ${context.status.branch} is up to date with $(git-branch) ${context.status.upstream?.name}`,
+					label: `$(git-branch) ${context.status.branch} 已经是最新的，在 $(git-branch) ${context.status.upstream?.name}`,
 					detail: workingTreeStatus,
 				}),
 			);
 		} else if (context.status.state.ahead !== 0 && context.status.state.behind !== 0) {
 			items.push(
 				createDirectiveQuickPickItem(Directive.Noop, true, {
-					label: `$(git-branch) ${context.status.branch} has diverged from $(git-branch) ${context.status.upstream?.name}`,
+					label: `$(git-branch) ${context.status.branch} 已经偏离了 $(git-branch) ${context.status.upstream?.name}`,
 					detail: workingTreeStatus,
 				}),
 			);
 		} else if (context.status.state.ahead !== 0) {
 			items.push(
 				createDirectiveQuickPickItem(Directive.Noop, true, {
-					label: `$(git-branch) ${context.status.branch} is ahead of $(git-branch) ${context.status.upstream?.name}`,
+					label: `$(git-branch) ${context.status.branch} 领先于 $(git-branch) ${context.status.upstream?.name}`,
 					detail: workingTreeStatus,
 				}),
 			);
 		} else if (context.status.state.behind !== 0) {
 			items.push(
 				createDirectiveQuickPickItem(Directive.Noop, true, {
-					label: `$(git-branch) ${context.status.branch} is behind $(git-branch) ${context.status.upstream?.name}`,
+					label: `$(git-branch) ${context.status.branch} 落后于 $(git-branch) ${context.status.upstream?.name}`,
 					detail: workingTreeStatus,
 				}),
 			);
@@ -2508,7 +2508,7 @@ function getShowRepositoryStatusStepItems<
 		if (context.status.state.behind !== 0) {
 			items.push(
 				new GitCommandQuickPickItem(
-					`$(cloud-download) ${pluralize('commit', context.status.state.behind)} behind`,
+					`$(cloud-download) ${pluralize('个提交', context.status.state.behind)} 落后`,
 					{
 						command: 'log',
 						state: {
@@ -2526,7 +2526,7 @@ function getShowRepositoryStatusStepItems<
 		if (context.status.state.ahead !== 0) {
 			items.push(
 				new GitCommandQuickPickItem(
-					`$(cloud-upload) ${pluralize('commit', context.status.state.ahead)} ahead`,
+					`$(cloud-upload) ${pluralize('个提交', context.status.state.ahead)} 领先`,
 					{
 						command: 'log',
 						state: {
@@ -2543,7 +2543,7 @@ function getShowRepositoryStatusStepItems<
 	} else {
 		items.push(
 			createDirectiveQuickPickItem(Directive.Noop, true, {
-				label: `$(git-branch) ${context.status.branch} has no upstream`,
+				label: `$(git-branch) ${context.status.branch} 没有上游`,
 				detail: workingTreeStatus,
 			}),
 		);
@@ -2564,23 +2564,23 @@ function getShowRepositoryStatusStepItems<
 	}
 
 	if (computed.staged > 0) {
-		items.push(new OpenChangedFilesCommandQuickPickItem(computed.stagedAddsAndChanges, 'Open Staged Files'));
+		items.push(new OpenChangedFilesCommandQuickPickItem(computed.stagedAddsAndChanges, '打开已暂存的文件'));
 
 		items.push(
-			new OpenOnlyChangedFilesCommandQuickPickItem(computed.stagedAddsAndChanges, 'Open Only Staged Files'),
+			new OpenOnlyChangedFilesCommandQuickPickItem(computed.stagedAddsAndChanges, '仅打开已暂存的文件'),
 		);
 	}
 
 	if (computed.unstaged > 0) {
-		items.push(new OpenChangedFilesCommandQuickPickItem(computed.unstagedAddsAndChanges, 'Open Unstaged Files'));
+		items.push(new OpenChangedFilesCommandQuickPickItem(computed.unstagedAddsAndChanges, '打开未暂存的文件'));
 
 		items.push(
-			new OpenOnlyChangedFilesCommandQuickPickItem(computed.unstagedAddsAndChanges, 'Open Only Unstaged Files'),
+			new OpenOnlyChangedFilesCommandQuickPickItem(computed.unstagedAddsAndChanges, '仅打开未暂存的文件'),
 		);
 	}
 
 	if (context.status.files.length) {
-		items.push(new CommandQuickPickItem('Close Unchanged Files', new ThemeIcon('x'), Commands.CloseUnchangedFiles));
+		items.push(new CommandQuickPickItem('关闭未更改的文件', new ThemeIcon('x'), Commands.CloseUnchangedFiles));
 	}
 
 	return items;
@@ -2601,13 +2601,13 @@ export async function* ensureAccessStep<
 			createQuickPickSeparator(),
 			createDirectiveQuickPickItem(Directive.Cancel),
 		);
-		placeholder = 'You must verify your email before you can continue';
+		placeholder = '在继续之前，你必须验证你的电子邮件';
 	} else {
 		if (access.subscription.required == null) return undefined;
 
-		placeholder = 'Pro feature — requires a trial or paid plan for use on privately-hosted repos';
+		placeholder = 'Pro 功能 — 需要试用或付费计划才能在私有托管仓库上使用';
 		if (isSubscriptionPaidPlan(access.subscription.required) && access.subscription.current.account != null) {
-			placeholder = 'Pro feature — requires a paid plan for use on privately-hosted repos';
+			placeholder = 'Pro 功能 — 需要付费计划才能在私有托管仓库上使用';
 			directives.push(
 				createDirectiveQuickPickItem(Directive.RequiresPaidSubscription, true),
 				createQuickPickSeparator(),

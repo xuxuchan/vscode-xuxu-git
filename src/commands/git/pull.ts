@@ -150,7 +150,7 @@ export class PullGitCommand extends QuickCommand<State> {
 					detail: `拉取 ${state.repos.length} 个仓库`,
 				}),
 				createFlagsQuickPickItem<Flags>(state.flags, ['--rebase'], {
-					label: `${this.title} 使用变基`,
+					label: `${this.title} with Rebase`,
 					description: '--rebase',
 					detail: `变基拉取 ${state.repos.length} 个仓库`,
 				}),
@@ -213,7 +213,7 @@ export class PullGitCommand extends QuickCommand<State> {
 						detail: `拉取${pullDetails}`,
 					}),
 					createFlagsQuickPickItem<Flags>(state.flags, ['--rebase'], {
-						label: `${this.title} 使用变基`,
+						label: `${this.title} with Rebase`,
 						description: '--rebase',
 						detail: `拉取并变基${pullDetails}`,
 					}),

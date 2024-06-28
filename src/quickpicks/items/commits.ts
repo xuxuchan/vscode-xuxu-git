@@ -371,7 +371,7 @@ export class OpenChangedFilesCommandQuickPickItem extends CommandQuickPickItem {
 			uris: files.map(f => f.uri),
 		};
 
-		super(label ?? 'Open All Changed Files', new ThemeIcon('files'), Commands.OpenChangedFiles, [commandArgs]);
+		super(label ?? '打开所有已更改的文件', new ThemeIcon('files'), Commands.OpenChangedFiles, [commandArgs]);
 	}
 }
 
@@ -381,7 +381,7 @@ export class OpenOnlyChangedFilesCommandQuickPickItem extends CommandQuickPickIt
 			uris: files.map(f => f.uri),
 		};
 
-		super(label ?? 'Open Changed & Close Unchanged Files', new ThemeIcon('files'), Commands.OpenOnlyChangedFiles, [
+		super(label ?? '打开已更改的文件 & 关闭未更改的文件', new ThemeIcon('files'), Commands.OpenOnlyChangedFiles, [
 			commandArgs,
 		]);
 	}
