@@ -310,7 +310,7 @@ export class GlCommitDetails extends GlDetailsBase {
 											>
 											<span slot="content">配置自动链接</span>
 										</gl-tooltip>
-										在提交消息中链接化外部引用，如 ${this.renderJiraLink()} 或 Zendesk 工单。
+										在提交消息中链接外部引用，如 ${this.renderJiraLink()} 或 Zendesk 工单。
 									</p>
 								</div>
 							`;

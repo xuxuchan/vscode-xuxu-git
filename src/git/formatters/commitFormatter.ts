@@ -370,7 +370,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 				)}\`](${InspectCommand.getMarkdownCommandArgs(
 					this._item.sha,
 					this._item.repoPath,
-				)} "Inspect Commit Details")`;
+				)} "审查提交详情")`;
 
 				commands += ` &nbsp;[$(chevron-left)$(compare-changes)](${DiffWithCommand.getMarkdownCommandArgs({
 					lhs: {
@@ -383,13 +383,13 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 					},
 					repoPath: this._item.repoPath,
 					line: this._options.editor?.line,
-				})} "Open Changes with Previous Revision")`;
+				})} "打开与上一个版本的更改对比")`;
 
 				commands += ` &nbsp;[$(versions)](${OpenFileAtRevisionCommand.getMarkdownCommandArgs(
 					Container.instance.git.getRevisionUri(diffUris.previous),
 					'blame',
 					this._options.editor?.line,
-				)} "Open Blame Prior to this Change")`;
+				)} "打开这次更改之前的追溯")`;
 			} else {
 				commands = `[\`${this._padOrTruncate(
 					shortenRevision(this._item.isUncommittedStaged ? uncommittedStaged : uncommitted),
@@ -397,7 +397,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 				)}\`](${InspectCommand.getMarkdownCommandArgs(
 					this._item.sha,
 					this._item.repoPath,
-				)} "Inspect Commit Details")`;
+				)} "审查提交详情")`;
 			}
 
 			return commands;
@@ -408,12 +408,12 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 		commands = `---\n\n[\`$(git-commit) ${this.id}\`](${InspectCommand.getMarkdownCommandArgs(
 			this._item.sha,
 			this._item.repoPath,
-		)} "Inspect Commit Details")`;
+		)} "审查提交详情")`;
 
 		commands += ` &nbsp;[$(chevron-left)$(compare-changes)](${DiffWithCommand.getMarkdownCommandArgs(
 			this._item,
 			this._options.editor?.line,
-		)} "Open Changes with Previous Revision")`;
+		)} "打开与上一个版本的更改对比")`;
 
 		if (this._item.file != null && this._item.unresolvedPreviousSha != null) {
 			const uri = Container.instance.git.getRevisionUri(
@@ -425,7 +425,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 				uri,
 				'blame',
 				this._options.editor?.line,
-			)} "Open Blame Prior to this Change")`;
+			)} "在这次更改之前打开追溯")`;
 		}
 
 		commands += ` &nbsp;[$(search)](${Command.getMarkdownCommandArgsCore<ShowQuickCommitCommandArgs>(
@@ -435,14 +435,14 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 				sha: this._item.sha,
 				revealInView: true,
 			},
-		)} "Reveal in Side Bar")`;
+		)} "在侧边栏显示")`;
 
 		if (arePlusFeaturesEnabled()) {
 			commands += ` &nbsp;[$(gitlens-graph)](${Command.getMarkdownCommandArgsCore<ShowInCommitGraphCommandArgs>(
 				Commands.ShowInCommitGraph,
 				// Avoid including the message here, it just bloats the command url
 				{ ref: getReferenceFromRevision(this._item, { excludeMessage: true }) },
-			)} "Open in Commit Graph")`;
+			)} "在提交图中打开")`;
 		}
 
 		const { pullRequest: pr, remotes } = this._options;
@@ -469,7 +469,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 					pr.state
 				}, ${pr.formatDateFromNow()}")`;
 			} else if (isPromise(pr)) {
-				commands += `${separator}[$(git-pull-request) PR $(loading~spin)](command:${Commands.RefreshHover} "Searching for a Pull Request (if any) that introduced this commit...")`;
+				commands += `${separator}[$(git-pull-request) PR $(loading~spin)](command:${Commands.RefreshHover} "搜索引入此提交的拉取请求（如果有的话）...")`;
 			}
 		} else if (remotes != null) {
 			const [remote] = remotes;
@@ -480,9 +480,9 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 			) {
 				commands += `${separator}[$(plug) Connect to ${remote?.provider.name}${
 					GlyphChars.Ellipsis
-				}](${ConnectRemoteProviderCommand.getMarkdownCommandArgs(remote)} "Connect to ${
+				}](${ConnectRemoteProviderCommand.getMarkdownCommandArgs(remote)} "连接到 ${
 					remote.provider.name
-				} to enable the display of the Pull Request (if any) that introduced this commit")`;
+				} 以启用显示引入此提交的拉取请求（如果有的话）。")`;
 			}
 		}
 
@@ -508,7 +508,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 								line: this._options.editor?.line,
 						  }
 						: undefined,
-			})} "Show Team Actions")`;
+			})} "显示团队操作")`;
 		}
 
 		const gitUri = this._item.getGitUri();
@@ -518,7 +518,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 						revisionUri: Container.instance.git.getRevisionUri(gitUri).toString(true),
 				  }
 				: { commit: this._item },
-		)} "Show More Actions")`;
+		)} "显示更多操作")`;
 
 		return this._padOrTruncate(commands, this._options.tokenOptions.commands);
 	}

@@ -51,8 +51,8 @@ export class PickCommandStep implements QuickPickStep<QuickCommand> {
 	ignoreFocusOut = false;
 	readonly items: QuickCommand[];
 	readonly matchOnDescription = true;
-	readonly placeholder = 'Choose a git command';
-	readonly title = 'GitLens';
+	readonly placeholder = '选择一个Git命令';
+	readonly title = 'XU-Git';
 
 	constructor(
 		private readonly container: Container,

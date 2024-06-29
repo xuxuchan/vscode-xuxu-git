@@ -1349,7 +1349,7 @@ export class DeepLinkService implements Disposable {
 
 		if (remoteUrl == null && typeof refOrIdOrRepoPath === 'string') {
 			const deepLinkRedirectUrl = new URL(
-				`https://${modePrefixString}gitkraken.dev/link/workspaces/${refOrIdOrRepoPath}`,
+				`https://${modePrefixString}dev.xutec.org/link/workspaces/${refOrIdOrRepoPath}`,
 			);
 			deepLinkRedirectUrl.searchParams.set('origin', 'gitlens');
 			return deepLinkRedirectUrl;
@@ -1405,7 +1405,7 @@ export class DeepLinkService implements Disposable {
 		}
 
 		const deepLinkRedirectUrl = new URL(
-			`https://${modePrefixString}gitkraken.dev/link/${encodeURIComponent(
+			`https://${modePrefixString}dev.xutec.org/link/${encodeURIComponent(
 				Buffer.from(deepLink.href).toString('base64'),
 			)}`,
 		);
@@ -1472,7 +1472,7 @@ export class DeepLinkService implements Disposable {
 		}
 
 		const deepLinkRedirectUrl = new URL(
-			`https://${modePrefixString}gitkraken.dev/link/${encodeURIComponent(
+			`https://${modePrefixString}dev.xutec.org/link/${encodeURIComponent(
 				Buffer.from(deepLink.href).toString('base64'),
 			)}`,
 		);

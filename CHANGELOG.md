@@ -22,7 +22,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Renames _Open Inspect_ to _Inspect Commit Details_
 - Renames _Open Line Inspect_ to _Inspect Line Commit Details_
 - Renames _Open Details_ to _Inspect Commit Details_
-- Replaces _Open in Editor_ link in the Launchpad with a link to _gitkraken.dev_
+- Replaces _Open in Editor_ link in the Launchpad with a link to _dev.xutec.org_
 
 ### Fixed
 
@@ -95,7 +95,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- Adds [Launchpad](https://gitkraken.com/solutions/launchpad?utm_source=gitlens-extension&utm_medium=in-app-links) `preview`, a new Pro feature bringing your GitHub pull requests into a unified, categorized list to keep you focused and your team unblocked
+- Adds [Launchpad](https://xutec.org/xugit/solutions/launchpad?utm_source=gitlens-extension&utm_medium=in-app-links) `preview`, a new Pro feature bringing your GitHub pull requests into a unified, categorized list to keep you focused and your team unblocked
   - Open using the new _GitLens: Open Launchpad_ command
   - Categorizes pull requests by status
     - _Current Branch_: Pull requests associated with your current branch
@@ -134,10 +134,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
     - `gitlens.launchpad.indicator.polling.enabled`: Specifies whether to regularly check for changes to pull requests
     - `gitlens.launchpad.indicator.polling.interval`: Specifies the interval in minutes to check for changes to pull requests
 - Adds new features that make code reviews easier
-  - Adds [Code Suggest](https://gitkraken.com/solutions/code-suggest?utm_source=gitlens-extension&utm_medium=in-app-links) `preview`, a cloud feature, that frees your code reviews from unnecessary restrictions
+  - Adds [Code Suggest](https://xutec.org/xugit/solutions/code-suggest?utm_source=gitlens-extension&utm_medium=in-app-links) `preview`, a cloud feature, that frees your code reviews from unnecessary restrictions
     - Create a Code Suggestion from the _Inspect: Overview_ tab when on a PR's branch
     - Upon creation of a Code Suggestion, a comment will appear on the pull request
-      - Code Suggestions can be viewed and apply directly from [gitkraken.dev](https://gitkraken.dev), or open in GitKraken Desktop or GitLens.
+      - Code Suggestions can be viewed and apply directly from [dev.xutec.org](https://dev.xutec.org), or open in GitKraken Desktop or GitLens.
     - See a PR's Code Suggestions from anywhere we currently display PR information in our views (Commits, Branches, Remotes)
     - You can additionally start Code Suggestions from the Launchpad
   - Adds a _Pull Request_ view to view PR commits and review file changes
@@ -167,7 +167,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Changes the command to open the Launchpad in the editor (formerly _Focus View_) from _GitLens: Show Focus_ to _GitLens: Open Launchpad in Editor_
 - Renames the setting `gitlens.focus.allowMultiple` to `gitlens.launchpad.allowMultiple`
 - Updates most deep link prompts to quick picks or quick inputs, moves most prompts to before a repository is opened.
-- Updates Pro upgrade links to use the newer gitkraken.dev site
+- Updates Pro upgrade links to use the newer dev.xutec.org site
 
 ### Fixed
 
@@ -288,7 +288,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   - Click the _Invite_ button at the bottom of the _Patch Details_ view to add members of your organization to collaborate and click _Update Patch_ to save your changes
   - Cloud Patch collaborators will see these Patches under the _Shared with Me_ section of the _Cloud Patches_ view
 - Adds support for deep links to files and code
-  - Deep link format: `https://gitkraken.dev/link/r/{repoId}/f/{filePath}?[url={remoteUrl}|path={repoPath}]&lines={lines}&ref={ref}`
+  - Deep link format: `https://dev.xutec.org/link/r/{repoId}/f/{filePath}?[url={remoteUrl}|path={repoPath}]&lines={lines}&ref={ref}`
   - Adds _Copy Link to File_, _Copy Link to File at Revision..._, and _Copy Link to Code_ commands to the _Copy As_ submenu in the editor context menu and to the _Share_ submenu of files in GitLens views
 - Adds the ability to choose multiple stashes to drop in the _Git Command Palette_'s _stash drop_ command &mdash; closes [#3102](https://github.com/gitkraken/vscode-gitlens/issues/3102)
 - Adds a new _prune_ subcommand to the _Git Command Palette_'s _branch_ command to easily delete local branches with missing upstreams
@@ -408,7 +408,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- Adds a preview of [Cloud Patches](https://www.gitkraken.com/solutions/cloud-patches), an all-new ☁️ feature &mdash; engage in early collaboration before the pull request:
+- Adds a preview of [Cloud Patches](https://www.xutec.org/xugit/solutions/cloud-patches), an all-new ☁️ feature &mdash; engage in early collaboration before the pull request:
   - Share your work with others by creating a Cloud Patch from Working Changes, Commits, Stashes or Comparisons
   - View Cloud Patches from URLs shared to you and apply them to your working tree or to a new or existing branch
   - Manage your Cloud Patches from the new _Cloud Patches_ view in the GitLens side bar
@@ -479,7 +479,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Adds a _[Show|Hide] Merge Commits_ toggle to the _File History_ view &mdash; closes [#2104](https://github.com/gitkraken/vscode-gitlens/issues/2104) & [#2944](https://github.com/gitkraken/vscode-gitlens/issues/2944)
   - Adds a `gitlens.advanced.fileHistoryShowMergeCommits` setting to specify whether merge commits will be show in file histories
 - Adds deep link support for workspaces in the _GitKraken Workspaces_ view
-  - Deep link format: `https://gitkraken.dev/link/workspaces/{workspaceId}`
+  - Deep link format: `https://dev.xutec.org/link/workspaces/{workspaceId}`
   - Adds a _Share_ submenu with a _Copy Link to Workspace_ command to workspaces in the _GitKraken Workspaces_ view
 
 ### Changed
@@ -871,7 +871,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- ✨ Adds a preview of the all-new **Focus**, a [GitLens+ feature](https://gitkraken.com/gitlens/pro-features) &mdash; provides you with a comprehensive list of all your most important work across your connected GitHub repos:
+- ✨ Adds a preview of the all-new **Focus**, a [GitLens+ feature](https://xutec.org/xugit/pro-features) &mdash; provides you with a comprehensive list of all your most important work across your connected GitHub repos:
   - My Pull Requests: shows all GitHub PRs opened by you, assigned to you, or awaiting your review
   - My Issues: shows all issues created by you, assigned to you, or that mention you
   - Open it via _GitLens+: Show Focus_ from the Command Palette
@@ -1140,7 +1140,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- ✨ Adds an all-new [**Commit Graph**](https://github.com/gitkraken/vscode-gitlens#commit-graph-), a [GitLens+ feature](https://gitkraken.com/gitlens/pro-features) &mdash; helps you to easily visualize branch structure and commit history. Not only does it help you verify your changes, but also easily see changes made by others and when
+- ✨ Adds an all-new [**Commit Graph**](https://github.com/gitkraken/vscode-gitlens#commit-graph-), a [GitLens+ feature](https://xutec.org/xugit/pro-features) &mdash; helps you to easily visualize branch structure and commit history. Not only does it help you verify your changes, but also easily see changes made by others and when
   ![Commit Graph illustration](https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/commit-graph-illustrated.png)
 - Adds a [**Commit Details view**](https://github.com/gitkraken/vscode-gitlens#commit-details-view-) &mdash; provides rich details for commits and stashes
   - Contextually updates as you navigate:
@@ -1375,7 +1375,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Adds (preview) VS Code for Web support!
   - Get the power and insights of GitLens for any GitHub repository directly in your browser on vscode.dev or github.dev
-- Introducing GitLens+ features &mdash; [learn about GitLens+ features](https://gitkraken.com/gitlens/pro-features)
+- Introducing GitLens+ features &mdash; [learn about GitLens+ features](https://xutec.org/xugit/pro-features)
 
   - GitLens+ adds all-new, completely optional, features that enhance your current GitLens experience when you sign in with a free account. A free GitLens+ account gives you access to these new GitLens+ features on local and public repos, while a paid account allows you to use them on private repos. All other GitLens features will continue to be free without an account, so you won't lose access to any of the GitLens features you know and love, EVER.
   - Visual File History &mdash; a visual way to analyze and explore changes to a file
@@ -1469,7 +1469,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Changed
 
-- GitLens joins forces with GitKraken! &mdash; [Learn more](https://gitkraken.com/blog/gitkraken-acquires-gitlens-for-visual-studio-code)
+- GitLens joins forces with GitKraken! &mdash; [Learn more](https://xutec.org/xugit/blog/gitkraken-acquires-gitlens-for-visual-studio-code)
 
 ## [11.6.0] - 2021-07-13
 

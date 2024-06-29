@@ -624,7 +624,7 @@ export class GlDraftDetails extends GlTreeBase {
 					${when(
 						this.cloudDraft?.gkDevLink != null,
 						() => html`
-							<a class="commit-action" href=${this.cloudDraft!.gkDevLink} title="Open on gitkraken.dev">
+							<a class="commit-action" href=${this.cloudDraft!.gkDevLink} title="Open on dev.xutec.org">
 								<code-icon icon="globe"></code-icon>
 							</a>
 						`,

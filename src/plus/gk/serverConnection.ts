@@ -29,14 +29,14 @@ export class ServerConnection implements Disposable {
 	@memoize()
 	private get accountsUri(): Uri {
 		if (this.container.env === 'staging') {
-			return Uri.parse('https://stagingapp.gitkraken.com');
+			return Uri.parse('https://stagingapp.xutec.org');
 		}
 
 		if (this.container.env === 'dev') {
-			return Uri.parse('https://devapp.gitkraken.com');
+			return Uri.parse('https://devapp.xutec.org');
 		}
 
-		return Uri.parse('https://app.gitkraken.com');
+		return Uri.parse('https://app.xutec.org');
 	}
 
 	getAccountsUri(path?: string, query?: string) {
@@ -50,14 +50,14 @@ export class ServerConnection implements Disposable {
 	@memoize()
 	private get baseApiUri(): Uri {
 		if (this.container.env === 'staging') {
-			return Uri.parse('https://stagingapi.gitkraken.com');
+			return Uri.parse('https://stagingapi.xutec.org');
 		}
 
 		if (this.container.env === 'dev') {
-			return Uri.parse('https://devapi.gitkraken.com');
+			return Uri.parse('https://devapi.xutec.org');
 		}
 
-		return Uri.parse('https://api.gitkraken.com');
+		return Uri.parse('https://api.xutec.org');
 	}
 
 	getApiUrl(...pathSegments: string[]) {
@@ -67,14 +67,14 @@ export class ServerConnection implements Disposable {
 	@memoize()
 	private get baseGkDevApiUri(): Uri {
 		if (this.container.env === 'staging') {
-			return Uri.parse('https://staging-api.gitkraken.dev');
+			return Uri.parse('https://staging-api.dev.xutec.org');
 		}
 
 		if (this.container.env === 'dev') {
-			return Uri.parse('https://dev-api.gitkraken.dev');
+			return Uri.parse('https://dev-api.dev.xutec.org');
 		}
 
-		return Uri.parse('https://api.gitkraken.dev');
+		return Uri.parse('https://api.dev.xutec.org');
 	}
 
 	getGkDevApiUrl(...pathSegments: string[]) {

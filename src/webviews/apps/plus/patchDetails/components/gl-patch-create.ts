@@ -363,7 +363,7 @@ export class GlPatchCreate extends GlTreeBase {
 							>
 							are
 							<a
-								href="https://help.gitkraken.com/gitlens/security"
+								href="https://help.xutec.org/xugit/security"
 								title="Learn more about GitKraken security"
 								aria-label="Learn more about GitKraken security"
 								>securely stored</a

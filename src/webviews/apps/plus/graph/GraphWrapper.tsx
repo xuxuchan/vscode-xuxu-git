@@ -1436,7 +1436,7 @@ export function GraphWrapper({
 				visible={!allowed}
 			>
 				<p slot="feature">
-					<a href="https://help.gitkraken.com/gitlens/gitlens-features/#commit-graph-%e2%9c%a8">
+					<a href="https://help.xutec.org/xugit/gitlens-features/#commit-graph-%e2%9c%a8">
 						提交图
 					</a>
 					<GlFeatureBadge

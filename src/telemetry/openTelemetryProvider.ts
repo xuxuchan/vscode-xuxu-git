@@ -53,8 +53,8 @@ export class OpenTelemetryProvider implements TelemetryProvider {
 
 		const exporter = new OTLPTraceExporter({
 			url: debugging
-				? 'https://otel-dev.gitkraken.com:4318/v1/traces'
-				: 'https://otel.gitkraken.com:4318/v1/traces',
+				? 'https://otel-dev.xutec.org:4318/v1/traces'
+				: 'https://otel.xutec.org:4318/v1/traces',
 			compression: 'gzip' as any,
 			httpAgentOptions: agent?.options,
 		});

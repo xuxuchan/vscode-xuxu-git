@@ -918,14 +918,14 @@ export class Container {
 	@memoize()
 	private get baseGkDevUri(): Uri {
 		if (this.env === 'staging') {
-			return Uri.parse('https://staging.gitkraken.dev');
+			return Uri.parse('https://staging.dev.xutec.org');
 		}
 
 		if (this.env === 'dev') {
-			return Uri.parse('https://dev.gitkraken.dev');
+			return Uri.parse('https://dev.xutec.org');
 		}
 
-		return Uri.parse('https://gitkraken.dev');
+		return Uri.parse('https://dev.xutec.org');
 	}
 
 	getGkDevUri(path?: string, query?: string): Uri {

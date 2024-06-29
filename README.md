@@ -2,7 +2,7 @@
 
 > Supercharge Git and unlock **untapped knowledge** within your repository to better **understand**, **write**, and **review** code. Focus, collaborate, accelerate.
 
-[GitLens](https://gitkraken.com/gitlens?utm_source=gitlens-extension&utm_medium=in-app-links&utm_campaign=gitlens-logo-links 'Learn more about GitLens') is a powerful [open-source](https://github.com/gitkraken/vscode-gitlens 'Open GitLens on GitHub') extension for [Visual Studio Code](https://code.visualstudio.com).
+[GitLens](https://xutec.org/xugit?utm_source=gitlens-extension&utm_medium=in-app-links&utm_campaign=gitlens-logo-links 'Learn more about GitLens') is a powerful [open-source](https://github.com/gitkraken/vscode-gitlens 'Open GitLens on GitHub') extension for [Visual Studio Code](https://code.visualstudio.com).
 
 GitLens supercharges your Git experience in VS Code. Maintaining focus is critical, extra time spent context switching or missing context disrupts your flow. GitLens is the ultimate tool for making Git work for you, designed to improve focus, productivity, and collaboration with a powerful set of tools to help you and your team better understand, write, and review code.
 
@@ -22,8 +22,8 @@ Use `Switch to Pre-Release Version` on the extension banner to live on the edge 
 
 All features are free to use on all repos, **except** for features,
 
-- marked with a `Pro` require a [trial or paid plan](https://www.gitkraken.com/gitlens/pricing) for use on privately-hosted repos
-- marked with a `Preview` require a GitKraken account, with access level based on your [plan](https://www.gitkraken.com/gitlens/pricing), e.g. Free, Pro, etc
+- marked with a `Pro` require a [trial or paid plan](https://www.xutec.org/xugit/pricing) for use on privately-hosted repos
+- marked with a `Preview` require a GitKraken account, with access level based on your [plan](https://www.xutec.org/xugit/pricing), e.g. Free, Pro, etc
 
 See the [FAQ](#is-gitlens-free-to-use 'Jump to FAQ') for more details.
 
@@ -169,7 +169,7 @@ Convenient and easy access to the Commit Graph with a dedicated details view.
 
 Easily visualize your repository and keep track of all work in progress.
 
-Use the rich commit search to find exactly what you're looking for. Its powerful filters allow you to search by a specific commit, message, author, a changed file or files, or even a specific code change. [Learn more](https://gitkraken.com/solutions/commit-graph?utm_source=gitlens-extension&utm_medium=in-app-links)
+Use the rich commit search to find exactly what you're looking for. Its powerful filters allow you to search by a specific commit, message, author, a changed file or files, or even a specific code change. [Learn more](https://xutec.org/xugit/solutions/commit-graph?utm_source=gitlens-extension&utm_medium=in-app-links)
 
 <figure align="center">
   <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/commit-graph.png" alt="Commit Graph" />
@@ -181,7 +181,7 @@ Use the rich commit search to find exactly what you're looking for. Its powerful
 
 ## Launchpad `Preview`
 
-Launchpad brings all of your GitHub pull requests into a unified, actionable list to better track work in progress, pending work, reviews, and more. Stay focused and take action on the most important items to keep your team unblocked. [Learn more](https://gitkraken.com/solutions/launchpad?utm_source=gitlens-extension&utm_medium=in-app-links)
+Launchpad brings all of your GitHub pull requests into a unified, actionable list to better track work in progress, pending work, reviews, and more. Stay focused and take action on the most important items to keep your team unblocked. [Learn more](https://xutec.org/xugit/solutions/launchpad?utm_source=gitlens-extension&utm_medium=in-app-links)
 
 <figure align="center">
   <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/launchpad.png" alt="Launchpad" />
@@ -189,7 +189,7 @@ Launchpad brings all of your GitHub pull requests into a unified, actionable lis
 
 ## Code Suggest `Preview`
 
-Liberate your code reviews from GitHub's restrictive, comment-only feedback style. Like suggesting changes on a Google-doc, suggest code changes from where you're already coding — your IDE and on anything in your project, not just on the lines of code changed in the PR. [Learn more](https://gitkraken.com/solutions/code-suggest?utm_source=gitlens-extension&utm_medium=in-app-links)
+Liberate your code reviews from GitHub's restrictive, comment-only feedback style. Like suggesting changes on a Google-doc, suggest code changes from where you're already coding — your IDE and on anything in your project, not just on the lines of code changed in the PR. [Learn more](https://xutec.org/xugit/solutions/code-suggest?utm_source=gitlens-extension&utm_medium=in-app-links)
 
 <figure align="center">
   <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/code-suggest.png" alt="Code Suggest" />
@@ -197,7 +197,7 @@ Liberate your code reviews from GitHub's restrictive, comment-only feedback styl
 
 ## Cloud Patches `Preview`
 
-Easily and securely share code changes with your teammates or other developers by creating a Cloud Patch from your WIP, commit or stash and sharing the generated link. Use Cloud Patches to collaborate early for feedback on direction, approach, and more, to minimize rework and streamline your workflow. [Learn more](https://gitkraken.com/solutions/cloud-patches?utm_source=gitlens-extension&utm_medium=in-app-links)
+Easily and securely share code changes with your teammates or other developers by creating a Cloud Patch from your WIP, commit or stash and sharing the generated link. Use Cloud Patches to collaborate early for feedback on direction, approach, and more, to minimize rework and streamline your workflow. [Learn more](https://xutec.org/xugit/solutions/cloud-patches?utm_source=gitlens-extension&utm_medium=in-app-links)
 
 ## Worktrees `Pro`
 
@@ -211,7 +211,7 @@ Avoid interrupting your work in progress when needing to review a pull request. 
 
 ## GitKraken Workspaces `Preview`
 
-GitKraken Workspaces allow you to easily group and manage multiple repositories together, accessible from anywhere, streamlining your workflow. Create workspaces just for yourself or share (coming soon in GitLens) them with your team for faster onboarding and better collaboration. [Learn more](https://gitkraken.com/solutions/workspaces?utm_source=gitlens-extension&utm_medium=in-app-links)
+GitKraken Workspaces allow you to easily group and manage multiple repositories together, accessible from anywhere, streamlining your workflow. Create workspaces just for yourself or share (coming soon in GitLens) them with your team for faster onboarding and better collaboration. [Learn more](https://xutec.org/xugit/solutions/workspaces?utm_source=gitlens-extension&utm_medium=in-app-links)
 
 ## Visual File History `Pro`
 
@@ -277,15 +277,15 @@ Use the `Generate Commit Message` command from the Source Control view's context
 
 # Ready for GitLens Pro?
 
-When you're ready to unlock the full potential of GitLens and our [DevEx platform](https://gitkraken.com/devex?utm_source=gitlens-extension&utm_medium=in-app-links) and enjoy all the benefits on your privately-hosted repos, consider upgrading to GitLens Pro. With GitLens Pro, you'll gain access to [Pro features](https://gitkraken.com/gitlens/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links) on privately-hosted repos.
+When you're ready to unlock the full potential of GitLens and our [DevEx platform](https://xutec.org/xugit/devex?utm_source=gitlens-extension&utm_medium=in-app-links) and enjoy all the benefits on your privately-hosted repos, consider upgrading to GitLens Pro. With GitLens Pro, you'll gain access to [Pro features](https://xutec.org/xugit/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links) on privately-hosted repos.
 
-To learn more about the pricing and the additional features offered with GitLens Pro, visit the [GitLens Pricing page](https://www.gitkraken.com/gitlens/pricing?utm_source=gitlens-extension&utm_medium=in-app-links). Upgrade to GitLens Pro today and take your Git workflow to the next level!
+To learn more about the pricing and the additional features offered with GitLens Pro, visit the [GitLens Pricing page](https://www.xutec.org/xugit/pricing?utm_source=gitlens-extension&utm_medium=in-app-links). Upgrade to GitLens Pro today and take your Git workflow to the next level!
 
 # FAQ
 
 ## Is GitLens free to use?
 
-Yes. All features are free to use on all repos, **except** for `Pro` features, which require a [trial or paid plan](https://www.gitkraken.com/gitlens/pricing?utm_source=gitlens-extension&utm_medium=in-app-links).
+Yes. All features are free to use on all repos, **except** for `Pro` features, which require a [trial or paid plan](https://www.xutec.org/xugit/pricing?utm_source=gitlens-extension&utm_medium=in-app-links).
 
 While GitLens offers a remarkable set of free features, a subset of `Pro` features tailored for professional developers and teams, require a trial or paid plan for use on privately-hosted repos &mdash; use on local or publicly-hosted repos is free for everyone. Additionally `Preview` features may require a paid plan in the future and some, if cloud-backed, require a GitKraken account.
 
@@ -297,11 +297,11 @@ Preview `Pro` features instantly for free for 3 days without an account, or star
 
 ## Where can I find pricing?
 
-Visit the [GitLens Pricing page](https://www.gitkraken.com/gitlens/pricing?utm_source=gitlens-extension&utm_medium=in-app-links) for detailed pricing information and feature matrix for plans.
+Visit the [GitLens Pricing page](https://www.xutec.org/xugit/pricing?utm_source=gitlens-extension&utm_medium=in-app-links) for detailed pricing information and feature matrix for plans.
 
 # Support and Community
 
-Support documentation can be found on the [GitLens Help Center](https://help.gitkraken.com/gitlens/gitlens-home/). If you need further assistance or have any questions, there are various support channels and community forums available for GitLens:
+Support documentation can be found on the [GitLens Help Center](https://help.xutec.org/xugit/gitlens-home/). If you need further assistance or have any questions, there are various support channels and community forums available for GitLens:
 
 ## Issue Reporting and Feature Requests
 
@@ -313,7 +313,7 @@ Join the GitLens community on [GitHub Discussions](https://github.com/gitkraken/
 
 ## GitKraken Support
 
-For any issues or inquiries related to GitLens, you can reach out to the GitKraken support team via the [official support page](https://support.gitkraken.com/). They will be happy to assist you with any problems you may encounter.
+For any issues or inquiries related to GitLens, you can reach out to the GitKraken support team via the [official support page](https://support.xutec.org/xugit/). They will be happy to assist you with any problems you may encounter.
 
 With GitLens Pro, you gain access to priority email support from our customer success team, ensuring higher priority and faster response times. Custom onboarding and training are also available to help you and your team quickly get up and running with a GitLens Pro plan.
 

@@ -4,8 +4,8 @@ contact_links:
       url: https://github.com/gitkraken/vscode-gitlens/discussions?discussions_q=category%3AQ%26A
       about: Ask and answer questions about GitLens
     - name: Documentation
-      url: https://help.gitkraken.com/gitlens
+      url: https://help.xutec.org/xugit
       about: Read the GitLens support documentation
     - name: GitKraken Support
-      url: https://gitkraken.com/gitlens-support
+      url: https://xutec.org/xugit-support
       about: Get email support for issues and questions on paid features or relating to your GitKraken account or plan

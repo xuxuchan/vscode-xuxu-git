@@ -32,23 +32,23 @@ export const ImageMimetypes: Record<string, string> = Object.freeze({
 });
 
 export const urls = Object.freeze({
-	codeSuggest: 'https://gitkraken.com/solutions/code-suggest?utm_source=gitlens-extension&utm_medium=in-app-links',
-	cloudPatches: 'https://gitkraken.com/solutions/cloud-patches?utm_source=gitlens-extension&utm_medium=in-app-links',
-	graph: 'https://gitkraken.com/solutions/commit-graph?utm_source=gitlens-extension&utm_medium=in-app-links',
-	launchpad: 'https://gitkraken.com/solutions/launchpad?utm_source=gitlens-extension&utm_medium=in-app-links',
-	platform: 'https://gitkraken.com/devex?utm_source=gitlens-extension&utm_medium=in-app-links',
-	pricing: 'https://gitkraken.com/gitlens/pricing?utm_source=gitlens-extension&utm_medium=in-app-links',
-	proFeatures: 'https://gitkraken.com/gitlens/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links',
-	security: 'https://help.gitkraken.com/gitlens/security?utm_source=gitlens-extension&utm_medium=in-app-links',
-	workspaces: 'https://gitkraken.com/solutions/workspaces?utm_source=gitlens-extension&utm_medium=in-app-links',
+	codeSuggest: 'https://xutec.org/xugit/solutions/code-suggest?utm_source=gitlens-extension&utm_medium=in-app-links',
+	cloudPatches: 'https://xutec.org/xugit/solutions/cloud-patches?utm_source=gitlens-extension&utm_medium=in-app-links',
+	graph: 'https://xutec.org/xugit/solutions/commit-graph?utm_source=gitlens-extension&utm_medium=in-app-links',
+	launchpad: 'https://xutec.org/xugit/solutions/launchpad?utm_source=gitlens-extension&utm_medium=in-app-links',
+	platform: 'https://xutec.org/xugit/devex?utm_source=gitlens-extension&utm_medium=in-app-links',
+	pricing: 'https://xutec.org/xugit/pricing?utm_source=gitlens-extension&utm_medium=in-app-links',
+	proFeatures: 'https://xutec.org/xugit/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links',
+	security: 'https://help.xutec.org/xugit/security?utm_source=gitlens-extension&utm_medium=in-app-links',
+	workspaces: 'https://xutec.org/xugit/solutions/workspaces?utm_source=gitlens-extension&utm_medium=in-app-links',
 
-	cli: 'https://gitkraken.com/cli?utm_source=gitlens-extension&utm_medium=in-app-links',
-	browserExtension: 'https://gitkraken.com/browser-extension?utm_source=gitlens-extension&utm_medium=in-app-links',
-	desktop: 'https://gitkraken.com/git-client?utm_source=gitlens-extension&utm_medium=in-app-links',
+	cli: 'https://xutec.org/xugit/cli?utm_source=gitlens-extension&utm_medium=in-app-links',
+	browserExtension: 'https://xutec.org/xugit/browser-extension?utm_source=gitlens-extension&utm_medium=in-app-links',
+	desktop: 'https://xutec.org/xugit/git-client?utm_source=gitlens-extension&utm_medium=in-app-links',
 
-	releaseNotes: 'https://help.gitkraken.com/gitlens/gitlens-release-notes-current/',
+	releaseNotes: 'https://help.xutec.org/xugit/gitlens-release-notes-current/',
 	releaseAnnouncement:
-		'https://www.gitkraken.com/blog/gitkraken-launches-devex-platform-acquires-codesee?utm_source=gitlens-extension&utm_medium=in-app-links',
+		'https://www.xutec.org/xugit/blog/gitkraken-launches-devex-platform-acquires-codesee?utm_source=gitlens-extension&utm_medium=in-app-links',
 });
 
 export const enum CharCode {

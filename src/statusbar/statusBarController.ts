@@ -70,15 +70,15 @@ export class StatusBarController implements Disposable {
 						alignment,
 						alignment === StatusBarAlignment.Right ? 999 : 1,
 					);
-				this._statusBarMode.name = 'GitLens Modes';
+				this._statusBarMode.name = 'XU-Git 模式';
 				this._statusBarMode.command = Commands.SwitchMode;
 				this._statusBarMode.text = mode.statusBarItemName;
 				this._statusBarMode.tooltip = new MarkdownString(
-					`**${mode.statusBarItemName}** ${GlyphChars.Dash} ${mode.description}\n\n---\n\nClick to Switch GitLens Modes`,
+					`**${mode.statusBarItemName}** ${GlyphChars.Dash} ${mode.description}\n\n---\n\n点击切换 XU-Git 模式`,
 					true,
 				);
 				this._statusBarMode.accessibilityInformation = {
-					label: `GitLens Mode: ${mode.statusBarItemName}\nClick to Switch GitLens Modes`,
+					label: `XU-Git 模式: ${mode.statusBarItemName}\n点击切换 XU-Git 模式`,
 				};
 				this._statusBarMode.show();
 			} else {
@@ -109,7 +109,7 @@ export class StatusBarController implements Disposable {
 					alignment,
 					alignment === StatusBarAlignment.Right ? 1000 : 0,
 				);
-			this._statusBarBlame.name = 'GitLens Current Line Blame';
+			this._statusBarBlame.name = 'XU-Git 行内追溯';
 			this._statusBarBlame.command = configuration.get('statusBar.command');
 
 			if (configuration.changed(e, 'statusBar.enabled')) {
@@ -166,24 +166,24 @@ export class StatusBarController implements Disposable {
 					statusBarItem.tooltip.isTrusted = { enabledCommands: [Commands.ShowSettingsPage] };
 
 					if (doc.canDirtyIdle) {
-						statusBarItem.text = '$(watch) Blame Paused';
+						statusBarItem.text = '$(watch) 追溯暂停';
 						statusBarItem.tooltip.appendMarkdown(
-							`Blame will resume after a [${configuration.get(
+							`在[${configuration.get(
 								'advanced.blame.delayAfterEdit',
-							)} ms delay](${Command.getMarkdownCommandArgsCore<[undefined, string]>(
+							)}毫秒延迟](${Command.getMarkdownCommandArgsCore<[undefined, string]>(
 								Commands.ShowSettingsPage,
 								[undefined, 'advanced.blame.delayAfterEdit'],
-							)} 'Change the after edit delay') to limit the performance impact because there are unsaved changes`,
+							)} '更改编辑后延迟')之后恢复追溯，以限制性能影响，因为存在未保存的更改`,
 						);
 					} else {
-						statusBarItem.text = '$(debug-pause) Blame Paused';
+						statusBarItem.text = '$(debug-pause) 追溯暂停';
 						statusBarItem.tooltip.appendMarkdown(
-							`Blame will resume after saving because there are unsaved changes and the file is over the [${configuration.get(
+							`因为存在未保存的更改，并且文件超过了[${configuration.get(
 								'advanced.blame.sizeThresholdAfterEdit',
-							)} line threshold](${Command.getMarkdownCommandArgsCore<[undefined, string]>(
+							)}行阈值](${Command.getMarkdownCommandArgsCore<[undefined, string]>(
 								Commands.ShowSettingsPage,
 								[undefined, 'advanced.blame.sizeThresholdAfterEdit'],
-							)} 'Change the after edit line threshold') to limit the performance impact`,
+							)} '更改编辑后的行阈值')，以限制性能影响，保存后将恢复追溯`,
 						);
 					}
 
@@ -242,54 +242,54 @@ export class StatusBarController implements Disposable {
 		let actionTooltip: string;
 		switch (cfg.command) {
 			case StatusBarCommand.CopyRemoteCommitUrl:
-				actionTooltip = 'Click to Copy Remote Commit URL';
+				actionTooltip = '点击复制远程提交URL';
 				break;
 			case StatusBarCommand.CopyRemoteFileUrl:
 				this._statusBarBlame.command = Commands.CopyRemoteFileUrl;
-				actionTooltip = 'Click to Copy Remote File Revision URL';
+				actionTooltip = '点击复制远程文件修订URL';
 				break;
 			case StatusBarCommand.DiffWithPrevious:
 				this._statusBarBlame.command = Commands.DiffLineWithPrevious;
-				actionTooltip = 'Click to Open Line Changes with Previous Revision';
+				actionTooltip = '点击打开与上一修订的行更改';
 				break;
 			case StatusBarCommand.DiffWithWorking:
 				this._statusBarBlame.command = Commands.DiffLineWithWorking;
-				actionTooltip = 'Click to Open Line Changes with Working File';
+				actionTooltip = '点击打开与工作文件的行更改';
 				break;
 			case StatusBarCommand.OpenCommitOnRemote:
-				actionTooltip = 'Click to Open Commit on Remote';
+				actionTooltip = '点击在远程打开提交';
 				break;
 			case StatusBarCommand.OpenFileOnRemote:
-				actionTooltip = 'Click to Open Revision on Remote';
+				actionTooltip = '点击在远程打开修订';
 				break;
 			case StatusBarCommand.RevealCommitInView:
-				actionTooltip = 'Click to Reveal Commit in the Side Bar';
+				actionTooltip = '点击在侧边栏显示提交';
 				break;
 			case StatusBarCommand.ShowCommitsInView:
-				actionTooltip = 'Click to Search for Commit';
+				actionTooltip = '点击搜索提交';
 				break;
 			case StatusBarCommand.ShowQuickCommitDetails:
-				actionTooltip = 'Click to Show Commit';
+				actionTooltip = '点击显示提交详情';
 				break;
 			case StatusBarCommand.ShowQuickCommitFileDetails:
-				actionTooltip = 'Click to Show Commit (file)';
+				actionTooltip = '点击显示提交（文件）';
 				break;
 			case StatusBarCommand.ShowQuickCurrentBranchHistory:
-				actionTooltip = 'Click to Show Branch History';
+				actionTooltip = '点击显示分支历史';
 				break;
 			case StatusBarCommand.ShowQuickFileHistory:
-				actionTooltip = 'Click to Show File History';
+				actionTooltip = '点击显示文件历史';
 				break;
 			case StatusBarCommand.ToggleCodeLens:
-				actionTooltip = 'Click to Toggle Git CodeLens';
+				actionTooltip = '点击切换Git CodeLens';
 				break;
 			case StatusBarCommand.ToggleFileBlame:
-				actionTooltip = 'Click to Toggle File Blame';
+				actionTooltip = '点击切换文件责任追溯';
 				break;
 			case StatusBarCommand.ToggleFileChanges: {
 				if (commit.file != null) {
 					this._statusBarBlame.command = asCommand<[Uri, ToggleFileChangesAnnotationCommandArgs]>({
-						title: 'Toggle File Changes',
+						title: '切换文件更改',
 						command: Commands.ToggleFileChanges,
 						arguments: [
 							commit.file.uri,
@@ -300,13 +300,13 @@ export class StatusBarController implements Disposable {
 						],
 					});
 				}
-				actionTooltip = 'Click to Toggle File Changes';
+				actionTooltip = '点击切换文件更改';
 				break;
 			}
 			case StatusBarCommand.ToggleFileChangesOnly: {
 				if (commit.file != null) {
 					this._statusBarBlame.command = asCommand<[Uri, ToggleFileChangesAnnotationCommandArgs]>({
-						title: 'Toggle File Changes',
+						title: '切换文件更改',
 						command: Commands.ToggleFileChanges,
 						arguments: [
 							commit.file.uri,
@@ -317,11 +317,11 @@ export class StatusBarController implements Disposable {
 						],
 					});
 				}
-				actionTooltip = 'Click to Toggle File Changes';
+				actionTooltip = '点击切换文件更改';
 				break;
 			}
 			case StatusBarCommand.ToggleFileHeatmap:
-				actionTooltip = 'Click to Toggle File Heatmap';
+				actionTooltip = '点击切换文件热图';
 				break;
 		}
 
