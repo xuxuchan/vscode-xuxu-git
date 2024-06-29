@@ -452,7 +452,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 
 			commands += ` &nbsp;[$(globe)](${OpenCommitOnRemoteCommand.getMarkdownCommandArgs(
 				this._item.sha,
-			)} "Open Commit on ${providers?.length ? providers[0].name : 'Remote'}")`;
+			)} "在 ${providers?.length ? providers[0].name : 'Remote'} 中打开提交")`;
 		}
 
 		if (pr != null) {
@@ -463,8 +463,8 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 					repoPath: this._item.repoPath,
 					provider: { id: pr.provider.id, name: pr.provider.name, domain: pr.provider.domain },
 					pullRequest: { id: pr.id, url: pr.url },
-				})} "Open Pull Request \\#${pr.id}${
-					Container.instance.actionRunners.count('openPullRequest') == 1 ? ` on ${pr.provider.name}` : '...'
+				})} "打开拉取请求 \\#${pr.id}${
+					Container.instance.actionRunners.count('openPullRequest') == 1 ? ` 在 ${pr.provider.name}` : '...'
 				}\n${GlyphChars.Dash.repeat(2)}\n${escapeMarkdown(pr.title).replace(/"/g, '\\"')}\n${
 					pr.state
 				}, ${pr.formatDateFromNow()}")`;
@@ -478,7 +478,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 				!remote.maybeIntegrationConnected &&
 				configuration.get('integrations.enabled')
 			) {
-				commands += `${separator}[$(plug) Connect to ${remote?.provider.name}${
+				commands += `${separator}[$(plug) 连接到 ${remote?.provider.name}${
 					GlyphChars.Ellipsis
 				}](${ConnectRemoteProviderCommand.getMarkdownCommandArgs(remote)} "连接到 ${
 					remote.provider.name
@@ -489,7 +489,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 		if (Container.instance.actionRunners.count('hover.commands') > 0) {
 			const { name, email } = this._item.author;
 
-			commands += `${separator}[$(organization) Team${GlyphChars.SpaceThinnest}${
+			commands += `${separator}[$(organization) 团队${GlyphChars.SpaceThinnest}${
 				GlyphChars.Ellipsis
 			}](${getMarkdownActionCommand<HoverCommandsActionContext>('hover.commands', {
 				repoPath: this._item.repoPath,
@@ -596,7 +596,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 		} else {
 			icon = this._item.sha != null && !this._item.isUncommitted ? 'git-commit' : '';
 			label = this._padOrTruncate(
-				shortenRevision(this._item.sha ?? '', { strings: { working: 'Working Tree' } }),
+				shortenRevision(this._item.sha ?? '', { strings: { working: '工作树' } }),
 				this._options.tokenOptions.id,
 			);
 		}
@@ -634,7 +634,7 @@ export class CommitFormatter extends Formatter<GitCommit, CommitFormatOptions> {
 				this._item.isUncommittedStaged ||
 				(this._options.previousLineComparisonUris?.current?.isUncommittedStaged ?? false);
 
-			let message = `${conflicted ? 'Merge' : staged ? 'Staged' : 'Uncommitted'} changes`;
+			let message = `${conflicted ? '合并' : staged ? '已暂存' : '未提交'} 的更改`;
 			switch (outputFormat) {
 				case 'html':
 					message = /*html*/ `<span ${

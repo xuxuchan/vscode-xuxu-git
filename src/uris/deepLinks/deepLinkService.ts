@@ -342,7 +342,7 @@ export class DeepLinkService implements Disposable {
 	}): Promise<DeepLinkRepoOpenType | undefined> {
 		const openOptions: OpenQuickPickItem[] = [
 			{ label: '选择一个本地文件夹...', action: 'folder' },
-			{ label: '选择一个工作空间文件...', action: 'workspace' },
+			{ label: '选择一个工作区文件...', action: 'workspace' },
 		];
 
 		if (this._context.remoteUrl != null) {

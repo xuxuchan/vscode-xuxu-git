@@ -336,7 +336,7 @@ export class GlFocusApp extends LitElement {
 							avatars.
 						</p>
 						<gl-button appearance="alert" href="command:gitlens.connectRemoteProvider"
-							>Connect to GitHub</gl-button
+							>连接到 Github</gl-button
 						>
 					</gl-feature-gate>
 

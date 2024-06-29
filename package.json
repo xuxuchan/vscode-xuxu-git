@@ -2,7 +2,7 @@
 	"name": "xuxu-git",
 	"displayName": "XU-Git Tool",
 	"description": "超级增强 VS Code 中的 Git 功能，一目了然地可视化代码作者信息，无缝导航和探索 Git 仓库，通过丰富的可视化和强大的比较命令获取有价值的见解，等等。",
-	"version": "1.0.1",
+	"version": "2.0.1",
 	"engines": {
 	  "vscode": "^1.82.0"
 	},
@@ -2075,7 +2075,7 @@
 		},
 		{
 		  "id": "workspaces-view",
-		  "title": "工作空间视图",
+		  "title": "工作区视图",
 		  "order": 34,
 		  "properties": {
 			"gitlens.views.workspaces.showBranchComparison": {
@@ -2094,105 +2094,105 @@
 				"将工作树与用户选择的参考进行比较"
 			  ],
 			  "default": "working",
-			  "markdownDescription": "指定在“工作空间”视图中是否显示当前分支或工作树与用户选择的引用（分支、标签等）的比较",
+			  "markdownDescription": "指定在“工作区”视图中是否显示当前分支或工作树与用户选择的引用（分支、标签等）的比较",
 			  "scope": "window",
 			  "order": 10
 			},
 			"gitlens.views.workspaces.showUpstreamStatus": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库当前分支的上游状态",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库当前分支的上游状态",
 			  "scope": "window",
 			  "order": 11
 			},
 			"gitlens.views.workspaces.includeWorkingTree": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定在“工作空间”视图中是否包含每个仓库的工作树文件状态",
+			  "markdownDescription": "指定在“工作区”视图中是否包含每个仓库的工作树文件状态",
 			  "scope": "window",
 			  "order": 12
 			},
 			"gitlens.views.workspaces.pullRequests.enabled": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定是否在“工作空间”视图中查询与分支和提交相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
+			  "markdownDescription": "指定是否在“工作区”视图中查询与分支和提交相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
 			  "scope": "window",
 			  "order": 20
 			},
 			"gitlens.views.workspaces.pullRequests.showForBranches": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示与分支（如果有）相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
+			  "markdownDescription": "指定在“工作区”视图中是否显示与分支（如果有）相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
 			  "scope": "window",
 			  "order": 21
 			},
 			"gitlens.views.workspaces.pullRequests.showForCommits": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示与提交（如果有）相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
+			  "markdownDescription": "指定在“工作区”视图中是否显示与提交（如果有）相关的拉取请求。需要连接到受支持的远程服务（例如 GitHub）",
 			  "scope": "window",
 			  "order": 22
 			},
 			"gitlens.views.workspaces.showCommits": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库当前分支上的提交",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库当前分支上的提交",
 			  "scope": "window",
 			  "order": 30
 			},
 			"gitlens.views.workspaces.showBranches": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的分支",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库的分支",
 			  "scope": "window",
 			  "order": 31
 			},
 			"gitlens.views.workspaces.showRemotes": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的远程仓库",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库的远程仓库",
 			  "scope": "window",
 			  "order": 32
 			},
 			"gitlens.views.workspaces.showStashes": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的暂存",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库的暂存",
 			  "scope": "window",
 			  "order": 33
 			},
 			"gitlens.views.workspaces.showTags": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的标签",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库的标签",
 			  "scope": "window",
 			  "order": 34
 			},
 			"gitlens.views.workspaces.showContributors": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的贡献者",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库的贡献者",
 			  "scope": "window",
 			  "order": 35
 			},
 			"gitlens.views.workspaces.showWorktrees": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的工作区",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库的工作区",
 			  "scope": "window",
 			  "order": 36
 			},
 			"gitlens.views.workspaces.showIncomingActivity": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示每个仓库的实验性传入活动",
+			  "markdownDescription": "指定在“工作区”视图中是否显示每个仓库的实验性传入活动",
 			  "scope": "window",
 			  "order": 37
 			},
 			"gitlens.views.workspaces.avatars": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定在“工作空间”视图中显示头像图像而不是提交（或状态）图标",
+			  "markdownDescription": "指定在“工作区”视图中显示头像图像而不是提交（或状态）图标",
 			  "scope": "window",
 			  "order": 60
 			},
@@ -2207,7 +2207,7 @@
 				"以列表方式显示分支",
 				"当分支名称包含斜杠 `/` 时以树形方式显示分支"
 			  ],
-			  "markdownDescription": "指定“工作空间”视图将如何显示分支",
+			  "markdownDescription": "指定“工作区”视图将如何显示分支",
 			  "scope": "window",
 			  "order": 70
 			},
@@ -2224,7 +2224,7 @@
 				"以列表方式显示文件",
 				"以树形方式显示文件"
 			  ],
-			  "markdownDescription": "指定“工作空间”视图将如何显示文件",
+			  "markdownDescription": "指定“工作区”视图将如何显示文件",
 			  "scope": "window",
 			  "order": 80
 			},
@@ -2253,14 +2253,14 @@
 				"显示文件状态作为图标",
 				"显示文件类型（主题图标）作为图标"
 			  ],
-			  "markdownDescription": "指定“工作空间”视图将如何显示文件图标",
+			  "markdownDescription": "指定“工作区”视图将如何显示文件图标",
 			  "scope": "window",
 			  "order": 83
 			},
 			"gitlens.views.workspaces.compact": {
 			  "type": "boolean",
 			  "default": false,
-			  "markdownDescription": "指定在“工作空间”视图中是否显示紧凑的显示密度",
+			  "markdownDescription": "指定在“工作区”视图中是否显示紧凑的显示密度",
 			  "scope": "window",
 			  "order": 90
 			},
@@ -2278,7 +2278,7 @@
 				"将分支与用户选择的参考进行比较"
 			  ],
 			  "default": "branch",
-			  "markdownDescription": "指定在“工作空间”视图中每个分支下是否显示分支与用户选择的引用（分支、标签等）的比较",
+			  "markdownDescription": "指定在“工作区”视图中每个分支下是否显示分支与用户选择的引用（分支、标签等）的比较",
 			  "scope": "window",
 			  "order": 100
 			}
@@ -5872,7 +5872,7 @@
 		},
 		{
 		  "command": "gitlens.showWorkspacesView",
-		  "title": "显示云工作空间视图",
+		  "title": "显示云工作区视图",
 		  "category": "GitLens"
 		},
 		{
@@ -8418,19 +8418,19 @@
 		},
 		{
 		  "command": "gitlens.views.workspaces.info",
-		  "title": "了解云工作空间...",
+		  "title": "了解云工作区...",
 		  "category": "GitLens",
 		  "icon": "$(info)"
 		},
 		{
 		  "command": "gitlens.views.workspaces.convert",
-		  "title": "转换为云工作空间...",
+		  "title": "转换为云工作区...",
 		  "category": "GitLens",
 		  "icon": "$(cloud-upload)"
 		},
 		{
 		  "command": "gitlens.views.workspaces.create",
-		  "title": "创建云工作空间...",
+		  "title": "创建云工作区...",
 		  "category": "GitLens",
 		  "icon": "$(add)"
 		},
@@ -17103,7 +17103,7 @@
 		},
 		{
 		  "view": "gitlens.views.workspaces",
-		  "contents": "[开始专业试用](command:gitlens.plus.signUp?%7B%22source%22%3A%22workspaces%22%7D)\n\n开始免费 7 天的专业试用，体验 GitKraken (GK) 工作区和其他专业功能，或[登录](command:gitlens.plus.login?%7B%22source%22%3A%22workspaces%22%7D)。",
+		  "contents": "[开始专业试用](command:gitlens.plus.signUp?%7B%22source%22%3A%22workspaces%22%7D)\n\n开始免费 7 天的专业试用，体验 XU-Git 云工作区和其他专业功能，或[登录](command:gitlens.plus.login?%7B%22source%22%3A%22workspaces%22%7D)。",
 		  "when": "!gitlens:plus"
 		},
 		{
@@ -17171,7 +17171,7 @@
 		  },
 		  {
 			"id": "gitlens.views.workspaces",
-			"name": "XU-Tec 云工作空间",
+			"name": "XU-Tec 云工作区",
 			"when": "!gitlens:untrusted && !gitlens:hasVirtualFolders",
 			"contextualTitle": "GitLens",
 			"icon": "$(gitlens-workspaces-view)",

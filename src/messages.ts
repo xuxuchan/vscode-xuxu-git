@@ -16,52 +16,52 @@ export function showBlameInvalidIgnoreRevsFileWarningMessage(
 	if (ex instanceof BlameIgnoreRevsFileBadRevisionError) {
 		return showMessage(
 			'error',
-			`Unable to show blame. Invalid revision (${ex.revision}) specified in the blame.ignoreRevsFile in your Git config.`,
+			`无法显示追溯。在 Git 配置的 blame.ignoreRevsFile 中指定了无效的修订版本（${ex.revision}）。`,
 			'suppressBlameInvalidIgnoreRevsFileBadRevisionWarning',
 		);
 	}
 
 	return showMessage(
 		'error',
-		`Unable to show blame. Invalid or missing blame.ignoreRevsFile (${ex.fileName}) specified in your Git config.`,
+		`无法显示追溯。在您的 Git 配置中指定了无效或缺失的 blame.ignoreRevsFile（${ex.fileName}） 。`,
 		'suppressBlameInvalidIgnoreRevsFileWarning',
 	);
 }
 
 export function showCommitHasNoPreviousCommitWarningMessage(commit?: GitCommit): Promise<MessageItem | undefined> {
 	if (commit == null) {
-		return showMessage('info', 'There is no previous commit.', 'suppressCommitHasNoPreviousCommitWarning');
+		return showMessage('info', '没有之前的提交。', 'suppressCommitHasNoPreviousCommitWarning');
 	}
 	return showMessage(
 		'info',
-		`Commit ${commit.shortSha} (${commit.author.name}, ${commit.formattedDate}) has no previous commit.`,
+		`提交 ${commit.shortSha}（${commit.author.name}，${commit.formattedDate}）没有之前的提交。`,
 		'suppressCommitHasNoPreviousCommitWarning',
 	);
 }
 
 export function showCommitNotFoundWarningMessage(message: string): Promise<MessageItem | undefined> {
-	return showMessage('warn', `${message}. The commit could not be found.`, 'suppressCommitNotFoundWarning');
+	return showMessage('warn', `${message}。 找不到该提交。`, 'suppressCommitNotFoundWarning');
 }
 
 export async function showCreatePullRequestPrompt(branch: string): Promise<boolean> {
 	const create = { title: 'Create Pull Request...' };
 	const result = await showMessage(
 		'info',
-		`Would you like to create a Pull Request for branch '${branch}'?`,
+		`您想为分支 '${branch}' 创建一个拉取请求吗？`,
 		'suppressCreatePullRequestPrompt',
-		{ title: "Don't Show Again" },
+		{ title: "不再显示" },
 		create,
 	);
 	return result === create;
 }
 
 export async function showDebugLoggingWarningMessage(): Promise<boolean> {
-	const disable = { title: 'Disable Debug Logging' };
+	const disable = { title: '禁用调试日志记录' };
 	const result = await showMessage(
 		'warn',
-		'GitLens debug logging is currently enabled. Unless you are reporting an issue, it is recommended to be disabled. Would you like to disable it?',
+		'XU-Git 调试日志记录当前已启用。除非您正在报告问题，否则建议将其禁用。您想要禁用它吗？',
 		'suppressDebugLoggingWarning',
-		{ title: "Don't Show Again" },
+		{ title: "不再显示" },
 		disable,
 	);
 
@@ -70,8 +70,8 @@ export async function showDebugLoggingWarningMessage(): Promise<boolean> {
 
 export async function showGenericErrorMessage(message: string): Promise<void> {
 	if (Logger.enabled('error')) {
-		const result = await showMessage('error', `${message}. See output channel for more details.`, undefined, null, {
-			title: 'Open Output Channel',
+		const result = await showMessage('error', `${message}。 查看输出频道以获取更多详情。`, undefined, null, {
+			title: '打开输出频道',
 		});
 
 		if (result != null) {
@@ -80,11 +80,11 @@ export async function showGenericErrorMessage(message: string): Promise<void> {
 	} else {
 		const result = await showMessage(
 			'error',
-			`${message}. If the error persists, please enable debug logging and try again.`,
+			`${message}。 如果错误仍然存在，请启用调试日志记录并再次尝试。`,
 			undefined,
 			null,
 			{
-				title: 'Enable Debug Logging',
+				title: '禁用调试日志记录',
 			},
 		);
 
@@ -97,7 +97,7 @@ export async function showGenericErrorMessage(message: string): Promise<void> {
 export function showFileNotUnderSourceControlWarningMessage(message: string): Promise<MessageItem | undefined> {
 	return showMessage(
 		'warn',
-		`${message}. The file is probably not under source control.`,
+		`${message}。 文件可能不在源代码控制之下。`,
 		'suppressFileNotUnderSourceControlWarning',
 	);
 }
@@ -105,7 +105,7 @@ export function showFileNotUnderSourceControlWarningMessage(message: string): Pr
 export function showGitDisabledErrorMessage() {
 	return showMessage(
 		'error',
-		'GitLens requires Git to be enabled. Please re-enable Git \u2014 set `git.enabled` to true and reload.',
+		'XU-Git 需要启用 Git。请重新启用 Git —— 将 `git.enabled` 设置为 true 并重新加载。',
 		'suppressGitDisabledWarning',
 	);
 }
@@ -113,14 +113,14 @@ export function showGitDisabledErrorMessage() {
 export function showGitInvalidConfigErrorMessage() {
 	return showMessage(
 		'error',
-		'GitLens is unable to use Git. Your Git configuration seems to be invalid. Please resolve any issues with your Git configuration and reload.',
+		'XU-Git 无法使用 Git。您的 Git 配置似乎无效。请解决 Git 配置中的任何问题并重新加载。',
 	);
 }
 
 export function showGitMissingErrorMessage() {
 	return showMessage(
 		'error',
-		"GitLens was unable to find Git. Please make sure Git is installed. Also ensure that Git is either in the PATH, or that 'git.path' is pointed to its installed location.",
+		"XU-Git 无法找到 Git。请确保 Git 已安装。同时确保 Git 要么在 PATH 中，要么 'git.path' 指向其安装位置。",
 		'suppressGitMissingWarning',
 	);
 }
@@ -131,7 +131,7 @@ export function showGitVersionUnsupportedErrorMessage(
 ): Promise<MessageItem | undefined> {
 	return showMessage(
 		'error',
-		`GitLens requires a newer version of Git (>= ${required}) than is currently installed (${version}). Please install a more recent version of Git.`,
+		`XU-Git 需要的 Git 版本（>= ${required}）高于当前安装的版本（${version}）。请安装更新的 Git 版本。`,
 		'suppressGitVersionWarning',
 	);
 }
@@ -139,22 +139,22 @@ export function showGitVersionUnsupportedErrorMessage(
 export function showPreReleaseExpiredErrorMessage(version: string) {
 	return showMessage(
 		'error',
-		`This GitLens pre-release version (${version}) has expired. Please upgrade to a more recent version.`,
+		`这个 XU-Git 预发布版本（${version}）已过期。请升级到更近的版本。`,
 	);
 }
 
 export function showLineUncommittedWarningMessage(message: string): Promise<MessageItem | undefined> {
-	return showMessage('warn', `${message}. The line has uncommitted changes.`, 'suppressLineUncommittedWarning');
+	return showMessage('warn', `${message}。 该行有未提交的更改。`, 'suppressLineUncommittedWarning');
 }
 
 export function showNoRepositoryWarningMessage(message: string): Promise<MessageItem | undefined> {
-	return showMessage('warn', `${message}. No repository could be found.`, 'suppressNoRepositoryWarning');
+	return showMessage('warn', `${message}。 未找到仓库。`, 'suppressNoRepositoryWarning');
 }
 
 export function showRebaseSwitchToTextWarningMessage(): Promise<MessageItem | undefined> {
 	return showMessage(
 		'warn',
-		'Closing either the git-rebase-todo file or the Rebase Editor will start the rebase.',
+		'关闭 git-rebase-todo 文件或 Rebase 编辑器将启动变基。',
 		'suppressRebaseSwitchToTextWarning',
 	);
 }
@@ -164,7 +164,7 @@ export function showIntegrationDisconnectedTooManyFailedRequestsWarningMessage(
 ): Promise<MessageItem | undefined> {
 	return showMessage(
 		'error',
-		`Rich integration with ${providerName} has been disconnected for this session, because of too many failed requests.`,
+		`由于过多的失败请求，本次会话中与 ${providerName} 的富集成已断开连接。`,
 		'suppressIntegrationDisconnectedTooManyFailedRequestsWarning',
 		undefined,
 		{
@@ -182,7 +182,7 @@ export function showIntegrationRequestFailed500WarningMessage(message: string): 
 export function showIntegrationRequestTimedOutWarningMessage(providerName: string): Promise<MessageItem | undefined> {
 	return showMessage(
 		'error',
-		`${providerName} request timed out.`,
+		`${providerName} 请求超时。`,
 		'suppressIntegrationRequestTimedOutWarning',
 		undefined,
 		{
@@ -193,14 +193,14 @@ export function showIntegrationRequestTimedOutWarningMessage(providerName: strin
 
 export async function showWhatsNewMessage(version: string) {
 	const confirm = { title: 'OK', isCloseAffordance: true };
-	const announcement = { title: 'Read Announcement', isCloseAffordance: true };
+	const announcement = { title: '读取公告', isCloseAffordance: true };
 	const result = await showMessage(
 		'info',
-		`Upgraded to GitLens ${version}${
+		`升级到 XU-Git ${version}${
 			version === '15'
-				? `, with a host of new [Pro features](${urls.proFeatures}) including [Launchpad](${urls.codeSuggest}), [Code Suggest](${urls.codeSuggest}), and more`
+				? `, 包括一系列新的 [Pro 功能](${urls.proFeatures})，包括 [启动台](${urls.codeSuggest})、[代码建议](${urls.codeSuggest}) 等`
 				: ''
-		} — [see what's new](${urls.releaseNotes} "See what's new in GitLens ${version}").`,
+		} — [查看更新说明](${urls.releaseNotes} "查看 XU-Git ${version} 的新功能").`,
 		undefined,
 		null,
 		confirm,
@@ -216,7 +216,7 @@ export async function showMessage(
 	type: 'info' | 'warn' | 'error',
 	message: string,
 	suppressionKey?: SuppressedMessages,
-	dontShowAgain: MessageItem | null = { title: "Don't Show Again" },
+	dontShowAgain: MessageItem | null = { title: "不再显示" },
 	...actions: MessageItem[]
 ): Promise<MessageItem | undefined> {
 	Logger.log(`ShowMessage(${type}, '${message}', ${suppressionKey}, ${JSON.stringify(dontShowAgain)})`);
@@ -249,7 +249,7 @@ export async function showMessage(
 		Logger.log(
 			`ShowMessage(${type}, '${message}', ${suppressionKey}, ${JSON.stringify(
 				dontShowAgain,
-			)}) don't show again requested`,
+			)}) 不再显示 requested`,
 		);
 		await suppressedMessage(suppressionKey);
 
