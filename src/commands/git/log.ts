@@ -49,7 +49,7 @@ export interface LogGitCommandArgs {
 export class LogGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: LogGitCommandArgs) {
 		super(container, 'log', 'history', 'Commits', {
-			description: '又名“日志”，显示提交历史',
+			description: '即“日志”，显示提交历史',
 		});
 
 		let counter = 0;

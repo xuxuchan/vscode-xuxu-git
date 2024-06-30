@@ -59,7 +59,7 @@ export interface SwitchGitCommandArgs {
 export class SwitchGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: SwitchGitCommandArgs) {
 		super(container, 'switch', 'switch', 'Switch to...', {
-			description: '又名“检出”，切换到指定的分支',
+			description: '即“检出”，切换到指定的分支',
 		});
 
 		let counter = 0;
