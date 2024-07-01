@@ -150,7 +150,7 @@ export class GlSearchBox extends GlElement {
 	resultsHidden = false;
 
 	@property({ type: String })
-	resultsLabel = 'result';
+	resultsLabel = '个结果';
 
 	@property({ type: Boolean })
 	resultsLoaded = false;
@@ -231,8 +231,9 @@ export class GlSearchBox extends GlElement {
 		}
 
 		const totalFormatted = pluralize(this.resultsLabel, this.total, {
-			zero: 'No',
+			zero: '0',
 			infix: this.more ? '+ ' : undefined,
+			plural: '个结果'
 		});
 
 		let tooltip: string | TemplateResult = '';
@@ -244,7 +245,7 @@ export class GlSearchBox extends GlElement {
 
 			const total = `${this.total}${this.more ? '+' : ''}`;
 			formatted = html`<span
-				><span aria-current="step">${this.step}</span> of
+				><span aria-current="step">${this.step}</span> 总计
 				<span class="${this.resultsHidden ? 'sr-hidden' : ''}">${total}</span
 				><span class="sr-only"> ${totalFormatted}</span></span
 			>`;

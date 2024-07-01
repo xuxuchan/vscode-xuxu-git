@@ -6,7 +6,7 @@ export function registerHomeWebviewView(controller: WebviewsController) {
 		{
 			id: 'gitlens.views.home',
 			fileName: 'home.html',
-			title: 'Home',
+			title: '主页',
 			contextKeyPrefix: `gitlens:webviewView:home`,
 			trackingFeature: 'homeView',
 			plusFeature: false,

@@ -347,7 +347,7 @@ function getDateTimeFormatOptionsFromFormatString(
 	return options;
 }
 
-const ordinals = ['th', 'st', 'nd', 'rd'];
+const ordinals = ['日', '日', '日', '日'];
 function formatWithOrdinal(n: number): string {
 	const v = n % 100;
 	return `${n}${ordinals[(v - 20) % 10] ?? ordinals[v] ?? ordinals[0]}`;

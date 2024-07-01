@@ -46,7 +46,7 @@ export const urls = Object.freeze({
 	browserExtension: 'https://xutec.org/xugit/browser-extension?utm_source=gitlens-extension&utm_medium=in-app-links',
 	desktop: 'https://xutec.org/xugit/git-client?utm_source=gitlens-extension&utm_medium=in-app-links',
 
-	releaseNotes: 'https://help.xutec.org/xugit/gitlens-release-notes-current/',
+	releaseNotes: 'https://help.xutec.org/xugit/xugit-release-notes-current/',
 	releaseAnnouncement:
 		'https://www.xutec.org/xugit/blog/gitkraken-launches-devex-platform-acquires-codesee?utm_source=gitlens-extension&utm_medium=in-app-links',
 });

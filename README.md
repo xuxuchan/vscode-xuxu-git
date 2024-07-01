@@ -301,7 +301,7 @@ Visit the [GitLens Pricing page](https://www.xutec.org/xugit/pricing?utm_source=
 
 # Support and Community
 
-Support documentation can be found on the [GitLens Help Center](https://help.xutec.org/xugit/gitlens-home/). If you need further assistance or have any questions, there are various support channels and community forums available for GitLens:
+Support documentation can be found on the [GitLens Help Center](https://help.xutec.org/xugit/xugit-home/). If you need further assistance or have any questions, there are various support channels and community forums available for GitLens:
 
 ## Issue Reporting and Feature Requests
 

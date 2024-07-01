@@ -2062,21 +2062,21 @@ async function getShowCommitOrStashStepItems<
 			}
 
 			items.push(
-				new GitCommandQuickPickItem('Revert Commit...', {
+				new GitCommandQuickPickItem('撤销提交...', {
 					command: 'revert',
 					state: {
 						repo: state.repo,
 						references: [state.reference],
 					},
 				}),
-				new GitCommandQuickPickItem(`Reset ${branch?.name ?? 'Current Branch'} to Commit...`, {
+				new GitCommandQuickPickItem(`重置 ${branch?.name ?? '当前分支'} 到提交...`, {
 					command: 'reset',
 					state: {
 						repo: state.repo,
 						reference: state.reference,
 					},
 				}),
-				new GitCommandQuickPickItem(`Reset ${branch?.name ?? 'Current Branch'} to Previous Commit...`, {
+				new GitCommandQuickPickItem(`重置 ${branch?.name ?? '当前分支'} 到上一个提交...`, {
 					command: 'reset',
 					state: {
 						repo: state.repo,
@@ -2090,7 +2090,7 @@ async function getShowCommitOrStashStepItems<
 			);
 		} else {
 			items.push(
-				new GitCommandQuickPickItem('Cherry Pick Commit...', {
+				new GitCommandQuickPickItem('优选提交...', {
 					command: 'cherry-pick',
 					state: {
 						repo: state.repo,
@@ -2101,14 +2101,14 @@ async function getShowCommitOrStashStepItems<
 		}
 
 		items.push(
-			new GitCommandQuickPickItem(`Rebase ${branch?.name ?? 'Current Branch'} onto Commit...`, {
+			new GitCommandQuickPickItem(`变基 ${branch?.name ?? '当前分支'} 到提交...`, {
 				command: 'rebase',
 				state: {
 					repo: state.repo,
 					reference: state.reference,
 				},
 			}),
-			new GitCommandQuickPickItem('Switch to Commit...', {
+			new GitCommandQuickPickItem('切换到提交...', {
 				command: 'switch',
 				state: {
 					repos: [state.repo],
@@ -2117,7 +2117,7 @@ async function getShowCommitOrStashStepItems<
 			}),
 
 			createQuickPickSeparator(),
-			new GitCommandQuickPickItem('Create Branch at Commit...', {
+			new GitCommandQuickPickItem('在提交处创建分支...', {
 				command: 'branch',
 				state: {
 					subcommand: 'create',
@@ -2125,7 +2125,7 @@ async function getShowCommitOrStashStepItems<
 					reference: state.reference,
 				},
 			}),
-			new GitCommandQuickPickItem('Create Tag at Commit...', {
+			new GitCommandQuickPickItem('在标签处创建分支...', {
 				command: 'tag',
 				state: {
 					subcommand: 'create',

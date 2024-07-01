@@ -90,7 +90,7 @@ export class AccountContent extends LitElement {
 
 			.account__signout {
 				grid-row: 1 / span 2;
-				display: flex;
+				display: none;
 				gap: 0.2rem;
 				flex-direction: row;
 				align-items: center;
@@ -185,24 +185,23 @@ export class AccountContent extends LitElement {
 
 	private renderAccountInfo() {
 		if (!this.hasAccount) return nothing;
-
 		return html`
 			<div class="account">
 				<div class="account__media">
-					${this.image
+					${!this.image
 						? html`<img src=${this.image} class="account__image" />`
 						: html`<code-icon icon="account" size="34"></code-icon>`}
 				</div>
 				<div class="account__details">
-					<p class="account__title">${this.subscription?.account?.name ?? ''}</p>
-					${when(this.organizationsCount === 0, () => html`<p class="account__access">${this.planName}</p>`)}
+					<p class="account__title">XUXU</p>
+					${when(this.organizationsCount === 0, () => html`<p class="account__access">永久订阅</p>`)}
 				</div>
 				<div class="account__signout">
 					<gl-button
 						appearance="toolbar"
 						href="command:gitlens.plus.logout"
-						tooltip="Sign Out"
-						aria-label="Sign Out"
+						tooltip="退出"
+						aria-label="退出"
 						><code-icon icon="sign-out"></code-icon
 					></gl-button>
 				</div>
@@ -231,8 +230,8 @@ export class AccountContent extends LitElement {
 							<gl-button
 								appearance="toolbar"
 								href="command:gitlens.gk.switchOrganization"
-								tooltip="Switch Organization"
-								aria-label="Switch Organization"
+								tooltip="切换组织"
+								aria-label="切换组织"
 								><code-icon icon="arrow-swap"></code-icon
 							></gl-button>
 						</div>`,
@@ -247,27 +246,25 @@ export class AccountContent extends LitElement {
 				return html`
 					<button-container>
 						<gl-button appearance="secondary" full href="command:gitlens.plus.manage"
-							>Manage Account</gl-button
+							>管理账户</gl-button
 						>
 						<gl-button
 							appearance="secondary"
 							full
 							href="command:gitlens.plus.cloudIntegrations.manage?%7B%22source%22%3A%22account%22%7D"
-							>Cloud Integrations</gl-button
+							>云集成</gl-button
 						>
 					</button-container>
 					<p>
-						Your ${getSubscriptionPlanName(this.planId)} plan provides full access to all Pro features and
-						our <a href="${urls.platform}">DevEx platform</a>, unleashing powerful Git visualization &
-						productivity capabilities everywhere you work: IDE, desktop, browser, and terminal.
+						你的 永久订阅 计划提供了对所有 Pro 功能的完全访问权限，以及我们的 <a href="${urls.platform}">Dev 平台</a>，在你工作的每个地方释放强大的 Git 可视化和生产力能力：IDE、桌面、浏览器和终端。
 					</p>
 				`;
 
 			case SubscriptionState.VerificationRequired:
 				return html`
-					<p>You must verify your email before you can access Pro features.</p>
+					<p>在你能访问 Pro 功能之前，你必须验证你的电子邮件。</p>
 					<button-container>
-						<gl-button full href="command:gitlens.plus.resendVerification">Resend Email</gl-button>
+						<gl-button full href="command:gitlens.plus.resendVerification">重新发送电子邮件</gl-button>
 						<gl-button appearance="secondary" href="command:gitlens.plus.validate"
 							><code-icon size="20" icon="refresh"></code-icon>
 						</gl-button>
@@ -323,8 +320,8 @@ export class AccountContent extends LitElement {
 				return html`
 					<p>
 						Sign up for access to Pro features and our
-						<a href="${urls.platform}">DevEx platform</a>, or
-						<a href="command:gitlens.plus.login">sign in</a>.
+						<a href="${urls.platform}">Dev 平台</a>, or
+						<a href="command:gitlens.plus.login">登录</a>.
 					</p>
 					<button-container>
 						<gl-button full href="command:gitlens.plus.signUp">Sign Up</gl-button>

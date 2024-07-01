@@ -113,8 +113,8 @@ export class CommitBrowseRepositoryFromHereCommandQuickPickItem extends CommandQ
 		},
 	) {
 		super(
-			`浏览仓库从{executeOptions?.before ? ' 之前' : ''} 这里${
-				executeOptions?.openInNewWindow ? ' 在新窗口中' : ''
+			`浏览仓库从此处${executeOptions?.before ? '之前' : ''} ${
+				executeOptions?.openInNewWindow ? '，在新窗口' : ''
 			}`,
 		);
 		this.iconPath = new ThemeIcon('folder-opened');

@@ -150,7 +150,7 @@ export class ResultsFilesNode extends ViewNode<'results-files', ViewsWithCommits
 				tooltip = `${label} &mdash; ${description}`;
 				files = results.filtered?.get(filter);
 				if (files == null) {
-					label = 'files changed';
+					label = '文件已更改';
 					icon = new ThemeIcon('ellipsis');
 					// Need to use Collapsed before we have results or the item won't show up in the view until the children are awaited
 					// https://github.com/microsoft/vscode/issues/54806 & https://github.com/microsoft/vscode/issues/62214
@@ -175,7 +175,7 @@ export class ResultsFilesNode extends ViewNode<'results-files', ViewsWithCommits
 				void ex.promise.then(() => queueMicrotask(() => this.triggerChange(false)));
 			}
 
-			label = 'files changed';
+			label = '文件已更改';
 			icon = new ThemeIcon('ellipsis');
 			// Need to use Collapsed before we have results or the item won't show up in the view until the children are awaited
 			// https://github.com/microsoft/vscode/issues/54806 & https://github.com/microsoft/vscode/issues/62214

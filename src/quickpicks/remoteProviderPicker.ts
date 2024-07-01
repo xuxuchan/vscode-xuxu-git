@@ -23,7 +23,7 @@ export class ConfigureCustomRemoteProviderCommandQuickPickItem extends CommandQu
 
 	override async execute(): Promise<void> {
 		await env.openExternal(
-			Uri.parse('https://help.xutec.org/xugit/gitlens-settings/#remote-provider-integration-settings'),
+			Uri.parse('https://help.xutec.org/xugit/xugit-settings/#remote-provider-integration-settings'),
 		);
 	}
 }
@@ -115,15 +115,15 @@ export class CopyRemoteResourceCommandQuickPickItem extends CommandQuickPickItem
 			remotes: remotes,
 			clipboard: true,
 		};
-		const label = `Copy Link to ${getNameFromRemoteResource(resource)} for ${
+		const label = `复制 ${
 			providers?.length ? providers[0].name : 'Remote'
-		}${providers?.length === 1 ? '' : GlyphChars.Ellipsis}`;
+		}${providers?.length === 1 ? '' : GlyphChars.Ellipsis} ${getNameFromRemoteResource(resource)} 的链接`;
 		super(label, new ThemeIcon('copy'), Commands.OpenOnRemote, [commandArgs]);
 	}
 
 	override async onDidPressKey(key: Keys): Promise<void> {
 		await super.onDidPressKey(key);
-		void window.showInformationMessage('URL copied to the clipboard');
+		void window.showInformationMessage('URL 已复制到剪贴板');
 	}
 }
 
@@ -136,7 +136,7 @@ export class OpenRemoteResourceCommandQuickPickItem extends CommandQuickPickItem
 			clipboard: false,
 		};
 		super(
-			`Open ${getNameFromRemoteResource(resource)} on ${
+			`打开 ${getNameFromRemoteResource(resource)} 在 ${
 				providers?.length === 1
 					? providers[0].name
 					: `${providers?.length ? providers[0].name : 'Remote'}${GlyphChars.Ellipsis}`
