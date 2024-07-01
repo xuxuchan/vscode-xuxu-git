@@ -29,7 +29,7 @@ export function registerGraphWebviewPanel(controller: WebviewsController) {
 		{
 			id: 'gitlens.graph',
 			fileName: 'graph.html',
-			iconPath: 'images/gitlens-icon.png',
+			iconPath: 'images/xuxu-gitlens-icon.png',
 			title: '提交图',
 			contextKeyPrefix: `gitlens:webview:graph`,
 			trackingFeature: 'graphWebview',

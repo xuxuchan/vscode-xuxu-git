@@ -12,7 +12,7 @@ export function registerSettingsWebviewPanel(controller: WebviewsController) {
 		{
 			id: 'gitlens.settings',
 			fileName: 'settings.html',
-			iconPath: 'images/gitlens-icon.png',
+			iconPath: 'images/xuxu-gitlens-icon.png',
 			title: 'GitLens Settings',
 			contextKeyPrefix: `gitlens:webview:settings`,
 			trackingFeature: 'settingsWebview',

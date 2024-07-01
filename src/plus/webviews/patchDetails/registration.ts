@@ -62,7 +62,7 @@ export function registerPatchDetailsWebviewPanel(controller: WebviewsController)
 		{
 			id: 'gitlens.patchDetails',
 			fileName: 'patchDetails.html',
-			iconPath: 'images/gitlens-icon.png',
+			iconPath: 'images/xuxu-gitlens-icon.png',
 			title: 'Patch',
 			contextKeyPrefix: `gitlens:webview:patchDetails`,
 			trackingFeature: 'patchDetailsWebview',

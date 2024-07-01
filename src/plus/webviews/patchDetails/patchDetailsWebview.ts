@@ -414,11 +414,11 @@ export class PatchDetailsWebviewProvider
 
 	private setHostTitle(mode: Mode = this._context.mode) {
 		if (mode === 'create') {
-			this.host.title = 'Create Cloud Patch';
+			this.host.title = '创建云补丁';
 		} else if (this._context.draft?.draftType === 'cloud' && this._context.draft.type === 'suggested_pr_change') {
-			this.host.title = 'Cloud Suggestion';
+			this.host.title = '云建议';
 		} else {
-			this.host.title = 'Cloud Patch Details';
+			this.host.title = '云补丁详情';
 		}
 	}
 

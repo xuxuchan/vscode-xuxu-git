@@ -367,7 +367,7 @@ export class TimelineWebviewProvider implements WebviewProvider<State, State, Ti
 			void (await Promise.allSettled(queryRequiredCommits.map(c => c.ensureFullDetails())));
 		}
 
-		const name = currentUser?.name ? `${currentUser.name} (you)` : '我';
+		const name = currentUser?.name ? `${currentUser.name} (我)` : '我';
 
 		const dataset: Commit[] = [];
 		for (const commit of log.commits.values()) {

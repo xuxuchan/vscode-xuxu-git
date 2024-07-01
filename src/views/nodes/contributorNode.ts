@@ -86,7 +86,7 @@ export class ContributorNode extends ViewNode<'contributor', ViewsWithContributo
 		const presence = this.options?.presence?.get(this.contributor.email!);
 
 		const item = new TreeItem(
-			this.contributor.current ? `${this.contributor.label} (you)` : this.contributor.label,
+			this.contributor.current ? `${this.contributor.label} (我)` : this.contributor.label,
 			TreeItemCollapsibleState.Collapsed,
 		);
 		item.id = this.id;

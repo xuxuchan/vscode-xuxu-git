@@ -9,7 +9,7 @@ export function registerWelcomeWebviewPanel(controller: WebviewsController) {
 		{
 			id: 'gitlens.welcome',
 			fileName: 'welcome.html',
-			iconPath: 'images/gitlens-icon.png',
+			iconPath: 'images/xuxu-gitlens-icon.png',
 			title: '欢迎使用 XU-Git',
 			contextKeyPrefix: `gitlens:webview:welcome`,
 			trackingFeature: 'welcomeWebview',

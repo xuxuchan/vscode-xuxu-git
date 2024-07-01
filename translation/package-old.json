@@ -22,7 +22,7 @@
 	},
 	"main": "./dist/gitlens.js",
 	"browser": "./dist/browser/gitlens.js",
-	"icon": "images/gitlens-icon.png",
+	"icon": "images/xuxu-gitlens-icon.png",
 	"preview": false,
 	"badges": [
 		{

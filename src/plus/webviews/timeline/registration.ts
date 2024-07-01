@@ -15,7 +15,7 @@ export function registerTimelineWebviewPanel(controller: WebviewsController) {
 		{
 			id: 'gitlens.timeline',
 			fileName: 'timeline.html',
-			iconPath: 'images/gitlens-icon.png',
+			iconPath: 'images/xuxu-gitlens-icon.png',
 			title: '可视化文件历史',
 			contextKeyPrefix: `gitlens:webview:timeline`,
 			trackingFeature: 'timelineWebview',

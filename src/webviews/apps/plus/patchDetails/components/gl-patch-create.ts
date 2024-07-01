@@ -260,13 +260,13 @@ export class GlPatchCreate extends GlTreeBase {
 									@change=${this.onVisibilityChange}
 								>
 									<option value="public" ?selected=${this.draftVisibility === 'public'}>
-										Anyone with the link
+										拥有链接的任何人
 									</option>
 									<option value="private" ?selected=${this.draftVisibility === 'private'}>
-										Members of my Org with the link
+										我的组织中拥有链接的成员
 									</option>
 									<option value="invite_only" ?selected=${this.draftVisibility === 'invite_only'}>
-										Collaborators only
+										仅限合作者
 									</option>
 								</select>
 								<span class="message-input__select-caret"
@@ -274,7 +274,7 @@ export class GlPatchCreate extends GlTreeBase {
 								></span>
 							</div>
 							<gl-button appearance="secondary" @click=${this.onInviteUsers}
-								><code-icon icon="person-add" slot="prefix"></code-icon> Invite</gl-button
+								><code-icon icon="person-add" slot="prefix"></code-icon> 邀请</gl-button
 							>
 						</div>
 						${this.renderUserSelectionList()}
@@ -285,7 +285,7 @@ export class GlPatchCreate extends GlTreeBase {
 						id="title"
 						type="text"
 						class="message-input__control"
-						placeholder="Title (required)"
+						placeholder="标题 (必填)"
 						maxlength="100"
 						.value=${this.create.title ?? ''}
 						?disabled=${this.generateBusy}
@@ -299,7 +299,7 @@ export class GlPatchCreate extends GlTreeBase {
 									id="generate-ai"
 									appearance="toolbar"
 									density="compact"
-									tooltip="Generate Title and Description..."
+									tooltip="生成标题和描述..."
 									@click=${(e: MouseEvent) => this.onGenerateTitleClick(e)}
 									?disabled=${this.generateBusy}
 									><code-icon
@@ -324,7 +324,7 @@ export class GlPatchCreate extends GlTreeBase {
 					<textarea
 						id="desc"
 						class="message-input__control"
-						placeholder="Description (optional)"
+						placeholder="描述 (可选)"
 						maxlength="10000"
 						.value=${this.create.description ?? ''}
 						?disabled=${this.generateBusy}
@@ -334,7 +334,7 @@ export class GlPatchCreate extends GlTreeBase {
 				<p class="button-container">
 					<span class="button-group button-group--single">
 						<gl-button full @click=${(e: Event) => this.onDebouncedCreateAll(e)}
-							>Create ${draftName}</gl-button
+							>创建云补丁</gl-button
 						>
 					</span>
 				</p>
@@ -344,7 +344,7 @@ export class GlPatchCreate extends GlTreeBase {
 						<p class="button-container">
 							<span class="button-group button-group--single">
 								<gl-button appearance="secondary" full @click=${() => this.onCancel()}
-									>Cancel</gl-button
+									>取消</gl-button
 								>
 							</span>
 						</p>
@@ -357,30 +357,29 @@ export class GlPatchCreate extends GlTreeBase {
 							<code-icon icon="lock"></code-icon>
 							<a
 								href="${urls.cloudPatches}"
-								title="Learn more about ${draftNamePlural}"
+								title="了解更多 ${draftNamePlural}"
 								aria-label="Learn more about ${draftNamePlural}"
-								>${draftNamePlural}</a
+								>云补丁</a
 							>
-							are
+							由 XU-Tec 提供
 							<a
 								href="https://help.xutec.org/xugit/security"
-								title="Learn more about GitKraken security"
+								title="了解更多 XU-Tec 安全性"
 								aria-label="Learn more about GitKraken security"
-								>securely stored</a
+								>安全存储</a
 							>
-							by GitKraken.
 						</p>`,
 					() =>
 						html`<p class="h-deemphasize">
 							<code-icon icon="info"></code-icon>
-							Your
+							您的
 							<a
 								href="${urls.cloudPatches}"
 								title="Learn more about ${draftNamePlural}"
 								aria-label="Learn more about ${draftNamePlural}"
 								>${draftName}</a
 							>
-							will be securely stored in your organization's self-hosted storage
+							将被安全地存储在您组织的自托管存储中
 						</p>`,
 				)}
 			</div>
@@ -407,7 +406,7 @@ export class GlPatchCreate extends GlTreeBase {
 	private renderChangedFiles() {
 		return html`
 			<webview-pane class="h-no-border" expanded>
-				<span slot="title">${this.review ? 'Changes to Suggest' : 'Changes to Include'}</span>
+				<span slot="title">${this.review ? '建议的更改' : '包含的更改'}</span>
 				<action-nav slot="actions">${this.renderLayoutAction(this.fileLayout)}</action-nav>
 
 				${when(
@@ -479,7 +478,7 @@ export class GlPatchCreate extends GlTreeBase {
 		if (this.createChanges == null || this.createChanges.length === 0) {
 			return this.renderTreeView([
 				{
-					label: 'No changes',
+					label: '没有更改',
 					path: '',
 					level: 1,
 					branch: false,
@@ -534,7 +533,7 @@ export class GlPatchCreate extends GlTreeBase {
 			} else {
 				if (unstaged.length) {
 					children.push({
-						label: 'Unstaged Changes',
+						label: '未暂存的更改',
 						path: '',
 						level: isMulti ? 2 : 1,
 						branch: true,
@@ -548,7 +547,7 @@ export class GlPatchCreate extends GlTreeBase {
 
 				if (staged.length) {
 					children.push({
-						label: 'Staged Changes',
+						label: '已暂存的更改',
 						path: '',
 						level: isMulti ? 2 : 1,
 						branch: true,
@@ -809,7 +808,7 @@ export class GlPatchCreate extends GlTreeBase {
 	override getFileActions(file: GitFileChangeShape, _options?: Partial<TreeItemBase>) {
 		const openFile = {
 			icon: 'go-to-file',
-			label: 'Open file',
+			label: '打开文件',
 			action: 'file-open',
 		};
 
@@ -817,16 +816,16 @@ export class GlPatchCreate extends GlTreeBase {
 			return [openFile];
 		}
 		if (file.staged === true) {
-			return [openFile, { icon: 'remove', label: 'Unstage changes', action: 'file-unstage' }];
+			return [openFile, { icon: 'remove', label: '取消暂存更改', action: 'file-unstage' }];
 		}
-		return [openFile, { icon: 'plus', label: 'Stage changes', action: 'file-stage' }];
+		return [openFile, { icon: 'plus', label: '暂存更改', action: 'file-stage' }];
 	}
 
 	override getRepoActions(_name: string, _path: string, _options?: Partial<TreeItemBase>) {
 		return [
 			{
 				icon: 'gl-graph',
-				label: 'Open in Commit Graph',
+				label: '在提交图中打开',
 				action: 'show-patch-in-graph',
 			},
 		];

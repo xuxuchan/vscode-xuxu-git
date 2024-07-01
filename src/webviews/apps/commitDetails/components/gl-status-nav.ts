@@ -131,14 +131,14 @@ export class GlStatusNav extends LitElement {
 						)}<span class="branch">${branch.name}</span><code-icon icon="chevron-down" size="10"></code-icon
 					></a>
 					<div slot="content">
-						Switch to Another Branch...
+						切换到其他分支...
 						<hr />
 						<code-icon icon="git-branch"></code-icon><span class="md-code">${this.wip.branch?.name}</span>
 					</div>
 				</gl-tooltip>
 			</div>
 			<div class="group">
-				<gl-tooltip hoist content="Fetch">
+				<gl-tooltip hoist content="获取">
 					<a href="#" class="commit-action" @click=${(e: MouseEvent) => this.handleAction(e, 'fetch')}
 						><code-icon icon="gl-repo-fetch"></code-icon></a
 				></gl-tooltip>

@@ -119,13 +119,13 @@ export class GlWipDetails extends GlDetailsBase {
 	}
 
 	override get filesChangedPaneLabel() {
-		return 'Working Changes';
+		return '工作中的更改';
 	}
 
 	renderSecondaryAction() {
 		if (!this.draftsEnabled || this.inReview) return undefined;
 
-		let label = 'Share as Cloud Patch';
+		let label = '作为云补丁共享';
 		let action = 'create-patch';
 		const pr = this.wip?.pullRequest;
 		if (pr != null && pr.state === 'opened') {
@@ -363,13 +363,13 @@ export class GlWipDetails extends GlDetailsBase {
 	override getFileActions(file: File, _options?: Partial<TreeItemBase>): TreeItemAction[] {
 		const openFile = {
 			icon: 'go-to-file',
-			label: 'Open file',
+			label: '打开文件',
 			action: 'file-open',
 		};
 		if (file.staged === true) {
-			return [openFile, { icon: 'remove', label: 'Unstage changes', action: 'file-unstage' }];
+			return [openFile, { icon: 'remove', label: '取消暂存更改', action: 'file-unstage' }];
 		}
-		return [openFile, { icon: 'plus', label: 'Stage changes', action: 'file-stage' }];
+		return [openFile, { icon: 'plus', label: '暂存更改', action: 'file-stage' }];
 	}
 
 	onDataActionClick(name: string) {
