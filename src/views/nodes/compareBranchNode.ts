@@ -195,15 +195,15 @@ export class CompareBranchNode extends SubscribeableViewNode<
 		let label;
 		let tooltip;
 		if (this._compareWith == null) {
-			label = `Compare ${
-				this.compareWithWorkingTree ? 'Working Tree' : this.branch.name
-			} with <branch, tag, or ref>`;
+			label = `比较 ${
+				this.compareWithWorkingTree ? '工作树' : this.branch.name
+			} 和 <分支、标签、引用>`;
 			state = TreeItemCollapsibleState.None;
-			tooltip = `Click to compare ${
-				this.compareWithWorkingTree ? 'Working Tree' : this.branch.name
-			} with a branch, tag, or ref`;
+			tooltip = `点击比较 ${
+				this.compareWithWorkingTree ? '工作树' : this.branch.name
+			} 和分支、标签、引用`;
 		} else {
-			label = `Compare ${this.compareWithWorkingTree ? 'Working Tree' : this.branch.name} with ${
+			label = `Compare ${this.compareWithWorkingTree ? '工作树' : this.branch.name} 和 ${
 				this._compareWith.label ??
 				shortenRevision(this._compareWith.ref, {
 					strings: { working: 'Working Tree' },

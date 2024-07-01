@@ -65,8 +65,8 @@ export class ContributorsViewNode extends RepositoriesSubscribeableNode<Contribu
 
 			if (repositories.length === 0) {
 				this.view.message = this.view.container.git.isDiscoveringRepositories
-					? 'Loading contributors...'
-					: 'No contributors could be found.';
+					? '加载贡献者...'
+					: '未找到贡献者';
 
 				return [];
 			}
@@ -99,8 +99,8 @@ export class ContributorsViewNode extends RepositoriesSubscribeableNode<Contribu
 
 			// const contributors = await child.repo.getContributors({ all: all, ref: ref });
 			if (children.length === 0) {
-				this.view.message = 'No contributors could be found.';
-				this.view.title = 'Contributors';
+				this.view.message = '未找到贡献者';
+				this.view.title = '贡献者';
 
 				void child.ensureSubscription();
 
@@ -108,12 +108,12 @@ export class ContributorsViewNode extends RepositoriesSubscribeableNode<Contribu
 			}
 
 			this.view.message = undefined;
-			this.view.title = `Contributors (${children.length})`;
+			this.view.title = `贡献者 (${children.length})`;
 
 			return children;
 		}
 
-		this.view.title = 'Contributors';
+		this.view.title = '贡献者';
 
 		return this.children;
 	}

@@ -41,14 +41,14 @@ export class ComparePickerNode extends ViewNode<'compare-picker', SearchAndCompa
 		let item;
 		if (selectedRef == null) {
 			item = new TreeItem(
-				'Compare <branch, tag, or ref> with <branch, tag, or ref>',
+				'比较 <分支、标签、引用> 和 <分支、标签、引用>',
 				TreeItemCollapsibleState.None,
 			);
 			item.contextValue = ContextValues.ComparePicker;
 			item.description = description;
 			item.tooltip = `点击选择或输入一个比较的参考${GlyphChars.Ellipsis}`;
 			item.command = {
-				title: `Compare${GlyphChars.Ellipsis}`,
+				title: `比较${GlyphChars.Ellipsis}`,
 				command: this.view.getQualifiedCommand('selectForCompare'),
 			};
 		} else {
@@ -60,7 +60,7 @@ export class ComparePickerNode extends ViewNode<'compare-picker', SearchAndCompa
 			item.description = description;
 			item.tooltip = `点击比较 ${selectedRef.label} 与${GlyphChars.Ellipsis}`;
 			item.command = {
-				title: `Compare ${selectedRef.label} with${GlyphChars.Ellipsis}`,
+				title: `比较 ${selectedRef.label} 和${GlyphChars.Ellipsis}`,
 				command: this.view.getQualifiedCommand('compareWithSelected'),
 			};
 		}

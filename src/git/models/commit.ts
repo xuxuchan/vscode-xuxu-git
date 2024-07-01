@@ -379,19 +379,19 @@ export class GitCommit implements GitRevisionReference {
 
 		if (typeof changedFiles === 'number') {
 			if (changedFiles) {
-				status += expand ? `${pluralize('file', changedFiles)} changed` : `~${changedFiles}`;
+				status += expand ? `${pluralize('个文件', changedFiles)} 已更改` : `~${changedFiles}`;
 			}
 		} else {
 			const { added, changed, deleted } = changedFiles;
 			if (added) {
-				status += expand ? `${pluralize('file', added)} added` : `+${added}`;
+				status += expand ? `${pluralize('个文件', added)} 已添加` : `+${added}`;
 			} else if (!expand && !compact) {
 				status += '+0';
 			}
 
 			if (changed) {
 				status += `${added ? separator : ''}${
-					expand ? `${pluralize('file', changed)} changed` : `~${changed}`
+					expand ? `${pluralize('个文件', changed)} 已更改` : `~${changed}`
 				}`;
 			} else if (!expand && !compact) {
 				status += '~0';
@@ -399,7 +399,7 @@ export class GitCommit implements GitRevisionReference {
 
 			if (deleted) {
 				status += `${changed | additions ? separator : ''}${
-					expand ? `${pluralize('file', deleted)} deleted` : `-${deleted}`
+					expand ? `${pluralize('个文件', deleted)} 已删除` : `-${deleted}`
 				}`;
 			} else if (!expand && !compact) {
 				status += '-0';

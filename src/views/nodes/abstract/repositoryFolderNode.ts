@@ -111,7 +111,7 @@ export abstract class RepositoryFolderNode<
 				}
 			}
 			if (lastFetched) {
-				item.description = `${item.description ?? ''}Last fetched ${Repository.formatLastFetched(lastFetched)}`;
+				item.description = `${item.description ?? ''}最后获取 ${Repository.formatLastFetched(lastFetched)}`;
 			}
 
 			let providerName;
@@ -139,9 +139,9 @@ export abstract class RepositoryFolderNode<
 					branch.upstream != null
 						? ` is ${branch.getTrackingStatus({
 								empty: branch.upstream.missing
-									? `missing upstream $(git-branch) ${branch.upstream.name}`
-									: `up to date with $(git-branch) ${branch.upstream.name}${
-											providerName ? ` on ${providerName}` : ''
+									? `丢失上游 $(git-branch) ${branch.upstream.name}`
+									: `已经是最新的 $(git-branch) ${branch.upstream.name}${
+											providerName ? ` 在 ${providerName}` : ''
 									  }`,
 								expand: true,
 								icons: true,

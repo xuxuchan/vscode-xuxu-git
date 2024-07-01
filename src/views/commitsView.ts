@@ -165,7 +165,7 @@ export class CommitsViewNode extends RepositoriesSubscribeableNode<CommitsView, 
 				const status = branch.getTrackingStatus();
 				this.view.description = `${status ? `${status} ${GlyphChars.Dot} ` : ''}${branch.name}${
 					branch.rebasing ? ' (Rebasing)' : ''
-				}${lastFetched ? ` ${GlyphChars.Dot} Last fetched ${Repository.formatLastFetched(lastFetched)}` : ''}`;
+				}${lastFetched ? ` ${GlyphChars.Dot} 最后获取 ${Repository.formatLastFetched(lastFetched)}` : ''}`;
 			}
 
 			return commitGraphNode == null ? child.getChildren() : [commitGraphNode, ...(await child.getChildren())];

@@ -403,7 +403,7 @@ export async function createRepositoryQuickPickItem(
 	if (options?.fetched) {
 		const lastFetched = await repository.getLastFetched();
 		if (lastFetched !== 0) {
-			const fetched = `Last fetched ${fromNow(new Date(lastFetched))}`;
+			const fetched = `最后获取 ${fromNow(new Date(lastFetched))}`;
 			description = description ? `${description}${pad(GlyphChars.Dot, 2, 2)}${fetched}` : fetched;
 		}
 	}

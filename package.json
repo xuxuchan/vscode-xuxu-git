@@ -7061,7 +7061,7 @@
 		},
 		{
 		  "command": "gitlens.views.openDirectoryDiffWithWorking",
-		  "title": "与工作树比较打开目录",
+		  "title": "打开目录与工作树比较",
 		  "category": "GitLens"
 		},
 		{
@@ -7106,7 +7106,7 @@
 		},
 		{
 		  "command": "gitlens.views.openChangedFileDiffsWithWorking",
-		  "title": "与工作树比较打开所有更改",
+		  "title": "打开所有更改与工作树比较",
 		  "icon": "$(diff-multiple)",
 		  "category": "GitLens"
 		},
@@ -7117,7 +7117,7 @@
 		},
 		{
 		  "command": "gitlens.views.openChangedFileDiffsWithWorkingIndividually",
-		  "title": "与工作树逐个比较打开所有更改",
+		  "title": "打开所有更改与工作树逐个比较",
 		  "category": "GitLens"
 		},
 		{
@@ -8972,7 +8972,7 @@
 		},
 		{
 		  "command": "gitlens.graph.openChangedFileDiffsWithWorking",
-		  "title": "与工作树比较打开所有更改",
+		  "title": "打开所有更改与工作树比较",
 		  "icon": "$(diff-multiple)",
 		  "category": "GitLens"
 		},
@@ -8983,7 +8983,7 @@
 		},
 		{
 		  "command": "gitlens.graph.openChangedFileDiffsWithWorkingIndividually",
-		  "title": "与工作树逐个比较打开所有更改",
+		  "title": "打开所有更改与工作树逐个比较",
 		  "category": "GitLens"
 		},
 		{

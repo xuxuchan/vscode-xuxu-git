@@ -43,8 +43,8 @@ export class StashesViewNode extends RepositoriesSubscribeableNode<StashesView, 
 
 			if (repositories.length === 0) {
 				this.view.message = this.view.container.git.isDiscoveringRepositories
-					? 'Loading stashes...'
-					: 'No stashes could be found.';
+					? '加载暂存...'
+					: '未找到暂存';
 
 				return [];
 			}
@@ -62,8 +62,8 @@ export class StashesViewNode extends RepositoriesSubscribeableNode<StashesView, 
 
 			const stash = await child.repo.getStash();
 			if (stash == null || stash.commits.size === 0) {
-				this.view.message = 'No stashes could be found.';
-				this.view.title = 'Stashes';
+				this.view.message = '未找到暂存';
+				this.view.title = '暂存';
 
 				void child.ensureSubscription();
 
@@ -71,12 +71,12 @@ export class StashesViewNode extends RepositoriesSubscribeableNode<StashesView, 
 			}
 
 			this.view.message = undefined;
-			this.view.title = `Stashes (${stash.commits.size})`;
+			this.view.title = `暂存 (${stash.commits.size})`;
 
 			return child.getChildren();
 		}
 
-		this.view.title = 'Stashes';
+		this.view.title = '暂存';
 
 		return this.children;
 	}

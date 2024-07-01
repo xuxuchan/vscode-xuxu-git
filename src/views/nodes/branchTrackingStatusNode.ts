@@ -185,9 +185,9 @@ export class BranchTrackingStatusNode
 		function getBranchStatus(this: BranchTrackingStatusNode, remote: GitRemote | undefined) {
 			return `\`${this.branch.name}\` is ${getUpstreamStatus(this.status.upstream, this.status.state, {
 				empty: this.status.upstream!.missing
-					? `missing upstream \`${this.status.upstream!.name}\``
-					: `up to date with \`${this.status.upstream!.name}\`${
-							remote?.provider?.name ? ` on ${remote.provider.name}` : ''
+					? `丢失上游 \`${this.status.upstream!.name}\``
+					: `已经是最新的 \`${this.status.upstream!.name}\`${
+							remote?.provider?.name ? ` 在 ${remote.provider.name}` : ''
 					  }`,
 				expand: true,
 				icons: true,
@@ -258,10 +258,10 @@ export class BranchTrackingStatusNode
 			case 'same': {
 				const remote = await this.branch.getRemote();
 
-				label = `Up to date with ${remote?.name ?? getRemoteNameFromBranchName(this.status.upstream!.name)}${
-					remote?.provider?.name ? ` on ${remote.provider.name}` : ''
+				label = `已经是最新的 ${remote?.name ?? getRemoteNameFromBranchName(this.status.upstream!.name)}${
+					remote?.provider?.name ? ` 在 ${remote.provider.name}` : ''
 				}`;
-				description = lastFetched ? `Last fetched ${fromNow(new Date(lastFetched))}` : '';
+				description = lastFetched ? `最后获取 ${fromNow(new Date(lastFetched))}` : '';
 				tooltip = getBranchStatus.call(this, remote);
 
 				collapsibleState = TreeItemCollapsibleState.None;
@@ -314,7 +314,7 @@ export class BranchTrackingStatusNode
 		item.contextValue = contextValue;
 		item.description = description;
 		if (lastFetched) {
-			tooltip += `\n\nLast fetched ${fromNow(new Date(lastFetched))}`;
+			tooltip += `\n\n最后获取 ${fromNow(new Date(lastFetched))}`;
 		}
 		item.iconPath = icon;
 

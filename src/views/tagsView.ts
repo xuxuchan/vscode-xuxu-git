@@ -44,8 +44,8 @@ export class TagsViewNode extends RepositoriesSubscribeableNode<TagsView, TagsRe
 
 			if (repositories.length === 0) {
 				this.view.message = this.view.container.git.isDiscoveringRepositories
-					? 'Loading tags...'
-					: 'No tags could be found.';
+					? '加载标签...'
+					: '未找到标签';
 
 				return [];
 			}
@@ -63,8 +63,8 @@ export class TagsViewNode extends RepositoriesSubscribeableNode<TagsView, TagsRe
 
 			const tags = await child.repo.getTags();
 			if (tags.values.length === 0) {
-				this.view.message = 'No tags could be found.';
-				this.view.title = 'Tags';
+				this.view.message = '未找到标签';
+				this.view.title = '标签';
 
 				void child.ensureSubscription();
 
@@ -72,12 +72,12 @@ export class TagsViewNode extends RepositoriesSubscribeableNode<TagsView, TagsRe
 			}
 
 			this.view.message = undefined;
-			this.view.title = `Tags (${tags.values.length})`;
+			this.view.title = `标签 (${tags.values.length})`;
 
 			return child.getChildren();
 		}
 
-		this.view.title = 'Tags';
+		this.view.title = '标签';
 
 		return this.children;
 	}

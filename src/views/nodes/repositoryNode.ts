@@ -272,8 +272,8 @@ export class RepositoryNode extends SubscribeableViewNode<'repository', ViewsWit
 
 			if (status.upstream != null) {
 				tooltip += ` is ${status.getUpstreamStatus({
-					empty: `up to date with $(git-branch) ${status.upstream.name}${
-						providerName ? ` on ${providerName}` : ''
+					empty: `已经是最新的 $(git-branch) ${status.upstream.name}${
+						providerName ? ` 在 ${providerName}` : ''
 					}`,
 					expand: true,
 					icons: true,

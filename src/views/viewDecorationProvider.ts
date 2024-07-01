@@ -101,31 +101,31 @@ export class ViewFileDecorationProvider implements FileDecorationProvider, Dispo
 				return {
 					badge: 'I',
 					color: new ThemeColor('gitlens.decorations.ignoredForegroundColor' satisfies Colors),
-					tooltip: 'Ignored',
+					tooltip: '已忽略',
 				};
 			case '?':
 				return {
 					badge: 'U',
 					color: new ThemeColor('gitlens.decorations.untrackedForegroundColor' satisfies Colors),
-					tooltip: 'Untracked',
+					tooltip: '未跟踪',
 				};
 			case 'A':
 				return {
 					badge: 'A',
 					color: new ThemeColor('gitlens.decorations.addedForegroundColor' satisfies Colors),
-					tooltip: 'Added',
+					tooltip: '已添加',
 				};
 			case 'C':
 				return {
 					badge: 'C',
 					color: new ThemeColor('gitlens.decorations.copiedForegroundColor' satisfies Colors),
-					tooltip: 'Copied',
+					tooltip: '已复制',
 				};
 			case 'D':
 				return {
 					badge: 'D',
 					color: new ThemeColor('gitlens.decorations.deletedForegroundColor' satisfies Colors),
-					tooltip: 'Deleted',
+					tooltip: '已删除',
 				};
 			case 'M':
 				return {
@@ -133,13 +133,13 @@ export class ViewFileDecorationProvider implements FileDecorationProvider, Dispo
 					// Commented out until we can control the color to only apply to the badge, as the color is applied to the entire decoration and its too much
 					// https://github.com/microsoft/vscode/issues/182098
 					// color: new ThemeColor('gitlens.decorations.modifiedForegroundColor' satisfies Colors),
-					tooltip: 'Modified',
+					tooltip: '已编辑',
 				};
 			case 'R':
 				return {
 					badge: 'R',
 					color: new ThemeColor('gitlens.decorations.renamedForegroundColor' satisfies Colors),
-					tooltip: 'Renamed',
+					tooltip: '已重命名',
 				};
 			default:
 				return undefined;
@@ -155,37 +155,37 @@ export class ViewFileDecorationProvider implements FileDecorationProvider, Dispo
 				return {
 					badge: '▲',
 					color: new ThemeColor('gitlens.decorations.branchAheadForegroundColor' satisfies Colors),
-					tooltip: 'Ahead',
+					tooltip: '领先',
 				};
 			case 'behind':
 				return {
 					badge: '▼',
 					color: new ThemeColor('gitlens.decorations.branchBehindForegroundColor' satisfies Colors),
-					tooltip: 'Behind',
+					tooltip: '落后',
 				};
 			case 'diverged':
 				return {
 					badge: '▼▲',
 					color: new ThemeColor('gitlens.decorations.branchDivergedForegroundColor' satisfies Colors),
-					tooltip: 'Diverged',
+					tooltip: '已分叉',
 				};
 			case 'missingUpstream':
 				return {
 					badge: '!',
 					color: new ThemeColor('gitlens.decorations.branchMissingUpstreamForegroundColor' satisfies Colors),
-					tooltip: 'Missing Upstream',
+					tooltip: '丢失上游',
 				};
 			case 'upToDate':
 				return {
 					badge: '',
 					color: new ThemeColor('gitlens.decorations.branchUpToDateForegroundColor' satisfies Colors),
-					tooltip: 'Up to Date',
+					tooltip: '已经是最新',
 				};
 			case 'unpublished':
 				return {
 					badge: '▲+',
 					color: new ThemeColor('gitlens.decorations.branchUnpublishedForegroundColor' satisfies Colors),
-					tooltip: 'Unpublished',
+					tooltip: '未发布',
 				};
 			default:
 				return undefined;
@@ -234,7 +234,7 @@ export class ViewFileDecorationProvider implements FileDecorationProvider, Dispo
 
 		return {
 			badge: GlyphChars.Check,
-			tooltip: 'Default Remote',
+			tooltip: '默认远程',
 		};
 	}
 

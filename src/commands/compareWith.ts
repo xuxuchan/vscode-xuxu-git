@@ -55,16 +55,16 @@ export class CompareWithCommand extends ActiveEditorCommand {
 			let title;
 			switch (args.ref1) {
 				case null:
-					title = 'Compare';
+					title = '比较';
 					break;
 				case '':
-					title = 'Compare Working Tree with';
+					title = '比较工作树与';
 					break;
 				case 'HEAD':
-					title = 'Compare HEAD with';
+					title = '比较HEAD与';
 					break;
 				default:
-					title = `Compare ${args.ref1} with`;
+					title = `比较${args.ref1}与`;
 					break;
 			}
 

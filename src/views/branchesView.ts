@@ -58,8 +58,8 @@ export class BranchesViewNode extends RepositoriesSubscribeableNode<BranchesView
 
 			if (repositories.length === 0) {
 				this.view.message = this.view.container.git.isDiscoveringRepositories
-					? 'Loading branches...'
-					: 'No branches could be found.';
+					? '加载分支...'
+					: '未找到分支';
 
 				return [];
 			}
@@ -99,8 +99,8 @@ export class BranchesViewNode extends RepositoriesSubscribeableNode<BranchesView
 
 			const branches = await child.repo.getBranches({ filter: b => !b.remote });
 			if (branches.values.length === 0) {
-				this.view.message = 'No branches could be found.';
-				this.view.title = 'Branches';
+				this.view.message = '未找到分支';
+				this.view.title = '分支';
 
 				void child.ensureSubscription();
 
@@ -108,12 +108,12 @@ export class BranchesViewNode extends RepositoriesSubscribeableNode<BranchesView
 			}
 
 			this.view.message = undefined;
-			this.view.title = `Branches (${branches.values.length})`;
+			this.view.title = `分支 (${branches.values.length})`;
 
 			return child.getChildren();
 		}
 
-		this.view.title = 'Branches';
+		this.view.title = '分支';
 
 		return this.children;
 	}

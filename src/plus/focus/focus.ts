@@ -599,7 +599,7 @@ export class FocusCommand extends QuickCommand<State> {
 						createQuickPickItemOfT(
 							{
 								label: '切换到分支或工作树',
-								detail: 'Will checkout the branch, create or open a worktree',
+								detail: '将检出分支，创建或打开一个工作树',
 							},
 							action,
 						),
@@ -609,10 +609,10 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: `Switch & Suggest ${
-									state.item.viewer.isAuthor ? 'Additional ' : ''
-								}Code Changes`,
-								detail: 'Will checkout and start suggesting code changes',
+								label: `检出 & 建议 ${
+									state.item.viewer.isAuthor ? '额外的 ' : ''
+								}代码更改`,
+								detail: '将检出并开始建议代码更改',
 							},
 							action,
 						),
@@ -622,8 +622,8 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: `Suggest ${state.item.viewer.isAuthor ? 'Additional ' : ''}Code Changes`,
-								detail: 'Will start suggesting code changes',
+								label: `建议 ${state.item.viewer.isAuthor ? '额外的 ' : ''}代码更改`,
+								detail: '将开始建议代码更改',
 							},
 							action,
 						),
@@ -633,8 +633,8 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: 'Open Details',
-								detail: 'Will open the pull request details in the Side Bar',
+								label: '打开详情',
+								detail: '将在侧边栏中打开拉取请求的详细信息',
 							},
 							action,
 						),
@@ -644,8 +644,8 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: 'Open Changes',
-								detail: 'Will open the pull request changes for review',
+								label: '打开更改',
+								detail: '将打开拉取请求的更改以供审查',
 							},
 							action,
 						),
@@ -655,7 +655,7 @@ export class FocusCommand extends QuickCommand<State> {
 					confirmations.push(
 						createQuickPickItemOfT(
 							{
-								label: 'Open in Commit Graph',
+								label: '在提交图中打开',
 							},
 							action,
 						),
@@ -665,11 +665,11 @@ export class FocusCommand extends QuickCommand<State> {
 		}
 
 		const step = this.createConfirmStep(
-			`Launchpad \u00a0\u2022\u00a0 Pull Request ${state.item.repository.owner.login}/${state.item.repository.name}#${state.item.id}`,
+			`启动台 \u00a0\u2022\u00a0 拉取请求 ${state.item.repository.owner.login}/${state.item.repository.name}#${state.item.id}`,
 			confirmations,
 			undefined,
 			{
-				placeholder: 'Choose an action to perform',
+				placeholder: '选择要执行的操作',
 				onDidClickItemButton: (_quickpick, button, item) => {
 					switch (button) {
 						case OpenOnGitHubQuickInputButton:

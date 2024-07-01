@@ -57,8 +57,8 @@ export class RemotesViewNode extends RepositoriesSubscribeableNode<RemotesView, 
 
 			if (repositories.length === 0) {
 				this.view.message = this.view.container.git.isDiscoveringRepositories
-					? 'Loading remotes...'
-					: 'No remotes could be found.';
+					? '加载远程...'
+					: '未找到远程';
 
 				return [];
 			}
@@ -76,8 +76,8 @@ export class RemotesViewNode extends RepositoriesSubscribeableNode<RemotesView, 
 
 			const remotes = await child.repo.getRemotes();
 			if (remotes.length === 0) {
-				this.view.message = 'No remotes could be found.';
-				this.view.title = 'Remotes';
+				this.view.message = '未找到远程';
+				this.view.title = '远程';
 
 				void child.ensureSubscription();
 
@@ -85,12 +85,12 @@ export class RemotesViewNode extends RepositoriesSubscribeableNode<RemotesView, 
 			}
 
 			this.view.message = undefined;
-			this.view.title = `Remotes (${remotes.length})`;
+			this.view.title = `远程 (${remotes.length})`;
 
 			return child.getChildren();
 		}
 
-		this.view.title = 'Remotes';
+		this.view.title = '远程';
 
 		return this.children;
 	}

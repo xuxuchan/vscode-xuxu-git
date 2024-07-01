@@ -282,9 +282,9 @@ export class WorktreeNode extends CacheableChildrenViewNode<'worktree', ViewsWit
 							tooltip.appendMarkdown(
 								` is ${branch.getTrackingStatus({
 									empty: branch.upstream.missing
-										? `missing upstream $(git-branch) ${branch.upstream.name}`
-										: `up to date with $(git-branch)  ${branch.upstream.name}${
-												remote?.provider?.name ? ` on ${remote.provider.name}` : ''
+										? `丢失上游 $(git-branch) ${branch.upstream.name}`
+										: `已经是最新的 $(git-branch)  ${branch.upstream.name}${
+												remote?.provider?.name ? ` 在 ${remote.provider.name}` : ''
 										  }`,
 									expand: true,
 									icons: true,

@@ -83,7 +83,7 @@ export class BlameSvg extends LitElement {
 					<rect x="0" y="0" width="100%" height="44" class="header-box" />
 					<text x="10" y="28" class="header">
 						<tspan dy="4" class="codicon">&#xeab4;</tspan>
-						<tspan dx="6" dy="-4">GITKRAKEN WORKSPACES</tspan>
+						<tspan dx="6" dy="-4">XU-Tec 云工作区</tspan>
 					</text>
 				</g>
 				<g class="row">
@@ -91,7 +91,7 @@ export class BlameSvg extends LitElement {
 					<text x="30" y="71" class="selected">
 						<tspan dx="2" dy="4" class="codicon">&#xeab4;</tspan>
 						<tspan dx="24" class="codicon">&#xebaa;</tspan>
-						<tspan dx="10" dy="-4">Client apps</tspan>
+						<tspan dx="10" dy="-4">客户端</tspan>
 					</text>
 					<text x="100%" y="71" text-anchor="end" class="selected">
 						<tspan dx="-10" dy="4" class="codicon">&#xea60;</tspan>
@@ -104,7 +104,7 @@ export class BlameSvg extends LitElement {
 					<text x="50" y="116">
 						<tspan dx="2" dy="4" class="codicon">&#xeab6;</tspan>
 						<tspan dx="24" class="codicon">&#xea83;</tspan>
-						<tspan dx="10" dy="-4">vscode-gitlens</tspan>
+						<tspan dx="10" dy="-4">VSCode-XU-Git</tspan>
 						<tspan dx="4" class="small">0</tspan>
 						<tspan dx="-8" dy="6" class="codicon">&#xea9d;</tspan>
 						<tspan dx="-4" dy="-6" class="small">1</tspan>
@@ -112,7 +112,7 @@ export class BlameSvg extends LitElement {
 						<tspan dx="-3" dy="-6" class="desc">•</tspan>
 						<tspan dx="1" dy="0" class="desc">main</tspan>
 						<tspan dx="1" dy="0" class="desc">•</tspan>
-						<tspan dx="1" dy="0" class="desc">Last fetched 6/9/23</tspan>
+						<tspan dx="1" dy="0" class="desc">最后获取 23/6/9</tspan>
 					</text>
 					<text x="100%" y="116" text-anchor="end" class="row-actions">
 						<tspan dx="-10" dy="4" class="codicon">&#xeaa1;</tspan>
@@ -126,7 +126,7 @@ export class BlameSvg extends LitElement {
 					<text x="50" y="162">
 						<tspan dx="2" dy="4" class="codicon">&#xeab6;</tspan>
 						<tspan dx="24" class="codicon">&#xea83;</tspan>
-						<tspan dx="10" dy="-4">GitKraken</tspan>
+						<tspan dx="10" dy="-4">XU-Git Desktop</tspan>
 						<tspan dx="4" class="small">1</tspan>
 						<tspan dx="-8" dy="6" class="codicon">&#xea9d;</tspan>
 						<tspan dx="-4" dy="-6" class="small">0</tspan>
@@ -134,7 +134,7 @@ export class BlameSvg extends LitElement {
 						<tspan dx="-3" dy="-6" class="desc">•</tspan>
 						<tspan dx="1" dy="0" class="desc">development</tspan>
 						<tspan dx="1" dy="0" class="desc">•</tspan>
-						<tspan dx="1" dy="0" class="desc">Last fetched 6/7/23</tspan>
+						<tspan dx="1" dy="0" class="desc">最后获取 23/6/7</tspan>
 					</text>
 					<text x="100%" y="162" text-anchor="end" class="row-actions">
 						<tspan dx="-10" dy="4" class="codicon">&#xeaa1;</tspan>
@@ -148,7 +148,7 @@ export class BlameSvg extends LitElement {
 					<text x="30" y="209">
 						<tspan dx="2" dy="4" class="codicon">&#xeab6;</tspan>
 						<tspan dx="24" class="codicon">&#xebaa;</tspan>
-						<tspan dx="10" dy="-4">Backend services</tspan>
+						<tspan dx="10" dy="-4">服务端</tspan>
 					</text>
 					<text x="100%" y="209" text-anchor="end" class="row-actions">
 						<tspan dx="-10" dy="4" class="codicon">&#xea60;</tspan>
@@ -161,7 +161,7 @@ export class BlameSvg extends LitElement {
 					<text x="30" y="253">
 						<tspan dx="2" dy="4" class="codicon">&#xeab6;</tspan>
 						<tspan dx="24" class="codicon">&#xebaa;</tspan>
-						<tspan dx="10" dy="-4">Open source projects</tspan>
+						<tspan dx="10" dy="-4">开源项目</tspan>
 					</text>
 					<text x="100%" y="253" text-anchor="end" class="row-actions">
 						<tspan dx="-10" dy="4" class="codicon">&#xea60;</tspan>

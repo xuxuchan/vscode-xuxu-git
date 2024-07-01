@@ -463,9 +463,9 @@ export class BranchNode
 
 				tooltip += ` is ${this.branch.getTrackingStatus({
 					empty: this.branch.upstream.missing
-						? `missing upstream \`${this.branch.upstream.name}\``
-						: `up to date with \`${this.branch.upstream.name}\`${
-								remote?.provider?.name ? ` on ${remote.provider.name}` : ''
+						? `丢失上游 \`${this.branch.upstream.name}\``
+						: `已经是最新的 \`${this.branch.upstream.name}\`${
+								remote?.provider?.name ? ` 在 ${remote.provider.name}` : ''
 						  }`,
 					expand: true,
 					icons: true,

@@ -30,7 +30,7 @@ export function registerGraphWebviewPanel(controller: WebviewsController) {
 			id: 'gitlens.graph',
 			fileName: 'graph.html',
 			iconPath: 'images/gitlens-icon.png',
-			title: 'Commit Graph',
+			title: '提交图',
 			contextKeyPrefix: `gitlens:webview:graph`,
 			trackingFeature: 'graphWebview',
 			plusFeature: true,
@@ -53,7 +53,7 @@ export function registerGraphWebviewView(controller: WebviewsController) {
 		{
 			id: 'gitlens.views.graph',
 			fileName: 'graph.html',
-			title: 'Commit Graph',
+			title: '提交图',
 			contextKeyPrefix: `gitlens:webviewView:graph`,
 			trackingFeature: 'graphView',
 			plusFeature: true,

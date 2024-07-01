@@ -1014,7 +1014,7 @@ export function GraphWrapper({
 							{tooltip}
 							{fetchedText && (
 								<>
-									<hr /> Last fetched {fetchedText}
+									<hr /> 最后获取 {fetchedText}
 								</>
 							)}
 						</div>
@@ -1288,7 +1288,7 @@ export function GraphWrapper({
 							</span>
 							<GlSearchBox
 								ref={searchEl}
-								label="Search Commits"
+								label="搜索提交"
 								step={searchPosition}
 								total={searchResults?.count ?? 0}
 								valid={Boolean(searchQuery?.query && searchQuery.query.length > 2)}
