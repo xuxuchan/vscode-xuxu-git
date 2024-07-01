@@ -242,7 +242,7 @@ export class GitFileChange implements GitFileChangeShape {
 		let status = prefix;
 
 		if (additions) {
-			status += expand ? `${pluralize('line', additions)} added` : `+${additions}`;
+			status += expand ? `${pluralize('行', additions)} 添加` : `+${additions}`;
 		} else if (!expand && !compact) {
 			status += '+0';
 		}
@@ -257,7 +257,7 @@ export class GitFileChange implements GitFileChangeShape {
 
 		if (deletions) {
 			status += `${/*changes |*/ additions ? separator : ''}${
-				expand ? `${pluralize('line', deletions)} deleted` : `-${deletions}`
+				expand ? `${pluralize('行', deletions)} 删除` : `-${deletions}`
 			}`;
 		} else if (!expand && !compact) {
 			status += '-0';

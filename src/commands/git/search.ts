@@ -100,7 +100,7 @@ type SearchStepState<T extends State = State> = ExcludeSome<StepState<T>, 'repo'
 
 export class SearchGitCommand extends QuickCommand<State> {
 	constructor(container: Container, args?: SearchGitCommandArgs) {
-		super(container, 'search', 'search', 'Commit Search', {
+		super(container, 'search', 'search', '搜索提交', {
 			description: '即“grep”，用于搜索提交',
 		});
 

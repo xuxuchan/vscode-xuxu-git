@@ -53,8 +53,8 @@ export class DiffFolderWithRevisionFromCommand extends ActiveEditorCommand {
 				} else {
 					const pick = await showReferencePicker(
 						repoPath,
-						`Open Folder Changes with Branch or Tag${pad(GlyphChars.Dot, 2, 2)}${relativePath}`,
-						'Choose a reference (branch, tag, etc) to compare',
+						`打开文件夹更改，与分支或标签进行比较${pad(GlyphChars.Dot, 2, 2)}${relativePath}`,
+						'选择一个参考（分支、标签等）进行比较',
 						{
 							allowRevisions: true,
 							include: ReferencesQuickPickIncludes.All,
@@ -70,10 +70,10 @@ export class DiffFolderWithRevisionFromCommand extends ActiveEditorCommand {
 			if (!args.lhs) {
 				const pick = await showReferencePicker(
 					repoPath,
-					`Open Folder Changes with Branch or Tag${pad(GlyphChars.Dot, 2, 2)}${relativePath}${
+					`打开文件夹更改，与分支或标签进行比较${pad(GlyphChars.Dot, 2, 2)}${relativePath}${
 						args.rhs ? ` at ${shortenRevision(args.rhs)}` : ''
 					}`,
-					'Choose a reference (branch, tag, etc) to compare with',
+					'选择一个参考（分支、标签等）进行比较',
 					{
 						allowRevisions: true,
 						include:

@@ -259,8 +259,8 @@ export class CopyFileDeepLinkCommand extends ActiveEditorCommand {
 		if (args?.chooseRef) {
 			const pick = await showReferencePicker(
 				repoPath,
-				`Copy Link to ${filePath} at Reference`,
-				'Choose a reference (branch, tag, etc) to copy the file link for',
+				`复制链接到 ${filePath} 在参考位置`,
+				'选择一个参考（分支、标签等）来复制文件链接',
 				{
 					allowRevisions: true,
 					include: ReferencesQuickPickIncludes.All,
@@ -299,8 +299,8 @@ export class CopyFileDeepLinkCommand extends ActiveEditorCommand {
 				chosenRemote = defaultRemote;
 			} else {
 				const pick = await showRemotePicker(
-					`Copy Link to ${deepLinkTypeToString(type)}`,
-					`Choose which remote to copy the link for`,
+					`复制链接到 ${deepLinkTypeToString(type)}`,
+					`选择哪个远程仓库来复制链接`,
 					remotes,
 					{
 						autoPick: true,

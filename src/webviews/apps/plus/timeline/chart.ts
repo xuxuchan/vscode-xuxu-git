@@ -93,14 +93,14 @@ export class TimelineChart implements Disposable {
 
 		if (state.uri != null) {
 			if (dataset?.length === 0) {
-				$empty.innerHTML = '<p>No commits found for the specified time period.</p>';
+				$empty.innerHTML = '<p>在指定的时间段内未找到任何提交。</p>';
 				$empty.removeAttribute('hidden');
 			} else {
 				$empty.setAttribute('hidden', '');
 			}
 			$header.removeAttribute('hidden');
 		} else if (dataset == null) {
-			$empty.innerHTML = '<p>There are no editors open that can provide file history information.</p>';
+			$empty.innerHTML = '<p>没有打开的编辑器可以提供文件历史信息。</p>';
 			$empty.removeAttribute('hidden');
 			$header.setAttribute('hidden', '');
 		} else {

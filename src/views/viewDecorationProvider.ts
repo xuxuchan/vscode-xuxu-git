@@ -133,7 +133,7 @@ export class ViewFileDecorationProvider implements FileDecorationProvider, Dispo
 					// Commented out until we can control the color to only apply to the badge, as the color is applied to the entire decoration and its too much
 					// https://github.com/microsoft/vscode/issues/182098
 					// color: new ThemeColor('gitlens.decorations.modifiedForegroundColor' satisfies Colors),
-					tooltip: '已编辑',
+					tooltip: '已修改',
 				};
 			case 'R':
 				return {

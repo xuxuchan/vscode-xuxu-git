@@ -217,13 +217,13 @@ export class GitStatus {
 		if (expand) {
 			let status = '';
 			if (added) {
-				status += `${pluralize('file', added)} added`;
+				status += `${pluralize('个文件', added)} 已添加`;
 			}
 			if (changed) {
-				status += `${status.length === 0 ? '' : separator}${pluralize('file', changed)} changed`;
+				status += `${status.length === 0 ? '' : separator}${pluralize('个文件', changed)} 已更改`;
 			}
 			if (deleted) {
-				status += `${status.length === 0 ? '' : separator}${pluralize('file', deleted)} deleted`;
+				status += `${status.length === 0 ? '' : separator}${pluralize('个文件', deleted)} 已删除`;
 			}
 			return `${prefix}${status}${suffix}`;
 		}

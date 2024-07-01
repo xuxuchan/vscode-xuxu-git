@@ -53,7 +53,7 @@ export class CommitStats extends LitElement {
 			${when(
 				this.added != null,
 				() =>
-					html`<span class="stat added" title="${this.added} added" aria-label="${this.added} added"
+					html`<span class="stat added" title="${this.added} 已添加" aria-label="${this.added} added"
 						><span class="label">+${this.added}</span></span
 					>`,
 			)}
@@ -62,7 +62,7 @@ export class CommitStats extends LitElement {
 				() =>
 					html`<span
 						class="stat modified"
-						title="${this.modified} modified"
+						title="${this.modified} 已修改"
 						aria-label="${this.modified} modified"
 						><span class="label">~${this.modified}</span></span
 					>`,
@@ -70,7 +70,7 @@ export class CommitStats extends LitElement {
 			${when(
 				this.removed != null,
 				() =>
-					html`<span class="stat deleted" title="${this.removed} removed" aria-label="${this.removed} removed"
+					html`<span class="stat deleted" title="${this.removed} 已移除" aria-label="${this.removed} removed"
 						><span class="label">-${this.removed}</span></span
 					>`,
 			)}

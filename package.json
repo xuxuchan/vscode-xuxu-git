@@ -3175,7 +3175,7 @@
 		},
 		{
 		  "id": "git-command-palette",
-		  "title": "Git 命令面板",
+		  "title": "XU-Git 命令",
 		  "order": 700,
 		  "properties": {
 			"gitlens.gitCommands.avatars": {
@@ -3196,7 +3196,7 @@
 				"按名称排序命令",
 				"按最后使用日期排序命令"
 			  ],
-			  "markdownDescription": "指定如何在“Git 命令面板”中排序 Git 命令",
+			  "markdownDescription": "指定如何在“XU-Git 命令”中排序 Git 命令",
 			  "scope": "window",
 			  "order": 10
 			},
@@ -3263,7 +3263,7 @@
 			"gitlens.gitCommands.closeOnFocusOut": {
 			  "type": "boolean",
 			  "default": true,
-			  "markdownDescription": "指定焦点移出时是否关闭“Git 命令面板”（如果没有，请按 `ESC` 键关闭）",
+			  "markdownDescription": "指定焦点移出时是否关闭“XU-Git 命令”（如果没有，请按 `ESC` 键关闭）",
 			  "scope": "window",
 			  "order": 30
 			},

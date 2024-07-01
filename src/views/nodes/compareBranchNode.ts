@@ -292,8 +292,8 @@ export class CompareBranchNode extends SubscribeableViewNode<
 	private async compareWith() {
 		const pick = await showReferencePicker(
 			this.branch.repoPath,
-			`Compare ${this.branch.name}${this.compareWithWorkingTree ? ' (working)' : ''} with`,
-			'Choose a reference (branch, tag, etc) to compare with',
+			`和 ${this.branch.name}${this.compareWithWorkingTree ? ' (工作中)' : ''} 比较`,
+			'选择一个参考（分支、标签等）进行比较',
 			{
 				allowRevisions: true,
 				picked: this.branch.ref,

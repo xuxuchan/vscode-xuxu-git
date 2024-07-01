@@ -65,7 +65,7 @@ export class DiffWithRevisionFromCommand extends ActiveEditorCommand {
 			const pick = await showReferencePicker(
 				gitUri.repoPath,
 				`${title}${gitUri.getFormattedFileName({ truncateTo: quickPickTitleMaxChars - title.length })}`,
-				'Choose a reference (branch, tag, etc) to compare with',
+				'选择一个参考（分支、标签等）进行比较',
 				{
 					allowRevisions: true,
 				},
