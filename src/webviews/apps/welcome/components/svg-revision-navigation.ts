@@ -136,14 +136,14 @@ export class RevisionNavigationSvg extends LitElement {
 					<!-- <rect class="added-text" x="433" y="21" width="38" height="21"></rect> -->
 					<rect class="line-current" x="0" y="21" width="calc(100% - 1px)" height="21"></rect>
 					<g class="line line-left" style="clip-path: url(#clip-left)">
-						<text y="14"><tspan x="7" class="line-number">12</tspan><tspan x="40" class="function-declaration">function</tspan><tspan dx="6" class="function-name">gitlens</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">:</tspan><tspan dx="6" class="function-argument-type">object</tspan><tspan class="punctuation">)</tspan><tspan dx="6" class="punctuation">{</tspan></text>
+						<text y="14"><tspan x="7" class="line-number">12</tspan><tspan x="40" class="function-declaration">function</tspan><tspan dx="6" class="function-name">xugit</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">:</tspan><tspan dx="6" class="function-argument-type">object</tspan><tspan class="punctuation">)</tspan><tspan dx="6" class="punctuation">{</tspan></text>
 						<text y="36"><tspan x="7" class="line-number">13</tspan><tspan x="40" dx="24" class="function-return">return</tspan><tspan dx="6" class="function-name">supercharged</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">)</tspan><tspan class="punctuation">;</tspan></text>
 					</g>
 					<line class="splitter" x1="280" y1="0" x2="280" y2="100%" />
 				</g>
 				<g class="revision-right">
 					<g class="line line-right">
-						<text y="14"><tspan x="290" class="line-number">12</tspan><tspan x="323" class="function-declaration">function</tspan><tspan dx="6" class="function-name">gitlens</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">:</tspan><tspan dx="6" class="function-argument-type">object</tspan><tspan class="punctuation">)</tspan><tspan dx="6" class="punctuation">{</tspan></text>
+						<text y="14"><tspan x="290" class="line-number">12</tspan><tspan x="323" class="function-declaration">function</tspan><tspan dx="6" class="function-name">xugit</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">:</tspan><tspan dx="6" class="function-argument-type">object</tspan><tspan class="punctuation">)</tspan><tspan dx="6" class="punctuation">{</tspan></text>
 						<text y="36"><tspan x="290" class="line-number-active">13</tspan><tspan x="323" dx="24" class="function-return">return</tspan><tspan dx="6" class="function-name"><tspan>super</tspan><tspan class="added-text">DuperC</tspan><tspan>harged</tspan></tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">)</tspan><tspan class="punctuation">;</tspan><tspan class="cursor">|</tspan></text>
 					</g>
 				</g>

@@ -139,7 +139,7 @@ export class AnnotationsSvg extends LitElement {
 							<circle cx="42" cy="9" r="7"></circle>
 							<text x="42" y="11.5" text-anchor="middle">EA</text>
 						</g>
-						<text y="14"><tspan x="58" class="gutter-text">Hello GitLens</tspan><tspan x="274" dx="-12" text-anchor="end" class="gutter-text">6 yrs ago</tspan></text>
+						<text y="14"><tspan x="58" class="gutter-text">Hello XU-Git</tspan><tspan x="274" dx="-12" text-anchor="end" class="gutter-text">6 yrs ago</tspan></text>
 						<g class="gutter-avatar">
 							<circle cx="42" cy="31" r="7"></circle>
 							<text x="42" y="33.5" text-anchor="middle">EA</text>
@@ -150,7 +150,7 @@ export class AnnotationsSvg extends LitElement {
 				</g>
 				<g class="annotations-right">
 					<g class="line">
-						<text y="14"><tspan x="278" class="function-declaration">function</tspan><tspan dx="6" class="function-name">gitlens</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">:</tspan><tspan dx="6" class="function-argument-type">object</tspan><tspan class="punctuation">)</tspan><tspan dx="6" class="punctuation">{</tspan></text>
+						<text y="14"><tspan x="278" class="function-declaration">function</tspan><tspan dx="6" class="function-name">xugit</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">:</tspan><tspan dx="6" class="function-argument-type">object</tspan><tspan class="punctuation">)</tspan><tspan dx="6" class="punctuation">{</tspan></text>
 						<text y="36"><tspan x="278" dx="24" class="function-return">return</tspan><tspan dx="6" class="function-name">supercharged</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">)</tspan><tspan class="punctuation">;</tspan><tspan class="cursor">|</tspan></text>
 					</g>
 				</g>

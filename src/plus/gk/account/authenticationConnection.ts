@@ -151,7 +151,7 @@ export class AuthenticationConnection implements Disposable {
 					input.onDidAccept(() => resolve(input.value)),
 				);
 
-				input.title = 'GitKraken Sign In';
+				input.title = 'XU-Tec 登录';
 				input.placeholder = 'Please enter the provided authorization code';
 				input.prompt = 'If the auto-redirect fails, paste the authorization code';
 
@@ -217,8 +217,8 @@ export class AuthenticationConnection implements Disposable {
 	private updateStatusBarItem(signingIn?: boolean) {
 		if (signingIn && this._statusBarItem == null) {
 			this._statusBarItem = window.createStatusBarItem('gitlens.plus.signIn', StatusBarAlignment.Left);
-			this._statusBarItem.name = 'GitKraken Sign in';
-			this._statusBarItem.text = 'Signing in to GitKraken...';
+			this._statusBarItem.name = 'XU-Tec 登录';
+			this._statusBarItem.text = '登录到 XU-Tec...';
 			this._statusBarItem.show();
 		}
 

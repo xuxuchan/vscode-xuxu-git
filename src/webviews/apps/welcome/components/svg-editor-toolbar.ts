@@ -171,8 +171,8 @@ export class EditorToolbarSvg extends LitElement {
 				  >
 				  	<title>${
 						this.revisionToggled
-							? 'Click to reset simulated revision navigation below\nShowing diff with revision (simulated)'
-							: 'Click to simulate revision navigation below\nShowing original (simulated)'
+                            ? '点击以下重置模拟的修订版本导航\n显示与修订版本的差异（模拟的）'
+                            : '点击以下模拟修订版本导航\n显示原始版本（模拟的）'
 					}</title>
 				  </rect>
 				  <circle class="indicator indicator--pulse" cx="16" cy="2" />
@@ -192,8 +192,8 @@ export class EditorToolbarSvg extends LitElement {
 				  >
 				  	<title>${
 						this.annotationsToggled
-							? 'Click to simulate toggling the annotation below\nFile annotations are on (simulated)'
-							: 'Click to simulate toggling the annotation below\nFile annotations are off (simulated)'
+                            ? '点击以下模拟切换注释\n文件注释已开启（模拟的）'
+                            : '点击以下模拟切换注释\n文件注释已关闭（模拟的）'
 					}</title>
 				  </rect>
 				  <circle class="indicator indicator--pulse" cx="90" cy="2" />
