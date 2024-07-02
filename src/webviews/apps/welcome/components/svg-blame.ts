@@ -293,7 +293,7 @@ export class BlameSvg extends LitElement {
 			<!-- prettier-ignore -->
 			<svg width="600" height="45" viewBox="0 0 600 43" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g class="codelens">
-					<text y="18"><tspan x="38">Eric Amodio, 3 minutes ago | 1 author (Eric Amodio)</tspan></text>
+					<text y="18"><tspan x="38">XUXU, 3分钟前 | 1个作者 (XUXU)</tspan></text>
 				</g>
 				<g class="line">
 					<text y="34"><tspan x="7" class="line-number">13</tspan><tspan x="38" class="function-return">return</tspan><tspan dx="6" class="function-name">supercharged</tspan><tspan class="punctuation">(</tspan><tspan class="function-argument">git</tspan><tspan class="punctuation">)</tspan><tspan class="punctuation">;</tspan><tspan class="cursor">|</tspan><tspan dx="24" class="blame" @mouseover=${this
