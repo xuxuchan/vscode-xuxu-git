@@ -1,339 +1,271 @@
-# GitLens &mdash; Supercharge Git in VS Code
+# XU-Git &mdash; Git 超级赋能
 
-> Supercharge Git and unlock **untapped knowledge** within your repository to better **understand**, **write**, and **review** code. Focus, collaborate, accelerate.
+> 加速Git的使用，并解锁仓库中的**未开发知识**，以便更好地**理解**、**编写**和**审查**代码。专注，合作，加速。
 
-[GitLens](https://xutec.org/xugit?utm_source=gitlens-extension&utm_medium=in-app-links&utm_campaign=gitlens-logo-links 'Learn more about GitLens') is a powerful [open-source](https://github.com/gitkraken/vscode-gitlens 'Open GitLens on GitHub') extension for [Visual Studio Code](https://code.visualstudio.com).
+[XU-Git](https://xutec.org/xugit?utm_source=xu-git-extension&utm_medium=in-app-links&utm_campaign=XU-Git-logo-links) 是一个强大的 [开源](https://github.com/xuxuchan/vscode-xuxu-git) 插件，用于 [Visual Studio Code](https://code.visualstudio.com)。
 
-GitLens supercharges your Git experience in VS Code. Maintaining focus is critical, extra time spent context switching or missing context disrupts your flow. GitLens is the ultimate tool for making Git work for you, designed to improve focus, productivity, and collaboration with a powerful set of tools to help you and your team better understand, write, and review code.
+XU-Git 在 VS Code 中增强了你的 Git 体验。保持专注至关重要，额外的时间用于上下文切换或错过上下文会打断你的工作流。XU-Git 是让 Git 为你工作的终极工具，旨在通过一套强大的工具来提升你的专注力、生产力和协作能力，帮助你和你的团队更好地理解、编写和审核代码。
 
-GitLens sets itself apart from other Git tools through its deep level of integration, versatility, and ease of use. GitLens sits directly within your editor, reducing context switching and promoting a more efficient workflow. We know Git is hard and strive to make it as easy as possible while also going beyond the basics with rich visualizations and step-by-step guidance and safety, just to name a few.
+XU-Git 通过其深度集成、多功能性和易用性，将自己与其他 Git 工具区分开来。XU-Git 直接嵌入你的编辑器中，减少了上下文切换并促进更高效的工作流。我们知道 Git 很难使用，因此我们努力使其尽可能简单，同时还提供丰富的可视化和逐步指导与安全性，仅举几例。
 
-## Getting Started
+## 开始使用
 
-<p>
-  <a title="Watch the GitLens Getting Started video" href="https://www.youtube.com/watch?v=UQPb73Zz9qk"><img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/get-started-video.png" alt="Watch the GitLens Getting Started video" /></a>
-</p>
+通过点击上方横幅上的 `安装` 或在 VS Code 的扩展侧边栏中搜索 XU-Git 来安装 XU-Git。
 
-Install GitLens by clicking `Install` on the banner above, or from the Extensions side bar in VS Code, by searching for GitLens.
+在扩展横幅上使用 `切换到预览版` 以尝鲜，并成为第一个体验新功能的人。
 
-Use `Switch to Pre-Release Version` on the extension banner to live on the edge and be the first to experience new features.
+## XU-Git 是免费的吗？
 
-## Is GitLens Free?
+除了下列功能外，所有功能在所有仓库上都可以免费使用，
 
-All features are free to use on all repos, **except** for features,
+- 标有 `Pro` 的功能需要在私有托管仓库上使用时，需[试用或付费计划](https://www.xutec.org/xugit/pricing)
+- 标有 `Preview` 的功能需要 XU-Tec 账户，访问级别取决于你的[计划](https://www.xutec.org/xugit/pricing)，例如免费版、专业版等
 
-- marked with a `Pro` require a [trial or paid plan](https://www.xutec.org/xugit/pricing) for use on privately-hosted repos
-- marked with a `Preview` require a GitKraken account, with access level based on your [plan](https://www.xutec.org/xugit/pricing), e.g. Free, Pro, etc
+详情请参见 [FAQ](#is-XU-Git-free-to-use)。
 
-See the [FAQ](#is-gitlens-free-to-use 'Jump to FAQ') for more details.
+[功能](#discover-powerful-features)
+| [实验室](#xutec-labs)
+| [Pro](#ready-for-XU-Git-pro)
+| [FAQ](#faq)
+| [支持和社区](#support-and-community)
+| [贡献](#contributing)
+| [贡献者](#contributors-)
+| [许可证](#license)
 
-[Features](#discover-powerful-features 'Jump to Discover Powerful Features')
-| [Labs](#gitkraken-labs 'Jump to GitKraken Labs')
-| [Pro](#ready-for-gitlens-pro 'Jump to Ready for GitLens Pro?')
-| [FAQ](#faq 'Jump to FAQ')
-| [Support and Community](#support-and-community 'Jump to Support and Community')
-| [Contributing](#contributing 'Jump to Contributing')
-| [Contributors](#contributors- 'Jump to Contributors')
-| [License](#license 'Jump to License')
+- # 发现强大的功能
 
-# Discover Powerful Features
+  快速了解某行或代码块的变更时间、原因以及变更者。聚焦于最重要的变更，轻松浏览历史，深入了解文件或单行代码的演变过程。通过 Git 追溯注释和 Git 代码洞察，一目了然地可视化代码作者。通过视觉丰富的提交图无缝探索 Git 仓库。通过 XU-Git Inspect 获得宝贵的见解，还有更多功能。
 
-Quickly glimpse into when, why, and by whom a line or code block was changed. Zero-in on the most important changes and effortlessly navigate through history to gain further insights as to how a file or individual line's code evolved. Visualize code authorship at a glance via Git blame annotations and Git CodeLens. Seamlessly explore Git repositories with the visually-rich Commit Graph. Gain valuable insights via GitLens Inspect, and much more.
+  - [**追溯、代码洞察 和悬停**](#blame-代码洞察-and-hovers) — 通过编辑器内的代码注释和丰富的悬停信息，更深入了解代码的变更及变更者。
+  - [**文件注释**](#file-annotations) — 按需切换整个文件注释，查看作者、最近的更改和热图。
+  - [**修订导航**](#revision-navigation) — 探索文件历史，查看代码随时间的演变。
+  - [**侧边栏视图**](#side-bar-views) — 强大的 Git 视图，不在默认提供的功能中。
+  - [**提交图 `Pro`**](#commit-graph-pro) — 可视化你的仓库并跟踪所有进行中的工作。
+  - [**启动台 `Preview`**](#launchpad-preview) — 保持专注并让你的团队不中断。
+  - [**代码建议 `Preview`**](#code-suggest-preview) — 让你的代码评审不再受不必要的限制。
+  - [**云补丁 `Preview`**](#cloud-patches-preview) — 轻松且安全地与团队成员分享代码。
+  - [**工作树 `Pro`**](#worktrees-pro) — 同时在一个仓库的不同分支上工作。
+  - [**可视化文件历史 `Pro`**](#visual-file-history-pro) — 识别文件最重要的变更及变更者。
+  - [**XU-Tec 工作区 `Preview`**](#xutec-workspaces-preview) — 轻松分组和管理多个仓库。
+  - [**交互式变基编辑器**](#interactive-rebase-editor) — 通过用户友好的编辑器可视化和配置交互式变基操作。
+  - [**全面的命令**](#comprehensive-commands) — 丰富的命令集，帮助你完成所有需要的操作。
+  - [**集成**](#integrations) — 通过与你的 Git 托管服务的集成，简化工作流程并快速获得见解。
 
-- [**Blame, CodeLens, and Hovers**](#blame-codelens-and-hovers) &mdash; Gain a deeper understanding of how code changed and by whom through in-editor code annotations and rich hovers.
-- [**File Annotations**](#file-annotations) &mdash; Toggle on-demand whole file annotations to see authorship, recent changes, and a heatmap.
-- [**Revision Navigation**](#revision-navigation) &mdash; Explore the history of a file to see how the code evolved over time.
-- [**Side Bar Views**](#side-bar-views) &mdash; Powerful views into Git that don't come in the box.
-- [**Commit Graph `Pro`**](#commit-graph-pro) &mdash; Visualize your repository and keep track of all work in progress.
-- [**Launchpad `Preview`**](#launchpad-preview) &mdash; Stay focused and keep your team unblocked.
-- [**Code Suggest `Preview`**](#code-suggest-preview) &mdash; Free your code reviews from unnecessary restrictions.
-- [**Cloud Patches `Preview`**](#cloud-patches-preview) &mdash; Easily and securely share code with your teammates.
-- [**Worktrees `Pro`**](#worktrees-pro) &mdash; Simultaneously work on different branches of a repository.
-- [**Visual File History `Pro`**](#visual-file-history-pro) &mdash; Identify the most impactful changes to a file and by whom.
-- [**GitKraken Workspaces `Preview`**](#gitkraken-workspaces-preview) &mdash; Easily group and manage multiple repositories.
-- [**Interactive Rebase Editor**](#interactive-rebase-editor) &mdash; Visualize and configure interactive rebase operations with a user-friendly editor.
-- [**Comprehensive Commands**](#comprehensive-commands) &mdash; A rich set of commands to help you do everything you need.
-- [**Integrations**](#integrations) &mdash; Simplify your workflow and quickly gain insights via integration with your Git hosting services.
+## 追溯、代码洞察 和悬停
 
-## Blame, CodeLens, and Hovers
+通过编辑器内的代码注释和丰富的悬停信息，更深入了解代码的变更及变更者。
 
-Gain a deeper understanding of how code changed and by whom through in-editor code annotations and rich hovers.
+### 行内和状态栏追溯
 
-### Inline and Status Bar Blame
+通过当前行末尾和状态栏上的不显眼的**追溯注释**提供有关行更改的历史背景。
 
-Provides historical context about line changes through unobtrusive **blame annotation** at the end of the current line and on the status bar.
+💡 在命令面板中使用`切换行追溯`和`切换 Git 代码洞察`命令来开启和关闭注释。
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/current-line-blame.png" alt="Inline Line Blame" />
-  <figcaption>Inline blame annotations</figcaption>
-</figure>
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/status-bar.png" alt="Status Bar Blame" />
-  <figcaption>Status bar blame annotations</figcaption>
-</figure>
+### Git 代码洞察
 
-💡 Use the `Toggle Line Blame` and `Toggle Git CodeLens` commands from the Command Palette to turn the annotations on and off.
+在每个文件顶部和每个代码块的开头添加上下文和可操作的作者信息。
 
-### Git CodeLens
+- **最近更改** — 文件或代码块的最新提交的作者和日期
+- **作者** — 文件或代码块的作者数量和最突出的作者（如果有多个）
 
-Adds contextual and actionable authorship information at the top of each file and at the beginning of each block of code.
+### 丰富的悬停信息
 
-- **Recent Change** &mdash; author and date of the most recent commit for the file or code block
-- **Authors** &mdash; number of authors of the file or code block and the most prominent author (if there is more than one)
+悬停在追溯注释上可以显示详细信息和操作。
 
-### Rich Hovers
+## 文件注释
 
-Hover over blame annotations to reveal rich details and actions.
+使用按需的整个文件注释查看作者、最近的更改和热图。注释作为视觉指示器直接在编辑器中渲染。
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/hovers-current-line.png" alt="Current Line Hovers" />
-</figure>
+💡 在一个活动文件上，使用命令面板中的`切换文件追溯`、`切换文件更改`和`切换文件热图`命令来开启和关闭注释。
 
-## File Annotations
+## 修订导航
 
-Use on-demand whole file annotations to see authorship, recent changes, and a heatmap. Annotations are rendered as visual indicators directly in the editor.
+只需点击一个按钮，你就可以向前和向后导航任何文件的历史。比较不同时期的更改，查看整个文件或单行的修订历史。
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/gutter-blame.png" alt="File Blame">
-  <figcaption>File Blame annotations</figcaption>
-</figure>
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/gutter-changes.png" alt="File Changes" />
-  <figcaption>File Changes annotations</figcaption>
-</figure>
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/gutter-heatmap.png" alt="File Heatmap" />
-  <figcaption>File Heatmap annotations</figcaption>
-</figure>
+## 侧边栏视图
 
-💡 On an active file, use the `Toggle File Blame`, `Toggle File Changes`, and `Toggle File Heatmap` commands from the Command Palette to turn the annotations on and off.
+我们的视图排列有助于集中注意力和提高生产力，但你可以轻松拖动它们以适应你的需求。
 
-## Revision Navigation
+💡 使用`重置视图布局`命令快速恢复到默认布局。
 
-With just a click of a button, you can navigate backwards and forwards through the history of any file. Compare changes over time and see the revision history of the whole file or an individual line.
+### XU-Git 检查
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/revision-navigation.gif" alt="Revision Navigation" />
-</figure>
+对代码进行透视或开发者工具检查，专注于提供与当前工作相关的上下文信息和见解。
 
-## Side Bar Views
+- **检查** &mdash; 查看提交或暂存的详细信息。
+- **行历史** &mdash; 跳转到选定行的修订历史。
+- **文件历史** &mdash; 探索文件、文件夹或选定行的修订历史。
+- [**可视化文件历史 `专业版`**](#visual-file-history-pro) &mdash; 快速查看文件的演变，包括更改时间、更改大小和更改者。
+- **搜索与比较** &mdash; 搜索并探索特定提交、消息、作者、更改的文件或特定代码更改，或可视化分支、标签、提交等之间的比较。
 
-Our views are arranged for focus and productivity, although you can easily drag them around to suit your needs.
+### XU-Git
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/side-bar-views.png" alt="Side Bar views" />
-  <figcaption>GitLens Inspect as shown above has been manually moved into the Secondary Side Bar</figcaption>
-</figure>
+快速访问许多 XU-Git 功能。也是 XU-Tec 团队和协作服务（如 XU-Tec 工作区）、帮助和支持的主页。
 
-💡 Use the `Reset Views Layout` command to quickly get back to the default layout.
+- **主页** &mdash; 快速访问许多功能。
+- [**云补丁 `预览`**](#cloud-patches-preview) &mdash; 轻松安全地与团队成员分享代码。
+- [**XU-Tec 工作区 `预览`**](#xutec-workspaces-preview) &mdash; 轻松分组和管理多个存储库，随时随地访问，简化工作流程。
+- **XU-Tec 账户** &mdash; 使用 XU-Tec 云服务增强功能。
 
-### GitLens Inspect
+### 源代码控制
 
-An x-ray or developer tools Inspect into your code, focused on providing contextual information and insights to what you're actively working on.
+显示额外的视图，专注于探索和管理你的存储库。
 
-- **Inspect** &mdash; See rich details of a commit or stash.
-- **Line History** &mdash; Jump through the revision history of the selected line(s).
-- **File History** &mdash; Explore the revision history of a file, folder, or selected lines.
-- [**Visual File History `Pro`**](#visual-file-history-pro) &mdash; Quickly see the evolution of a file, including when changes were made, how large they were, and who made them.
-- **Search & Compare** &mdash; Search and explore for a specific commit, message, author, changed file or files, or even a specific code change, or visualize comparisons between branches, tags, commits, and more.
+- **提交** &mdash; 当前分支提交历史的综合视图，包括未推送的更改、上游状态、快速比较等。
+- **分支** &mdash; 管理和导航分支。
+- **远程** &mdash; 管理和导航远程及远程分支。
+- **暂存** &mdash; 保存和恢复尚未准备提交的更改。
+- **标签** &mdash; 管理和导航标签。
+- [**工作树 `专业版`**](#worktrees-pro) &mdash; 同时在存储库的不同分支上工作。
+- **贡献者** &mdash; 贡献者的有序列表，提供对个人贡献和参与度的见解。
+- **存储库** &mdash; 将上述视图统一起来，更高效地管理多个存储库。
 
-### GitLens
+### （底部）面板
 
-Quick access to many GitLens features. Also the home of GitKraken teams and collaboration services (e.g. GitKraken Workspaces), help, and support.
+便捷且易于访问的提交图，带有专用的详细视图。
 
-- **Home** &mdash; Quick access to many features.
-- [**Cloud Patches `Preview`**](#cloud-patches-preview) &mdash; Easily and securely share code with your teammates
-- [**GitKraken Workspaces `Preview`**](#gitkraken-workspaces-preview) &mdash; Easily group and manage multiple repositories together, accessible from anywhere, streamlining your workflow.
-- **GitKraken Account** &mdash; Power-up with GitKraken Cloud Services.
+- [**提交图 `专业版`**](#commit-graph-pro) &mdash; 可视化你的存储库并跟踪所有进行中的工作。
 
-### Source Control
+## 提交图 `专业版`
 
-Shows additional views that are focused on exploring and managing your repositories.
+轻松可视化你的存储库并跟踪所有进行中的工作。
 
-- **Commits** &mdash; Comprehensive view of the current branch commit history, including unpushed changes, upstream status, quick comparisons, and more.
-- **Branches** &mdash; Manage and navigate branches.
-- **Remotes** &mdash; Manage and navigate remotes and remote branches.
-- **Stashes** &mdash; Save and restore changes you are not yet ready to commit.
-- **Tags** &mdash; Manage and navigate tags.
-- [**Worktrees `Pro`**](#worktrees-pro) &mdash; Simultaneously work on different branches of a repository.
-- **Contributors** &mdash; Ordered list of contributors, providing insights into individual contributions and involvement.
-- **Repositories** &mdash; Unifies the above views for more efficient management of multiple repositories.
+使用丰富的提交搜索找到你需要的内容。其强大的过滤器允许你按特定提交、消息、作者、更改的文件或特定代码更改进行搜索。[了解更多](https://xutec.org/xugit/solutions/commit-graph?utm_source=xu-git-extension&utm_medium=in-app-links)
 
-### (Bottom) Panel
+💡通过`切换提交图`命令快速切换图表。
 
-Convenient and easy access to the Commit Graph with a dedicated details view.
+💡通过`切换最大化提交图`命令最大化图表。
 
-- [**Commit Graph `Pro`**](#commit-graph-pro) &mdash; Visualize your repository and keep track of all work in progress.
+## 启动台 `预览版`
 
-## Commit Graph `Pro`
+启动台将所有 GitHub 的拉取请求整合到一个统一的、可操作的列表中，以更好地跟踪进行中的工作、待处理的工作、评审等。保持专注，并对最重要的事项采取行动，确保团队的顺利进行。[了解更多](https://xutec.org/xugit/solutions/launchpad?utm_source=xu-git-extension&utm_medium=in-app-links)
 
-Easily visualize your repository and keep track of all work in progress.
+## 代码建议 `预览版`
 
-Use the rich commit search to find exactly what you're looking for. Its powerful filters allow you to search by a specific commit, message, author, a changed file or files, or even a specific code change. [Learn more](https://xutec.org/xugit/solutions/commit-graph?utm_source=gitlens-extension&utm_medium=in-app-links)
+从 GitHub 限制性的、仅评论的反馈方式中解放你的代码评审。就像在 Google 文档上建议更改一样，可以在你已经在编码的地方——你的 IDE 中，建议对项目中的任何内容进行代码更改，而不仅仅是 PR 中更改的代码行。[了解更多](https://xutec.org/xugit/solutions/code-suggest?utm_source=xu-git-extension&utm_medium=in-app-links)
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/commit-graph.png" alt="Commit Graph" />
-</figure>
+## 云补丁 `预览版`
 
-💡Quickly toggle the Graph via the `Toggle Commit Graph` command.
+通过从你的 WIP、提交或暂存中创建云补丁并共享生成的链接，轻松且安全地与团队成员或其他开发人员分享代码更改。使用云补丁来提前协作，获取对方向、方法等的反馈，最小化返工并简化工作流程。[了解更多](https://xutec.org/xugit/solutions/cloud-patches?utm_source=xu-git-extension&utm_medium=in-app-links)
 
-💡Maximize the Graph via the `Toggle Maximized Commit Graph` command.
+## 工作树 `专业版`
 
-## Launchpad `Preview`
+通过最小化在分支之间的上下文切换，高效地进行多任务处理，使你能够轻松同时处理存储库的不同分支。
 
-Launchpad brings all of your GitHub pull requests into a unified, actionable list to better track work in progress, pending work, reviews, and more. Stay focused and take action on the most important items to keep your team unblocked. [Learn more](https://xutec.org/xugit/solutions/launchpad?utm_source=gitlens-extension&utm_medium=in-app-links)
+在需要评审拉取请求时，避免打断当前的工作进程。只需创建一个新的工作树并在一个新的 VS Code 窗口中打开它，而不影响其他工作。
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/launchpad.png" alt="Launchpad" />
-</figure>
+## XU-Tec 工作区 `预览版`
 
-## Code Suggest `Preview`
+XU-Tec 工作区允许你轻松分组和管理多个存储库，随时随地访问，简化工作流程。为你自己创建工作区或与团队共享（即将在 XU-Git 中推出），以加快入职并改善协作。[了解更多](https://xutec.org/xugit/solutions/workspaces?utm_source=xu-git-extension&utm_medium=in-app-links)
 
-Liberate your code reviews from GitHub's restrictive, comment-only feedback style. Like suggesting changes on a Google-doc, suggest code changes from where you're already coding — your IDE and on anything in your project, not just on the lines of code changed in the PR. [Learn more](https://xutec.org/xugit/solutions/code-suggest?utm_source=gitlens-extension&utm_medium=in-app-links)
+## 可视化文件历史 `专业版`
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/code-suggest.png" alt="Code Suggest" />
-</figure>
+快速查看文件的演变，包括更改的时间、更改的大小以及更改者。使用它快速找到对文件最有影响的更改时间或最适合谈论文件更改的人等。
 
-## Cloud Patches `Preview`
+## 交互式变基编辑器
 
-Easily and securely share code changes with your teammates or other developers by creating a Cloud Patch from your WIP, commit or stash and sharing the generated link. Use Cloud Patches to collaborate early for feedback on direction, approach, and more, to minimize rework and streamline your workflow. [Learn more](https://xutec.org/xugit/solutions/cloud-patches?utm_source=gitlens-extension&utm_medium=in-app-links)
+使用直观且用户友好的交互式变基编辑器轻松可视化和配置交互式变基操作。只需拖放即可重新排序提交，并选择要编辑、压缩或删除的提交。
 
-## Worktrees `Pro`
+## 全面的命令
 
-Efficiently multitask by minimizing the context switching between branches, allowing you to easily work on different branches of a repository simultaneously.
+无需担心记住 Git 命令；XU-Git 提供了一组丰富的命令，帮助你完成所有需要的操作。
 
-Avoid interrupting your work in progress when needing to review a pull request. Simply create a new worktree and open it in a new VS Code window, all without impacting your other work.
+### Git 命令面板
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/worktrees.png" alt="Worktrees view" />
-</figure>
+一个引导式的、逐步的体验，用于快速且安全地执行 Git 命令。
 
-## GitKraken Workspaces `Preview`
+### 快速访问命令
 
-GitKraken Workspaces allow you to easily group and manage multiple repositories together, accessible from anywhere, streamlining your workflow. Create workspaces just for yourself or share (coming soon in GitLens) them with your team for faster onboarding and better collaboration. [Learn more](https://xutec.org/xugit/solutions/workspaces?utm_source=gitlens-extension&utm_medium=in-app-links)
+使用一系列新命令来：
 
-## Visual File History `Pro`
+- 探索分支和文件的提交历史
+- 快速搜索和导航到（并操作）提交
+- 探索某个提交的文件
+- 查看并探索你的暂存
+- 可视化当前存储库状态
 
-Quickly see the evolution of a file, including when changes were made, how large they were, and who made them. Use it to quickly find when the most impactful changes were made to a file or who best to talk to about file changes and more.
+# 集成
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/visual-file-history-illustrated.png" alt="Visual File History view" />
-</figure>
+上下文切换会降低生产力。XU-Git 不仅揭示存储库中隐藏的知识，还从问题和拉取请求中提供额外的上下文，为你提供触手可得的信息和见解。
 
-## Interactive Rebase Editor
+通过自动链接多个 Git 托管服务（包括 GitHub、GitHub Enterprise `专业版`、GitLab、GitLab 自托管 `专业版`、Jira、Gitea、Gerrit、Google Source、Bitbucket、Bitbucket Server、Azure DevOps 和自定义服务器）中的问题和拉取请求，简化你的工作流程并快速获得见解。
 
-Easily visualize and configure interactive rebase operations with the intuitive and user-friendly Interactive Rebase Editor. Simply drag & drop to reorder commits and select which ones you want to edit, squash, or drop.
+所有集成都提供自动链接，而与 GitHub、GitLab 和 Jira 的丰富集成则提供详细的悬停信息，包括自动链接的详细信息、拉取请求、分支和提交之间的关联，以及用户头像以增加上下文。
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/rebase.gif" alt="Interactive Rebase Editor" />
-</figure>
+## 定义自己的自动链接
 
-## Comprehensive Commands
+使用自动链接在提交消息中链接外部引用，例如 Jira 问题或 Zendesk 工单。
 
-Stop worrying about memorizing Git commands; GitLens provides a rich set of commands to help you do everything you need.
+# XU-Tec 实验室
 
-### Git Command Palette
+我们的实验室旨在与社区一起进行实验和探索，以收集早期反馈。以下是我们当前的一些实验。
 
-A guided, step-by-step experience for quickly and safely executing Git commands.
+## 🧪AI 解释提交
 
-<figure align="center">
-  <img src="https://raw.githubusercontent.com/gitkraken/vscode-gitlens/main/images/docs/git-command-palette.png" alt="Git Command Palette" />
-</figure>
+使用 **检查** 视图中的解释面板，利用 AI 帮助你理解提交引入的更改。
 
-### Quick Access Commands
+## 🧪自动生成提交消息
 
-Use a series of new commands to:
+从源代码控制视图的上下文菜单中使用 `生成提交消息` 命令，利用 AI 自动生成阶段性更改的提交消息。
 
-- Explore the commit history of branches and files
-- Quickly search for and navigate to (and action upon) commits
-- Explore a file of a commit
-- View and explore your stashes
-- Visualize the current repository status
+# 准备好使用 XU-Git 专业版了吗？
 
-# Integrations
+当你准备好充分利用 XU-Git 和我们的 [Dev 平台](https://xutec.org/xugit/dev?utm_source=xu-git-extension&utm_medium=in-app-links) 并在私有托管存储库上享受所有好处时，请考虑升级到 XU-Git 专业版。使用 XU-Git 专业版，你可以在私有托管存储库上访问 [专业版功能](https://xutec.org/xugit/pro-features?utm_source=xu-git-extension&utm_medium=in-app-links)。
 
-Context switching kills productivity. GitLens not only reveals buried knowledge within your repository, it also brings additional context from issues and pull requests providing you with a wealth of information and insights at your fingertips.
+要了解更多关于定价和 XU-Git 专业版提供的附加功能，请访问 [XU-Git 定价页面](https://www.xutec.org/xugit/pricing?utm_source=xu-git-extension&utm_medium=in-app-links)。今天就升级到 XU-Git 专业版，让你的 Git 工作流程更上一层楼！
 
-Simplify your workflow and quickly gain insights with automatic linking of issues and pull requests across multiple Git hosting services including GitHub, GitHub Enterprise `Pro`, GitLab, GitLab Self-Managed `Pro`, Jira, Gitea, Gerrit, Google Source, Bitbucket, Bitbucket Server, Azure DevOps, and custom servers.
+# 常见问题解答
 
-All integrations provide automatic linking, while rich integrations with GitHub, GitLab and Jira offer detailed hover information for autolinks, and correlations between pull requests, branches, and commits, as well as user avatars for added context.
+## XU-Git 可以免费使用吗？
 
-## Define your own autolinks
+是的。除 `专业版` 功能外，所有功能都可以在所有存储库上免费使用，而 `专业版` 功能需要 [试用或付费计划](https://www.xutec.org/xugit/pricing?utm_source=xu-git-extension&utm_medium=in-app-links)。
 
-Use autolinks to linkify external references, like Jira issues or Zendesk tickets, in commit messages.
+虽然 XU-Git 提供了一套显著的免费功能，但部分针对专业开发人员和团队的 `专业版` 功能需要在私有托管存储库上使用试用或付费计划——在本地或公开托管的存储库上使用是对所有人免费的。此外，`预览版` 功能将来可能需要付费计划，如果是云支持的，则需要 XU-Tec 账户。
 
-# GitKraken Labs
+无需账户即可免费试用 `专业版` 功能 3 天，或开始免费 XU-Git 专业版试用以获得额外 7 天的 `专业版` 功能访问权限，体验 XU-Git 的全部威力。
 
-Our incubator for experimentation and exploration with the community to gather early reactions and feedback. Below are some of our current experiments.
+## `专业版` 和 `预览版` 功能可以免费使用吗？
 
-## 🧪AI Explain Commit
+`专业版` 功能在本地和公开托管的存储库上免费使用，但在私有托管的存储库上需要付费计划。`预览版` 功能将来可能需要付费计划。
 
-Use the Explain panel on the **Inspect** view to leverage AI to help you understand the changes introduced by a commit.
+## 我在哪里可以找到定价信息？
 
-## 🧪Automatically Generate Commit Message
+请访问 [XU-Git 定价页面](https://www.xutec.org/xugit/pricing?utm_source=xu-git-extension&utm_medium=in-app-links) 获取详细的定价信息和计划功能矩阵。
 
-Use the `Generate Commit Message` command from the Source Control view's context menu to automatically generate a commit message for your staged changes by leveraging AI.
+# 支持和社区
 
-# Ready for GitLens Pro?
+支持文档可以在 [XU-Git 帮助中心](https://help.xutec.org/xugit/xugit-home/) 找到。如果你需要进一步的帮助或有任何问题，XU-Git 提供了多种支持渠道和社区论坛：
 
-When you're ready to unlock the full potential of GitLens and our [DevEx platform](https://xutec.org/xugit/devex?utm_source=gitlens-extension&utm_medium=in-app-links) and enjoy all the benefits on your privately-hosted repos, consider upgrading to GitLens Pro. With GitLens Pro, you'll gain access to [Pro features](https://xutec.org/xugit/pro-features?utm_source=gitlens-extension&utm_medium=in-app-links) on privately-hosted repos.
+## 问题报告和功能请求
 
-To learn more about the pricing and the additional features offered with GitLens Pro, visit the [GitLens Pricing page](https://www.xutec.org/xugit/pricing?utm_source=gitlens-extension&utm_medium=in-app-links). Upgrade to GitLens Pro today and take your Git workflow to the next level!
+发现了 bug？有功能请求？请访问我们的 [GitHub 问题页面](https://github.com/xuxuchan/vscode-xuxu-git/issues)。
 
-# FAQ
+## 讨论
 
-## Is GitLens free to use?
+加入 XU-Git 社区，在 [GitHub 讨论](https://github.com/xuxuchan/vscode-xuxu-git/discussions) 中与其他用户交流，分享你的经验，并讨论与 XU-Git 相关的主题。
 
-Yes. All features are free to use on all repos, **except** for `Pro` features, which require a [trial or paid plan](https://www.xutec.org/xugit/pricing?utm_source=gitlens-extension&utm_medium=in-app-links).
+## XU-Tec 支持
 
-While GitLens offers a remarkable set of free features, a subset of `Pro` features tailored for professional developers and teams, require a trial or paid plan for use on privately-hosted repos &mdash; use on local or publicly-hosted repos is free for everyone. Additionally `Preview` features may require a paid plan in the future and some, if cloud-backed, require a GitKraken account.
+对于与 XU-Git 相关的任何问题或查询，可以通过 [官方支持页面](https://support.xutec.org/xugit/) 联系 XU-Tec 支持团队。他们将很乐意帮助你解决任何可能遇到的问题。
 
-Preview `Pro` features instantly for free for 3 days without an account, or start a free GitLens Pro trial to get an additional 7 days and gain access to `Pro` features to experience the full power of GitLens.
+使用 XU-Git 专业版，你可以获得来自客户成功团队的优先电子邮件支持，确保更高的优先级和更快的响应时间。我们还提供定制的入职和培训，帮助你和你的团队快速启动并运行 XU-Git 专业版计划。
 
-## Are `Pro` and `Preview` features free to use?
+# 贡献
 
-`Pro` features are free for use on local and publicly-hosted repos, while a paid plan is required for use on privately-hosted repos. `Preview` features may require a paid plan in the future.
+XU-Git 是一个开源项目，极大地受益于社区的贡献和反馈。
 
-## Where can I find pricing?
+你的贡献、反馈和参与在塑造 XU-Git 的未来方面起着重要作用。感谢你的支持！
 
-Visit the [GitLens Pricing page](https://www.xutec.org/xugit/pricing?utm_source=gitlens-extension&utm_medium=in-app-links) for detailed pricing information and feature matrix for plans.
+# 贡献者
 
-# Support and Community
+特别感谢为该项目做出贡献的人们：
 
-Support documentation can be found on the [GitLens Help Center](https://help.xutec.org/xugit/xugit-home/). If you need further assistance or have any questions, there are various support channels and community forums available for GitLens:
+- XUXU ([@xuxu](https://github.com/xuxuchan)) &mdash; [贡献](https://github.com/xuxuchan/vscode-xuxu-git/commits?author=xuxu)
 
-## Issue Reporting and Feature Requests
+# 许可
 
-Found a bug? Have a feature request? Reach out on our [GitHub Issues page](https://github.com/gitkraken/vscode-gitlens/issues).
+此存储库包含 OSS 许可和非 OSS 许可文件。
 
-## Discussions
+在任何名为 "plus" 的目录中的所有文件都属于 LICENSE.plus 许可。
 
-Join the GitLens community on [GitHub Discussions](https://github.com/gitkraken/vscode-gitlens/discussions) to connect with other users, share your experiences, and discuss topics related to GitLens.
-
-## GitKraken Support
-
-For any issues or inquiries related to GitLens, you can reach out to the GitKraken support team via the [official support page](https://support.xutec.org/xugit/). They will be happy to assist you with any problems you may encounter.
-
-With GitLens Pro, you gain access to priority email support from our customer success team, ensuring higher priority and faster response times. Custom onboarding and training are also available to help you and your team quickly get up and running with a GitLens Pro plan.
-
-# Contributing
-
-GitLens is an open-source project that greatly benefits from the contributions and feedback from its community.
-
-Your contributions, feedback, and engagement in the GitLens community are invaluable, and play a significant role in shaping the future of GitLens. Thank you for your support!
-
-# Contributors
-
-A big thanks to the people that have contributed to this project 🙏❤️:
-
-- Zeeshan Adnan ([@zeeshanadnan](https://github.com/zeeshanadnan)) &mdash; [contributions](https://github.com/gitkraken/vscode-gitlens/commits?author=zeeshanadnan)
-
-
-# License
-
-This repository contains both OSS-licensed and non-OSS-licensed files.
-
-All files in or under any directory named "plus" fall under LICENSE.plus.
-
-The remaining files fall under the MIT license.
+其余文件属于 MIT 许可。
